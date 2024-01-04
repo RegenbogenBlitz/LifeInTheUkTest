@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Life in the UK Quiz Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #quiz-container {
+            width: 80%;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px #000;
+        }
+
+        #question {
+            font-size: 1.2em;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        #submit,
+        #start-quiz,
+        #end-quiz {
+            background: #34a853;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        #submit:disabled,
+        #end-quiz:disabled {
+            background: #ddd;
+            cursor: not-allowed;
+        }
+
+        #score {
+            font-size: 1.5em;
+            color: #34a853;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="quiz-container">
+        <div id="category-selection">
+            <label><input type="checkbox" name="category" value="1"> Category 1</label>
+            <label><input type="checkbox" name="category" value="2"> Category 2</label>
+            <!-- Add more categories as needed -->
+        </div>
+        <button id="start-quiz" disabled>Start Quiz</button>
+        <p id="question">Question goes here?</p>
+        <div class="options">
+            <label><input type="radio" name="option" value="1"> Option 1</label>
+            <label><input type="radio" name="option" value="2"> Option 2</label>
+            <label><input type="radio" name="option" value="3"> Option 3</label>
+            <label><input type="radio" name="option" value="4"> Option 4</label>
+        </div>
+        <button id="submit" disabled>Submit</button>
+        <button id="end-quiz" disabled>End Quiz</button>
+        <p id="score">Score: 0%</p>
+    </div>
+</body>
+
+</html>
