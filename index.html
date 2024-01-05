@@ -20,14 +20,6 @@
             box-shadow: 0px 0px 10px 2px #000;
         }
 
-        #question {
-            font-size: 1.2em;
-        }
-
-        .options {
-            margin: 20px 0;
-        }
-
         .options label {
             display: block;
             padding: 10px;
@@ -37,9 +29,7 @@
             cursor: pointer;
         }
 
-        #submit,
-        #start-quiz,
-        #end-quiz {
+        #start-quiz,#end-quiz{
             background: #34a853;
             color: #fff;
             border: none;
@@ -48,39 +38,27 @@
             cursor: pointer;
             margin: 10px 0;
         }
-
-        #submit:disabled,
-        #end-quiz:disabled {
-            background: #ddd;
-            cursor: not-allowed;
-        }
-
-        #score {
-            font-size: 1.5em;
-            color: #34a853;
-        }
     </style>
     <script src="quiz.js"></script>
+    <script src="questions/012_WhatIsTheUk.js"></script>
+    <script src="gui.js"></script>
 </head>
 
 <body>
     <div id="quiz-container">
+        <div id="mode-selection">
+            <label><input class="quiz-mode" type="radio" name="mode" value="hard" checked>Hard Mode</label>
+            <label><input class="quiz-mode" type="radio" name="mode" value="test">Test Mode</label>
+        </div>
         <div id="category-selection">
-            <label><input type="checkbox" name="category" value="1"> Category 1</label>
-            <label><input type="checkbox" name="category" value="2"> Category 2</label>
-            <!-- Add more categories as needed -->
+            <!-- Will be populated at load time -->
         </div>
-        <button id="start-quiz" disabled>Start Quiz</button>
-        <p id="question">Question goes here?</p>
-        <div class="options">
-            <label><input type="radio" name="option" value="1"> Option 1</label>
-            <label><input type="radio" name="option" value="2"> Option 2</label>
-            <label><input type="radio" name="option" value="3"> Option 3</label>
-            <label><input type="radio" name="option" value="4"> Option 4</label>
+        <button id="start-quiz">Start Quiz</button>
+        
+        <div id="question-container">
+            
         </div>
-        <button id="submit" disabled>Submit</button>
-        <button id="end-quiz" disabled>End Quiz</button>
-        <p id="score">Score: 0%</p>
+        <button id="end-quiz">End Quiz</button>
     </div>
 </body>
 
