@@ -11,7 +11,7 @@ let getMode = () => {
     }
     return checkedRadios[0].value;
 }
-let loadCategoryControls = ()=> {
+let loadCategoryControls = () => {
     let categorySelectionDiv = document.getElementById("category-selection");
     quizDeck.categories.forEach(c => {
         let label = document.createElement("label");
@@ -25,7 +25,7 @@ let loadCategoryControls = ()=> {
     });
 }
 
-let getSelectedCategories = ()=> {
+let getSelectedCategories = () => {
     let selectedCategories = [];
     let categoryCheckboxes = document.querySelectorAll("#category-selection input");
     categoryCheckboxes.forEach(c => {
@@ -36,7 +36,7 @@ let getSelectedCategories = ()=> {
     return selectedCategories;
 }
 
-let showExplanation = (question, questionContainer)=>{
+let showExplanation = (question, questionContainer) => {
     if (question.explanation) {
         let explanationText = document.createElement("p");
         explanationText.innerText = question.explanation;
@@ -44,22 +44,22 @@ let showExplanation = (question, questionContainer)=>{
     }
 };
 
-let loadHardQuestion = (question,questionContainer)=> {
+let loadHardQuestion = (question, questionContainer) => {
     let revealButton = document.createElement("button");
     revealButton.innerText = "Reveal";
-    revealButton.onclick = ()=>{
-        
+    revealButton.onclick = () => {
+
         let correctAnswers = QuizHelpers.getAllCorrectAnswers(question);
         let answerText = document.createElement("p");
         answerText.innerText = "Correct answers: " + correctAnswers.join(", ");
         questionContainer.appendChild(answerText);
-        
+
         showExplanation(question, questionContainer);
 
         // add buttons to confirm whether the answer was correct or not 
         let correctButton = document.createElement("button");
         correctButton.innerText = "Correct";
-        correctButton.onclick = ()=>{
+        correctButton.onclick = () => {
             quiz.answerHardQuestion(true);
             loadNextQuestion();
         };
@@ -67,7 +67,7 @@ let loadHardQuestion = (question,questionContainer)=> {
 
         let incorrectButton = document.createElement("button");
         incorrectButton.innerText = "Incorrect";
-        incorrectButton.onclick = ()=>{
+        incorrectButton.onclick = () => {
             quiz.answerHardQuestion(false);
             loadNextQuestion();
         };
@@ -91,11 +91,11 @@ let loadTestQuestion = (question, questionContainer) => {
         answerItem.appendChild(answerInput);
         answerItem.appendChild(document.createTextNode(a));
         answerList.appendChild(answerItem);
-    });    
-    
+    });
+
     let submitButton = document.createElement("button");
     submitButton.innerText = "Submit";
-    submitButton.onclick = ()=>{
+    submitButton.onclick = () => {
         let selectedAnswers = [];
         let answerInputs = document.querySelectorAll("#question-container input[name=answer]");
         answerInputs.forEach(a => {
@@ -107,7 +107,7 @@ let loadTestQuestion = (question, questionContainer) => {
             alert("Please select at least " + minimumCorrectAnswers + " answer(s)");
             return;
         }
-        
+
         let isCorrect = quiz.answerTestQuestion(question, selectedAnswers);
         if (isCorrect) {
             alert("Correct!");
@@ -117,60 +117,60 @@ let loadTestQuestion = (question, questionContainer) => {
             let answerText = document.createElement("p");
             answerText.innerText = "Correct answers: " + correctAnswers.join(", ");
             questionContainer.appendChild(answerText);
-            
+
             showExplanation(question, questionContainer);
-            
-            setTimeout(()=>{
+
+            setTimeout(() => {
                 alert("Incorrect!");
                 loadNextQuestion();
             }, 100);
         }
     };
-        
+
     questionContainer.appendChild(answerList);
     questionContainer.appendChild(submitButton);
 }
-let endQuiz = ()=> {
+let endQuiz = () => {
     let questionContainer = document.getElementById("question-container");
     while (questionContainer.firstChild) {
         questionContainer.removeChild(questionContainer.firstChild);
     }
-    
+
     let numberOfQuestionsCorrect = quiz.getNumberOfQuestionsCorrect();
     let numberOfQuestionsAnswered = quiz.getNumberOfQuestionsAnswered();
     let score = numberOfQuestionsAnswered === 0 ? "0%" : (numberOfQuestionsCorrect / numberOfQuestionsAnswered * 100).toFixed(0) + "%"
-    
+
     let scoreText = document.createElement("p");
     scoreText.innerText = "Score: " + score;
     document.body.appendChild(scoreText);
-    
+
     let numberOfQuestionsCorrectText = document.createElement("p");
     numberOfQuestionsCorrectText.innerText = "Number of questions correct: " + numberOfQuestionsCorrect;
     document.body.appendChild(numberOfQuestionsCorrectText);
-    
+
     let numberOfQuestionsAnsweredText = document.createElement("p");
     numberOfQuestionsAnsweredText.innerText = "Number of questions answered: " + numberOfQuestionsAnswered;
     document.body.appendChild(numberOfQuestionsAnsweredText);
 };
 
-let loadNextQuestion =()=>{
-    if (!quiz){
+let loadNextQuestion = () => {
+    if (!quiz) {
         throw new Error("Quiz not started");
     }
     if (!quiz.getHasMoreQuestions()) {
         endQuiz();
     }
     let question = quiz.getNextQuestion();
-    
+
     // create new question container div
     let newQuestionContainer = document.createElement("div");
     newQuestionContainer.id = "question-container";
-    
+
     // add question text
     let questionText = document.createElement("p");
     questionText.innerText = question.question;
     newQuestionContainer.appendChild(questionText);
-    
+
     if (quiz.getMode() === QuizModes.HARD) {
         loadHardQuestion(question, newQuestionContainer);
     } else if (quiz.getMode() === QuizModes.TEST) {
@@ -179,13 +179,13 @@ let loadNextQuestion =()=>{
     else {
         throw new Error("Unknown question mode");
     }
-        
+
     //replace old question container div with new one
     let oldQuestionContainer = document.getElementById("question-container");
     oldQuestionContainer.parentNode.replaceChild(newQuestionContainer, oldQuestionContainer);
-    
+
 }
-let onStartQuiz_Click = ()=>{
+let onStartQuiz_Click = () => {
     let selectedCategories = getSelectedCategories();
     if (selectedCategories.length === 0) {
         alert("Please select at least one category");
@@ -195,11 +195,11 @@ let onStartQuiz_Click = ()=>{
     quiz = Quiz(selectedCategories, mode);
     loadNextQuestion();
 };
-let onEndQuiz_Click = ()=>{
+let onEndQuiz_Click = () => {
     endQuiz();
 };
 
-window.onload = ()=>{
+window.onload = () => {
     loadCategoryControls();
     document.getElementById("start-quiz").onclick = onStartQuiz_Click;
     document.getElementById("end-quiz").onclick = onEndQuiz_Click;

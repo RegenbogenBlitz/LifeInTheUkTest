@@ -7,9 +7,9 @@ let QuizModes = {
     TEST: "test",
 };
 
-let QuizHelpers = (()=>{
-    let getAllCorrectAnswers = (question) => 
-        question.furtherCorrectAnswers 
+let QuizHelpers = (() => {
+    let getAllCorrectAnswers = (question) =>
+        question.furtherCorrectAnswers
             ? question.correctAnswers.concat(question.furtherCorrectAnswers)
             : question.correctAnswers;
     return {
@@ -20,10 +20,10 @@ let QuizHelpers = (()=>{
             if (question.correctAnswers.length === 0) {
                 throw new Error("No correct answers");
             }
-            if(question.incorrectAnswers.length === 0) {
+            if (question.incorrectAnswers.length === 0) {
                 throw new Error("No incorrect answers");
             }
-            if(question.minimumCorrectAnswers && question.correctAnswers.length < question.minimumCorrectAnswers) {
+            if (question.minimumCorrectAnswers && question.correctAnswers.length < question.minimumCorrectAnswers) {
                 throw new Error("Not enough correct answers");
             }
 
@@ -71,32 +71,32 @@ let Quiz = (categoryNames, mode) => {
     let deck = {
         categories: quizDeck.categories.filter(c => categoryNames.includes(c.name))
     };
-    
+
     let numberOfQuestionsAnswered = 0;
     let numberOfQuestionsCorrect = 0;
-    
+
     return {
-        getMode : () => mode,
+        getMode: () => mode,
         getNumberOfQuestionsAnswered: () => numberOfQuestionsAnswered,
         getNumberOfQuestionsCorrect: () => numberOfQuestionsCorrect,
         getHasMoreQuestions: () => deck.categories.length > 0,
         getNextQuestion: () => {
             if (deck.categories.length === 0) {
                 throw new Error("No more categories with questions left");
-            }            
+            }
             let category = deck.categories[Math.floor(Math.random() * deck.categories.length)];
 
             if (category.questions.length === 0) {
                 throw new Error("No more questions in category");
             }
             let question = category.questions[Math.floor(Math.random() * category.questions.length)];
-            
+
             if (category.questions.length === 1) {
                 deck = {
                     ...deck,
                     categories: deck.categories.filter(c => c !== category)
                 }
-            } else{
+            } else {
                 // remove question from deck
                 deck = {
                     ...deck,
@@ -104,16 +104,17 @@ let Quiz = (categoryNames, mode) => {
                         c === category
                             ? {
                                 ...c,
-                                questions: c.questions.filter(q => q !== question)}
+                                questions: c.questions.filter(q => q !== question)
+                            }
                             : c)
                 }
             }
-            
+
             if (question.questions) {
                 // if so, get a question from that category
                 question = question.questions[Math.floor(Math.random() * question.questions.length)];
             }
-            
+
             return question;
         },
         answerHardQuestion: (answerWasCorrect) => {
@@ -129,7 +130,7 @@ let Quiz = (categoryNames, mode) => {
                     throw new Error("Not enough answers given");
                 }
             }
-            
+
             let possibleCorrectAnswers = QuizHelpers.getAllCorrectAnswers(question);
             let questionWasAnsweredCorrectly = answers.every(a => possibleCorrectAnswers.includes(a));
             if (questionWasAnsweredCorrectly) {

@@ -1,4 +1,4 @@
-(()=>{
+(() => {
     let britishOverseasTerritories = [
         "Anguilla",
         "Bermuda",
@@ -16,13 +16,13 @@
         "South Georgia and the South Sandwich Islands",
         "Akrotiri and Dhekelia",
         "Turks and Caicos Islands"];
-    
+
     let britishCrownDependencies = [
         "Isle of Man",
         "Jersey",
         "Guernsey"
-        ];
-    
+    ];
+
     let ukIndividualIslands = [
         "The Isle of Wight",
         "Skye",
@@ -32,14 +32,14 @@
         "Shetland",
         "Anglesey",
     ];
-    
+
     let ukIslandGroups = [
         "The Isles of Scilly",
         "The Hebrides",
         "The Western Isles",
         "The Northern Isles",
     ];
-    
+
     let questions = [
         {
             question: "What are the names of the countries that make up the UK?",
@@ -80,9 +80,9 @@
             question: "What is the name of the island that Northern Ireland is on?",
             correctAnswers: ["Ireland"],
             incorrectAnswers: [
-                "Great Britain", 
-                "England", 
-                "Scotland", 
+                "Great Britain",
+                "England",
+                "Scotland",
                 "Wales",
                 ...britishCrownDependencies,
                 ...ukIndividualIslands],
@@ -137,10 +137,10 @@
                 "Great Britain",
                 "Britain",
                 "England"
-            ]  
+            ]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "What are the names of the Crown Dependencies?",
                     correctAnswers: britishCrownDependencies,
@@ -160,7 +160,7 @@
                         "British Colonies",
                         "Crown Territories",
                         "Counties"
-                        ]
+                    ]
                 },
                 {
                     question: "The Crown Dependencies are part of the UK. True or false?",
@@ -174,7 +174,7 @@
             questions: [
                 {
                     question: "What are the names of the British Overseas Territories? Name at least 2",
-                    correctAnswers: [ "The Falkland Islands", "St Helena" ],
+                    correctAnswers: ["The Falkland Islands", "St Helena"],
                     minimumCorrectAnswers: 2,
                     furtherCorrectAnswers: britishOverseasTerritories.filter(t => t !== "The Falkland Islands" && t !== "St Helena"),
                     incorrectAnswers: [
@@ -203,7 +203,7 @@
             ]
         }
     ];
-    
+
     let category = {
         name: "What is the UK?",
         questions: questions
