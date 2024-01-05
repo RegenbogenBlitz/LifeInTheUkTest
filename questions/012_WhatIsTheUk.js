@@ -19,8 +19,8 @@
 
     let britishCrownDependencies = [
         "Isle of Man",
-        "Jersey",
-        "Guernsey"
+        "Bailiwick of Jersey",
+        "Bailiwick of Guernsey"
     ];
 
     let ukIndividualIslands = [
@@ -69,7 +69,7 @@
                 "Greenland"],
         },
         {
-            question: "What is the name of the 2nd largest island in the UK?",
+            question: "What is the name of the 2nd largest island that contains part of the UK?",
             correctAnswers: ["Ireland"],
             incorrectAnswers: [
                 "Great Britain",
@@ -120,13 +120,13 @@
                 "England"],
         },
         {
-            question: "The country of Ireland is part of the UK. True or false?",
+            question: "The country of The Republic of Ireland is part of the UK. True or false?",
             correctAnswers: ["False"],
             incorrectAnswers: ["True"],
-            explanation: "The country of Ireland is not part of the UK. Northern Ireland is part of the UK.",
+            explanation: "The country of The Republic of Ireland is not part of the UK. Northern Ireland is part of the UK.",
         },
         {
-            question: "What is the name of the island group that the UK and Ireland are a part of?",
+            question: "What is the name of the island group that the UK and The Republic of Ireland are a part of?",
             correctAnswers: ["The British Isles"],
             incorrectAnswers: [
                 ...ukIslandGroups,
@@ -151,7 +151,7 @@
                     ]
                 },
                 {
-                    question: "What sort of entities are the Isle of Man and the Channel Islands (Jersey and Guernsey)?",
+                    question: "What sort of entities are the Isle of Man and the Channel Islands (Bailiwick of Jersey and Bailiwick of Guernsey?",
                     correctAnswers: ["Crown Dependencies"],
                     incorrectAnswers: [
                         "British Overseas Territories",
@@ -159,6 +159,7 @@
                         "British Possessions",
                         "British Colonies",
                         "Crown Territories",
+                        "Crown Colonies",
                         "Counties"
                     ]
                 },
@@ -190,6 +191,7 @@
                         "British Provinces",
                         "British Possessions",
                         "British Colonies",
+                        "Crown Colonies",
                         "Crown Territories",
                         "Counties"
                     ]
