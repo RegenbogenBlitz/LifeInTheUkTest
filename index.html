@@ -59,6 +59,7 @@
         }
     </style>
     <script src="quiz.js"></script>
+    <script src="questions/006_ValuesAndPrinciples.js"></script>
     <script src="questions/012_WhatIsTheUk.js"></script>
     <script src="gui.js"></script>
 </head>
@@ -69,9 +70,9 @@
             <label><input class="quiz-mode" type="radio" name="mode" value="hard" checked>Hard Mode</label>
             <label><input class="quiz-mode" type="radio" name="mode" value="test">Test Mode</label>
         </div>
-        <div id="category-selection">
+        <ul id="category-selection">
             <!-- Will be populated at load time -->
-        </div>
+        </ul>
         <button id="start-quiz" class="quiz-button">Start Quiz</button>
 
         <div id="question-container">

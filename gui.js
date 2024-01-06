@@ -14,6 +14,7 @@ let getMode = () => {
 let loadCategoryControls = () => {
     let categorySelectionDiv = document.getElementById("category-selection");
     quizDeck.categories.forEach(c => {
+        let item = document.createElement("li");
         let label = document.createElement("label");
         let input = document.createElement("input");
         input.type = "checkbox";
@@ -22,7 +23,8 @@ let loadCategoryControls = () => {
         input.value = c.name;
         label.appendChild(input);
         label.appendChild(document.createTextNode(c.name));
-        categorySelectionDiv.appendChild(label);
+        item.appendChild(label);
+        categorySelectionDiv.appendChild(item);
     });
 }
 
