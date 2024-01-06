@@ -17,6 +17,7 @@ let loadCategoryControls = () => {
         let label = document.createElement("label");
         let input = document.createElement("input");
         input.type = "checkbox";
+        input.classList = "category-checkbox";
         input.name = "category";
         input.value = c.name;
         label.appendChild(input);
@@ -46,6 +47,7 @@ let showExplanation = (question, questionContainer) => {
 
 let loadHardQuestion = (question, questionContainer) => {
     let revealButton = document.createElement("button");
+    revealButton.classList = "quiz-button";
     revealButton.innerText = "Reveal";
     revealButton.onclick = () => {
 
@@ -59,6 +61,7 @@ let loadHardQuestion = (question, questionContainer) => {
         // add buttons to confirm whether the answer was correct or not 
         let correctButton = document.createElement("button");
         correctButton.innerText = "Correct";
+        correctButton.classList = "quiz-button"
         correctButton.onclick = () => {
             quiz.answerHardQuestion(true);
             loadNextQuestion();
@@ -66,6 +69,7 @@ let loadHardQuestion = (question, questionContainer) => {
         questionContainer.appendChild(correctButton);
 
         let incorrectButton = document.createElement("button");
+        incorrectButton.classList = "quiz-button"
         incorrectButton.innerText = "Incorrect";
         incorrectButton.onclick = () => {
             quiz.answerHardQuestion(false);
@@ -84,8 +88,10 @@ let loadTestQuestion = (question, questionContainer) => {
     let answerList = document.createElement("ul");
     answerOptions.forEach(a => {
         let answerItem = document.createElement("li");
+        answerItem.classList = "answer-item";
         let answerInput = document.createElement("input");
         answerInput.type = allowsMultipleAnswers ? "checkbox" : "radio";
+        answerInput.classList = "answer-selector";
         answerInput.name = "answer";
         answerInput.value = a;
         answerItem.appendChild(answerInput);
@@ -94,6 +100,7 @@ let loadTestQuestion = (question, questionContainer) => {
     });
 
     let submitButton = document.createElement("button");
+    submitButton.classList = "quiz-button";
     submitButton.innerText = "Submit";
     submitButton.onclick = () => {
         let selectedAnswers = [];
