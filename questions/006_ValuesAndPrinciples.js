@@ -12,17 +12,17 @@
                         "Participation in community life"
                     ],
                     incorrectAnswers: [
-                        "Militarism",
-                        "Anglicanism",
+                        "Progress",
+                        "Religious uniformity",
                         "Valuing the rights of the many over the rights of the few",
                         "Lack of private property",
-                        "Emancipation of the working class",
+                        "Loyalty",
                         "Individual self advancement",
-                        "Socialism",
-                        "Communism",
-                        "Fascism",
-                        "Anarchism",
-                        "Pacifism",
+                        "Innovation",
+                        "Tradition",
+                        "Social hierarchy",
+                        "Honour",
+                        "Meritocracy",
                         "Patriotism",
                         "Nationalism",
                     ]
@@ -46,15 +46,21 @@
                         "Worship God",
                         "Respect your elders",
                         "Report your neighbours for transgressions",
+                        "Celebrate national holidays",
                         "Avoid causing offence",
                         "Avoid showing off",
                         "Drink tea",
-                        "Support the monarchy",
+                        "Pledge allegiance to the flag",
+                        "Pledge allegiance to the monarch",
+                        "Support the state religion",
                         "Support the government",
                         "Support the armed forces",
                         "Support the police",
                         "Support the NHS",
                         "Support the BBC",
+                        "Vote in every election",
+                        "Join a political party",
+                        "Speak English",
                         "Promote the interests of the UK",
                     ]
                 }
@@ -80,6 +86,9 @@
                         "a right to a job",
                         "a right to a pension",
                         "a right to a free university education",
+                        "freedom of movement within the EU",
+                        "freedom of movement within the Commonwealth",
+                        "a right to universal basic income",
                     ]
                 }
             ]
