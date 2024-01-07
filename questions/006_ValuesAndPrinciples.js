@@ -4,7 +4,13 @@
             questions: [
                 {
                     question: "What are the fundamental principles of British life?",
-                    correctAnswers: ["Democracy", "The rule of law", "Individual liberty", "Tolerance of those with different faiths and beliefs", "Participation in community life"],
+                    correctAnswers: [
+                        "Democracy",
+                        "The rule of law",
+                        "Individual liberty",
+                        "Tolerance of those with different faiths and beliefs",
+                        "Participation in community life"
+                    ],
                     incorrectAnswers: [
                         "Militarism",
                         "Anglicanism",
@@ -21,7 +27,9 @@
                         "Nationalism",
                     ]
                 }
-            ],
+            ]
+        },
+        {
             questions: [
                 {
                     question: "What are the responsibilities of those living in the UK?",
@@ -30,7 +38,8 @@
                         "Respect the rights of others, including their right to their own opinions",
                         "Treat others with fairness",
                         "Look after yourself and your family",
-                        "Look after the area in which you live and the environment"],
+                        "Look after the area in which you live and the environment"
+                    ],
                     incorrectAnswers: [
                         "Military Service",
                         "Church attendance",
@@ -49,7 +58,9 @@
                         "Promote the interests of the UK",
                     ]
                 }
-            ],
+            ]
+        },
+        {
             questions: [
                 {
                     question: "What does life in the UK offer?",
