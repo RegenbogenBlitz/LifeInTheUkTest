@@ -88,6 +88,7 @@ let loadTestQuestion = (question, questionContainer) => {
     let minimumCorrectAnswers = QuizHelpers.getMinimumCorrectAnswers(question);
 
     let answerList = document.createElement("ul");
+    answerList.classList = "answer-list";
     answerOptions.forEach(a => {
         let answerItem = document.createElement("li");
         answerItem.classList = "answer-item";
