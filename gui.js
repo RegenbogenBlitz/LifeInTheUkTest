@@ -120,21 +120,29 @@ let loadTestQuestion = (question, questionContainer) => {
 
         let isCorrect = quiz.answerTestQuestion(question, selectedAnswers);
         if (isCorrect) {
-            alert("Correct!");
-            loadNextQuestion();
+            let correctText = document.createElement("p");
+            correctText.innerText = "Correct!";
+            questionContainer.appendChild(correctText);
         } else {
             let correctAnswers = QuizHelpers.getAllCorrectAnswers(question);
             let answerText = document.createElement("p");
             answerText.innerText = "Correct answers: " + correctAnswers.join(", ");
             questionContainer.appendChild(answerText);
 
-            showExplanation(question, questionContainer);
-
-            setTimeout(() => {
-                alert("Incorrect!");
-                loadNextQuestion();
-            }, 100);
+            let incorrectText = document.createElement("p");
+            incorrectText.innerText = "Incorrect";
+            questionContainer.appendChild(incorrectText);
         }
+
+        let nextButton = document.createElement("button");
+        nextButton.classList = "quiz-button";
+        nextButton.innerText = "Next";
+        nextButton.onclick = () => {
+            loadNextQuestion();
+        }
+        questionContainer.appendChild(nextButton);
+
+        showExplanation(question, questionContainer);
     };
 
     questionContainer.appendChild(answerList);
