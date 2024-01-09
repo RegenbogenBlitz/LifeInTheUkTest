@@ -120,10 +120,20 @@
                 "England"],
         },
         {
-            question: "The country of The Republic of Ireland is part of the UK. True or false?",
-            correctAnswers: ["False"],
-            incorrectAnswers: ["True"],
-            explanation: "The country of The Republic of Ireland is not part of the UK. Northern Ireland is part of the UK.",
+            questions: [
+                {
+                    question: "The Republic of Ireland is an independent country and is NOT part of the UK. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                    explanation: "The country of The Republic of Ireland is not part of the UK. Northern Ireland is part of the UK.",
+                },
+                {
+                    question: "The Republic of Ireland is part of the UK. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "The country of The Republic of Ireland is not part of the UK. Northern Ireland is part of the UK.",
+                },
+            ],
         },
         {
             question: "What is the name of the island group that the UK and The Republic of Ireland are a part of?",
@@ -164,7 +174,13 @@
                     ]
                 },
                 {
-                    question: "The Crown Dependencies are part of the UK. True or false?",
+                    question: "The Crown Dependencies have their own governments and are NOT part of the UK. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                    explanation: "The Crown Dependencies are not part of the UK. They are self-governing possessions of the Crown.",
+                },
+                {
+                    question: "The Crown Dependencies are part of the UK. True or False?",
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"],
                     explanation: "The Crown Dependencies are not part of the UK. They are self-governing possessions of the Crown.",
@@ -197,10 +213,107 @@
                     ]
                 },
                 {
-                    question: "The British Overseas Territories are part of the UK. True or false?",
+                    question: "The British Overseas Territories are territories of the UK, but are NOT part of the UK. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                    explanation: "The British Overseas Territories have a constitutional and historical link with the UK, but do not form part of the UK itself.",
+                },
+                {
+                    question: "The British Overseas Territories are part of the UK. True or False?",
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"],
-                    explanation: "The British Overseas Territories are self-governing territories with a constitutional and historical link with the UK, but do not form part of the UK itself.",
+                    explanation: "The British Overseas Territories have a constitutional and historical link with the UK, but do not form part of the UK itself.",
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "What sort of body governs the UK?",
+                    correctAnswers: ["A parliament"],
+                    incorrectAnswers: [
+                        "A senate",
+                        "A congress",
+                        "A house of Representatives",
+                        "An assembly",
+                        "A council",
+                        "A diet",
+                        "A duma"
+                    ]
+                },
+                {
+                    question: "Where is the UK parliament located?",
+                    correctAnswers: ["Westminster"],
+                    incorrectAnswers: [
+                        "Stormont",
+                        "Holyrood",
+                        "Cardiff Bay",
+                        "Kensington",
+                        "Chelsea",
+                        "Richmond",
+                        "Windsor",
+                        "Knightsbridge",
+                        "Mayfair",
+                        "Belgravia",
+                        "Sandringham",
+                        "Balmoral",
+                        "Stockbridge",
+                        "Morningside",
+                        "Bruntsfield",
+                        "Marchmont",
+                        "Malone",
+                        "Stranmillis",
+                        "Ormeau",
+                        "Pontcanna",
+                        "Cathays",
+                        "Roath"
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "Scotland has its own parliament with devolved powers. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                },
+                {
+                    question: "Scotland does NOT have its own parliament with devolved powers. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "Wales has its own parliament with devolved powers. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                    explanation: "The Welsh parliament is called the Senedd.",
+                },
+                {
+                    question: "Wales does NOT have its own parliament with devolved powers. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "The Welsh parliament is called the Senedd.",
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "Northern Ireland has its own assembly with devolved powers. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                    explanation: "Northern Ireland has its own assembly, often known as Stormont, but not its own parliament.",
+                },
+                {
+                    question: "Northern Ireland has its own parliament. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "Northern Ireland has its own assembly, often known as Stormont, but not its own parliament.",
                 }
             ]
         }
