@@ -102,6 +102,9 @@ let loadTestQuestion = (question, questionContainer) => {
         answerList.appendChild(answerItem);
     });
 
+    let answerArea = document.createElement("div");
+    answerArea.classList = "answer-area";
+
     let submitButton = document.createElement("button");
     submitButton.classList = "quiz-button";
     submitButton.innerText = "Submit";
@@ -122,7 +125,7 @@ let loadTestQuestion = (question, questionContainer) => {
         if (isCorrect) {
             let correctText = document.createElement("p");
             correctText.innerText = "Correct!";
-            questionContainer.appendChild(correctText);
+            answerArea.appendChild(correctText);
         } else {
             let correctAnswers = QuizHelpers.getAllCorrectAnswers(question);
             let answerText = document.createElement("p");
@@ -131,7 +134,7 @@ let loadTestQuestion = (question, questionContainer) => {
 
             let incorrectText = document.createElement("p");
             incorrectText.innerText = "Incorrect";
-            questionContainer.appendChild(incorrectText);
+            answerArea.appendChild(incorrectText);
         }
 
         let nextButton = document.createElement("button");
@@ -140,13 +143,15 @@ let loadTestQuestion = (question, questionContainer) => {
         nextButton.onclick = () => {
             loadNextQuestion();
         }
-        questionContainer.appendChild(nextButton);
+        answerArea.replaceChild(nextButton, submitButton);
+
 
         showExplanation(question, questionContainer);
     };
+    answerArea.appendChild(submitButton);
 
     questionContainer.appendChild(answerList);
-    questionContainer.appendChild(submitButton);
+    questionContainer.appendChild(answerArea);
 }
 let endQuiz = () => {
     let questionContainer = document.getElementById("question-container");
