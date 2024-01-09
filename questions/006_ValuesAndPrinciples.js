@@ -91,6 +91,24 @@
                         "a right to universal basic income",
                     ]
                 }
+        ]},{
+            questions: [
+                {
+                    question: "Apart from visa status, residency period and cost; what do you need to apply for permanent residency?",
+                    correctAnswers: [
+                        "speak and read English",
+                        "have a good understanding of life in the UK"
+                    ],
+                    incorrectAnswers: [
+                        "a reference from your home government",
+                        "a job of sufficient salary",
+                        "a reference from your employer",
+                        "recent negative test for certain diseases",
+                        "savings over £20,000",
+                        "a valid UK driving licence",
+                        "a university Batchelors's degree or equivalent"
+                    ]
+                }
             ]
         }
     ];
