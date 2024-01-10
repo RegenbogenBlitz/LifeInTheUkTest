@@ -14,7 +14,7 @@ let QuizHelpers = (() => {
             : question.correctAnswers;
     return {
         getAllCorrectAnswers: getAllCorrectAnswers,
-        getAllowsMultipleAnswers: (question) => question.correctAnswers.length > 1,
+        getAllowsMultipleAnswers: (question) => question.correctAnswers.length > 1 || question.isMultipleChoice,
         getMinimumCorrectAnswers: (question) => question.minimumCorrectAnswers ? question.minimumCorrectAnswers : question.correctAnswers.length,
         getTestAnswerOptions: (question) => {
             if (question.correctAnswers.length === 0) {
@@ -39,6 +39,9 @@ let QuizHelpers = (() => {
 
             let options = [];
             options.push(...question.correctAnswers);
+            if (question.mandatoryIncorrectAnswers) {
+                options.push(...question.mandatoryIncorrectAnswers);
+            }
 
             let possibleFurtherCorrectAnswers = question.furtherCorrectAnswers ? [...question.furtherCorrectAnswers] : [];
             let possibleIncorrectAnswers = [...question.incorrectAnswers];
