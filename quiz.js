@@ -27,10 +27,12 @@ let QuizHelpers = (() => {
                 throw new Error("Not enough correct answers");
             }
 
+            let numberOfMandatoryIncorrectAnswers = question.mandatoryIncorrectAnswers ? question.mandatoryIncorrectAnswers.length : 0;
+
             let maxNumOfOptions =
                 question.correctAnswers.length > 1
-                    ? question.correctAnswers.length * 3
-                    : 4;
+                    ? question.correctAnswers.length * 3 + numberOfMandatoryIncorrectAnswers
+                    : 4 + numberOfMandatoryIncorrectAnswers;
 
             let maximumPossibleNumOptions = getAllCorrectAnswers(question).length + question.incorrectAnswers.length;
             if (maxNumOfOptions > maximumPossibleNumOptions) {
