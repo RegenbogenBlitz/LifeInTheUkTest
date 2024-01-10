@@ -371,7 +371,7 @@
                     ]
                 },
                 {
-                    question: "It is necessary to be able to read English above rESOL Entry Level 3 to understand some parts of the handbook. True or False?",
+                    question: "It is necessary to be able to read English above ESOL Entry Level 3 to understand some parts of the handbook. True or False?",
                     correctAnswers: [
                         "False",
                     ],
