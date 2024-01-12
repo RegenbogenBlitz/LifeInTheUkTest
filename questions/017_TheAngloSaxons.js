@@ -1,4 +1,76 @@
 (() => {
+    let englishCounties = [
+        "Bedfordshire",
+        "Berkshire",
+        "Bristol",
+        "Buckinghamshire",
+        "Cambridgeshire",
+        "Cheshire",
+        "Cornwall",
+        "Cumbria",
+        "Derbyshire",
+        "Devon",
+        "Dorset",
+        "Durham",
+        "East Sussex",
+        "Essex",
+        "Gloucestershire",
+        "Greater London",
+        "Greater Manchester",
+        "Hampshire",
+        "Herefordshire",
+        "Hertfordshire",
+        "Isle of Wight",
+        "Kent",
+        "Lancashire",
+        "Leicestershire",
+        "Lincolnshire",
+        "Merseyside",
+        "Norfolk",
+        "North Yorkshire",
+        "Northamptonshire",
+        "Northumberland",
+        "Nottinghamshire",
+        "Oxfordshire",
+        "Rutland",
+        "Shropshire",
+        "Somerset",
+        "South Yorkshire",
+        "Staffordshire",
+        "Suffolk",
+        "Surrey",
+        "Tyne and Wear",
+        "Warwickshire",
+        "West Midlands",
+        "Westmorland",
+        "West Sussex",
+        "West Yorkshire",
+        "Wiltshire",
+        "Worcestershire"
+    ];
+
+    let ukIndividualIslands = [
+        "The Isle of Wight",
+        "Skye",
+        "Lewis",
+        "Harris",
+        "Orkney",
+        "Arran",
+        "Mull",
+        "Jura",
+        "Iona",
+        "Shetland",
+        "Anglesey",
+    ];
+
+    let plausibleSaints = [
+        "St David",
+        "St George",
+        "St Andrew",
+        "St Alban",
+        "St Edward"
+    ];
+
     let questions = [
         {
             questions: [
@@ -28,11 +100,7 @@
                     correctAnswers: ["Jutes", "Angles", "Saxons"],
                     mandatoryIncorrectAnswers: ["Vikings", "Normans"],
                     incorrectAnswers: ["Gauls", "Franks", "Goths", "Huns", "Vandals"],
-                }
-            ]
-        },
-        {
-            questions: [
+                },
                 {
                     question: "The languages spoken by the Jutes, Angles and Saxons are the basis of modern-day English. True or False?",
                     correctAnswers: ["True"],
@@ -42,18 +110,14 @@
                     question: "The languages spoken by the Jutes, Angles and Saxons are NOT the basis of modern-day English. True or False?",
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"],
-                }
-            ]
-        },
-        {
-            questions: [
+                },
                 {
-                    question: "Battles were fought against the Jutes, Angles and Saxons. True or False?",
+                    question: "The people of Britain fought battles against the Jutes, Angles and Saxons. True or False?",
                     correctAnswers: ["True"],
                     incorrectAnswers: ["False"],
                 },
                 {
-                    question: "Battles were NOT fought against the Jutes, Angles and Saxons. True or False?",
+                    question: "The Jutes, Angles and Saxons settled in Britain without any fighting. True or False?",
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"],
                 }
@@ -70,20 +134,99 @@
                     question: "The Anglo-Saxon kingdoms were mainly in what is now England. True or False?",
                     correctAnswers: ["True"],
                     incorrectAnswers: ["False"],
-                }
-                // TODO more questions
-            ]
-        },
-        //The burial place of one of the kings was at Sutton Hoo in modern Suffolk. 
-        // This king was buried with treasure and armour, all placed in a ship which was then covered by a mound of earth. 
-        {
-            questions: [
+                },
+                {
+                    question: "The Anglo-Saxon kingdoms were mainly in what is now Scotland. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "The Anglo-Saxon kingdoms were mainly in what is now England. The Anglo-Saxons did not conquer Scotland.",
+                },
+                {
+                    question: "The Anglo-Saxon kingdoms were mainly in what is now Wales. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "The Anglo-Saxon kingdoms were mainly in what is now England. The Anglo-Saxons did not conquer Wales.",
+                },
+                {
+                    question: "The Anglo-Saxon kingdoms were mainly in what is now Ireland. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "The Anglo-Saxon kingdoms were mainly in what is now England. The Anglo-Saxons did not conquer Ireland.",
+                },
                 {
                     question: "Parts of the west of Britain, including much of what is now Wales, and Scotland, remained free of Anglo-Saxon rule. True or False?",
                     correctAnswers: ["True"],
                     incorrectAnswers: ["False"],
                 }
-                // TODO more questions
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "Name a burial place of one of the kings of Anglo-Saxon kingdoms.",
+                    correctAnswers: ["Sutton Hoo"],
+                    furtherCorrectAnswers: ["Winchester Cathedral", "Hyde Abbey"],
+                    mandatoryIncorrectAnswers: [
+                        "Stonehenge",
+                        "Maiden Castle",
+                        "Skara Brae"
+                    ],
+                    incorrectAnswers: [
+                        "Hadrian's Wall",
+                        "Tower of London",
+                        "Westminster Abbey",
+                        "St Paul's Cathedral",
+                        "Avebury",
+                        "Silbury Hill",
+                    ]
+                },
+                {
+                    question: "Where is Sutton Hoo?",
+                    correctAnswers: ["Suffolk"],
+                    incorrectAnswers: englishCounties.filter(county => county !== "Suffolk"),
+                },
+                {
+                    question: "What is famous about Sutton Hoo in Suffolk?",
+                    correctAnswers: ["It is the burial place of one an Anglo-Saxon king."],
+                    incorrectAnswers: [
+                        "It is the burial place of one of the Roman emperors.",
+                        "It is the burial place of one of the Viking kings.",
+                        "It is the burial place of one of the Norman kings.",
+                        "It is the site of a famous battle between the Anglo-Saxons and the Vikings.",
+                        "It is the site of a famous battle between the Anglo-Saxons and the Normans.",
+                        "It is the site of a famous battle between the Anglo-Saxons and the Romans.",
+                        "It is the site of a famous battle between the Anglo-Saxons and the Celts.",
+                        "It is the site of a standing stone circle.",
+                    ]
+                },
+                {
+                    question: "What was buried with the Anglo-Saxon king at Sutton Hoo? (Name at least 3)",
+                    minimumCorrectAnswers: 3,
+                    correctAnswers: ["treasure", "armour", "a ship"],
+                    furtherCorrectAnswers: ["a sword", "a shield", "a spear", "a drinking horn", "a lyre", "a silver plate"],
+                    incorrectAnswers: [
+                        "a chess set",
+                        "a pocket watch",
+                        "a sundial",
+                        "a telescope",
+                        "a compass",
+                        "a bible",
+                        "philosphical writings",
+                        "a pet dog",
+                        "a pet cat"
+                    ]
+                },
+                {
+                    question: "How was the burial at Sutton Hoo covered?",
+                    correctAnswers: ["a mound of earth"],
+                    incorrectAnswers: [
+                        "a pyramid",
+                        "a stone circle",
+                        "a mausoleum",
+                        "a palace",
+                        "large stone slabs"
+                    ]
+                }
             ]
         },
         {
@@ -98,40 +241,128 @@
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"],
                 }
-                // TODO more questions
-                //The Anglo-Saxons were not Christians when they first came to Britain but, during this period, missionaries came to Britain to preach about Christianity.
             ]
         },
         {
             questions: [
                 {
-                    question: "Missionaries from Ireland spread the religion in the north of Britain. True or False?",
+                    question: "During the Anglo-Saxon period, missionaries came to Britain to preach about Christianity. True or False?",
                     correctAnswers: ["True"],
                     incorrectAnswers: ["False"],
+                },
+                {
+                    question: "Christian missionaries did NOT come to Britain during the Anglo-Saxon period. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                 }
-                // TODO more questions
             ]
         },
         {
             questions: [
                 {
-                    question: "Which part of the British Isles did St Patrick come from?",
-                    correctAnswers: ["Ireland"],
-                    incorrectAnswers: ["England", "Scotland", "Wales"],
+                    question: "Missionaries from Ireland spread Christianity in which part of Great Britain?",
+                    correctAnswers: ["North Britain"],
+                    incorrectAnswers: ["South Britain", "Wales"],
+                },
+                {
+                    question: "Missionaries from Ireland spread Christianity in the north of Britain. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                },
+                {
+                    question: "Missionaries from Ireland spread Christianity in the south of Britain. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "Missionaries from Ireland spread Christianity in the north of Britain.",
+                },
+                {
+                    question: "Missionaries from Ireland spread Christianity throughout Britain. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "Missionaries from Ireland spread Christianity in the north of Britain.",
+                },
+                {
+                    question: "Missionaries from Ireland spread Christianity throughout England. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "Missionaries from Ireland spread Christianity in the north of Britain.",
                 }
-                // TODO more questions
-                // The most famous of these were St Patrick, who would become the patron saint of Ireland, 
             ]
         },
         {
             questions: [
                 {
-                    question: "Which part of the British Isles did St Columba come from?",
+                    question: "Which part of the British Isles did St Patrick spend the most significant part of his career?",
                     correctAnswers: ["Ireland"],
                     incorrectAnswers: ["England", "Scotland", "Wales"],
+                },
+                {
+                    question: "St Patrick, who lived in the 5th century, became the patron saint of which country?",
+                    correctAnswers: ["Ireland"],
+                    incorrectAnswers: ["England", "Scotland", "Wales"],
+                },
+                {
+                    question: "Who famously brought Christianity to Ireland?",
+                    correctAnswers: ["St Patrick"],
+                    mandatoryIncorrectAnswers: ["St Columba", "St Augustine"],
+                    incorrectAnswers: plausibleSaints
                 }
-                // TODO more questions
-                //  and St Columba, who founded a monastery on the island of Iona, off the coast of what is now Scotland.
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "Where did St Columba found a monastery?",
+                    correctAnswers: ["Iona"],
+                    incorrectAnswers: ukIndividualIslands.filter(island => island !== "Iona")
+                },
+                {
+                    question: "Who founded a monastery on the island of Iona, off the coast of what is now Scotland?",
+                    correctAnswers: ["St Columba"],
+                    mandatoryIncorrectAnswers: ["St Patrick", "St Augustine",],
+                    incorrectAnswers: plausibleSaints
+                },
+                {
+                    question: "St Columba founded a monastery on the island of Iona. Where is Iona?",
+                    correctAnswers: ["Off the coast of what is now Scotland"],
+                    incorrectAnswers: [
+                        "Off the coast of what is now England",
+                        "Off the coast of what is now Wales",
+                        "Off the coast of what is now Ireland"
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "Missionaries from Rome spread Christianity in which part of Great Britain?",
+                    correctAnswers: ["South Britain"],
+                    incorrectAnswers: ["North Britain", "Wales"],
+                },
+                {
+                    question: "Missionaries from Rome spread Christianity in the south of Britain. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                },
+                {
+                    question: "Missionaries from Rome spread Christianity in the north of Britain. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "Missionaries from Rome spread Christianity in the south of Britain.",
+                },
+                {
+                    question: "Missionaries from Rome spread Christianity throughout Britain. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "Missionaries from Rome spread Christianity in the south of Britain.",
+                },
+                {
+                    question: "Missionaries from Rome spread Christianity throughout England. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "Missionaries from Rome spread Christianity in the south of Britain.",
+                }
             ]
         },
         {
@@ -152,20 +383,18 @@
                         "Constantinople"
                     ],
                 },
-                // TODO more questions
-                //   St Augustine led missionaries from Rome, who spread Christianity in the south.
                 {
-                    question: "St Augustine became the first Archbishop of Canterbury. True or False?",
-                    correctAnswers: ["True"],
-                    incorrectAnswers: ["False"],
-
+                    question: "Who was the first Archbishop of Canterbury?",
+                    correctAnswers: ["St Augustine"],
+                    mandatoryIncorrectAnswers: ["St Columba", "St Patrick"],
+                    incorrectAnswers: plausibleSaints
                 },
                 {
-                    question: "St Augustine was NOT the first Archbishop of Canterbury. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
+                    question: "Who led missionaries from Rome, who spread Christianity in parts of Britain?",
+                    correctAnswers: ["St Augustine"],
+                    mandatoryIncorrectAnswers: ["St Columba", "St Patrick"],
+                    incorrectAnswers: plausibleSaints
                 }
-                // St Augustine became the first Archbishop of Canterbury.
             ]
         }
     ];
