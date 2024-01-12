@@ -163,17 +163,21 @@ let endQuiz = () => {
     let numberOfQuestionsAnswered = quiz.getNumberOfQuestionsAnswered();
     let score = numberOfQuestionsAnswered === 0 ? "0%" : (numberOfQuestionsCorrect / numberOfQuestionsAnswered * 100).toFixed(0) + "%"
 
+    let scoreContainer = document.createElement("div");
+
     let scoreText = document.createElement("p");
     scoreText.innerText = "Score: " + score;
-    document.body.appendChild(scoreText);
+    scoreContainer.appendChild(scoreText);
 
     let numberOfQuestionsCorrectText = document.createElement("p");
     numberOfQuestionsCorrectText.innerText = "Number of questions correct: " + numberOfQuestionsCorrect;
-    document.body.appendChild(numberOfQuestionsCorrectText);
+    scoreContainer.appendChild(numberOfQuestionsCorrectText);
 
     let numberOfQuestionsAnsweredText = document.createElement("p");
     numberOfQuestionsAnsweredText.innerText = "Number of questions answered: " + numberOfQuestionsAnswered;
-    document.body.appendChild(numberOfQuestionsAnsweredText);
+    scoreContainer.appendChild(numberOfQuestionsAnsweredText);
+
+    questionContainer.appendChild(scoreContainer);
 };
 
 let loadNextQuestion = () => {
@@ -216,6 +220,11 @@ let onStartQuiz_Click = () => {
     }
     let mode = getMode();
     quiz = Quiz(selectedCategories, mode);
+
+    let scoreContainer = document.getElementById("score-container");
+    if (scoreContainer) {
+        scoreContainer.parentNode.removeChild(scoreContainer);
+    }
     loadNextQuestion();
 };
 let onEndQuiz_Click = () => {
