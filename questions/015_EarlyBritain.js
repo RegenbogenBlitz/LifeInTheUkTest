@@ -415,8 +415,9 @@
             ]
         },
         {
-            question: "What sort of new material did Iron Age people in Britain make their tools and weapons out of?",
+            question: "What sort of new material did Iron Age people in Britain make their tools and weapons out of? (Select all that apply)",
             correctAnswers: ["iron"],
+            isMultipleChoice: true,
             incorrectAnswers: [
                 "bronze",
                 "gold",
