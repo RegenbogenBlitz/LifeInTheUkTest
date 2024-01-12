@@ -66,8 +66,21 @@ let QuizHelpers = (() => {
                     throw new Error("Not enough options");
                 }
             }
+
+            // if the options are True and False, then always put True first
+            if (options.length === 2 && options.includes("True") && options.includes("False")) {
+                return ["True", "False"];
+            }
+
             // shuffle options
-            return options.sort(() => Math.random() - 0.5);
+            let finalOptions = [];
+            while (options.length > 0) {
+                let randomOption = options[Math.floor(Math.random() * options.length)];
+                finalOptions.push(randomOption);
+                options = options.filter(a => a !== randomOption);
+            }
+
+            return finalOptions;
         }
     };
 })();
