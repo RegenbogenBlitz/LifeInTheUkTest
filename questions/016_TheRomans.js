@@ -16,7 +16,8 @@
                         "23 AD",
                         "34 AD",
                         "55 AD",
-                        "100 AD"
+                        "100 AD",
+                        "410 AD"
                     ],
                 },
                 {
@@ -439,6 +440,32 @@
                 "1st and 2nd centuries AD",
                 "5th and 6th centuries AD",
                 "7th and 8th centuries AD"
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "When did the Romans leave Britain?",
+                    correctAnswers: ["410 AD"],
+                    mandatoryIncorrectAnswers: ["55 BC", "43 AD"],
+                    incorrectAnswers: [
+                        "100 AD",
+                        "250 AD",
+                        "360 AD",
+                        "530 AD",
+                        "660 AD"
+                    ]
+                },
+                {
+                    question: "When the Roman army left Britain in AD 410 to defend other parts of the Roman Empire, they never returned. True or False?",
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
+                },
+                {
+                    question: "When the Roman army left Britain in AD 410 to defend other parts of the Roman Empire, they returned later. True or False?",
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"]
+                },
             ]
         }
     ];
