@@ -29,6 +29,9 @@
         "Lewis",
         "Harris",
         "Orkney",
+        "Arran",
+        "Mull",
+        "Jura",
         "Shetland",
         "Anglesey",
     ];
@@ -190,7 +193,7 @@
         {
             questions: [
                 {
-                    question: "What are the names of the British Overseas Territories? Name at least 2",
+                    question: "What are the names of the British Overseas Territories? (Name at least 2)",
                     correctAnswers: ["The Falkland Islands", "St Helena"],
                     minimumCorrectAnswers: 2,
                     furtherCorrectAnswers: britishOverseasTerritories.filter(t => t !== "The Falkland Islands" && t !== "St Helena"),
