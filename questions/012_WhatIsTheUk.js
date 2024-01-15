@@ -32,6 +32,7 @@
         "Arran",
         "Mull",
         "Jura",
+        "Iona",
         "Shetland",
         "Anglesey",
     ];
