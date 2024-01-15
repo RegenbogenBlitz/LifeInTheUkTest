@@ -23,20 +23,6 @@
         "Bailiwick of Guernsey"
     ];
 
-    let ukIndividualIslands = [
-        "The Isle of Wight",
-        "Skye",
-        "Lewis",
-        "Harris",
-        "Orkney",
-        "Arran",
-        "Mull",
-        "Jura",
-        "Iona",
-        "Shetland",
-        "Anglesey",
-    ];
-
     let ukIslandGroups = [
         "The Isles of Scilly",
         "The Hebrides",
@@ -99,15 +85,7 @@
                 "England",
                 "Scotland",
                 "Wales",
-                "France",
-                "Spain",
-                "Portugal",
-                "Italy",
-                "Germany",
-                "Belgium",
-                "The Netherlands",
-                "Denmark",
-                "Iceland",
+                ...europeanCountries.filter(country => country !== "The Republic of Ireland"),
             ],
         },
         {
