@@ -493,7 +493,7 @@
                     question: "What iron age hill fort still can still be seen today in Dorset?",
                     correctAnswers: ["Maiden Castle"],
                     mandatoryIncorrectAnswers: [
-                        "Stonehedge",
+                        "Stonehenge",
                         "Skara Brae",
                         "Sutton Hoo",
                     ],
