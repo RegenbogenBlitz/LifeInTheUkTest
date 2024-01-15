@@ -92,12 +92,20 @@ let loadTestQuestion = (question, questionContainer) => {
     answerOptions.forEach(a => {
         let answerItem = document.createElement("li");
         answerItem.classList = "answer-item";
+
         let answerInput = document.createElement("input");
         answerInput.type = allowsMultipleAnswers ? "checkbox" : "radio";
         answerInput.classList = "answer-selector";
         answerInput.name = "answer";
         answerInput.value = a;
+        answerInput.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
         answerItem.appendChild(answerInput);
+        answerItem.addEventListener('click', function () {
+            answerInput.click();
+        });
         answerItem.appendChild(document.createTextNode(a));
         answerList.appendChild(answerItem);
     });
