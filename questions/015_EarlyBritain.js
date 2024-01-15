@@ -502,7 +502,10 @@
                     incorrectAnswers: [
                         "England"
                     ],
-                    explanation: "The Celtic languages are Welsh, Scottish Gaelic and Irish. There's also Manx, Breton and Cornish, but they're not spoken in the UK."
+                    explanation:
+                        "The Celtic languages are Welsh, Scottish Gaelic and Irish Gaelic. " +
+                        "There's also Manx and Breton, but they're not spoken in the UK. " +
+                        "There's also Cornish from England, but it's not a living language."
                 },
                 {
                     question: "Celtic languages were spoken across Europe in the Iron Age. True or False?",
