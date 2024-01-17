@@ -61,8 +61,8 @@
         },
         {
             question: "When were Anglo-Saxon kingdoms established in Britain?",
-            correctAnswers: ["about 600 AD"],
-            incorrectAnswers: ["about 300 AD", "about 400 AD", "about 500 AD", "about 700 AD", "about 800 AD", "about 900 AD"],
+            correctAnswers: ["about AD 600"],
+            incorrectAnswers: ["about AD 300", "about AD 400", "about AD 500", "about AD 700", "about AD 800", "about AD 900"],
         },
         {
             questions: [
