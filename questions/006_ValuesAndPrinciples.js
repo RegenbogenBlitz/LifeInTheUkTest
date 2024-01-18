@@ -1,6 +1,43 @@
 (() => {
     let questions = [
         {
+            question: "There is NO place in British society for which of the following?",
+            correctAnswers: ["Extremism", "Intolerance"],
+            incorrectAnswers: [
+                "Diversity of opinions",
+                "Diversity of lifestyles",
+                "Diversity of beliefs",
+                "Diversity of cultures",
+                "Disrespect for the government",
+                "Disrespect for the press",
+                "Nationalism",
+                "Patriotism",
+                "Social classes",
+                "Capitalism"
+            ]
+        },
+        {
+            question: "British society is founded on fundamental values and principles. What are these based on?",
+            correctAnswers: ["history", "tradition"],
+            incorrectAnswers: [
+                "religion",
+                "the constitution",
+                "an important book",
+                "the teachings of a great philosopher",
+                "the edicts of a council of elders"
+            ]
+        },
+        {
+            question: "British society is founded on fundamental values and principles. What are these protected by?",
+            correctAnswers: ["law", "customs", "expectations"],
+            incorrectAnswers: [
+                "the army",
+                "the church",
+                "the monarchy",
+                "citizen education programmes",
+            ]
+        },
+        {
             question: "What are the fundamental principles of British life?",
             correctAnswers: [
                 "Democracy",
