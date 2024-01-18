@@ -513,9 +513,10 @@
                     incorrectAnswers: ["False"]
                 },
                 {
-                    question: "In the Iron Age, Celtic languages were only spoken in Britan. True or False?",
+                    question: "In the Iron Age, Celtic languages were only spoken in Britain. True or False?",
                     correctAnswers: ["False"],
-                    incorrectAnswers: ["True"]
+                    incorrectAnswers: ["True"],
+                    explanation: "Celtic languages were spoken across Europe in the Iron Age."
                 }
             ]
         },
