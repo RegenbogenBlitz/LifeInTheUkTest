@@ -194,6 +194,7 @@ let loadNextQuestion = () => {
     }
     if (!quiz.getHasMoreQuestions()) {
         endQuiz();
+        return;
     }
     let question = quiz.getNextQuestion();
 
