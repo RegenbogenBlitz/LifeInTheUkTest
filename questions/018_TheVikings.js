@@ -129,7 +129,8 @@
             ]
         },
         {
-            question: "Name some of the place names in Britain that come from the Viking languages. Name at least 2.",
+            question: "Name some of the place names in Britain that come from the Viking languages. (Name at least 2)",
+            minimumCorrectAnswers: 2,
             correctAnswers: ["Grimsby", "Scunthorpe"],
             furtherCorrectAnswers: [
                 "Rugby",

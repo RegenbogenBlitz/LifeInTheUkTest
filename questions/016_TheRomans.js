@@ -355,7 +355,8 @@
                     ]
                 },
                 {
-                    question: "Hadrian's Wall included a number of forts. Which of the following forts can still be seen today? (Name at least two)",
+                    question: "Hadrian's Wall included a number of forts. Which of the following forts can still be seen today? (Name at least 2)",
+                    minimumCorrectAnswers: 2,
                     correctAnswers: ["Housesteads", "Vindolanda"],
                     furtherCorrectAnswers: ["Segedunum", "Arbeia", "Chesters", "Birdoswald"],
                     incorrectAnswers: [

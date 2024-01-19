@@ -1,9 +1,15 @@
+let significantAdDates = [
+    "43",
+    "410",
+    "789",
+    "1066"
+];
+
 let significantDates = [
     "55 BC",
-    "AD 43",
-    "AD 410",
-    "AD 789"
+    ...significantAdDates.map(d => "AD " + d)
 ];
+
 
 let englishCounties = [
     "Bedfordshire",
