@@ -20,7 +20,7 @@
 
     let questions = [
         {
-            question: "Where did the Vikings come from (in modern day terms)?",
+            question: "From where did the Vikings come to Britain (in modern day terms)?",
             correctAnswers: ["Denmark", "Norway", "Sweden"],
             incorrectAnswers: europeanCountries.filter(country => country !== "Denmark" && country !== "Norway" && country !== "Sweden")
         },
@@ -182,7 +182,7 @@
                     incorrectAnswers: ["False"]
                 },
                 {
-                    question: "Anglo-Saxon continued to rule continuously in England, throughout the Viking period. True or False?",
+                    question: "Anglo-Saxons continued to rule continuously in England, throughout the Viking period. True or False?",
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"]
                 },
