@@ -336,7 +336,7 @@
     ];
 
     let category = {
-        name: "The Anglo-Saxons",
+        name: "Early Britain - The Anglo-Saxons",
         questions: questions
     }
     quizDeck.categories.push(category);

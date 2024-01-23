@@ -522,7 +522,7 @@
     ];
 
     let category = {
-        name: "The Norman Conquest",
+        name: "Early Britain - The Norman Conquest",
         questions: questions
     }
     quizDeck.categories.push(category);

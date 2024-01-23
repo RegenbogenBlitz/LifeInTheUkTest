@@ -215,7 +215,7 @@
     ];
 
     let category = {
-        name: "The Vikings",
+        name: "Early Britain - The Vikings",
         questions: questions
     }
     quizDeck.categories.push(category);

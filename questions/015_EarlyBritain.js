@@ -575,7 +575,7 @@
     ];
 
     let category = {
-        name: "Early Britain",
+        name: "Early Britain - Pre-Roman",
         questions: questions
     }
     quizDeck.categories.push(category);
