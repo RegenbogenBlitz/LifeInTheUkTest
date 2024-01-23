@@ -1,18 +1,4 @@
 (() => {
-    let famousBattles = [
-        "The Battle of Stamford Bridge",
-        "The Battle of Naseby",
-        "The Battle of Bosworth Field",
-        "The Battle of Bannockburn",
-        "The Battle of Flodden Field",
-        "The Battle of Colloden",
-        "The Battle of Trafalgar",
-        "The Battle of Waterloo",
-        "The Battle of the Somme",
-        "The Battle of Britain",
-        "The Battle of Agincourt",
-    ];
-
     let questions = [
         {
             questions: [

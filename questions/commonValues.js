@@ -11,6 +11,21 @@ let significantDates = [
 ];
 
 
+let famousBattles = [
+    "The Battle of Stamford Bridge", // 1066
+    "The Battle of Hastings", // 1066
+    "The Battle of Bannockburn", // 1314
+    "The Battle of Agincourt", // 1415
+    "The Battle of Bosworth Field", // 1485
+    "The Battle of Flodden Field", // 1513
+    "The Battle of Naseby", // 1645
+    "The Battle of Colloden", // 1746
+    "The Battle of Trafalgar", // 1805
+    "The Battle of Waterloo", // 1815
+    "The Battle of the Somme", // 1916
+    "The Battle of Britain", // 1940
+];
+
 let englishCounties = [
     "Bedfordshire",
     "Berkshire",
