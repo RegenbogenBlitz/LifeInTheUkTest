@@ -1,4 +1,6 @@
 .idea/
 python/keys.txt
 python/endpoint.txt
+python/text.txt
 
+python/sections/*
