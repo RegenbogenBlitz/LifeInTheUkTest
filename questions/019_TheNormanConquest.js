@@ -5,12 +5,12 @@
                 {
                     question: "In what year did the Battle of Hastings take place?",
                     correctAnswers: ["1066"],
-                    incorrectAnswers: significantAdDates.filter(date => date !== "1066")
+                    incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1066")
                 },
                 {
                     question: "What battle took place in 1066?",
                     correctAnswers: ["The Battle of Hastings"],
-                    incorrectAnswers: famousBattles
+                    incorrectAnswers: famousBattles.filter(battle => battle !== "The Battle of Hastings")
                 },
                 {
                     question: "What significant event took place in 1066?",
@@ -250,7 +250,7 @@
                 {
                     question: "What does the Bayeux Tapestry show?",
                     correctAnswers: ["The Battle of Hastings"],
-                    incorrectAnswers: famousBattles
+                    incorrectAnswers: famousBattles.filter(battle => battle !== "The Battle of Hastings"),
                 },
             ]
         },

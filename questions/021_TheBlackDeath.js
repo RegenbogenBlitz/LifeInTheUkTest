@@ -1,19 +1,4 @@
 (() => {
-    let significantDates = [
-        "1066", // Battle of Hastings
-        "1086", // Domesday book
-        "1139", // War of Stephen and Matilda
-        "1215", // Signing of the Magna Carta
-        "1258", // Signing of the provisions of Oxford
-        "1284", // Statute of Rhuddlan
-        "1314", // Battle of Bannockburn
-        "1337", // Start of the Hundred Years War
-        "1348", // Arrival of the Black Death in England
-        "1415", // Battle of Agincourt
-        "1455", // Start of the War of the Roses
-        "1475", // End of the Hundred Years War
-        "1485" // Battle of Bosworth
-    ]
     let questions = [
         {
             question: "What type of land ownership system did the Normans use?",
@@ -228,7 +213,7 @@
         {
             question: "When did the Black Death arrive in Britain?",
             correctAnswers: ["1348"],
-            incorrectAnswers: significantDates.filter(d => d !== "1348")
+            incorrectAnswers: significantMiddleAgesDates.filter(d => d !== "1348")
         },
         {
             question: "Most probably, what sort of disease was the Black death?",

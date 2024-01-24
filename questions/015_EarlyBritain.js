@@ -26,12 +26,8 @@
         },
         {
             question: "When did the first people to live in Britain arrive?",
-            correctAnswers: ["Stone Age"],
-            incorrectAnswers: [
-                "Bronze Age",
-                "Iron Age",
-                "Copper Age"
-            ],
+            correctAnswers: ["The Stone Age"],
+            incorrectAnswers: namesOfEarlyAges.filter(age => age !== "The Stone Age"),
         },
         {
             questions: [
@@ -163,14 +159,8 @@
                 },
                 {
                     question: "When was Stonehenge built?",
-                    correctAnswers: ["Stone Age"],
-                    incorrectAnswers: [
-                        "Copper Age",
-                        "Bronze Age",
-                        "Iron Age",
-                        "Dark Ages",
-                        "Middle Ages"
-                    ]
+                    correctAnswers: ["The Stone Age"],
+                    incorrectAnswers: namesOfEarlyAges.filter(age => age !== "The Stone Age"),
                 },
                 {
                     question: "What was Stonehenge probably used for?",
@@ -251,14 +241,8 @@
                 },
                 {
                     question: "When was Skara Brae built?",
-                    correctAnswers: ["Stone Age"],
-                    incorrectAnswers: [
-                        "Copper Age",
-                        "Bronze Age",
-                        "Iron Age",
-                        "Dark Ages",
-                        "Middle Ages"
-                    ]
+                    correctAnswers: ["The Stone Age"],
+                    incorrectAnswers: namesOfEarlyAges.filter(age => age !== "The Stone Age"),
                 },
                 {
                     question: "Skara Brae has helped archaeologists to understand more about how people lived near the end of the Stone Age. True or False?",
@@ -356,13 +340,8 @@
         },
         {
             question: "What is the name of the age that followed the Bronze Age?",
-            correctAnswers: ["Iron Age"],
-            incorrectAnswers: [
-                "Stone Age",
-                "Copper Age",
-                "Dark Ages",
-                "Middle Ages"
-            ]
+            correctAnswers: ["The Iron Age"],
+            incorrectAnswers: namesOfEarlyAges.filter(age => age !== "The Iron Age")
         },
         {
             question: "What sort of new material did Iron Age people in Britain make their tools and weapons out of? (Select all that apply)",
@@ -451,14 +430,8 @@
                 },
                 {
                     question: "When was Maiden Castle built?",
-                    correctAnswers: ["Iron Age"],
-                    incorrectAnswers: [
-                        "Stone Age",
-                        "Copper Age",
-                        "Bronze Age",
-                        "Dark Ages",
-                        "Middle Ages"
-                    ]
+                    correctAnswers: ["The Iron Age"],
+                    incorrectAnswers: namesOfEarlyAges.filter(age => age !== "The Iron Age")
                 }
             ]
         },

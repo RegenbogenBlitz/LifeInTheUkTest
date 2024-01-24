@@ -5,7 +5,7 @@
                 {
                     question: "When did Julius Caesar lead a Roman invasion of Britain?",
                     correctAnswers: ["55 BC"],
-                    mandatoryIncorrectAnswers: significantDates.filter(date => date !== "55 BC"),
+                    mandatoryIncorrectAnswers: significantPreNormanDates.filter(date => date !== "55 BC"),
                     incorrectAnswers: [
                         "100 BC",
                         "43 BC",
@@ -81,7 +81,7 @@
                 {
                     question: "When did the Emperor Claudius ordered the Roman invasion of Britain?",
                     correctAnswers: ["AD 43"],
-                    mandatoryIncorrectAnswers: significantDates.filter(date => date !== "AD 43"),
+                    mandatoryIncorrectAnswers: significantPreNormanDates.filter(date => date !== "AD 43"),
                     incorrectAnswers: [
                         "100 BC",
                         "43 BC",
@@ -447,7 +447,7 @@
                 {
                     question: "When did the Romans leave Britain?",
                     correctAnswers: ["AD 410"],
-                    mandatoryIncorrectAnswers: significantDates.filter(date => date !== "AD 410"),
+                    mandatoryIncorrectAnswers: significantPreNormanDates.filter(date => date !== "AD 410"),
                     incorrectAnswers: [
                         "AD 100",
                         "AD 250",
