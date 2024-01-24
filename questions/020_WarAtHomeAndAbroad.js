@@ -145,36 +145,19 @@
             ]
         },
         {
+            question: "In what year did the English king introduce the Statute of Rhuddlan?",
+            correctAnswers: ["1284"],
+            incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1284")
+        },
+        {
+            question: "Which English monarch introduced the Statute of Rhuddlan?",
+            correctAnswers: ["Edward I"],
+            incorrectAnswers: englishMonarchs.filter(monarch => monarch !== "Edward I")
+        },
+        {
             questions: [
                 {
-                    question: "In what year did the English king introduce the Statute of Rhuddlan?",
-                    correctAnswers: ["1284"],
-                    incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1284")
-                },
-                {
-                    question: "What did the Statute of Rhuddlan do?",
-                    correctAnswers: ["Annexed Wales to the Crown of England"],
-                    incorrectAnswers: [
-                        "Annexed England to the Crown of Scotland",
-                        "Annexed England to the Crown of Wales",
-                        "Annexed England to the Crown of Ireland",
-                        "Annexed Scotland to the Crown of England",
-                        "Annexed Scotland to the Crown of Wales",
-                        "Annexed Scotland to the Crown of Ireland",
-                        "Annexed Wales to the Crown of Scotland",
-                        "Annexed Wales to the Crown of Ireland",
-                        "Annexed Ireland to the Crown of England",
-                        "Annexed Ireland to the Crown of Scotland",
-                        "Annexed Ireland to the Crown of Wales"
-                    ]
-                },
-                {
-                    question: "What region was annexed to the Crown of England as a result of the Statute of Rhuddlan?",
-                    correctAnswers: ["Wales"],
-                    incorrectAnswers: ["Scotland", "Ireland", "The Pale", "Brittany", "Normandy", "Aquitaine"]
-                },
-                {
-                    question: "What was the main effect of the Statute of Rhuddlan in 1284?",
+                    question: "What was the main effect of the Statute of Rhuddlan?",
                     correctAnswers: ["It annexed Wales to the Crown of England"],
                     incorrectAnswers: [
                         "It granted independence to Scotland",
@@ -186,9 +169,22 @@
                     ]
                 },
                 {
-                    question: "Which English monarch introduced the Statute of Rhuddlan?",
-                    correctAnswers: ["Edward I"],
-                    incorrectAnswers: englishMonarchs.filter(monarch => monarch !== "Edward I")
+                    question: "What region was annexed to the Crown of England as a result of the Statute of Rhuddlan?",
+                    correctAnswers: ["Wales"],
+                    incorrectAnswers: ["Scotland", "Ireland", "The Pale", "Brittany", "Normandy", "Aquitaine"]
+                },
+                {
+                    question: "What was the name of the law that annexed Wales to the Crown of England in 1284?",
+                    correctAnswers: ["The Statute of Rhuddlan"],
+                    mandatoryIncorrectAnswers: ["The Magna Carta"],
+                    incorrectAnswers: [
+                        "The Statute of Westminster",
+                        "The Statute of Rutland",
+                        "The Act of Wales",
+                        "The Act of Union",
+                        "The Annexation Proclamation",
+                        "The Bill of Supremacy",
+                    ]
                 }
             ]
         },
@@ -231,26 +227,15 @@
         {
             questions: [
                 {
-                    question: "The English built castles in Wales to maintain their power during the Middle Ages. True or False?",
-                    correctAnswers: ["True"],
-                    incorrectAnswers: ["False"]
-                },
-                {
-                    question: "The English built castles in Wales to act as pleasure palaces during the Middle Ages. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
-                    explanation: "The English built castles in Wales to maintain their power during the Middle Ages."
-                },
-                {
                     question: "What did the English build in Wales as a primary means to maintain their power after annexing it to the Crown of England?",
                     correctAnswers: ["Huge castles"],
                     incorrectAnswers: [
-                        "Cathedrals",
-                        "Monasteries",
+                        "Large cathedrals",
+                        "Significant monasteries",
                         "Royal palaces",
                         "Market towns",
-                        "Universities",
-                        "Hospitals",
+                        "Esteemed universities",
+                        "Important hospitals",
                         "Great monuments",
                     ]
                 },
@@ -345,6 +330,40 @@
             ]
         },
         {
+            question: "Which of the following is true regarding the relative success of the English in Wales and in Scotland during the Middle Ages?",
+            correctAnswers: ["The English were less in Scotland than in Wales"],
+            incorrectAnswers: [
+                "The English were more successful in Scotland than in Wales",
+                "The English were equally successful in Scotland and in Wales"
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "When was the Battle of Bannockburn?",
+                    correctAnswers: ["1314"],
+                    incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1314")
+                },
+                {
+                    question: "What was the name of the battle in which the Scots fought the English in 1314?",
+                    correctAnswers: ["The Battle of Bannockburn"],
+                    mandatoryIncorrectAnswers: ["The Battle of Colloden"],
+                    incorrectAnswers: famousBattles.filter(battle =>
+                        battle !== "The Battle of Bannockburn" &&
+                        battle !== "The Battle of Colloden")
+                }
+            ]
+        },
+        {
+            question: "Who led the victorious side at the Battle of Bannockburn?",
+            correctAnswers: ["Robert the Bruce"],
+            mandatoryIncorrectAnswers: ["William Wallace", "Edward II"],
+            incorrectAnswers: [
+                ...scottishMonarchs.filter(monarch => monarch !== "Robert the Bruce"),
+                ...englishMonarchs.filter(monarch => monarch !== "Edward II")
+            ]
+        },
+        {
             questions: [
                 {
                     question: "Who won at the Battle of Bannockburn?",
@@ -370,35 +389,21 @@
                         "Scotland was a fully integrated part of the English kingdom",
                         "Scotland became a republic"
                     ]
-                },
-                {
-                    question: "What was the outcome of the English kings' attempts to control Scotland during the Middle Ages?",
-                    correctAnswers: ["Scotland remained unconquered by the English"],
-                    incorrectAnswers: [
-                        "Scotland was annexed to the Crown of England",
-                        "Scotland became a fully integrated part of England",
-                        "Scotland was divided into English-controlled territories",
-                        "Scotland became an independent country",
-                        "Scotland was divided into English and Scottish territories",
-                        "Scotland was under shared rule by England and France",
-                        "Scotland was a fully integrated part of the English kingdom",
-                        "Scotland became a republic"
-                    ]
                 }
             ]
         },
         {
-            question: "When was the Battle of Bannockburn?",
-            correctAnswers: ["1314"],
-            incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1314")
-        },
-        {
-            question: "Who led the victorious side at the Battle of Bannockburn?",
-            correctAnswers: ["Robert the Bruce"],
-            mandatoryIncorrectAnswers: ["William Wallace", "Edward II"],
+            question: "What was the outcome of the English kings' attempts to control Scotland during the Middle Ages?",
+            correctAnswers: ["Scotland remained unconquered by the English"],
             incorrectAnswers: [
-                ...scottishMonarchs.filter(monarch => monarch !== "Robert the Bruce"),
-                ...englishMonarchs.filter(monarch => monarch !== "Edward II")
+                "Scotland was annexed to the Crown of England",
+                "Scotland became a fully integrated part of England",
+                "Scotland was divided into English-controlled territories",
+                "Scotland became an independent country",
+                "Scotland was divided into English and Scottish territories",
+                "Scotland was under shared rule by England and France",
+                "Scotland was a fully integrated part of the English kingdom",
+                "Scotland became a republic"
             ]
         },
         {
@@ -529,6 +534,26 @@
             ]
         },
         {
+            question: "Which of the following statements most correctly describes the number of knights who took part in the Crusades?",
+            correctAnswers: ["Many knights took part in the Crusades"],
+            incorrectAnswers: [
+                "Only a few knights took part in the Crusades",
+                "No knights took part in the Crusades"
+            ]
+        },
+        {
+            question: "What primary role did knights play in the Crusades?",
+            correctAnswers: ["They took part in the military campaigns"],
+            incorrectAnswers: [
+                "They served as diplomats",
+                "They were merchants",
+                "They acted as scouts",
+                "They provided medical support",
+                "They were chroniclers and scribes",
+                "They functioned as shipbuilders"
+            ]
+        },
+        {
             question: "Who were the main participants in the Crusades?",
             correctAnswers: ["European Christians"],
             incorrectAnswers: [
@@ -551,36 +576,39 @@
                 "Spread of Christianity to the Far East"]
         },
         {
-            question: "What primary role did knights play in the Crusades?",
-            correctAnswers: ["They took part in the military campaigns"],
-            incorrectAnswers: [
-                "They served as diplomats",
-                "They were merchants",
-                "They acted as scouts",
-                "They provided medical support",
-                "They were chroniclers and scribes",
-                "They functioned as shipbuilders"
+            questions: [
+                {
+                    question: "What was the long conflict between England and France during the Middle Ages known as?",
+                    correctAnswers: ["The Hundred Years War"],
+                    mandatoryIncorrectAnswers: ["The War of the Roses", "The Crusades"],
+                    incorrectAnswers: famousEnglishWars.filter(war =>
+                        war !== "The Hundred Years War" &&
+                        war !== "The War of the Roses" &&
+                        war !== "The Crusades")
+                },
+                {
+                    question: "The Hundred Years War was fought between which countries?",
+                    correctAnswers: ["England", "France"],
+                    incorrectAnswers: [
+                        "Scotland",
+                        "Wales",
+                        "Ireland",
+                        ...europeanCountries.filter(country =>
+                            country !== "England" &&
+                            country !== "Scotland" &&
+                            country !== "Wales" &&
+                            country !== "Ireland" &&
+                            country !== "The Republic of Ireland" &&
+                            country !== "France")
+                    ]
+                }
             ]
-        },
-        {
-            question: "What was the long conflict between England and France during the Middle Ages known as?",
-            correctAnswers: ["The Hundred Years War"],
-            mandatoryIncorrectAnswers: ["The War of the Roses", "The Crusades"],
-            incorrectAnswers: famousEnglishWars.filter(war =>
-                war !== "The Hundred Years War" &&
-                war !== "The War of the Roses" &&
-                war !== "The Crusades")
         },
         {
             question: "Despite its name, how long did the Hundred Years War actually last?",
             correctAnswers: ["116 years"],
             mandatoryIncorrectAnswers: ["100 years"],
             incorrectAnswers: Array.from({ length: 31 }, (_, i) => i + 100).filter(year => year !== 116 && year !== 100).map(year => year + " years")
-        },
-        {
-            question: "The Hundred Years War was fought between England and which other country?",
-            correctAnswers: ["France"],
-            incorrectAnswers: ["Scotland", "Ireland", "Wales", "Spain", "Germany", "Italy"]
         },
         {
             question: "When was the Battle of Agincourt?",
@@ -597,19 +625,38 @@
                 war !== "The Crusades")
         },
         {
+            question: "The Battle of Agincourt was fought between which countries?",
+            correctAnswers: ["England", "France"],
+            incorrectAnswers: [
+                "Scotland",
+                "Wales",
+                "Ireland",
+                ...europeanCountries.filter(country =>
+                    country !== "England" &&
+                    country !== "Scotland" &&
+                    country !== "Wales" &&
+                    country !== "Ireland" &&
+                    country !== "The Republic of Ireland" &&
+                    country !== "France")
+            ]
+        },
+        {
             questions: [
                 {
-                    question: "Who acheived a significant victory at the Battle of Agincourt?",
-                    correctAnswers: ["The English"],
-                    mandatoryIncorrectAnswers: ["The French"],
+                    question: "Who achieved a significant victory at the Battle of Agincourt?",
+                    correctAnswers: ["England"],
+                    mandatoryIncorrectAnswers: ["France"],
                     incorrectAnswers: [
-                        "The Irish",
-                        "The Scots",
-                        "The Germans",
-                        "The Spanish",
-                        "The Americans",
-                        "The Vikings",
-                        "The Romans"
+                        "Scotland",
+                        "Wales",
+                        "Ireland",
+                        ...europeanCountries.filter(country =>
+                            country !== "England" &&
+                            country !== "Scotland" &&
+                            country !== "Wales" &&
+                            country !== "Ireland" &&
+                            country !== "The Republic of Ireland" &&
+                            country !== "France")
                     ]
                 },
                 {
@@ -626,14 +673,20 @@
         },
         {
             question: "Whose army was vastly outnumbered during the Battle of Agincourt?",
-            correctAnswers: ["The English army"],
-            mandatoryIncorrectAnswers: ["The French army"],
+            correctAnswers: ["England"],
+            mandatoryIncorrectAnswers: ["France"],
             incorrectAnswers: [
-                "The Scottish army",
-                "The Welsh army",
-                "The Irish army",
-                "The Crusader army",
-                "The Viking army"]
+                "Scotland",
+                "Wales",
+                "Ireland",
+                ...europeanCountries.filter(country =>
+                    country !== "England" &&
+                    country !== "Scotland" &&
+                    country !== "Wales" &&
+                    country !== "Ireland" &&
+                    country !== "The Republic of Ireland" &&
+                    country !== "France")
+            ]
         },
         {
             question: "When did the English finally leave France, marking the end of territorial claims after the Hundred Years War?",
