@@ -17,9 +17,9 @@
     let questions = [
         {
             question: "What type of land ownership system did the Normans use?",
-            correctAnswers: [ "Feudalism"],
+            correctAnswers: ["Feudalism"],
             mandatoryIncorrectAnswers: ["The Clan system"],
-            incorrectAnswers : [
+            incorrectAnswers: [
                 "Communism",
                 "Capitalism",
                 "Enclosure",
@@ -31,82 +31,82 @@
             ]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "Feudalism was the system whereby the king gave land to his lords in return for help in war. True or False?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "Feudalism was the system whereby the king gave land to his lords without obligation as thanks for personal favours. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Feudalism was the system whereby the king gave land to his lords in return for help in war."
                 },
                 {
                     question: "Feudalism was the system whereby wealthy capitalists owned large plantations where slaves performed agricultural work. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Feudalism was the system whereby the king gave land to his lords in return for help in war."
                 },
                 {
                     question: "Feudalism was the system whereby the state owned all land and it was cultivated for the common good. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Feudalism was the system whereby the king gave land to his lords in return for help in war."
                 },
                 {
                     question: "Feudalism was the system whereby most farmers owned their own land and cultivated it for their own profit. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Feudalism was the system whereby the king gave land to his lords in return for help in war."
                 }
             ]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "Feudalism required landowners to send certain numbers of men to serve in the army. True or False?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "Feudalism required nothing of landowners. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Feudalism required landowners to send certain numbers of men to serve in the army."
                 },
                 {
                     question: "Feudalism required landowners to receive certain numbers of migrants. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Feudalism required landowners to send certain numbers of men to serve in the army."
                 },
                 {
                     question: "Feudalism required landowners to contribute crops to national food stores. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Feudalism required landowners to send certain numbers of men to serve in the army."
                 }
             ]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "In Feudalism, some peasants had their own land but most were serfs. True or False?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "In Feudalism, most peasants had their own land but some were serfs. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "In Feudalism, some peasants had their own land but most were serfs."
                 },
                 {
                     question: "In Feudalism, no peasants had their own land as all were serfs. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "In Feudalism, some peasants had their own land but most were serfs."
                 }
             ]
@@ -115,25 +115,25 @@
             questions: [
                 {
                     question: "In Feudalism, serfs had a small area of land where they could grow food. True or false?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "In Feudalism, serfs had a large area of land where they could grow food. True or false?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Serfs had a small area of land where they could grow food."
                 },
                 {
                     question: "In Feudalism, serfs had a small area of land where they could grow cash crops. True or false?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Serfs had a small area of land where they could grow food."
                 },
                 {
                     question: "In Feudalism, serfs shared their land with many other serfs to grow food. True or false?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Serfs had a small area of land where they could grow food."
                 }
             ]
@@ -142,19 +142,19 @@
             questions: [
                 {
                     question: "In Feudalism, serfs had to work for their lord and could not move away. True or false?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "In Feudalism, serfs had to work for their lord but could leave to work for another lord. True or false?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Serfs had to work for their lord and could not move away."
                 },
                 {
                     question: "In Feudalism, serfs had no obligation to a lord, but could not move away. True or false?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Serfs had to work for their lord and could not move away."
                 }
             ]
@@ -163,15 +163,15 @@
             questions: [
                 {
                     question: "Where did Feudalism develop in Britain?",
-                    correctAnswers: [ "South England", "North England", "South Scotland"],
-                    incorrectAnswers : [ 
+                    correctAnswers: ["South England", "North England", "South Scotland"],
+                    incorrectAnswers: [
                         "North Scotland",
                         "North Ireland",
                         "South Ireland"]
                 },
                 {
                     question: "What type of land ownership system was used in north Scotland and in Ireland?",
-                    correctAnswers: [ "The Clan system"],
+                    correctAnswers: ["The Clan system"],
                     mandatoryIncorrectAnswers: ["Feudalism"],
                     incorrectAnswers: [
                         "Communism",
@@ -187,40 +187,40 @@
             ]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "The Clan system was the system whereby prominent families owned the land. True or False?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "The Clan system was the system whereby the king gave land to his lords in return for help in war. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "The Clan system was the system whereby prominent families owned the land. Feudalism was the system whereby the king gave land to his lords in return for help in war."
                 },
                 {
                     question: "The Clan system was the system whereby the king gave land to his lords without obligation as thanks for personal favours. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "The Clan system was the system whereby prominent families owned the land."
                 },
                 {
                     question: "The Clan system was the system whereby wealthy capitalists owned large plantations where slaves performed agricultural work. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "The Clan system was the system whereby prominent families owned the land."
                 },
                 {
                     question: "The Clan system was the system whereby the state owned all land and it was cultivated for the common good. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "The Clan system was the system whereby prominent families owned the land."
                 },
                 {
                     question: "The Clan system was the system whereby most farmers owned their own land and cultivated it for their own profit. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "The Clan system was the system whereby prominent families owned the land."
                 }
             ]
@@ -228,7 +228,7 @@
         {
             question: "When did the Black Death arrive in Britain?",
             correctAnswers: ["1348"],
-            incorrectAnswers: significantDates.filter(d => d !=="1348")
+            incorrectAnswers: significantDates.filter(d => d !== "1348")
         },
         {
             question: "Most probably, what sort of disease was the Black death?",
@@ -315,22 +315,22 @@
             ]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "After the Black Death, new social classes appeared in Britan. True or False?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "After the Black Death, the social structures in Britain largely remained the same. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "After the Black Death, new social classes appeared in Britan."
                 },
                 {
                     question: "After the Black Death, what was the name of the new social class of large land owners?",
-                    correctAnswers: [ "The gentry"],
-                    incorrectAnswers : [ 
+                    correctAnswers: ["The gentry"],
+                    incorrectAnswers: [
                         "The peasantry",
                         "The serfs",
                         "The villians",
@@ -345,8 +345,8 @@
                 },
                 {
                     question: "After the Black Death, what distinguished the new social class of the gentry?",
-                    correctAnswers: [ "Ownership of large areas of land"],
-                    incorrectAnswers : [ 
+                    correctAnswers: ["Ownership of large areas of land"],
+                    incorrectAnswers: [
                         "High wages for labour",
                         "Slavelike status, attached to the land they worked",
                         "Trading of imported goods",
@@ -365,26 +365,26 @@
                 "People left the towns to live in the countryside."]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "After the Black Death, growing wealth led to the development of a strong middle class. True or False?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "After the Black Death, falling wealth led to the decimation of the middle class. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "After the Black Death, growing wealth led to the development of a strong middle class."
                 }
             ]
         },
         {
-            questions:[
+            questions: [
                 {
                     question: "What was the name of the area of Ireland controlled by the English King where the Black Death killed many?",
-                    correctAnswers: [ "The Pale"],
-                    incorrectAnswers : [ 
+                    correctAnswers: ["The Pale"],
+                    incorrectAnswers: [
                         "Ulster",
                         "Desmond",
                         "Kildare",
@@ -399,13 +399,13 @@
                 },
                 {
                     question: "In Ireland, the Black Death killed many in the Pale. True or False?",
-                    correctAnswers: [ "True"],
-                    incorrectAnswers : [ "False"]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "In Ireland, the Black Death largely spared the Pale. True or False?",
-                    correctAnswers: [ "False"],
-                    incorrectAnswers : [ "True"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "In Ireland, the Black Death killed many in the Pale."
                 }
             ]
@@ -413,7 +413,7 @@
         {
             question: "What happened to the area controlled by the English in Ireland after the Black Death?",
             correctAnswers: ["It became smaller"],
-            incorrectAnswers:[
+            incorrectAnswers: [
                 "It became larger",
                 "It roughly stayed the same"
             ]
