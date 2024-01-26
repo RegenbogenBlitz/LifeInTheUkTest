@@ -152,6 +152,36 @@ let scottishMonarchs = [
     "Mary I"
 ];
 
+let significantDocuments = [
+    "The Domesday Book", // 1086
+    "The Charter of Liberties", // 1100
+    "The Magna Carta", // 1215
+    "The Charter of the Forest", // 1217
+    "The Provisions of Oxford", // 1258
+    "The Provisions of Westminster", // 1259
+    "The Statute of Marlborough", // 1267
+    "The Statute of Rhuddlan", // 1284
+    "The Statute of Westminster", // 1297
+    "The Statute of Labourers", // 1351
+    "The Statute of Kilkenny", // 1366
+    "The Act of Supremacy", // 1534
+    "The Petition of Right", // 1628
+    "The Habeas Corpus Act", // 1679
+    "The Act of Toleration", // 1689
+    "The Bill of Rights", // 1689
+    "The Act of Settlement", // 1701
+    "The Act of Union", // 1707, 1800
+    "The Great Reform Act", // 1832
+    "The Slavery Abolition Act", // 1833
+    "The Parliament Act", // 1911, 1949
+    "The Representation of the People Act", // 1918, 1928
+    "The Education Act", // 1944
+    "The National Health Service Act", // 1946
+    "The European Communities Act", // 1972
+    "The Human Rights Act", // 1998
+    "The Equality Act", // 2010
+];
+
 let englishCounties = [
     "Bedfordshire",
     "Berkshire",
