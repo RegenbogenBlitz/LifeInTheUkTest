@@ -85,7 +85,9 @@
                 "England",
                 "Scotland",
                 "Wales",
-                ...europeanCountries.filter(country => country !== "The Republic of Ireland"),
+                ...europeanCountries.filter(country =>
+                    country !== "The Republic of Ireland" &&
+                    country !== "The United Kingdom"),
             ],
         },
         {

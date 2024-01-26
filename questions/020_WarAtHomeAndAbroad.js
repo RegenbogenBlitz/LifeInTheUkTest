@@ -123,6 +123,7 @@
                         country !== "England" &&
                         country !== "Scotland" &&
                         country !== "Ireland" &&
+                        country !== "The United Kingdom" &&
                         country !== "The Republic of Ireland")
                 },
                 {
@@ -598,6 +599,7 @@
                             country !== "Scotland" &&
                             country !== "Wales" &&
                             country !== "Ireland" &&
+                            country !== "The United Kingdom" &&
                             country !== "The Republic of Ireland" &&
                             country !== "France")
                     ]
@@ -636,6 +638,7 @@
                     country !== "Scotland" &&
                     country !== "Wales" &&
                     country !== "Ireland" &&
+                    country !== "The United Kingdom" &&
                     country !== "The Republic of Ireland" &&
                     country !== "France")
             ]
@@ -655,6 +658,7 @@
                             country !== "Scotland" &&
                             country !== "Wales" &&
                             country !== "Ireland" &&
+                            country !== "The United Kingdom" &&
                             country !== "The Republic of Ireland" &&
                             country !== "France")
                     ]
@@ -684,6 +688,7 @@
                     country !== "Scotland" &&
                     country !== "Wales" &&
                     country !== "Ireland" &&
+                    country !== "The United Kingdom" &&
                     country !== "The Republic of Ireland" &&
                     country !== "France")
             ]
