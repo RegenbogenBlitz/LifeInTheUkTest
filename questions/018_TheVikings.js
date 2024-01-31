@@ -27,18 +27,7 @@
         {
             question: "When did the Vikings first visit Britain?",
             correctAnswers: ["789"],
-            mandatoryIncorrectAnswers: significantPreNormanDates.filter(date => date !== "789"),
-            incorrectAnswers: [
-                "535",
-                "571",
-                "610",
-                "664",
-                "712",
-                "852",
-                "804",
-                "949",
-                "973",
-            ]
+            incorrectAnswers: getDates(1, 1066, [789], false)
         },
         {
             question: "What did the Vikings do when they first visited Britain?",

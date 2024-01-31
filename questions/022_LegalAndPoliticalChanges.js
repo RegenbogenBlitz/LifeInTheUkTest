@@ -32,14 +32,14 @@
         {
             question: "Until what year were there few formal limits to the king's power?",
             correctAnswers: ["1215"],
-            incorrectAnswers: significantMiddleAgesDates.filter(x => x !== "1215")
+            incorrectAnswers: getDates(1066, 1485, [1215], false)
         },
         {
             questions: [
                 {
                     question: "In what year was King John forced by his noblemen to agree to a number of demands?",
                     correctAnswers: ["1215"],
-                    incorrectAnswers: significantMiddleAgesDates.filter(x => x !== "1215")
+                    incorrectAnswers: getDates(1066, 1485, [1215], false)
                 },
                 {
                     question: "Which King was forced by his noblemen to agree to a number of demands in 1215?",
@@ -69,7 +69,7 @@
         {
             question: "When was the Magna Carta signed?",
             correctAnswers: ["1215"],
-            incorrectAnswers: significantMiddleAgesDates.filter(x => x !== "1215")
+            incorrectAnswers: getDates(1066, 1485, [1215], false)
         },
         {
             questions: [

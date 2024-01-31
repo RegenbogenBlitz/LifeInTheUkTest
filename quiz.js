@@ -20,7 +20,12 @@ let QuizHelpers = (() => {
             if (question.correctAnswers.length === 0) {
                 throw new Error("No correct answers");
             }
-            if (question.incorrectAnswers.length === 0) {
+
+            var incorrectAnswers =
+                typeof question.incorrectAnswers === "function"
+                    ? question.incorrectAnswers()
+                    : question.incorrectAnswers;
+            if (incorrectAnswers.length === 0) {
                 throw new Error("No incorrect answers");
             }
             if (question.minimumCorrectAnswers && question.correctAnswers.length < question.minimumCorrectAnswers) {
@@ -34,7 +39,7 @@ let QuizHelpers = (() => {
                     ? question.correctAnswers.length * 3 + numberOfMandatoryIncorrectAnswers
                     : 4 + numberOfMandatoryIncorrectAnswers;
 
-            let maximumPossibleNumOptions = getAllCorrectAnswers(question).length + question.incorrectAnswers.length;
+            let maximumPossibleNumOptions = getAllCorrectAnswers(question).length + incorrectAnswers.length;
             if (maxNumOfOptions > maximumPossibleNumOptions) {
                 maxNumOfOptions = maximumPossibleNumOptions;
             }
@@ -46,7 +51,7 @@ let QuizHelpers = (() => {
             }
 
             let possibleFurtherCorrectAnswers = question.furtherCorrectAnswers ? [...question.furtherCorrectAnswers] : [];
-            let possibleIncorrectAnswers = [...question.incorrectAnswers];
+            let possibleIncorrectAnswers = [...incorrectAnswers];
 
             while (options.length < maxNumOfOptions) {
                 let newOptionAdded = false;

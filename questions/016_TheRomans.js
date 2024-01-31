@@ -5,19 +5,7 @@
                 {
                     question: "When did Julius Caesar lead a Roman invasion of Britain?",
                     correctAnswers: ["55 BC"],
-                    mandatoryIncorrectAnswers: significantPreNormanDates.filter(date => date !== "55 BC"),
-                    incorrectAnswers: [
-                        "100 BC",
-                        "43 BC",
-                        "34 BC",
-                        "23 BC",
-                        "14 BC",
-                        "AD 14",
-                        "AD 23",
-                        "AD 34",
-                        "AD 55",
-                        "AD 100"
-                    ],
+                    incorrectAnswers: getDates(-100, 410, [-55], true),
                 },
                 {
                     question: "Who led a Roman invasion of Britain in 55 BC?",
@@ -81,19 +69,7 @@
                 {
                     question: "When did the Emperor Claudius ordered the Roman invasion of Britain?",
                     correctAnswers: ["AD 43"],
-                    mandatoryIncorrectAnswers: significantPreNormanDates.filter(date => date !== "AD 43"),
-                    incorrectAnswers: [
-                        "100 BC",
-                        "43 BC",
-                        "34 BC",
-                        "23 BC",
-                        "14 BC",
-                        "AD 14",
-                        "AD 23",
-                        "AD 34",
-                        "AD 55",
-                        "AD 100"
-                    ],
+                    incorrectAnswers: getDates(-100, 410, [43], true),
                 },
                 {
                     question: "What was the name of the Roman Emperor who ordered the invasion of Britain in AD 43?",
@@ -447,14 +423,7 @@
                 {
                     question: "When did the Romans leave Britain?",
                     correctAnswers: ["AD 410"],
-                    mandatoryIncorrectAnswers: significantPreNormanDates.filter(date => date !== "AD 410"),
-                    incorrectAnswers: [
-                        "AD 100",
-                        "AD 250",
-                        "AD 360",
-                        "AD 530",
-                        "AD 660"
-                    ]
+                    incorrectAnswers: getDates(-100, 789, [410], true)
                 },
                 {
                     question: "When the Roman army left Britain in AD 410 to defend other parts of the Roman Empire, they never returned. True or False?",

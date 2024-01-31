@@ -1,44 +1,60 @@
-let significantEarlyMiddleAgesDates = [
-    "476", // Fall of the Western Roman Empire
-    "789", // First Viking raid
+let significantDates = [
+    -55, // Julius Caesar's first invasion
+    43, // Roman invasion
+    60, // Boudicca's revolt
+    122, // Hadrian's Wall
+    306, // Constantine becomes emperor
+    410, // End of Roman rule
+    476, // Fall of the Western Roman Empire
+    597, // St Augustine arrives in England
+    789, // First Viking raid
+    871, // Alfred the Great becomes king
+    1066, // Battle of Hastings
+    1086, // Domesday book
+    1139, // War of Stephen and Matilda
+    1215, // Signing of the Magna Carta
+    1258, // Signing of the provisions of Oxford
+    1284, // Statute of Rhuddlan
+    1314, // Battle of Bannockburn
+    1337, // Start of the Hundred Years War
+    1346, // Battle of Crecy
+    1348, // Arrival of the Black Death in England
+    1415, // Battle of Agincourt
+    1453, // End of the Hundred Years War
+    1455, // Start of the War of the Roses
+    1475, // End of the Hundred Years War
+    1485, // Battle of Bosworth
+    1509, // Henry VIII becomes king
+    1558, // Elizabeth I becomes queen
+    1603, // James I becomes king
+    1649, // Execution of Charles I
+    1707, // Act of Union
 ];
 
-let significantPreNormanAdDates = [
-    "43", // Roman invasion
-    "410", // End of Roman rule
-    ...significantEarlyMiddleAgesDates
-];
+let getDates = (from, to, avoidDates, includeBcAd) => () => {
+    let includeDate = (d) =>
+        !avoidDates.includes(d) &&
+        from <= d && d <= to &&
+        (!includeBcAd || 1 <= d);
 
-let significantPreNormanDates = [
-    "55 BC", // Julius Caesar's first invasion
-    ...significantPreNormanAdDates.map(d => "AD " + d)
-];
-let significantMiddleAgesDates = [
-    ...significantEarlyMiddleAgesDates,
-    "1066", // Battle of Hastings
-    "1086", // Domesday book
-    "1139", // War of Stephen and Matilda
-    "1215", // Signing of the Magna Carta
-    "1258", // Signing of the provisions of Oxford
-    "1284", // Statute of Rhuddlan
-    "1314", // Battle of Bannockburn
-    "1337", // Start of the Hundred Years War
-    "1346", // Battle of Crecy
-    "1348", // Arrival of the Black Death in England
-    "1415", // Battle of Agincourt
-    "1453", // End of the Hundred Years War
-    "1455", // Start of the War of the Roses
-    "1475", // End of the Hundred Years War
-    "1485" // Battle of Bosworth
-];
+    let filteredSignificantDates = significantDates.filter(includeDate);
 
-let significantPostMiddleAgesDates = [
-    "1509", // Henry VIII becomes king
-    "1558", // Elizabeth I becomes queen
-    "1603", // James I becomes king
-    "1649", // Execution of Charles I
-    "1707", // Act of Union
-];
+    let proximateDates = [];
+    let correctDate = avoidDates[0]; // assume that the first avoid date is the correct date
+    for (let d = correctDate - 20; d <= correctDate + 20; d++) {
+        if (includeDate(d)) {
+            proximateDates.push(d);
+        }
+    }
+
+    let toDateString = (d) => includeBcAd
+        ? d < 0 ? `${Math.abs(d)} BC` : `AD ${d}`
+        : d.toString();
+
+    return Math.random() > 0.66
+        ? filteredSignificantDates.map(toDateString)
+        : proximateDates.map(toDateString);
+}
 
 let namesOfEarlyAges = [
     "The Stone Age",

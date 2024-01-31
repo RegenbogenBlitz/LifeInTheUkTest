@@ -20,11 +20,7 @@
                     question: "When did the Middle Ages begin?",
                     correctAnswers: ["476"],
                     mandatoryIncorrectAnswers: ["410"],
-                    incorrectAnswers: [
-                        "55 BC",
-                        "43",
-                        ...significantMiddleAgesDates.filter(date => date !== "476")
-                    ]
+                    incorrectAnswers: getDates(43, 1485, [476, 410], false)
                 },
                 {
                     question: "What event started the Middle Ages?",
@@ -44,10 +40,7 @@
                 {
                     question: "When did the Middle Ages end in England?",
                     correctAnswers: ["1485"],
-                    incorrectAnswers: [
-                        ...significantMiddleAgesDates.filter(date => date !== "1485"),
-                        ...significantPostMiddleAgesDates
-                    ]
+                    incorrectAnswers: getDates(1066, 1750, [1485], false)
                 },
                 {
                     question: "What event ended the Middle Ages in England?",
@@ -148,7 +141,7 @@
         {
             question: "In what year did the English king introduce the Statute of Rhuddlan?",
             correctAnswers: ["1284"],
-            incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1284")
+            incorrectAnswers: getDates(1066, 1485, [1284], false)
         },
         {
             question: "Which English monarch introduced the Statute of Rhuddlan?",
@@ -343,7 +336,7 @@
                 {
                     question: "When was the Battle of Bannockburn?",
                     correctAnswers: ["1314"],
-                    incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1314")
+                    incorrectAnswers: getDates(1066, 1485, [1314], false)
                 },
                 {
                     question: "What was the name of the battle in which the Scots fought the English in 1314?",
@@ -615,7 +608,7 @@
         {
             question: "When was the Battle of Agincourt?",
             correctAnswers: ["1415"],
-            incorrectAnswers: significantMiddleAgesDates.filter(date => date !== "1415")
+            incorrectAnswers: getDates(1066, 1485, [1415], false)
         },
         {
             question: "The Battle of Agincourt was a part of which larger conflict?",

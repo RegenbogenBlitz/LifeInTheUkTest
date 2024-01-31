@@ -213,7 +213,7 @@
         {
             question: "When did the Black Death arrive in Britain?",
             correctAnswers: ["1348"],
-            incorrectAnswers: significantMiddleAgesDates.filter(d => d !== "1348")
+            incorrectAnswers: getDates(1066, 1485, [1348], false)
         },
         {
             question: "Most probably, what sort of disease was the Black death?",
