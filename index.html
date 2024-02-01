@@ -12,6 +12,10 @@
             font-size: 60px;
         }
 
+        #score-container {
+            display: none;
+        }
+
         #quiz-container {
             width: 95%;
             margin: auto;
@@ -84,14 +88,21 @@
 
 <body>
     <div id="quiz-container">
-        <div id="mode-selection">
-            <label><input class="quiz-mode" type="radio" name="mode" value="hard">Hard Mode</label>
-            <label><input class="quiz-mode" type="radio" name="mode" value="test" checked>Test Mode</label>
+        <div id="score-container">
+            <div id="score"></div>
+            <div id="score-correct"></div>
+            <div id="score-answered"></div>
         </div>
-        <ul id="category-selection">
-            <!-- Will be populated at load time -->
-        </ul>
-        <button id="start-quiz" class="quiz-button">Start Quiz</button>
+        <div id="quiz-settings">
+            <div id="mode-selection">
+                <label><input class="quiz-mode" type="radio" name="mode" value="hard">Hard Mode</label>
+                <label><input class="quiz-mode" type="radio" name="mode" value="test" checked>Test Mode</label>
+            </div>
+            <ul id="category-selection">
+                <!-- Will be populated at load time -->
+            </ul>
+            <button id="start-quiz" class="quiz-button">Start Quiz</button>
+        </div>
 
         <div id="question-container">
 

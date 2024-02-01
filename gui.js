@@ -161,7 +161,31 @@ let loadTestQuestion = (question, questionContainer) => {
     questionContainer.appendChild(answerList);
     questionContainer.appendChild(answerArea);
 }
+
+
+let showQuizSettings = () => {
+    let quizSettings = document.getElementById("quiz-settings");
+    quizSettings.style.display = "block";
+}
+
+let hideQuizSettings = () => {
+    let quizSettings = document.getElementById("quiz-settings");
+    quizSettings.style.display = "none";
+}
+
+let showScoreContainer = () => {
+    let scoreContainer = document.getElementById("score-container");
+    scoreContainer.style.display = "block";
+}
+
+let hideScoreContainer = () => {
+    let scoreContainer = document.getElementById("score-container");
+    scoreContainer.style.display = "none";
+}
+
 let endQuiz = () => {
+    showQuizSettings();
+
     let questionContainer = document.getElementById("question-container");
     while (questionContainer.firstChild) {
         questionContainer.removeChild(questionContainer.firstChild);
@@ -171,21 +195,16 @@ let endQuiz = () => {
     let numberOfQuestionsAnswered = quiz.getNumberOfQuestionsAnswered();
     let score = numberOfQuestionsAnswered === 0 ? "0%" : (numberOfQuestionsCorrect / numberOfQuestionsAnswered * 100).toFixed(0) + "%"
 
-    let scoreContainer = document.createElement("div");
-
-    let scoreText = document.createElement("p");
+    let scoreText = document.getElementById("score");
     scoreText.innerText = "Score: " + score;
-    scoreContainer.appendChild(scoreText);
 
-    let numberOfQuestionsCorrectText = document.createElement("p");
+    let numberOfQuestionsCorrectText = document.getElementById("score-correct");
     numberOfQuestionsCorrectText.innerText = "Number of questions correct: " + numberOfQuestionsCorrect;
-    scoreContainer.appendChild(numberOfQuestionsCorrectText);
 
-    let numberOfQuestionsAnsweredText = document.createElement("p");
+    let numberOfQuestionsAnsweredText = document.getElementById("score-answered");
     numberOfQuestionsAnsweredText.innerText = "Number of questions answered: " + numberOfQuestionsAnswered;
-    scoreContainer.appendChild(numberOfQuestionsAnsweredText);
 
-    questionContainer.appendChild(scoreContainer);
+    showScoreContainer();
 };
 
 let loadNextQuestion = () => {
@@ -219,21 +238,21 @@ let loadNextQuestion = () => {
     //replace old question container div with new one
     let oldQuestionContainer = document.getElementById("question-container");
     oldQuestionContainer.parentNode.replaceChild(newQuestionContainer, oldQuestionContainer);
-
 }
+
 let onStartQuiz_Click = () => {
     let selectedCategories = getSelectedCategories();
     if (selectedCategories.length === 0) {
         alert("Please select at least one category");
         return;
     }
+
+    hideScoreContainer();
+    hideQuizSettings();
+
     let mode = getMode();
     quiz = Quiz(selectedCategories, mode);
 
-    let scoreContainer = document.getElementById("score-container");
-    if (scoreContainer) {
-        scoreContainer.parentNode.removeChild(scoreContainer);
-    }
     loadNextQuestion();
 };
 let onEndQuiz_Click = () => {
