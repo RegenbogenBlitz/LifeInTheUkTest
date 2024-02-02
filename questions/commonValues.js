@@ -198,6 +198,43 @@ let significantDocuments = [
     "The Equality Act", // 2010
 ];
 
+let englishPoets = [
+    "Geoffrey Chaucer", // 1343-1400
+    "Edmund Spenser", // 1552-1599
+    "William Shakespeare", // 1564-1616
+    "John Donne", // 1572-1631
+    "John Milton", // 1608-1674
+    "Alexander Pope", // 1688-1744
+    "William Blake", // 1757-1827
+    "Samuel Coleridge", // 1772-1834
+    "William Wordsworth", // 1770-1850
+    "Lord Byron", // 1788-1824
+    "Percy Shelley", // 1792-1822
+    "John Keats", // 1795-1821
+    "Alfred Tennyson", // 1809-1892
+    "Thomas Hardy", // 1840-1928
+    "Rudyard Kipling", // 1865-1936
+];
+
+let englishPoems = [
+    "Beowulf",
+    "Sir Gawain and the Green Knight",
+    "Paradise Lost",
+    "The Faerie Queene",
+    "The Lady of Shalott",
+    "The Rime of the Ancient Mariner",
+    "The Jabberwocky",
+    "The Waste Land",
+];
+
+let scotsPoems = [
+    "The Bruce",
+    "Address to the Haggis",
+    "Auld Lang Syne",
+    "To a Mouse",
+    "Tam o' Shanter",
+]
+
 let englishCounties = [
     "Bedfordshire",
     "Berkshire",
