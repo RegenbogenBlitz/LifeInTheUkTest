@@ -274,7 +274,21 @@ let loadNextQuestion = () => {
     oldQuestionContainer.parentNode.replaceChild(newQuestionContainer, oldQuestionContainer);
 }
 
-let onStartQuiz_Click = () => {
+let selectAllCategories_onClick = () => {
+    let categoryCheckboxes = document.querySelectorAll("#category-selection input");
+    categoryCheckboxes.forEach(c => {
+        c.checked = true;
+    });
+}
+
+let clearAllCategories_onClick = () => {
+    let categoryCheckboxes = document.querySelectorAll("#category-selection input");
+    categoryCheckboxes.forEach(c => {
+        c.checked = false;
+    });
+}
+
+let startQuiz_onClick = () => {
     let selectedCategories = getSelectedCategories();
     if (selectedCategories.length === 0) {
         alert("Please select at least one category");
@@ -290,12 +304,15 @@ let onStartQuiz_Click = () => {
 
     loadNextQuestion();
 };
-let onEndQuiz_Click = () => {
+
+let endQuiz_onClick = () => {
     endQuiz();
 };
 
 window.onload = () => {
     loadCategoryControls();
-    document.getElementById("start-quiz").onclick = onStartQuiz_Click;
-    document.getElementById("end-quiz").onclick = onEndQuiz_Click;
+    document.getElementById("start-quiz").onclick = startQuiz_onClick;
+    document.getElementById("end-quiz").onclick = endQuiz_onClick;
+    document.getElementById("select-all-categories").onclick = selectAllCategories_onClick;
+    document.getElementById("clear-all-categories").onclick = clearAllCategories_onClick;
 };

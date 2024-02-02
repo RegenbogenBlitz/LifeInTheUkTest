@@ -43,6 +43,18 @@
             width: 2em;
         }
 
+        .category-button {
+            background: #34a853;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 0.7em;
+        }
+
+        #category-selection {
+            margin: 0;
+        }
+
         .category-checkbox {
             width: 3em;
             height: 3em;
@@ -121,6 +133,8 @@
                 <input type="number" id="max-questions-input" value="24">
                 <label><input class="max-questions" type="radio" name="max-questions" value="unlimted">Unlimited</label>
             </div>
+            <button id="select-all-categories" class="category-button">Select All</button>
+            <button id="clear-all-categories" class="category-button">Clear</button>
             <ul id="category-selection">
                 <!-- Will be populated at load time -->
             </ul>
