@@ -11,6 +11,40 @@ let getMode = () => {
     }
     return checkedRadios[0].value;
 }
+
+let getMaxQuestions = () => {
+    var radios = document.getElementsByClassName('max-questions');
+    var checkedRadios = Array.prototype.slice.call(radios).filter(r => r.checked);
+    if (checkedRadios.length === 0) {
+        throw new Error("No max questions setting selected");
+    }
+    if (checkedRadios.length > 1) {
+        throw new Error("More than one max questions setting selected");
+    }
+
+    if (checkedRadios[0].value === "limited") {
+        let input = document.getElementById("max-questions-input").value;
+
+        if (input === "") {
+            throw new Error("No max questions value entered");
+        }
+        else if (isNaN(input)) {
+            throw new Error("Max questions value is not a number");
+        }
+        else if (!Number.isInteger(parseFloat(input))) {
+            throw new Error("Max questions value is not an integer");
+        }
+        else if (parseInt(input) <= 0) {
+            throw new Error("Max questions value is not positive");
+        }
+
+        return parseInt(input);
+    }
+    else {
+        return null;
+    }
+}
+
 let loadCategoryControls = () => {
     let categorySelectionDiv = document.getElementById("category-selection");
     quizDeck.categories.forEach(c => {
@@ -251,7 +285,8 @@ let onStartQuiz_Click = () => {
     hideQuizSettings();
 
     let mode = getMode();
-    quiz = Quiz(selectedCategories, mode);
+    let maxQuestions = getMaxQuestions();
+    quiz = Quiz(selectedCategories, mode, maxQuestions);
 
     loadNextQuestion();
 };

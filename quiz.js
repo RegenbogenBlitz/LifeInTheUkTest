@@ -90,7 +90,7 @@ let QuizHelpers = (() => {
     };
 })();
 
-let Quiz = (categoryNames, mode) => {
+let Quiz = (categoryNames, mode, maxQuestions) => {
     let deck = {
         categories: quizDeck.categories.filter(c => categoryNames.includes(c.name))
     };
@@ -102,8 +102,15 @@ let Quiz = (categoryNames, mode) => {
         getMode: () => mode,
         getNumberOfQuestionsAnswered: () => numberOfQuestionsAnswered,
         getNumberOfQuestionsCorrect: () => numberOfQuestionsCorrect,
-        getHasMoreQuestions: () => deck.categories.length > 0,
+        getHasMoreQuestions: () =>
+            deck.categories.length > 0 &&
+            deck.categories.some(c => c.questions.length > 0) &&
+            (!maxQuestions || numberOfQuestionsAnswered < maxQuestions),
         getNextQuestion: () => {
+            if (maxQuestions && numberOfQuestionsAnswered >= maxQuestions) {
+                throw new Error("Maximum number of questions reached");
+            }
+
             if (deck.categories.length === 0) {
                 throw new Error("No more categories with questions left");
             }
