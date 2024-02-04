@@ -508,8 +508,9 @@
     ];
 
     let category = {
-        name: "Early Britain - The Norman Conquest",
-        questions: questions
+        name: "The Norman Conquest",
+        questions: questions,
+        group: "Early Britain"
     }
     quizDeck.categories.push(category);
 })();

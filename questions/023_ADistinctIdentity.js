@@ -463,8 +463,9 @@
     ];
 
     let category = {
-        name: "The Middle Ages - A Distinct Identity",
-        questions: questions
+        name: "A Distinct Identity",
+        questions: questions,
+        group: "The Middle Ages"
     }
     quizDeck.categories.push(category);
 })();

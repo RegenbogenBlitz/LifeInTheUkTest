@@ -406,8 +406,9 @@
     ];
 
     let category = {
-        name: "The Middle Ages - The Black Death",
-        questions: questions
+        name: "The Black Death",
+        questions: questions,
+        group: "The Middle Ages"
     }
     quizDeck.categories.push(category);
 })();

@@ -204,8 +204,9 @@
     ];
 
     let category = {
-        name: "Early Britain - The Vikings",
-        questions: questions
+        name: "The Vikings",
+        questions: questions,
+        group: "Early Britain"
     }
     quizDeck.categories.push(category);
 })();

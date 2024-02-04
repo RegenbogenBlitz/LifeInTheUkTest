@@ -548,8 +548,9 @@
     ];
 
     let category = {
-        name: "Early Britain - Pre-Roman",
-        questions: questions
+        name: "Pre-Roman",
+        questions: questions,
+        group: "Early Britain"
     }
     quizDeck.categories.push(category);
 })();

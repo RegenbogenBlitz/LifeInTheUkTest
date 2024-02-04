@@ -46,19 +46,65 @@ let getMaxQuestions = () => {
 }
 
 let loadCategoryControls = () => {
-    let categorySelectionDiv = document.getElementById("category-selection");
-    quizDeck.categories.forEach(c => {
-        let item = document.createElement("li");
-        let label = document.createElement("label");
+    let createCategoryItem = (category) => {
         let input = document.createElement("input");
         input.type = "checkbox";
         input.classList = "category-checkbox";
         input.name = "category";
-        input.value = c.name;
+        input.value = category.name;
+
+        let label = document.createElement("label");
         label.appendChild(input);
-        label.appendChild(document.createTextNode(c.name));
+        label.appendChild(document.createTextNode(category.name));
+
+        let item = document.createElement("li");
         item.appendChild(label);
-        categorySelectionDiv.appendChild(item);
+
+        return item;
+    }
+
+    let categorySelectionUl = document.getElementById("category-selection");
+
+    let categoryGroups = {};
+    quizDeck.categories.forEach(c => {
+        let categoryItem = createCategoryItem(c);
+
+        if (c.group) {
+            let groupUl = categoryGroups[c.group];
+            if (!groupUl) {
+                let groupInput = document.createElement("input");
+                groupInput.type = "checkbox";
+                groupInput.classList = "category-group-checkbox";
+
+                let groupLabel = document.createElement("label");
+                groupLabel.appendChild(groupInput);
+                groupLabel.appendChild(document.createTextNode(c.group));
+
+                groupUl = document.createElement("ul");
+
+                groupItem = document.createElement("li");
+                groupItem.appendChild(groupLabel);
+                groupItem.appendChild(groupUl);
+
+                categorySelectionUl.appendChild(groupItem);
+
+                let group_onChange = () => {
+                    let groupCheckboxes = groupUl.querySelectorAll("input");
+                    groupCheckboxes.forEach(cb => {
+                        cb.checked = groupInput.checked;
+                    });
+                };
+                groupInput.addEventListener("change", group_onChange);
+
+                categoryGroups[c.group] = groupUl;
+            }
+            groupUl.appendChild(categoryItem);
+        }
+        else {
+            categorySelectionUl.appendChild(categoryItem);
+        }
+
+
     });
 }
 

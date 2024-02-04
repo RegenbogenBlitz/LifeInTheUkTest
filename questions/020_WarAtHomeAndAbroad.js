@@ -705,8 +705,9 @@
 
 
     let category = {
-        name: "The Middle Ages - War at Home and Abroad",
-        questions: questions
+        name: "War at Home and Abroad",
+        questions: questions,
+        group: "The Middle Ages"
     }
     quizDeck.categories.push(category);
 })();

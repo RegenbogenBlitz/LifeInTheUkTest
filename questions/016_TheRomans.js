@@ -440,8 +440,9 @@
     ];
 
     let category = {
-        name: "Early Britain - The Romans",
-        questions: questions
+        name: "The Romans",
+        questions: questions,
+        group: "Early Britain"
     }
     quizDeck.categories.push(category);
 })();

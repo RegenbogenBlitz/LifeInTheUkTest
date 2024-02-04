@@ -403,8 +403,9 @@
     ];
 
     let category = {
-        name: "The Middle Ages - Legal and Politcal Changes",
-        questions: questions
+        name: "Legal and Politcal Changes",
+        questions: questions,
+        group: "The Middle Ages"
     }
     quizDeck.categories.push(category);
 })();

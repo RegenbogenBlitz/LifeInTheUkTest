@@ -336,8 +336,9 @@
     ];
 
     let category = {
-        name: "Early Britain - The Anglo-Saxons",
-        questions: questions
+        name: "The Anglo-Saxons",
+        questions: questions,
+        group: "Early Britain"
     }
     quizDeck.categories.push(category);
 })();
