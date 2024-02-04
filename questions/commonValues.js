@@ -84,7 +84,9 @@ let famousBattles = [
     "The Battle of Crecy", // 1346
     "The Battle of Poitiers", // 1356
     "The Battle of Agincourt", // 1415
+    "The Battle of Towton", // 1461
     "The Battle of Bosworth Field", // 1485
+    "The Battle of Stoke Field", // 1487
     "The Battle of Flodden Field", // 1513
     "The Battle of Naseby", // 1645
     "The Battle of Colloden", // 1746
