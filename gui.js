@@ -80,10 +80,25 @@ let loadCategoryControls = () => {
                 groupLabel.appendChild(groupInput);
                 groupLabel.appendChild(document.createTextNode(c.group));
 
+                let groupButton = document.createElement("button");
+                groupButton.classList = "show-hide-category-group-button";
+                groupButton.textContent = "Show";
+                groupButton.addEventListener("click", () => {
+                    if (groupUl.style.display === "none") {
+                        groupUl.style.display = "block";
+                        groupButton.textContent = "Hide";
+                    }
+                    else {
+                        groupUl.style.display = "none";
+                        groupButton.textContent = "Show";
+                    }
+                });
                 groupUl = document.createElement("ul");
+                groupUl.style.display = "none";
 
                 groupItem = document.createElement("li");
                 groupItem.appendChild(groupLabel);
+                groupItem.appendChild(groupButton);
                 groupItem.appendChild(groupUl);
 
                 categorySelectionUl.appendChild(groupItem);
