@@ -539,7 +539,13 @@
                 "Mary I of England",
                 "Mary Queen of Scots"],
             incorrectAnswers: [
-            ]
+                "Elizabeth of York",
+                "Margaret Beaufort",
+                "Elizabeth Woodville",
+                "Margaret Tudor",
+                "Mary Boleyn",
+                "Eleanor of Aquitaine",
+                "Elizabeth Bowes-Lyon"]
         }
 
     ];

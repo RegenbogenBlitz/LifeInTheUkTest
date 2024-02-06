@@ -17,29 +17,35 @@ let QuizHelpers = (() => {
         getAllowsMultipleAnswers: (question) => question.correctAnswers.length > 1 || question.isMultipleChoice,
         getMinimumCorrectAnswers: (question) => question.minimumCorrectAnswers ? question.minimumCorrectAnswers : question.correctAnswers.length,
         getTestAnswerOptions: (question) => {
-            if (question.correctAnswers.length === 0) {
-                throw new Error("No correct answers");
+            let questionText = question.question;
+            if (!question.correctAnswers || question.correctAnswers.length === 0) {
+                throw new Error(`No correct answers for question: ${questionText}`);
             }
 
             var incorrectAnswers =
                 typeof question.incorrectAnswers === "function"
                     ? question.incorrectAnswers()
                     : question.incorrectAnswers;
-            if (incorrectAnswers.length === 0) {
-                throw new Error("No incorrect answers");
-            }
-            if (question.minimumCorrectAnswers && question.correctAnswers.length < question.minimumCorrectAnswers) {
-                throw new Error("Not enough correct answers");
-            }
 
             let numberOfMandatoryIncorrectAnswers = question.mandatoryIncorrectAnswers ? question.mandatoryIncorrectAnswers.length : 0;
+
+            if (incorrectAnswers.length === 0 &&
+                numberOfMandatoryIncorrectAnswers === 0) {
+                throw new Error(`No incorrect answers for question: ${questionText}`);
+            }
+            if (question.minimumCorrectAnswers && question.correctAnswers.length < question.minimumCorrectAnswers) {
+                throw new Error(`Not enough correct answers for question: ${questionText}`);
+            }
 
             let maxNumOfOptions =
                 question.correctAnswers.length > 1
                     ? question.correctAnswers.length * 3 + numberOfMandatoryIncorrectAnswers
                     : 4 + numberOfMandatoryIncorrectAnswers;
 
-            let maximumPossibleNumOptions = getAllCorrectAnswers(question).length + incorrectAnswers.length;
+            let maximumPossibleNumOptions =
+                getAllCorrectAnswers(question).length +
+                incorrectAnswers.length +
+                numberOfMandatoryIncorrectAnswers;
             if (maxNumOfOptions > maximumPossibleNumOptions) {
                 maxNumOfOptions = maximumPossibleNumOptions;
             }
@@ -68,7 +74,7 @@ let QuizHelpers = (() => {
                     possibleFurtherCorrectAnswers = possibleFurtherCorrectAnswers.filter(a => a !== randomFurtherCorrectAnswer);
                 }
                 if (!newOptionAdded) {
-                    throw new Error("Not enough options");
+                    throw new Error(`Not enough options for question: ${questionText}`);
                 }
             }
 
