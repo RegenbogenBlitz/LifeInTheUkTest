@@ -159,7 +159,7 @@
                     ]
                 },
                 {
-                    question: "Harold defended England against an invasion at the Battle of Hastings. Who was he?",
+                    question: "An invasion of England at the Battle of Hastings was defended by a man called Harold. What was his title?",
                     correctAnswers: ["A Saxon king of England"],
                     incorrectAnswers: [
                         "A Norman duke",
@@ -321,7 +321,7 @@
                         "Wool cloth",
                         "Cotton cloth",
                         "Silk cloth",
-                        "Help cloth"
+                        "Hemp cloth"
                     ]
                 },
                 {
@@ -331,7 +331,7 @@
                         "Coloured Linen",
                         "Coloured Cotton",
                         "Coloured Silk",
-                        "Coloured Help",
+                        "Coloured Hemp",
                         "Gold",
                     ]
                 }

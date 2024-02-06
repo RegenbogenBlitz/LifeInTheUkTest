@@ -95,15 +95,15 @@
             question: "During the Middle Ages, which noblemen did the English kings fight against for control of their lands?",
             correctAnswers: ["Welsh", "Scottish", "Irish"],
             incorrectAnswers: [
-                "French",
                 "Spanish",
                 "German",
                 "Italian",
-                "Norse",
-                "Danish",
-                "Viking",
-                "Roman"
-            ]
+                "Roman",
+                "Greek",
+                "Portuguese",
+                "Polish",
+            ],
+            explanation: "They also fought against the French, the Normans, and the Vikings."
         },
         {
             questions: [

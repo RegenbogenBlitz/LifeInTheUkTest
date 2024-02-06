@@ -403,7 +403,7 @@
     ];
 
     let category = {
-        name: "Legal and Politcal Changes",
+        name: "Legal and Political Changes",
         questions: questions,
         group: "The Middle Ages"
     }

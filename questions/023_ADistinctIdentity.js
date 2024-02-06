@@ -105,29 +105,10 @@
                 "It was solely for religious texts"]
         },
         {
-            questions: [
-                {
-                    question: "English was the preferred language of the royal court and Parliament in England by 1400. True or False?",
-                    correctAnswers: ["True"],
-                    incorrectAnswers: ["False"]
-                },
-                {
-                    question: "French was the preferred language of the royal court and Parliament in England by 1400. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"]
-                },
-                {
-                    question: "Latin was the preferred language of the royal court and Parliament in England by 1400. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"]
-                },
-                {
-                    question: "What was the preferred language of the royal court and Parliament in England by 1400?",
-                    correctAnswers: ["English"],
-                    mandatoryIncorrectAnswers: ["French"],
-                    incorrectAnswers: ["Latin", "Gaelic", "Scots", "Welsh", "Dutch", "German"]
-                }
-            ]
+            question: "What was the preferred language of the royal court and Parliament in England by 1400?",
+            correctAnswers: ["English"],
+            mandatoryIncorrectAnswers: ["French"],
+            incorrectAnswers: ["Latin", "Gaelic", "Scots", "Welsh", "Dutch", "German"]
         },
         {
             questions: [
