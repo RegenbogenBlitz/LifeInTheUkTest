@@ -25,10 +25,37 @@ let significantDates = [
     1475, // End of the Hundred Years War
     1485, // Battle of Bosworth
     1509, // Henry VIII becomes king
+    1536, // Dissolution of the monasteries
+    1547, // Edward VI becomes king
+    1553, // Mary I becomes queen
     1558, // Elizabeth I becomes queen
+    1588, // Defeat of the Spanish Armada
     1603, // James I becomes king
+    1625, // Charles I becomes king
     1649, // Execution of Charles I
+    1660, // Restoration of Charles II
+    1685, // James II becomes king
+    1688, // Glorious Revolution
+    1702, // Anne becomes queen
     1707, // Act of Union
+    1714, // Hanoverian succession
+    1756, // Start of the Seven Years War
+    1776, // American Declaration of Independence
+    1789, // French Revolution
+    1815, // Battle of Waterloo
+    1837, // Victoria becomes queen
+    1848, // Chartist movement
+    1854, // Crimean War
+    1867, // Second Reform Act
+    1914, // Start of the First World War
+    1918, // End of the First World War
+    1939, // Start of the Second World War
+    1945, // End of the Second World War
+    1952, // Elizabeth II becomes queen
+    1956, // Suez Crisis
+    1973, // UK joins the EEC
+    1982, // Falklands War
+    1989, // Fall of the Berlin Wall
 ];
 
 let getDates = (from, to, avoidDates, includeBcAd) => () => {
@@ -170,6 +197,16 @@ let scottishMonarchs = [
     "Mary I"
 ];
 
+let dualMonarchs = [
+    "James VI and I",
+    "Charles I",
+    "Charles II",
+    "James VII and II",
+    "William III",
+    "Mary II",
+    "Anne",
+];
+
 let significantDocuments = [
     "The Domesday Book", // 1086
     "The Charter of Liberties", // 1100
@@ -183,6 +220,7 @@ let significantDocuments = [
     "The Statute of Labourers", // 1351
     "The Statute of Kilkenny", // 1366
     "The Act of Supremacy", // 1534
+    "The Act for the Government of Wales", // 1535
     "The Petition of Right", // 1628
     "The Habeas Corpus Act", // 1679
     "The Act of Toleration", // 1689
