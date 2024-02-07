@@ -559,7 +559,7 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - The wives of Henry VIII",
+        name: "The Tudors and Stuarts - The Wives of Henry VIII",
         questions: questions
     }
     quizDeck.categories.push(category);
