@@ -268,7 +268,7 @@
             ]
         },
         {
-            question: ["To what extent was the Black Death a disaster in Britain?"],
+            question: "To what extent was the Black Death a disaster in Britain?",
             correctAnswers: ["It was one of the worsts disasters ever to strike Britain."],
             incorrectAnswers: [
                 "It was a disaster in Britain, but was not significant historically speaking.",
@@ -276,7 +276,7 @@
             ]
         },
         {
-            question: ["After the Black Death, what happened to the need for growing cereal crops in Britain?"],
+            question: "After the Black Death, what happened to the need for growing cereal crops in Britain?",
             correctAnswers: ["There was less need"],
             incorrectAnswers: [
                 "The need did not significantly change",
@@ -284,7 +284,7 @@
             ]
         },
         {
-            question: ["After the Black Death, what happened to the demand for labour in Britain?"],
+            question: "After the Black Death, what happened to the demand for labour in Britain?",
             correctAnswers: ["There were labour shortages"],
             incorrectAnswers: [
                 "Demand for labour balanced the reduced supply",
@@ -292,7 +292,7 @@
             ]
         },
         {
-            question: ["After the Black Death, what happened to peasants demand for wages in Britain?"],
+            question: "After the Black Death, what happened to peasants demand for wages in Britain?",
             correctAnswers: ["They began to demand higher wages"],
             incorrectAnswers: [
                 "Wages stablised",
