@@ -232,7 +232,7 @@ let loadTestQuestion = (question, questionContainer) => {
         } else {
             let correctAnswers = QuizHelpers.getAllCorrectAnswers(question);
             let answerText = document.createElement("p");
-            answerText.innerText = "Correct answers: " + correctAnswers.join(", ");
+            answerText.innerText = "Correct answer(s): " + correctAnswers.join(", ");
             questionContainer.appendChild(answerText);
 
             let incorrectText = document.createElement("p");
