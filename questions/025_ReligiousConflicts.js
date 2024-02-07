@@ -303,7 +303,7 @@
                         "Creation of the Irish Parliament"]
                 },
                 {
-                    questions: "Which of the following led to the brutal fighting in Ireland during the 16th century?",
+                    question: "Which of the following led to the brutal fighting in Ireland during the 16th century?",
                     correctAnswers: [
                         "Attempts to introduce Protestantism",
                         "Attempts to introduce the English system of laws about the inheritance of land"],
