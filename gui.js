@@ -54,6 +54,9 @@ let loadCategoryControls = () => {
         input.value = category.name;
 
         let label = document.createElement("label");
+        if (category.isUnvetted) {
+            label.classList = "category-unvetted";
+        }
         label.appendChild(input);
         label.appendChild(document.createTextNode(category.name));
 
@@ -312,11 +315,16 @@ let loadNextQuestion = () => {
     }
     let question = quiz.getNextQuestion();
 
-    // create new question container div
     let newQuestionContainer = document.createElement("div");
     newQuestionContainer.id = "question-container";
 
-    // add question text
+    if (question.isUnvetted) {
+        let unvettedText = document.createElement("p");
+        unvettedText.classList = "question-unvetted";
+        unvettedText.innerText = "This question is unvetted. Please report any issues.";
+        newQuestionContainer.appendChild(unvettedText);
+    }
+
     let questionText = document.createElement("p");
     questionText.innerText = question.question;
     newQuestionContainer.appendChild(questionText);

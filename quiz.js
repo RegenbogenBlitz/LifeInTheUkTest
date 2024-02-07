@@ -151,6 +151,13 @@ let Quiz = (categoryNames, mode, maxQuestions) => {
                 question = question.questions[Math.floor(Math.random() * question.questions.length)];
             }
 
+            if (category.isUnvetted) {
+                question = {
+                    ...question,
+                    isUnvetted: true
+                }
+            }
+
             return question;
         },
         answerHardQuestion: (answerWasCorrect) => {
