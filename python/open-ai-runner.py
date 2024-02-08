@@ -10,7 +10,7 @@ def read_file(file_name):
     with open(file_path, 'r') as file:
         return file.read().strip()
 
-def query_openai(endpoint, api_key, text, sentence):
+def query_openai(endpoint, api_key, text):
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -37,49 +37,30 @@ def query_openai(endpoint, api_key, text, sentence):
             },
             {
             'role': 'user',
-            'content': 'I will now give you a sentence from that section. Please read it.'
-            },
-            {
-            'role': 'assistant',
-            'content': 'OK'
-            },
-            {
-            'role': 'user',
-            'content': sentence
-            },
-            {
-            'role': 'assistant',
-            'content': 'OK I have read it. I understand it entirely, and understand how it compares to the other sentences in the section and the rest of the book.'
-            },
-            {
-            'role': 'user',
-            'content': 'Now generate me some multiple choice questions based on that sentence, in the format of the Life in The UK Test. /n Generate as many questions as needed to cover each important fact in the sentence. Try not to ask about multiple facts in the same question. /n For each question, make sure all the answers are plausible. Make sure there is only one answer is true, all the other answers must be false. /n When possible, try to use information from the rest of the book to make the question more difficult. Where possible, do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book./n Return your questions in the following format:/n ``` /n {/n question: "YOUR QUESTION",/n correctAnswers: ["CORRECT ANSWER"],/n incorrectAnswers: ["INCORRECT ANSWER 1", "INCORRECT ANSWER 2" etc]/n }/n ```/n If there are multiple correct answers, return them all in the correctAnswers array. Try to include at least 6 incorrect answers.'
+            'content': 'Now generate me some multiple choice questions based on each sentence of the section, in the format of the Life in The UK Test. /n Generate as many questions as needed to cover each important fact in each sentence. Try not to ask about multiple facts in the same question. /n For each question, make sure all the answers are plausible. Make sure only the correctAnswers are true, all the incorrectAnswers must be false. /n When possible, try to use information from the rest of the book to make the question more difficult. Where possible, do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book./n Return your questions in the following format:/n ``` /n {/n question: "YOUR QUESTION",/n correctAnswers: ["CORRECT ANSWER"],/n incorrectAnswers: ["INCORRECT ANSWER 1", "INCORRECT ANSWER 2" etc]/n }/n ```/n If there are multiple correct answers, return them all in the correctAnswers array. Try to include at least 6 incorrect answers.'
             }
         ],
         'temperature': 0.7,
         'top_p': 0.95,
         'frequency_penalty': 0,
         'presence_penalty': 0,
-        'max_tokens': 800
+        'max_tokens': 3200
     }
 
     response = requests.post(endpoint, headers=headers, json=data)
+
     if response.status_code == 200:
         try:
             return response.json()
         except json.decoder.JSONDecodeError:
             print("JSONDecodeError: ", response.content)
     else:
-        print("Error: ", response.status_code, response.text)  
+        print("Error: ", response.status_code, response.text)
 
 api_key = read_file('keys.txt')
 endpoint = read_file('endpoint.txt')
 text = read_file('text.txt')
 
-sentences = text.split('. ')
-
-for sentence in sentences:
-    response = query_openai(endpoint, api_key, text, sentence)
-    message = response['choices'][0]['message']['content']
-    print('---------------------------------')
-    print(message)
+response = query_openai(endpoint, api_key, text)
+message = response['choices'][0]['message']['content']
+print(message)
