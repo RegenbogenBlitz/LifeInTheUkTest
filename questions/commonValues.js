@@ -29,6 +29,7 @@ let significantDates = [
     1547, // Edward VI becomes king
     1553, // Mary I becomes queen
     1558, // Elizabeth I becomes queen
+    1560, // The abolition of the authority of the Pope in Scotland
     1588, // Defeat of the Spanish Armada
     1603, // James I becomes king
     1625, // Charles I becomes king
