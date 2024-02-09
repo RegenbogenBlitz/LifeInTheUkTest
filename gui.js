@@ -303,6 +303,7 @@ let endQuiz = () => {
     numberOfQuestionsAnsweredText.innerText = "Number of questions answered: " + numberOfQuestionsAnswered;
 
     showScoreContainer();
+    window.scrollTo(0, 0);
 };
 
 let loadNextQuestion = () => {
