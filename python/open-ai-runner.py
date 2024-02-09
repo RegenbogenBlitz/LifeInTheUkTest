@@ -23,12 +23,29 @@ def query_openai(endpoint, api_key, text, sentence, previousQuestions):
     data = {
         'messages': [
             {
+            'role': 'system',
+            'content':
+                'You are an AI assistant that generates practice questions for the Life in The UK Test. ' +
+                'When given a section from the Life in The UK Test handbook and a sentence from that section, you generate multiple choice questions based on that sentence, in the format of the Life in The UK Test. '+
+                'You generate as many questions as needed to cover each important fact in the sentence. ' +
+                'You do not ask about multiple facts in the same question. '+
+                'You make sure the questions ONLY require knowledge that is in the section provided! ' +
+                'You make sure the questions DO NOT require information that is not in the Life in The UK Test handbook!'+
+                'You make sure all and only the answers designated as "correctAnswers" are true. ' +
+                'If there are multiple correct answers, where sensible you do not just link them all together as one answer with an "and", instead you return them all as separate items in the correctAnswers array. ' +
+                'You make sure all the answers designated as "incorrectAnswers" are false. ' +
+                'You make sure all the incorrectAnswers are plausible. ' +
+                'You try to include at least 6 incorrectAnswers. ' +
+                'When possible, you try to use information from the rest of the book to make choosing the correct answer(s) more difficult. ' +
+                'You do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book.'
+            },
+            {
             'role': 'user',
-            'content': 'I''m going to give you a section from the Life in The UK Test handbook. Please read it.'
+            'content': 'Here is a section from the Life in The UK Test handbook.'
             },
             {
             'role': 'assistant',
-            'content': 'OK'
+            'content': 'Awaiting section.'
             },
             {
             'role': 'user',
@@ -36,15 +53,15 @@ def query_openai(endpoint, api_key, text, sentence, previousQuestions):
             },
             {
             'role': 'assistant',
-            'content': 'OK I have read it. I understand it entirely, and understand how it compares to the other sections in the handbook.'
+            'content': 'Understood.'
             },
             {
             'role': 'user',
-            'content': 'I will now give you a sentence from that section. Please read it.'
+            'content': 'Here is sentence from that section.'
             },
             {
             'role': 'assistant',
-            'content': 'OK'
+            'content': 'Awaiting sentence.'
             },
             {
             'role': 'user',
@@ -52,21 +69,79 @@ def query_openai(endpoint, api_key, text, sentence, previousQuestions):
             },
             {
             'role': 'assistant',
-            'content': 'OK I have read it. I understand it entirely, and understand how it compares to the other sentences in the section and the rest of the book.'
+            'content': 'Understood.'
             },
             {
             'role': 'user',
-            'content': 'Now generate me some multiple choice questions based on that sentence, in the format of the Life in The UK Test. /n'+
-            'Generate as many questions as needed to cover each important fact in the sentence. Try not to ask about multiple facts in the same question. /n'+
-            'For each question, make sure all the answers are plausible. Make sure there is only one answer is true, all the other answers must be false. The questions should ONLY require knowledge that is in the section provided! The questions MUST NOT require information that is not in the Life in The UK Test handbook!/n'+
-            'When possible, try to use information from the rest of the book to make choosing the correct answer more difficult. Where possible, do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book./n'+
-            'Return your questions in the following format:/n ``` /n {/n question: "YOUR QUESTION",/n correctAnswers: ["CORRECT ANSWER"],/n incorrectAnswers: ["INCORRECT ANSWER 1", "INCORRECT ANSWER 2" etc]/n }/n ```/n'+
-            'If there are multiple correct answers, where sensible do not just link them all together as one answer with an "and", instead return them all as separate items in the correctAnswers array. Try to include at least 6 incorrect answers./n'+
-            '/n' +
-            'Here are the questions I have generated so far, try to avoid asking the same question in different ways: \n'+ '\n'.join(previousQuestions)
-            
+            'content': 
+            'Here are the questions I have generated so far. Try to avoid asking the same question in different ways.'
+            },
+            {
+            'role': 'assistant',
+            'content': 'Awaiting previous questions.'
+            },
+            {
+            'role': 'user',
+            'content': '\n'.join(previousQuestions)
+            },
+            {
+            'role': 'assistant',
+            'content': 'Understood.'
+            },
+            {
+            'role': 'user',
+            'content': 
+            'Generate me questions for this sentence from this section.'
+            },
+
+        ],
+        'tools': [
+            {
+                'type': 'function',
+                'function': {
+                    'name': 'create_question',
+                    'description': 'Create a multiple choice question based on a sentence from the Life in The UK Test handbook',
+                    'parameters': {
+                        'type': 'object',
+                        'properties': {
+                            'questions': {
+                                'type': 'array',
+                                'items': {
+                                    'type': 'object',
+                                    'properties': {
+                                        'question': {
+                                            'type': 'string',
+                                            'description': 'The text of the question'
+                                        },
+                                        'correctAnswers': {
+                                            'type': 'array',
+                                            'items': {
+                                                'type': 'string'
+                                            },
+                                            'description': 'The correct answers to the question'
+                                        },
+                                        'incorrectAnswers': {
+                                            'type': 'array',
+                                            'items': {
+                                                'type': 'string'
+                                            },
+                                            'description': 'The incorrect answers to the question'
+                                        },
+                                    },
+                                    'required': ['question', 'correctAnswers', 'incorrectAnswers']
+                                }
+                            }
+                        }
+                    }
+                }
             }
         ],
+        'tool_choice': {
+            'type': 'function',
+            'function': {
+                'name': 'create_question'
+            }
+        },
         'temperature': 0.7,
         'top_p': 0.95,
         'frequency_penalty': 0,
@@ -88,14 +163,22 @@ endpoint = read_file('endpoint.txt')
 text = read_file('text.txt')
 
 sentences = text.split('.')
+sentences = list(filter(None, sentences))
 
 questions = []
 
 for sentence in sentences:
     response = query_openai(endpoint, api_key, text, sentence, questions)
-    message = response['choices'][0]['message']['content']
-
-    questions += re.findall(r'question: "(.*)"', message)
+    message = response['choices'][0]['message']
+    tool_calls = message['tool_calls']
+    if not tool_calls:
+        throw('No tool calls found in response')
 
     print('---------------------------------')
-    print(message)
+    for tool_call in tool_calls:
+        function = tool_call['function']
+        if not function['name'] == 'create_question':
+            throw('Unexpected function name in tool call')
+        
+        function_args = function['arguments']
+        print(function_args)
