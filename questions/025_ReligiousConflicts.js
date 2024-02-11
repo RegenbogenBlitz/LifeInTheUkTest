@@ -551,8 +551,9 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - Religious Conflicts",
-        questions: questions
+        name: "Religious Conflicts",
+        questions: questions,
+        group: "The Tudors and Stuarts (incomplete)"
     }
     quizDeck.categories.push(category);
 })();

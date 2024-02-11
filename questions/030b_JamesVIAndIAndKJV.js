@@ -143,9 +143,10 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - King James VI and I, and The King James Bible",
+        name: "King James VI and I, and The King James Bible",
         questions: questions,
-        isUnvetted: true
+        isUnvetted: true,
+        group: "The Tudors and Stuarts (incomplete)"
     }
     quizDeck.categories.push(category);
 })();

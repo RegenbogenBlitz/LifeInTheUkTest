@@ -146,9 +146,10 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - Queen Elizabeth I",
+        name: "Queen Elizabeth I",
         questions: questions,
-        isUnvetted: true
+        isUnvetted: true,
+        group: "The Tudors and Stuarts (incomplete)"
     }
     quizDeck.categories.push(category);
 })();

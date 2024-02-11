@@ -559,8 +559,9 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - The Wives of Henry VIII",
-        questions: questions
+        name: "The Wives of Henry VIII",
+        questions: questions,
+        group: "The Tudors and Stuarts (incomplete)"
     }
     quizDeck.categories.push(category);
 })();

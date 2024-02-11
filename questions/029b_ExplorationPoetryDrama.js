@@ -116,9 +116,10 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - Exploration, Poetry and Drama",
+        name: "Exploration, Poetry and Drama",
         questions: questions,
-        isUnvetted: true
+        isUnvetted: true,
+        group: "The Tudors and Stuarts (incomplete)"
     }
     quizDeck.categories.push(category);
 })();

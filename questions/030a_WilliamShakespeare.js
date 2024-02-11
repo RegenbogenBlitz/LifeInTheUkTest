@@ -160,8 +160,9 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - William Shakespeare",
-        questions: questions
+        name: "William Shakespeare",
+        questions: questions,
+        group: "The Tudors and Stuarts (incomplete)"
     }
     quizDeck.categories.push(category);
 })();

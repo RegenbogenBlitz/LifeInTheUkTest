@@ -126,9 +126,10 @@
     ];
 
     let category = {
-        name: "The Tudors and Stuarts - The Reformation in Scotland and Mary Queen of Scots",
+        name: "The Reformation in Scotland and Mary Queen of Scots",
         questions: questions,
-        isUnvetted: true
+        isUnvetted: true,
+        group: "The Tudors and Stuarts (incomplete)"
     }
     quizDeck.categories.push(category);
 })();
