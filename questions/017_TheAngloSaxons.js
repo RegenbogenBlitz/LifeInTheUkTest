@@ -194,36 +194,10 @@
             ]
         },
         {
-            questions: [
-                {
-                    question: "Missionaries from Ireland spread Christianity in which part of Great Britain?",
-                    correctAnswers: ["North Britain"],
-                    incorrectAnswers: ["South Britain", "Wales"],
-                },
-                {
-                    question: "Missionaries from Ireland spread Christianity in the north of Britain. True or False?",
-                    correctAnswers: ["True"],
-                    incorrectAnswers: ["False"],
-                },
-                {
-                    question: "Missionaries from Ireland spread Christianity in the south of Britain. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
-                    explanation: "Missionaries from Ireland spread Christianity in the north of Britain.",
-                },
-                {
-                    question: "Missionaries from Ireland spread Christianity throughout Britain. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
-                    explanation: "Missionaries from Ireland spread Christianity in the north of Britain.",
-                },
-                {
-                    question: "Missionaries from Ireland spread Christianity throughout England. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
-                    explanation: "Missionaries from Ireland spread Christianity in the north of Britain.",
-                }
-            ]
+            question: "During the Anglo Saxon period, missionaries from Ireland spread Christianity in which part(s) of Great Britain?",
+            isMultipleChoice: true,
+            correctAnswers: ["North Britain"],
+            incorrectAnswers: ["South Britain", "Wales"],
         },
         {
             questions: [
@@ -270,36 +244,10 @@
             ]
         },
         {
-            questions: [
-                {
-                    question: "Missionaries from Rome spread Christianity in which part of Great Britain?",
-                    correctAnswers: ["South Britain"],
-                    incorrectAnswers: ["North Britain", "Wales"],
-                },
-                {
-                    question: "Missionaries from Rome spread Christianity in the south of Britain. True or False?",
-                    correctAnswers: ["True"],
-                    incorrectAnswers: ["False"],
-                },
-                {
-                    question: "Missionaries from Rome spread Christianity in the north of Britain. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
-                    explanation: "Missionaries from Rome spread Christianity in the south of Britain.",
-                },
-                {
-                    question: "Missionaries from Rome spread Christianity throughout Britain. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
-                    explanation: "Missionaries from Rome spread Christianity in the south of Britain.",
-                },
-                {
-                    question: "Missionaries from Rome spread Christianity throughout England. True or False?",
-                    correctAnswers: ["False"],
-                    incorrectAnswers: ["True"],
-                    explanation: "Missionaries from Rome spread Christianity in the south of Britain.",
-                }
-            ]
+            question: "During the Anglo Saxon period, missionaries from Rome spread Christianity in which part(s) of the British Isles?",
+            isMultipleChoice: true,
+            correctAnswers: ["South Britain"],
+            incorrectAnswers: ["North Britain", "Wales", "Ireland"],
         },
         {
             questions: [

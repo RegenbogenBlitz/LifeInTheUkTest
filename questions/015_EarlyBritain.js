@@ -341,7 +341,7 @@
         {
             question: "What is the name of the age that followed the Bronze Age?",
             correctAnswers: ["The Iron Age"],
-            incorrectAnswers: namesOfEarlyAges.filter(age => age !== "The Iron Age")
+            incorrectAnswers: namesOfEarlyAges.filter(age => age !== "The Iron Age" && age !== "The Bronze Age")
         },
         {
             question: "What sort of new material did Iron Age people in Britain make their tools and weapons out of? (Select all that apply)",

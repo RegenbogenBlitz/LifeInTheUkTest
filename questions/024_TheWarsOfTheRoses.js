@@ -335,7 +335,7 @@
         {
             question: "What was the symbol of the House of Tudor?",
             correctAnswers: ["A red rose with a white rose inside it"],
-            mandatoryIncorrectAnswers: ["A red rose", "A white rose"],
+            mandatoryIncorrectAnswers: ["A red rose", "A white rose", "A white rose with a red rose inside it"],
             incorrectAnswers: symbols.filter(symbol =>
                 symbol !== "A red rose" &&
                 symbol !== "A white rose" &&
