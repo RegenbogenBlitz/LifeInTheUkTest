@@ -561,7 +561,7 @@
     let category = {
         name: "The Wives of Henry VIII",
         questions: questions,
-        group: "The Tudors and Stuarts (incomplete)"
+        group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
 })();

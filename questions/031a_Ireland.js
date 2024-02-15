@@ -142,7 +142,7 @@
             incorrectAnswers: ["Protestant landholders", "Muslim landholders", "Jewish landholders", "Buddhist landholders", "Hindu landholders", "Sikh landholders"]
         },
         {
-            questions: "In what part of Ireland is Ulster?",
+            question: "In what part of Ireland is Ulster?",
             correctAnswers: ["North"],
             incorrectAnswers: ["South", "East", "West", "Central"]
         },
@@ -182,7 +182,7 @@
         name: "Ireland",
         questions: questions,
         isUnvetted: true,
-        group: "The Tudors and Stuarts (incomplete)"
+        group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
 })();

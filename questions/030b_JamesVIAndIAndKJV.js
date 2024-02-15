@@ -146,7 +146,7 @@
         name: "King James VI and I, and The King James Bible",
         questions: questions,
         isUnvetted: true,
-        group: "The Tudors and Stuarts (incomplete)"
+        group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
 })();

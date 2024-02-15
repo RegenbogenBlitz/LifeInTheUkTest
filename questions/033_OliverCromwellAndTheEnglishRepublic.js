@@ -310,7 +310,7 @@
         name: "Oliver Cromwell and the English Republic",
         questions: questions,
         isUnvetted: true,
-        group: "The Tudors and Stuarts (incomplete)"
+        group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
 })();

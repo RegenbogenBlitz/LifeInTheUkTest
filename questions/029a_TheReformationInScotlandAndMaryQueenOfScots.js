@@ -129,7 +129,7 @@
         name: "The Reformation in Scotland and Mary Queen of Scots",
         questions: questions,
         isUnvetted: true,
-        group: "The Tudors and Stuarts (incomplete)"
+        group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
 })();

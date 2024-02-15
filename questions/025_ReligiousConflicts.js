@@ -553,7 +553,7 @@
     let category = {
         name: "Religious Conflicts",
         questions: questions,
-        group: "The Tudors and Stuarts (incomplete)"
+        group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
 })();

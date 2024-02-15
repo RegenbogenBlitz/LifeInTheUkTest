@@ -119,7 +119,7 @@
         name: "The Rise of Parliament",
         questions: questions,
         isUnvetted: true,
-        group: "The Tudors and Stuarts (incomplete)"
+        group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
 })();
