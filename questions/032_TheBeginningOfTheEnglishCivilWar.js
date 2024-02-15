@@ -6,6 +6,20 @@
             incorrectAnswers: ["Simplicity", "Tithing", "Confessions", "Pilgrimages", "Fasting", "Scripture readings", "Hymns"]
         },
         {
+            question: "What does 'Presbyterian' mean?",
+            correctAnswers: ["The main Protestant church in Scotland"],
+            incorrectAnswers: [
+                "The main Protestant church in England",
+                "The main Protestant church in Wales",
+                "The main Protestant church in Ireland",
+                "The main Protestant church in France",
+                "The main Protestant church in Spain",
+                "The main Protestant church in Italy",
+                "The main Protestant church in Germany"
+            ],
+            explanation: "Presbyterian refers to the form of church government in which the church is governed by elders."
+        },
+        {
             questions: [
                 {
                     question: "What did Charles I attempt to impose on the Presbyterian Church in Scotland?",

@@ -145,6 +145,17 @@
             ]
         },
         {
+            question: "What is an architect?",
+            correctAnswers: ["A person who designs buildings"],
+            incorrectAnswers: [
+                "A person who builds buildings",
+                "A person who repairs buildings",
+                "A person who studies buildings",
+                "A person who writes about buildings",
+                "A person who teaches about buildings",
+                "A person who owns buildings"]
+        },
+        {
             questions: [
                 {
                     question: "Who wrote about the events of the plague and the Great Fire of London in a diary?",

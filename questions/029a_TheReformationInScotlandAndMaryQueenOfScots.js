@@ -16,6 +16,18 @@
             incorrectAnswers: ["Catholic", "Anglican", "Orthodox", "Baptist", "Methodist", "Lutheran"]
         },
         {
+            question: "What does 'illegal' mean?",
+            correctAnswers: ["Something which the law does not allow"],
+            incorrectAnswers: [
+                "Something which the law requires",
+                "Something which the law encourages",
+                "Something which the law permits",
+                "Something which the law suggests",
+                "Something which the law discourages",
+                "Something which the law advises against",
+            ]
+        },
+        {
             question: "What became illegal in Scotland after the Scottish Parliament abolished the authority of the pope in 1560?",
             correctAnswers: ["Roman Catholic religious services"],
             incorrectAnswers: ["Protestant religious services", "Jewish religious services", "Buddhist religious practices", "Hindu religious rituals", "Islamic religious services", "Non-religious gatherings"]

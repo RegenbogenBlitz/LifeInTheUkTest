@@ -252,6 +252,16 @@
                         "Cathays",
                         "Roath"
                     ]
+                },
+                {
+                    question: "What are the Houses of Parliament?",
+                    correctAnswers: ["The building in London where the House of Lords and the House of Commons meet"],
+                    incorrectAnswers: [
+                        "The collective term for all the different parliaments in the UK",
+                        "The official residences of the Prime Minister and the Monarch",
+                        "The headquarters of the Monarch in London",
+                        "The national capitals of the UK"
+                    ]
                 }
             ]
         },

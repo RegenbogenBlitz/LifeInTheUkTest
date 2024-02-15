@@ -23,6 +23,41 @@
                 "To develop commercial alliances with the Russian Empire"]
         },
         {
+            questions: [
+                {
+                    question: "What does 'colonise' mean?",
+                    correctAnswers: ["Inhabit and take control of another country"],
+                    incorrectAnswers: [
+                        "Trade with another country",
+                        "Share knowledge with another country",
+                        "Submit to the authority of another country",
+                        "Establish a military base in another country",
+                        "Establish a diplomatic mission in another country",
+                        "Establish a religious mission in another country",
+                    ]
+                },
+                {
+                    question: "What is a person who colonises called?",
+                    correctAnswers: ["A colonist"],
+                    incorrectAnswers: [
+                        "A colonialer",
+                        "A colonister",
+                        "A colonade",
+                        "A colonel",
+                        "A trader",
+                        "A missionary",
+                        "A diplomat",
+                        "A soldier",
+                        "A sailor",
+                        "A pirate",
+                        "A spy",
+                        "A refugee"
+                    ]
+                }
+            ]
+        }
+        
+        {
             question: "Which colonies did English explorers attempt to expand British trade into during the Elizabethan period?",
             correctAnswers: ["The Spanish colonies in the Americas"],
             incorrectAnswers: [

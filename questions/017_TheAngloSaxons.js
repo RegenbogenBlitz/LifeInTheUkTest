@@ -220,6 +220,16 @@
             ]
         },
         {
+            question: "What is a 'patron saint'?",
+            correctAnswers: ["A Christian saint who is believed to protect a particular area or group of people"],
+            incorrectAnswers: [
+                "An angel who is believed to guide people on their spiritual journey",
+                "A title given to the eldest member of a Christian church",
+                "A person who financially supports a Christian church",
+                "A person who is believed to have been the first to bring Christianity to a particular area",
+                "A religious artifact that is believed to have been touched by a Christian saint"]
+        },
+        {
             questions: [
                 {
                     question: "Where did St Columba found a monastery?",

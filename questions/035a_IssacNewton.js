@@ -56,7 +56,8 @@
                         "Leviathan",
                         "Principles of Geology",
                         "A Brief History of Time",
-                        "The Origin of Species"]
+                        "The Origin of Species",
+                        "Tractatus Logico-Philosophicus"]
                 },
                 {
                     question: "What was demonstrated in Isaac Newton's work 'Philosophiae Naturalis Principia Mathematica'?",

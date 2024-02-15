@@ -133,6 +133,22 @@
                 "a valid UK driving licence",
                 "a university Batchelors's degree or equivalent"
             ]
+        },
+        {
+            question: "What does 'liberty' mean?",
+            correctAnswers: ["freedom"],
+            incorrectAnswers: [
+                "the right to vote",
+                "the right to bear arms",
+                "the right to a fair trial",
+                "equality",
+                "justice",
+                "democracy",
+                "peace",
+                "prosperity",
+                "security",
+                "unity"
+            ]
         }
     ];
 

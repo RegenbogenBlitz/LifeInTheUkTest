@@ -55,14 +55,29 @@
             ]
         },
         {
-            question: "What sort of conflict was the Wars of the Roses?",
-            correctAnswers: ["A civil war"],
-            incorrectAnswers: [
-                "A war of conquest",
-                "A war of independence",
-                "A foreign invasion",
-                "A religious war",
-                "A crusade"]
+            questions: [
+                {
+                    question: "What is a civil war?",
+                    correctAnswers: ["A war between groups from the same country"],
+                    incorrectAnswers: [
+                        "A foreign invasion",
+                        "A crusade",
+                        "A war against a neighbouring country",
+                        "A war in towns and cities",
+                        "A war against a religious group"
+                    ]
+                },
+                {
+                    question: "What sort of conflict was the Wars of the Roses?",
+                    correctAnswers: ["A civil war"],
+                    incorrectAnswers: [
+                        "A war of conquest",
+                        "A war of independence",
+                        "A foreign invasion",
+                        "A religious war",
+                        "A crusade"]
+                }
+            ]
         },
         {
             question: "What was the main purpose of the Wars of the Roses?",
@@ -73,6 +88,16 @@
                 "To resist foreign invasion",
                 "To address peasant revolts",
                 "To end the practice of feudalism"]
+        },
+        {
+            question: "What is a House in the context of dynastic history?",
+            correctAnswers: ["A family"],
+            incorrectAnswers: [
+                "A political party",
+                "A group of people who work together",
+                "A group of people who share a common interest",
+                "A charitable organisation"
+            ]
         },
         {
             question: "The supporters of which two houses fought in the Wars of the Roses?",

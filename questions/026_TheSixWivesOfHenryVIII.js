@@ -1,6 +1,20 @@
 (() => {
     let questions = [
         {
+            question: "What is an 'heir'?",
+            correctAnswers: [
+                "A person who will legally receive a person's money or possessions after their death",
+                "The person who will be the next king or queen"],
+            incorrectAnswers: [
+                "The person who will be executed next",
+                "The person who will be married next",
+                "A person who oversees the distribution of a person's money or possessions after their death",
+                "The person who will be the next Prime Minister",
+                "A person who signs a legal document",
+                "A substance that is inhaled"
+            ]
+        },
+        {
             question: "Who was Henry VIII's first wife?",
             correctAnswers: ["Catherine of Aragon"],
             mandatoryIncorrectAnswers: [
@@ -227,6 +241,16 @@
                         "She survived Henry"],
                     incorrectAnswers: []
                 }
+            ]
+        },
+        {
+            question: "What does it mean for a person to be executed?",
+            correctAnswers: ["To be killed as a punishment"],
+            incorrectAnswers: [
+                "To be imprisoned as a punishment",
+                "To have a sentence carried out on them",
+                "To have the property in their will distributed",
+                "To ordered to perform a particular task"
             ]
         },
         {

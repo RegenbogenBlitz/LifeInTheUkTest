@@ -94,39 +94,81 @@
             ]
         },
         {
-            question: "What is the Magna Carta?",
-            correctAnswers: ["A charter of rights"],
-            incorrectAnswers: [
-                "A battle",
-                "A religious document",
-                "A king's title",
-                "A tax system"
+            questions: [
+                {
+                    question: "What is the Magna Carta?",
+                    correctAnswers: ["A charter of rights"],
+                    incorrectAnswers: [
+                        "A battle",
+                        "A religious document",
+                        "A king's title",
+                        "A tax system"
+                    ]
+                },
+                {
+                    question: "What does the term 'Magna Carta' translate to in English?",
+                    correctAnswers: ["The Great Charter"],
+                    incorrectAnswers: [
+                        "The Grand Document",
+                        "The Major Law",
+                        "The Long Agreement",
+                        "The Big Treaty",
+                        "The Large Settlement",
+                        "The Supreme Rule"
+                    ]
+                },
+                {
+                    question: "What is a charter?",
+                    correctAnswers: ["An official written statement which describes the rights and responsibilities of a state and its citizens"],
+                    incorrectAnswers: [
+                        "A type of traditional British pastry.",
+                        "A ceremonial sword used in British knighthood ceremonies.",
+                        "A popular British board game originating in the Medieval period.",
+                        "A specific style of architecture common in 13th century Britain.",
+                        "A unique breed of sheep native to the British Isles.",
+                        "A traditional British folk dance performed at cultural festivals."
+                    ]
+                }
             ]
         },
         {
-            question: "What does the term 'Magna Carta' translate to in English?",
-            correctAnswers: ["The Great Charter"],
-            incorrectAnswers: [
-                "The Grand Document",
-                "The Major Law",
-                "The Long Agreement",
-                "The Big Treaty",
-                "The Large Settlement",
-                "The Supreme Rule"
+            questions: [
+                {
+                    question: "Who were the main beneficiaries of the rights protected by the Magna Carta?",
+                    correctAnswers: ["The nobility"],
+                    incorrectAnswers: [
+                        "The peasants",
+                        "The merchants",
+                        "The clergy",
+                        "The knights",
+                        "The common people",
+                        "Women",
+                        "Serfs"]
+                },
+                {
+                    question: "Who are the nobility?",
+                    correctAnswers: ["The people in a country who belong to the highest social class"],
+                    incorrectAnswers: [
+                        "The people in a country who belong to the lowest social class",
+                        "The people in a country who belong to the middle social class",
+                        "The people in a country who are not native to that country",
+                        "The people in a country who members of the military",
+                        "The people in a country who are members of the church"]
+                },
+                {
+                    question: "What section of society are most likely to have titles such as 'Lord', 'Duke' or 'Baron'?",
+                    correctAnswers: ["The nobility"],
+                    incorrectAnswers: [
+                        "The peasants",
+                        "The merchants",
+                        "The clergy",
+                        "Women",
+                        "Serfs"
+                    ]
+                }
             ]
-        },
-        {
-            question: "Who were the main beneficiaries of the rights protected by the Magna Carta?",
-            correctAnswers: ["The nobility"],
-            incorrectAnswers: [
-                "The peasants",
-                "The merchants",
-                "The clergy",
-                "The knights",
-                "The common people",
-                "Women",
-                "Serfs"]
-        },
+        }
+        
         {
             question: "What powers of the king were restricted by the Magna Carta?",
             correctAnswers: [
@@ -243,6 +285,34 @@
         {
             questions: [
                 {
+                    question: "What is a bishop?",
+                    correctAnswers: ["A senior member of the clergy in the Christian religion"],
+                    incorrectAnswers: [
+                        "A senior member of the clergy in the Jewish religion",
+                        "A senior member of the clergy in the Muslim religion",
+                        "A senior member of the clergy in the Hindu religion",
+                        "A senior member of the clergy in the Buddhist religion",
+                        "A senior member of the clergy in the Sikh religion",
+                    ]
+                },
+                {
+                    question: "What is often the role of a bishop?",
+                    correctAnswers: ["To be in charge of the churches in a particular area"],
+                    incorrectAnswers: [
+                        "To be in charge of the military in a particular area",
+                        "To be in charge of the schools in a particular area",
+                        "To be in charge of the hospitals in a particular area",
+                        "To be in charge of the police in a particular area",
+                        "To be in charge of the government in a particular area",
+                        "To be in charge of the businesses in a particular area",
+                        "To be in charge of the farms in a particular area"
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
                     question: "Who were the members that traditionally sat in the House of Commons during the Middle Ages?",
                     correctAnswers: [
                         "Elected knights",
@@ -319,6 +389,30 @@
                         "The princes",
                         "The peasants"]
                 },
+            ]
+        },
+        {
+            question: "What is the 'clergy'?",
+            correctAnswers: ["Relgiious leaders of the Christian church"],
+            incorrectAnswers: [
+                "Military leaders in the country",
+                "Wealthy merchants in the towns",
+                "Elected officials in the government",
+                "Large landowners in the country",
+                "Members of the royal family",
+                "Elected officials from the towns"
+            ]
+        },
+        {
+            question: "What is a 'judge'?",
+            correctAnswers: ["The most important official in court. The judge makes sure what happens is court is fair and legal."],
+            incorrectAnswers: [
+                "The most important official in the army. The judge makes sure the soldiers are following orders.",
+                "The most important official in the government. The judge makes sure the laws are being followed.",
+                "The most important official in the church. The judge makes sure the religious laws are being followed.",
+                "The most important official in the town. The judge makes sure the town laws are being followed.",
+                "The most important official in the school. The judge makes sure the students are following the rules.",
+                "The most important official in the hospital. The judge makes sure the patients are being treated fairly."
             ]
         },
         {

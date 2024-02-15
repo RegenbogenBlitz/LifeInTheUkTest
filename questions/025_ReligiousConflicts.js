@@ -112,6 +112,21 @@
             ]
         },
         {
+            question: "Who is the Pope?",
+            correctAnswers: ["The head of the Roman Catholic Church"],
+            incorrectAnswers: [
+                "The head of the Church of England",
+                "The head of the Eastern Orthodox Church",
+                "The head of the Lutheran Church",
+                "The head of the Methodist Church",
+                "The head of the Baptist Church",
+                "The head of the Presbyterian Church",
+                "The senior rabbi in Orthodox Judaism",
+                "The lead figure in Sunni Islam",
+                "The lead figure in Shia Islam"
+            ]
+        },
+        {
             questions: [
                 {
                     question: "The Pope refused to annul Henry VIII's marriage. True or False?",
@@ -211,6 +226,19 @@
             ]
         },
         {
+            question: "What is a Protestant?",
+            correctAnswers: ["A member of a Western Christian church not in communion with the Roman Catholic Church"],
+            incorrectAnswers: [
+                "A member of the Roman Catholic Church",
+                "A member of the Eastern Orthodox Church",
+                "A member of a Eastern Christian church not in communion with the Eastern Orthodox Church",
+                "A member of the Coptic Church",
+                "A member of the Ethiopian Orthodox Church",
+                "A member of the Armenian Apostolic Church",
+                "A member of the Assyrian Church of the East",
+            ]
+        },
+        {
             question: "What did the Protestants do during the Reformation?",
             correctAnswers: ["Formed their own churches"],
             incorrectAnswers: [
@@ -286,6 +314,17 @@
                         "17th century",
                         "18th century"]
                 }
+            ]
+        },
+        {
+            question: "What is a chieftain?",
+            correctAnswers: ["The leader of a clan in Scotland or Ireland"],
+            incorrectAnswers: [
+                "The leader of a band of pirates in the North Sea",
+                "The leader of a group of knights in England",
+                "The leader of a group of peasants in Wales",
+                "The leader of a group of merchants in England or Scotland",
+                "The leader of a group of craftsmen in Ireland",
             ]
         },
         {

@@ -3,6 +3,72 @@
         {
             questions: [
                 {
+                    question: "What does AD stand for?",
+                    correctAnswers: ["Anno Domini"],
+                    mandatoryIncorrectAnswers: ["After Death", "Anno Diem"],
+                    incorrectAnswers: [
+                        "After Date",
+                        "After Day",
+                        "Ante Diem",
+                        "Astras Dominus",
+                        "Aqua Ductus"
+                    ]
+                },
+                {
+                    question: "What does Anno Domini refer to? The number of years...",
+                    correctAnswers: ["after the birth of Jesus Christ"],
+                    mandatoryIncorrectAnswers: [
+                        "before the birth of Jesus Christ",
+                        "after the death of Jesus Christ"],
+                    incorrectAnswers: [
+                        "before the death of Jesus Christ",
+                        "since the creation of the world",
+                        "since the creation of the Roman Empire",
+                        "since the creation of the Roman Republic",
+                        "since the signing of the Anno Domini document"
+                    ]
+                },
+                {
+                    question: "What is the term AD used for?",
+                    correctAnswers: ["A time reference"],
+                    incorrectAnswers: [
+                        "A place",
+                        "A person",
+                        "A thing",
+                        "A concept",
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "What does BC stand for?",
+                    correctAnswers: ["Before Christ"],
+                    mandatoryIncorrectAnswers: ["Before Christmas", "Before Creation"],
+                    incorrectAnswers: [
+                        "Before Calendar",
+                        "British Colony",
+                        "British Crown",
+                        "British Constitution",
+                        "British Currency"
+                    ]
+                },
+                {
+                    question: "What is the term BC used for?",
+                    correctAnswers: ["A time reference"],
+                    incorrectAnswers: [
+                        "A place",
+                        "A person",
+                        "A thing",
+                        "A concept",
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
                     question: "When did Julius Caesar lead a Roman invasion of Britain?",
                     correctAnswers: ["55 BC"],
                     incorrectAnswers: getDates(-100, 410, [-55], true),
@@ -253,16 +319,28 @@
         {
             questions: [
                 {
-                    question: "The Romans were NOT successful in occupying almost all of Scotland. True or False?",
+                    question: "The Romans were NOT successful in conquering almost all of Scotland. True or False?",
                     correctAnswers: ["True"],
                     incorrectAnswers: ["False"],
                 },
                 {
-                    question: "The Romans were successful in occupying almost all of Scotland. True or False?",
+                    question: "The Romans were successful in conquering almost all of Scotland. True or False?",
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"]
                 }
             ]
+        },
+        {
+            question: "What does 'conquered' mean?",
+            correctAnswers: ["Beaten in battle"],
+            incorrectAnswers: [
+                "Established a colony",
+                "Established diplomatic relations",
+                "Formed an alliance",
+                "Formed a trade agreement",
+                "Signed a treaty",
+                "Expanded territory",
+                "Developed technology"]
         },
         {
             questions: [

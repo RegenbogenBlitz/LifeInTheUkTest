@@ -320,6 +320,17 @@
             ]
         },
         {
+            question: "What is a cathedral?",
+            correctAnswers: ["The most important church in an area"],
+            incorrectAnswers: [
+                "A well defended castle",
+                "The palace where the monarch currently resides",
+                "A type of university",
+                "The main hospital in a city",
+                "A monument to a famous person"
+            ]
+        },
+        {
             questions: [
                 {
                     question: "Many great cathedrals were built in Britain during the Middle Ages. True or False?",

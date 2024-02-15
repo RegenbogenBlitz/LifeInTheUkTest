@@ -149,6 +149,11 @@
             incorrectAnswers: englishMonarchs.filter(monarch => monarch !== "Edward I")
         },
         {
+            question: "Does annexed mean?",
+            correctAnswers: ["Joined"],
+            incorrectAnswers: ["Separated", "Divided", "Destroyed", "Rebuilt", "Repaired", "Replaced", "Reunited", "Reorganized", "Reformed"]
+        },
+        {
             questions: [
                 {
                     question: "What was the main effect of the Statute of Rhuddlan?",
@@ -262,6 +267,17 @@
                     correctAnswers: ["The Middle Ages"],
                     incorrectAnswers: namesOfAges.filter(age => age !== "The Middle Ages")
                 }
+            ]
+        },
+        {
+            question: "What is a 'rebellion'?",
+            correctAnswers: ["Organised fighting against a government"],
+            incorrectAnswers: [
+                "Diplomatic negotiations with a country",
+                "Displays of public affection to a ruler",
+                "Solemn praying in a monastery",
+                "Enthusiastic singing at a festival",
+                "Magnificent jousting at a tournament"
             ]
         },
         {

@@ -1,6 +1,19 @@
 (() => {
     let questions = [
         {
+            question: "What is a monarch?",
+            correctAnswers: ["The king or queen of a country"],
+            incorrectAnswers: [
+                "The leader of a political party",
+                "A president or prime minister of a country",
+                "The head of a church",
+                "The head of the army",
+                "The head of the police",
+                "The head of the judiciary",
+                "The head of the civil service",
+            ]
+        },
+        {
             questions: [
                 {
                     question: "In what year did the Battle of Hastings take place?",
@@ -253,6 +266,16 @@
                     incorrectAnswers: famousBattles.filter(battle => battle !== "The Battle of Hastings"),
                 },
             ]
+        },
+        {
+            question: "What does 'commemorate' mean?",
+            correctAnswers: ["Show that something or someone is remembered"],
+            incorrectAnswers: [
+                "Ensure that something or someone is protected",
+                "Demonstrate that something or someone is understood",
+                "Prove that something or someone is discovered",
+                "Record that something or someone has died",
+                "Recount that something or someone was seen"]
         },
         {
             questions: [
