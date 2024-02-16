@@ -26,12 +26,13 @@
             question: "At the time of the death of Elizabeth I, who was the heir to her throne?",
             correctAnswers: ["James VI of Scotland"],
             incorrectAnswers: [
-                "Charles I of England",
                 "Henry VIII of England",
-                "Mary Queen of Scots",
                 "Edward VI of England",
-                "James I of England",
-                "Elizabeth II of England"]
+                "Mary I of England",
+                "Mary Queen of Scots",
+                "Anne of Denmark",
+                "Charles I of England",
+                "William III of England"]
         },
         {
             question: "What title did James VI of Scotland acquire when he became the ruler of England, Wales, and Ireland?",

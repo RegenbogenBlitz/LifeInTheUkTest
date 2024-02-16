@@ -1,9 +1,12 @@
 (() => {
     let questions = [
         {
-            question: "What influenced Scotland during the time leading up to the abolition of the pope's authority?",
-            correctAnswers: ["Protestant ideas"],
-            incorrectAnswers: ["Catholic ideas", "Anglican ideas", "Orthodox ideas", "Buddhist teachings", "Islamic teachings", "Hindu philosophies", "Atheist perspectives"]
+            question: "Which of these is true regarding the influence of Protestant ideas in Scotland in the mid-16th century?",
+            correctAnswers: ["Scotland had been strongly influenced by them"],
+            incorrectAnswers: [
+                "Scotland had been somewhat influenced by them",
+                "Scotland had been completely uninfluenced by them",
+                "Scotland had been strongly influenced by Catholic, counter-reformation ideas"]
         },
         {
             question: "In what year did the Scottish Parliament abolish the authority of the pope in Scotland?",
@@ -110,7 +113,8 @@
         {
             question: "What was the religion of James VI of Scotland?",
             correctAnswers: ["Protestant"],
-            incorrectAnswers: ["Catholic", "Anglican", "Methodist", "Baptist", "Presbyterian", "Lutheran", "Judaism"]
+            mandatoryIncorrectAnswers: ["Catholic"],
+            incorrectAnswers: ["Orthodox", "Jewish", "Non-Religious"]
         },
         {
             question: "What was the relationship between Mary Stuart and Elizabeth I?",

@@ -23,7 +23,8 @@
         {
             question: "What was William of Orange's religious affiliation?",
             correctAnswers: ["Protestant"],
-            incorrectAnswers: ["Catholic", "Presbyterian", "Baptist", "Methodist", "Lutheran"]
+            mandatoryIncorrectAnswers: ["Catholic"],
+            incorrectAnswers: ["Orthodox", "Jewish", "Non-Religious"]
         },
         {
             question: "What title did William of Orange hold before he became King of England, Scotland and Ireland?",

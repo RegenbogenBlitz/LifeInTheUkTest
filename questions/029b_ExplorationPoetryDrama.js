@@ -129,8 +129,15 @@
         },
         {
             question: "What was a key reason for the increase in colonisation of the east coast of America in the next century after Elizabeth I?",
-            correctAnswers: ["People who disagreed with the religious views of the next two kings."],
-            incorrectAnswers: ["People who were seeking to escape economic hardships.", "People who were interested in exploring new cultures.", "People who wanted to establish new educational institutions.", "People attracted by the promise of gold and riches.", "People who were sent by the English government to establish a military base.", "People who were in search of new scientific discoveries.", "People who were fleeing from political persecution in England."]
+            correctAnswers: ["People who disagreed with the religious views of the next two kings"],
+            incorrectAnswers: [
+                "People who were fleeing from the Bubonic Plague in England",
+                "People who were seeking to establish a new trade route to China",
+                "People who were in search of the mythical city of El Dorado",
+                "People who were fleeing from the Great Fire of London",
+                "People who were attracted by the promise of finding the Northwest Passage",
+                "People who wanted to establish a republic in the New World",
+            ]
         },
         {
             question: "What is the Elizabethan period particularly remembered for?",

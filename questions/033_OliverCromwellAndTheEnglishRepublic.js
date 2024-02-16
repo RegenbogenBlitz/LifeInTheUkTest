@@ -163,19 +163,14 @@
                 "They allied with Parliament"]
         },
         {
-            question: "Who was crowned King of Scotland before leading a Scottish army into England?",
-            correctAnswers: ["Charles II"],
-            incorrectAnswers: ["Charles I", "Oliver Cromwell", "Richard Cromwell", "James I", "Elizabeth I", "Henry VIII", "William the Conqueror"]
-        },
-        {
-            question: "What action did the newly crowned King of Scotland, Charles II, take after his coronation?",
-            correctAnswers: ["Led a Scottish army into England"],
+            question: "What happened to Charles II soon after he was declared king by the Scots?",
+            correctAnswers: ["Led a Scottish army into England", "Crowned in Scotland"],
             incorrectAnswers: [
                 "Signed a peace treaty with England",
                 "Fled to Europe immediately",
                 "Held a position in the English Parliament",
                 "Established the Commonwealth",
-                "Defeated Cromwell at Worcester",
+                "Defeated Cromwell in battle",
                 "Surrendered to the English forces"]
         },
         {
