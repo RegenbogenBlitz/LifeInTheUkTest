@@ -103,16 +103,35 @@ let Quiz = (categoryNames, mode, maxQuestions) => {
 
     let numberOfQuestionsAnswered = 0;
     let numberOfQuestionsCorrect = 0;
-    let numberOfPossibleQuestions = deck.categories.reduce((acc, c) => acc + c.questions.length, 0);
+    const numberOfPossibleQuestions = deck.categories.reduce((acc, c) => acc + c.questions.length, 0);
+    const totalNumberOfQuestions =
+        maxQuestions > 0
+            ? Math.min(maxQuestions, numberOfPossibleQuestions)
+            : numberOfPossibleQuestions;
+
+    const getNextCategoryIndex = () => {
+        // a dictionary of category indexes and the proportion of questions remaining in each category
+        const categoryProportionsRemaining = {};
+        deck.categories.forEach((c, i) => {
+            const categoryName = c.name;
+            const uneditedCategory = quizDeck.categories.find(c => c.name === categoryName);
+            const totalNumberOfQuestionsInCategory = uneditedCategory.questions.length;
+            categoryProportionsRemaining[i] = c.questions.length / totalNumberOfQuestionsInCategory;
+        });
+
+        // the category with the highest proportion of questions remaining
+        const categoryIndex = Object.keys(categoryProportionsRemaining).reduce((a, b) => categoryProportionsRemaining[a] > categoryProportionsRemaining[b] ? a : b);
+
+        // pick a random category if there are multiple categories with the same proportion of questions remaining
+        const categoryIndexesWithMaxProportion = Object.keys(categoryProportionsRemaining).filter(i => categoryProportionsRemaining[i] === categoryProportionsRemaining[categoryIndex]);
+        return categoryIndexesWithMaxProportion[Math.floor(Math.random() * categoryIndexesWithMaxProportion.length)];
+    }
 
     return {
         getMode: () => mode,
         getNumberOfQuestionsAnswered: () => numberOfQuestionsAnswered,
         getNumberOfQuestionsCorrect: () => numberOfQuestionsCorrect,
-        getTotalNumberOfQuestions: () =>
-            maxQuestions > 0
-                ? Math.min(maxQuestions, numberOfPossibleQuestions)
-                : numberOfPossibleQuestions,
+        getTotalNumberOfQuestions: () => totalNumberOfQuestions,
         getHasMoreQuestions: () =>
             deck.categories.length > 0 &&
             deck.categories.some(c => c.questions.length > 0) &&
@@ -125,7 +144,7 @@ let Quiz = (categoryNames, mode, maxQuestions) => {
             if (deck.categories.length === 0) {
                 throw new Error("No more categories with questions left");
             }
-            let category = deck.categories[Math.floor(Math.random() * deck.categories.length)];
+            let category = deck.categories[getNextCategoryIndex()];
 
             if (category.questions.length === 0) {
                 throw new Error("No more questions in category");
