@@ -30,7 +30,7 @@
                     question: "Which university did Isaac Newton attend?",
                     correctAnswers: ["Cambridge University"],
                     mandatoryIncorrectAnswers: ["Oxford University"],
-                    incorrectAnswers: [,
+                    incorrectAnswers: [
                         "University of Edinburgh",
                         "Gottigen University",
                         "University of Leiden",

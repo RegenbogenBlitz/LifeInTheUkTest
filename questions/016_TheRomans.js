@@ -125,9 +125,7 @@
                     question: "Britain was part of the Roman Empire since 55 BC. True or False?",
                     correctAnswers: ["False"],
                     incorrectAnswers: ["True"],
-                },
-                ,
-
+                }
             ]
         },
         {
