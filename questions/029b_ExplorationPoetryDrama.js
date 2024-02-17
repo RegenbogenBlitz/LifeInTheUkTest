@@ -55,8 +55,7 @@
                     ]
                 }
             ]
-        }
-        
+        },
         {
             question: "Which colonies did English explorers attempt to expand British trade into during the Elizabethan period?",
             correctAnswers: ["The Spanish colonies in the Americas"],

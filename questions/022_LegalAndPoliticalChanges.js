@@ -167,8 +167,7 @@
                     ]
                 }
             ]
-        }
-        
+        },
         {
             question: "What powers of the king were restricted by the Magna Carta?",
             correctAnswers: [
