@@ -68,7 +68,13 @@
         {
             question: "Who is often referred to as 'Mary, Queen of Scots'?",
             correctAnswers: ["Mary Stuart"],
-            incorrectAnswers: ["Elizabeth I", "Mary I of England", "Anne Boleyn", "Lady Jane Grey", "Catherine of Aragon", "Anne of Cleves"]
+            incorrectAnswers: [
+                "Mary I of England",
+                "Mary Tudor",
+                "Mary of Teck",
+                "Mary of Modena",
+                "Mary of Guise",
+                "Mary of Burgundy"]
         },
         {
             question: "How old was Mary Stuart when she became the Queen of Scotland?",
