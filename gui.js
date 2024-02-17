@@ -327,7 +327,7 @@ let loadNextQuestion = () => {
     }
 
     let questionText = document.createElement("p");
-    questionText.innerText = question.question;
+    questionText.innerText = `${quiz.getNumberOfQuestionsAnswered() + 1}/${quiz.getTotalNumberOfQuestions()} ${question.question}`;
     newQuestionContainer.appendChild(questionText);
 
     if (quiz.getMode() === QuizModes.HARD) {

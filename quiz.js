@@ -103,11 +103,16 @@ let Quiz = (categoryNames, mode, maxQuestions) => {
 
     let numberOfQuestionsAnswered = 0;
     let numberOfQuestionsCorrect = 0;
+    let numberOfPossibleQuestions = deck.categories.reduce((acc, c) => acc + c.questions.length, 0);
 
     return {
         getMode: () => mode,
         getNumberOfQuestionsAnswered: () => numberOfQuestionsAnswered,
         getNumberOfQuestionsCorrect: () => numberOfQuestionsCorrect,
+        getTotalNumberOfQuestions: () =>
+            maxQuestions > 0
+                ? Math.min(maxQuestions, numberOfPossibleQuestions)
+                : numberOfPossibleQuestions,
         getHasMoreQuestions: () =>
             deck.categories.length > 0 &&
             deck.categories.some(c => c.questions.length > 0) &&
