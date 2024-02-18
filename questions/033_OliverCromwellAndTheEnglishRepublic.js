@@ -276,7 +276,7 @@
                 "A new republic was declared"]
         },
         {
-            question: "What was a common desire among the people of Britain during the republic period?",
+            question: "What was a common desire among many people of Britain during the republic period?",
             correctAnswers: ["Stability"],
             incorrectAnswers: [
                 "A permanent military rule",

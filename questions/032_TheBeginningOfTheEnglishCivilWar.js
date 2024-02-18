@@ -3,7 +3,12 @@
         {
             question: "What did Charles I want to include more of in the Church of England's worship?",
             correctAnswers: ["Ceremony"],
-            incorrectAnswers: ["Simplicity", "Tithing", "Confessions", "Pilgrimages", "Fasting", "Scripture readings", "Hymns"]
+            incorrectAnswers: [
+                "Simplicity",
+                "Tithing",
+                "Confessions",
+                "Pilgrimages",
+                "Fasting"]
         },
         {
             question: "What does 'Presbyterian' mean?",
@@ -208,11 +213,12 @@
                     question: "Since what occasion has no monarch set foot in the House of Commons?",
                     correctAnswers: ["Since Charles I tried to arrest five parliamentary leaders"],
                     incorrectAnswers: [
-                        "Since the reign of Elizabeth I",
-                        "Since the Glorious Revolution",
-                        "Since the Act of Union with Scotland",
-                        "Since the establishment of the Church of England",
-                        "Since the Magna Carta was signed"]
+                        "Since John signed the Magna Carta",
+                        "Since Henry VIII sought approval for his divorce from Catherine of Aragon",
+                        "Since Elizabeth I gave her 'Golden Speech'",
+                        "Since James the I's last speech prior to the failed Gunpowder Plot",
+                        "Since Anne dissolved the Parliament of Scotland",
+                        "Since George III asked for support during the American Revolution"]
                 },
                 {
                     question: "Who was the last monarch to enter the House of Commons?",
