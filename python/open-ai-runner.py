@@ -4,6 +4,7 @@ import re
 import asyncio
 import aiohttp
 import json
+import time
 
 def read_file(file_name):
     # Get the directory of the current script
@@ -156,7 +157,7 @@ def create_get_questions_request(text, sentence):
 
     return messages, tools, tool_choice
 
-def create_guess_correct_answer_request(question):
+def create_guess_correct_answer_request(question_text):
     messages = [
         {
         'role': 'system',
@@ -166,7 +167,7 @@ def create_guess_correct_answer_request(question):
         },
         {
         'role': 'user',
-        'content': question
+        'content': question_text
         }
     ]
 
@@ -200,6 +201,64 @@ def create_guess_correct_answer_request(question):
     }
 
     return messages, tools, tool_choice
+
+def create_confirm_correct_answer_request(question_text, actual_correct_answers, given_correct_answers):
+    given_correct_answers_text = ', '.join(given_correct_answers)
+    actual_correct_answers_text = ', '.join(actual_correct_answers)
+    messages = [
+        {
+        'role': 'system',
+        'content':
+            'You are an AI assistant that is an expert in the Life in The UK Test. ' +
+            'When given a question from the Life in The UK Test, you are able to give the correct answer, even without the multiple choice options. ' +
+            'You are also able to confirm whether a given answer is correct or not. '
+        },
+        {
+        'role': 'user',
+        'content': question_text
+        },
+        {
+        'role': 'assistant',
+        'content': given_correct_answers_text
+        },
+        {
+        'role': 'user',
+        'content': 'Here are the actual correct answer(s): ' + actual_correct_answers_text
+        },
+        {
+        'role': 'user',
+        'content': 'Did you give the correct answer(s)?'
+        }
+    ]
+
+    tools = [
+        {
+            'type': 'function',
+            'function': {
+                'name': 'confirm_whether_correct_answer_was_given',
+                'description': 'The AI assistant confirms whether the given answer is correct or not',
+                'parameters': {
+                    'type': 'object',
+                    'properties': {
+                        'correct_answer_was_given': {
+                            'type': 'boolean',
+                            'description': 'Whether the correct answer was given or not'
+                        }
+                    }
+                }
+            }
+        }
+    ]
+
+    tool_choice = {
+        'type': 'function',
+        'function': {
+            'name': 'confirm_whether_correct_answer_was_given'
+        }
+    }
+
+    return messages, tools, tool_choice
+
 
 async def get_questions():
     api_key = read_file('keys.txt')
@@ -238,7 +297,6 @@ async def guess_correct_answers(questions):
     api_key = read_file('keys.txt')
     endpoint = read_file('endpoint.txt')
 
-    # create an object to store the tasks, along with the question that each task is for
     tasks = []
 
     responses = None
@@ -254,7 +312,6 @@ async def guess_correct_answers(questions):
     question_response_pairs = [(question, response) for response, (question, task) in zip(responses, tasks)]
 
     print("Processing responses...")
-    # Extract the tool calls from the question_response_pairs
     tool_calls = [(question, response['choices'][0]['message']['tool_calls']) for (question, response) in question_response_pairs]
 
     results = []
@@ -278,7 +335,63 @@ async def guess_correct_answers(questions):
         results.append((question, guessed_correct_answers))
     return results
 
+async def confirm_whether_correct_answers_given(question_guess_pairs):
+    api_key = read_file('keys.txt')
+    endpoint = read_file('endpoint.txt')
+
+    tasks = []
+
+    responses = None
+    print("Confirming correct answers...")
+    async with aiohttp.ClientSession() as session:
+        for question_guess_pair in question_guess_pairs:
+            question, guessed_correct_answers = question_guess_pair
+            questionText = question['question']
+            correct_answers = question['correctAnswers']
+
+            messages, tools, tool_choice = create_confirm_correct_answer_request(questionText, correct_answers, guessed_correct_answers)
+            task = query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
+            tasks.append((question_guess_pair, task))
+        responses = await asyncio.gather(*(task for (question_guess_pair, task) in tasks))
+    
+    question_response_pairs = [(question_guess_pair, response) for response, (question_guess_pair, task) in zip(responses, tasks)]
+
+    print("Processing responses...")
+    tool_calls = [(question_guess_pair, response['choices'][0]['message']['tool_calls']) for (question_guess_pair, response) in question_response_pairs]
+
+    results = []
+    for (question_guess_pair, tool_call_array) in tool_calls:
+        if not isinstance(tool_call_array, list):
+            throw('Unexpected tool call array')
+        
+        if not len(tool_call_array) == 1:
+            throw('Unexpected number of tool calls')
+        
+        tool_call = tool_call_array[0]
+
+        function = tool_call['function']
+        if not function['name'] == 'confirm_whether_correct_answer_was_given':
+            throw('Unexpected function name in tool call')
+
+        function_args = function['arguments']
+        function_args = json.loads(function_args)
+        correct_answer_was_given = function_args['correct_answer_was_given']
+
+        results.append((question_guess_pair, correct_answer_was_given))
+    return results
+
+
 questions = asyncio.run(get_questions())
 print(json.dumps(questions, indent=4))
 correctAnswers = asyncio.run(guess_correct_answers(questions))
 print(correctAnswers)
+
+# wait one minute
+print("Waiting one minute...")
+# count down from 60 seconds every 10 seconds
+for i in range(60, 0, -10):
+    print(i)
+    time.sleep(10)
+
+confirmations = asyncio.run(confirm_whether_correct_answers_given(correctAnswers))
+print(confirmations)
