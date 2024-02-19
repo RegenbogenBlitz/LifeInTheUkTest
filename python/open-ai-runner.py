@@ -153,6 +153,51 @@ def create_get_questions_request(text, sentence):
 
     return messages, tools, tool_choice
 
+def create_guess_correct_answer_request(question):
+    messages = [
+        {
+        'role': 'system',
+        'content':
+            'You are an AI assistant that is an expert in the Life in The UK Test. ' +
+            'When given a question from the Life in The UK Test, you are able to give the correct answer, even without the multiple choice options. '
+        },
+        {
+        'role': 'user',
+        'content': question
+        }
+    ]
+
+    tools = [
+        {
+            'type': 'function',
+            'function': {
+                'name': 'provide_correct_answer',
+                'description': 'Provide the correct answer to a question based on the Life in The UK Test handbook',
+                'parameters': {
+                    'type': 'object',
+                    'properties': {
+                        'correctAnswers': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            },
+                            'description': 'Correct answer (or correct answers if there is more than one) to the question'
+                        }
+                    }
+                }
+            }
+        }
+    ]
+
+    tool_choice = {
+        'type': 'function',
+        'function': {
+            'name': 'provide_correct_answer'
+        }
+    }
+
+    return messages, tools, tool_choice
+
 async def get_questions():
     api_key = read_file('keys.txt')
     endpoint = read_file('endpoint.txt')
@@ -186,5 +231,51 @@ async def get_questions():
         results.extend(function_args['questions'])
     return results
 
+async def guess_correct_answers(questions):
+    api_key = read_file('keys.txt')
+    endpoint = read_file('endpoint.txt')
+
+    # create an object to store the tasks, along with the question that each task is for
+    tasks = []
+
+    responses = None
+    print("Guessing correct answers...")
+    async with aiohttp.ClientSession() as session:
+        for question in questions:
+            questionText = question['question']
+            messages, tools, tool_choice = create_guess_correct_answer_request(questionText)
+            task = query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
+            tasks.append((question, task))
+        responses = await asyncio.gather(*(task for (question, task) in tasks))
+    
+    question_response_pairs = [(question, response) for response, (question, task) in zip(responses, tasks)]
+
+    print("Processing responses...")
+    # Extract the tool calls from the question_response_pairs
+    tool_calls = [(question, response['choices'][0]['message']['tool_calls']) for (question, response) in question_response_pairs]
+
+    results = []
+    for (question, tool_call_array) in tool_calls:
+        if not isinstance(tool_call_array, list):
+            throw('Unexpected tool call array')
+        
+        if not len(tool_call_array) == 1:
+            throw('Unexpected number of tool calls')
+        
+        tool_call = tool_call_array[0]
+
+        function = tool_call['function']
+        if not function['name'] == 'provide_correct_answer':
+            throw('Unexpected function name in tool call')
+
+        function_args = function['arguments']
+        function_args = json.loads(function_args)
+        guessed_correct_answers = function_args['correctAnswers']
+
+        results.append((question, guessed_correct_answers))
+    return results
+
 questions = asyncio.run(get_questions())
 print(json.dumps(questions, indent=4))
+correctAnswers = asyncio.run(guess_correct_answers(questions))
+print(correctAnswers)
