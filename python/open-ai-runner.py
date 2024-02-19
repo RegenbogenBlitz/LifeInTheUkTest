@@ -1,6 +1,9 @@
 import os
 import requests
 import re
+import asyncio
+import aiohttp
+import json
 
 def read_file(file_name):
     # Get the directory of the current script
@@ -11,14 +14,12 @@ def read_file(file_name):
     with open(file_path, 'r') as file:
         return file.read().strip()
 
-def query_openai(endpoint, api_key, text, sentence, previousQuestions):
+async def query_openai_async(session, endpoint, api_key, text, sentence):
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
         'api-key': f'{api_key}',
     }
-
-    previousQuestionsText = '\n'.join(previousQuestions)
 
     data = {
         'messages': [
@@ -66,23 +67,6 @@ def query_openai(endpoint, api_key, text, sentence, previousQuestions):
             {
             'role': 'user',
             'content': sentence
-            },
-            {
-            'role': 'assistant',
-            'content': 'Understood.'
-            },
-            {
-            'role': 'user',
-            'content': 
-            'Here are the questions I have generated so far. Try to avoid asking the same question in different ways.'
-            },
-            {
-            'role': 'assistant',
-            'content': 'Awaiting previous questions.'
-            },
-            {
-            'role': 'user',
-            'content': '\n'.join(previousQuestions)
             },
             {
             'role': 'assistant',
@@ -149,36 +133,48 @@ def query_openai(endpoint, api_key, text, sentence, previousQuestions):
         'max_tokens': 3200
     }
 
-    response = requests.post(endpoint, headers=headers, json=data)
-    if response.status_code == 200:
-        try:
-            return response.json()
-        except json.decoder.JSONDecodeError:
-            print("JSONDecodeError: ", response.content)
-    else:
-        print("Error: ", response.status_code, response.text)
+    try:
+        async with session.post(endpoint, headers=headers, json=data) as response:
+            if response.status == 200:
+                try:
+                    return await response.json()
+                except json.decoder.JSONDecodeError:
+                    print("JSONDecodeError: ", response.content)
+            else:
+                print("Error: ", response.status, await response.text())
+    except Exception as e:
+        print("Error posting: ", e)
 
-api_key = read_file('keys.txt')
-endpoint = read_file('endpoint.txt')
-text = read_file('text.txt')
 
-sentences = text.split('.')
-sentences = list(filter(None, sentences))
+async def getQuestions():
+    api_key = read_file('keys.txt')
+    endpoint = read_file('endpoint.txt')
+    text = read_file('text.txt')
 
-questions = []
+    sentences = text.split('.')
+    sentences = list(filter(None, sentences))
 
-for sentence in sentences:
-    response = query_openai(endpoint, api_key, text, sentence, questions)
-    message = response['choices'][0]['message']
-    tool_calls = message['tool_calls']
-    if not tool_calls:
-        throw('No tool calls found in response')
+    tasks = []
+    responses = None
+    async with aiohttp.ClientSession() as session:
+        for sentence in sentences:
+            task = query_openai_async(session, endpoint, api_key, text, sentence)
+            tasks.append(task)
+        responses = await asyncio.gather(*tasks)
 
-    print('---------------------------------')
+    tool_calls = [response['choices'][0]['message']['tool_calls'] for response in responses]
+    tool_calls = [item for sublist in tool_calls for item in sublist]
+
+    results = []
     for tool_call in tool_calls:
         function = tool_call['function']
         if not function['name'] == 'create_question':
             throw('Unexpected function name in tool call')
-        
+
         function_args = function['arguments']
-        print(function_args)
+        function_args = json.loads(function_args)
+        results.extend(function_args['questions'])
+    return results
+
+questions = asyncio.run(getQuestions())
+print(json.dumps(questions, indent=4))
