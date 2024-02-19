@@ -55,13 +55,16 @@ def create_get_questions_request(text, sentence):
             'You do not ask about multiple facts in the same question. '+
             'You make sure the questions ONLY require knowledge that is in the section provided! ' +
             'You make sure the questions DO NOT require information that is not in the Life in The UK Test handbook!'+
+            'You do not make references to the Life in The UK Test handbook, the Life in The UK Test in the questions or answers. ' +
+            'You do not refer to things not included in the question with phrases such as "the sentence", "this time period", "the king" etc. unless identifying this is the purpose of the question. ' +
+            'Instead, you include all relevant context in the question, as you are aware that the person answering the question will not be told beforehand what sentence the question is referring to, nor what section the question comes from. ' +
             'You make sure all and only the answers designated as "correctAnswers" are true. ' +
             'If there are multiple correct answers, where sensible you do not just link them all together as one answer with an "and", instead you return them all as separate items in the correctAnswers array. ' +
             'You make sure all the answers designated as "incorrectAnswers" are false. ' +
             'You make sure all the incorrectAnswers are plausible. ' +
             'You try to include at least 6 incorrectAnswers. ' +
             'When possible, you try to use information from the rest of the book to make choosing the correct answer(s) more difficult. ' +
-            'You do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book.'
+            'You do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book. '
         },
         {
         'role': 'user',
