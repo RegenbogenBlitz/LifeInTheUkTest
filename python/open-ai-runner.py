@@ -57,7 +57,7 @@ def create_get_questions_request(text, sentence):
             'You make sure the questions ONLY require knowledge that is in the section provided! ' +
             'You make sure the questions DO NOT require information that is not in the Life in The UK Test handbook!'+
             'You do not make references to the Life in The UK Test handbook, the Life in The UK Test in the questions or answers. ' +
-            'You do not refer to things not included in the question with phrases such as "the sentence", "this time period", "the king" etc. unless identifying this is the purpose of the question. ' +
+            'You do not refer to things not included in the question with phrases such as "the sentence", "this time period", "the king", "the ... referred to" etc. unless identifying this is the purpose of the question. ' +
             'Instead, you include all relevant context in the question, as you are aware that the person answering the question will not be told beforehand what sentence the question is referring to, nor what section the question comes from. ' +
             'You make sure all and only the answers designated as "correctAnswers" are true. ' +
             'If there are multiple correct answers, where sensible you do not just link them all together as one answer with an "and", instead you return them all as separate items in the correctAnswers array. ' +
@@ -293,29 +293,28 @@ async def get_questions():
         results.extend(function_args['questions'])
     return results
 
-async def guess_correct_answers(questions):
+async def multi_api_call(inputs, create_request, function_name, argument_name):
     api_key = read_file('keys.txt')
     endpoint = read_file('endpoint.txt')
 
     tasks = []
 
     responses = None
-    print("Guessing correct answers...")
+    print("Calling OpenAI...")
     async with aiohttp.ClientSession() as session:
-        for question in questions:
-            questionText = question['question']
-            messages, tools, tool_choice = create_guess_correct_answer_request(questionText)
+        for input in inputs:
+            messages, tools, tool_choice = create_request(input)
             task = query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
-            tasks.append((question, task))
-        responses = await asyncio.gather(*(task for (question, task) in tasks))
+            tasks.append((input, task))
+        responses = await asyncio.gather(*(task for (input, task) in tasks))
     
-    question_response_pairs = [(question, response) for response, (question, task) in zip(responses, tasks)]
+    input_response_pairs = [(input, response) for response, (input, task) in zip(responses, tasks)]
 
     print("Processing responses...")
-    tool_calls = [(question, response['choices'][0]['message']['tool_calls']) for (question, response) in question_response_pairs]
+    tool_calls = [(input, response['choices'][0]['message']['tool_calls']) for (input, response) in input_response_pairs]
 
     results = []
-    for (question, tool_call_array) in tool_calls:
+    for (input, tool_call_array) in tool_calls:
         if not isinstance(tool_call_array, list):
             throw('Unexpected tool call array')
         
@@ -325,73 +324,46 @@ async def guess_correct_answers(questions):
         tool_call = tool_call_array[0]
 
         function = tool_call['function']
-        if not function['name'] == 'provide_correct_answer':
+        if not function['name'] == function_name:
             throw('Unexpected function name in tool call')
 
         function_args = function['arguments']
         function_args = json.loads(function_args)
-        guessed_correct_answers = function_args['correctAnswers']
+        argument_value = function_args[argument_name]
 
-        results.append((question, guessed_correct_answers))
+        results.append((input, argument_value))
     return results
 
-async def confirm_whether_correct_answers_given(question_guess_pairs):
-    api_key = read_file('keys.txt')
-    endpoint = read_file('endpoint.txt')
-
-    tasks = []
-
-    responses = None
-    print("Confirming correct answers...")
-    async with aiohttp.ClientSession() as session:
-        for question_guess_pair in question_guess_pairs:
-            question, guessed_correct_answers = question_guess_pair
-            questionText = question['question']
-            correct_answers = question['correctAnswers']
-
-            messages, tools, tool_choice = create_confirm_correct_answer_request(questionText, correct_answers, guessed_correct_answers)
-            task = query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
-            tasks.append((question_guess_pair, task))
-        responses = await asyncio.gather(*(task for (question_guess_pair, task) in tasks))
-    
-    question_response_pairs = [(question_guess_pair, response) for response, (question_guess_pair, task) in zip(responses, tasks)]
-
-    print("Processing responses...")
-    tool_calls = [(question_guess_pair, response['choices'][0]['message']['tool_calls']) for (question_guess_pair, response) in question_response_pairs]
-
-    results = []
-    for (question_guess_pair, tool_call_array) in tool_calls:
-        if not isinstance(tool_call_array, list):
-            throw('Unexpected tool call array')
-        
-        if not len(tool_call_array) == 1:
-            throw('Unexpected number of tool calls')
-        
-        tool_call = tool_call_array[0]
-
-        function = tool_call['function']
-        if not function['name'] == 'confirm_whether_correct_answer_was_given':
-            throw('Unexpected function name in tool call')
-
-        function_args = function['arguments']
-        function_args = json.loads(function_args)
-        correct_answer_was_given = function_args['correct_answer_was_given']
-
-        results.append((question_guess_pair, correct_answer_was_given))
-    return results
-
-
+# --------------------------------------------------------------------------
 questions = asyncio.run(get_questions())
 print(json.dumps(questions, indent=4))
-correctAnswers = asyncio.run(guess_correct_answers(questions))
-print(correctAnswers)
 
-# wait one minute
+def make_guess_correct_answers_request(question):
+    questionText = question['question']
+    return create_guess_correct_answer_request(questionText)
+
+question_guess_pairs = asyncio.run(multi_api_call(
+    questions,
+    make_guess_correct_answers_request, 
+    'provide_correct_answer', 
+    'correctAnswers'))
+print(question_guess_pairs)
+
 print("Waiting one minute...")
-# count down from 60 seconds every 10 seconds
 for i in range(60, 0, -10):
     print(i)
     time.sleep(10)
 
-confirmations = asyncio.run(confirm_whether_correct_answers_given(correctAnswers))
+def make_confirm_whether_correct_answers_given_request(question_guess_pair):
+    question, guessed_correct_answers = question_guess_pair
+    questionText = question['question']
+    correct_answers = question['correctAnswers']
+
+    return create_confirm_correct_answer_request(questionText, correct_answers, guessed_correct_answers)
+
+confirmations = asyncio.run(multi_api_call(
+    question_guess_pairs, 
+    make_confirm_whether_correct_answers_given_request, 
+    'confirm_whether_correct_answer_was_given', 
+    'correct_answer_was_given'))
 print(confirmations)
