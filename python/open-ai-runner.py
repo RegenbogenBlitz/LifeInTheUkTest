@@ -57,7 +57,7 @@ def create_get_questions_request(text, sentence):
             'You make sure the questions ONLY require knowledge that is in the section provided! ' +
             'You make sure the questions DO NOT require information that is not in the Life in The UK Test handbook!'+
             'You do not make references to the Life in The UK Test handbook, the Life in The UK Test in the questions or answers. ' +
-            'You do not refer to things not included in the question with phrases such as "the sentence", "this time period", "the king", "the ... referred to" etc. unless identifying this is the purpose of the question. ' +
+            'You do not refer to things not included in the question with phrases such as "the sentence", "this time period", "this time", "the king", "the ... referred to" etc. unless identifying this is the purpose of the question. ' +
             'Instead, you include all relevant context in the question, as you are aware that the person answering the question will not be told beforehand what sentence the question is referring to, nor what section the question comes from. ' +
             'You make sure all and only the answers designated as "correctAnswers" are true. ' +
             'If there are multiple correct answers, where sensible you do not just link them all together as one answer with an "and", instead you return them all as separate items in the correctAnswers array. ' +
@@ -211,7 +211,18 @@ def create_confirm_correct_answer_request(question_text, actual_correct_answers,
         'content':
             'You are an AI assistant that is an expert in the Life in The UK Test. ' +
             'When given a question from the Life in The UK Test, you are able to give the correct answer, even without the multiple choice options. ' +
-            'You are also able to confirm whether a given answer is correct or not. '
+            'You are also able to confirm whether a given answer is correct or not. ' +
+            'An answer is considered correct if it is one of the correct answers to the question.' +
+
+            'For example: ' +
+            'If the question is "Where did the storming of the Bastille take place?" and the actual correct answer is "Paris" ' + 
+            'then "In Paris" or "In the centre of Paris" would count as correct, as they are accurate and at least as precise as the actual correct answer. ' + 
+            '"In France" or "A large city in the north of the country" would not count as correct, as though accurate, it is less precise than the actual correct answer. They also do not demonstrate knowledge of the name of the city, and the name of the city was used in the question. '  +
+
+            'If the question is "When did the Plague of Justinian occur?" and the actual correct answer is "In the 500s" ' + 
+            'then "In the mid 500s", "In the 540s" or "541" would count as correct, as they are accurate and at least as precise as the actual correct answer. ' + 
+            '"In the Middle Ages" would not count as correct, as though accurate, it is less precise than the actual correct answer. ' +
+            '"During the reign of Justinian" and "When people died of plague in Byzantine Empire" would also not count as correct, as it does not demonstrate knowledge of the years, and the years are used in the actual correct answer.'
         },
         {
         'role': 'user',
@@ -227,7 +238,7 @@ def create_confirm_correct_answer_request(question_text, actual_correct_answers,
         },
         {
         'role': 'user',
-        'content': 'Did you give the correct answer(s)?'
+        'content': 'Did you give all the correct answer(s)?'
         }
     ]
 
