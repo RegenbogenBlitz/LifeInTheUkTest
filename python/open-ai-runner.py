@@ -76,10 +76,10 @@ async def make_request_async(session, endpoint, api_key, messages, tools, tool_c
     function_args = json.loads(function_args)
 
     function_def_args = tools[0]['function']['parameters']['properties']
-    argument_name = list(function_def_args.keys())[0]
-    argument_value = function_args[argument_name]
 
-    return argument_value
+    function_argument_values = {k: function_args[k] for k in function_def_args.keys()}
+
+    return function_argument_values
 
 def create_get_questions_request(text, sentence):
     messages = [
@@ -238,43 +238,45 @@ def create_guess_correct_answer_request(question_text):
 
     return messages, tools, tool_choice
 
-def create_confirm_correct_answer_request(question_text, actual_correct_answers, given_correct_answers):
-    given_correct_answers_text = ', '.join(given_correct_answers)
-    actual_correct_answers_text = ', '.join(actual_correct_answers)
+def create_confirm_correct_answer_request(question_text, expected_correct_answers, proposed_correct_answers):
+    proposed_correct_answers_text = ', '.join(proposed_correct_answers)
+    expected_correct_answers_text = ', '.join(expected_correct_answers)
     messages = [
         {
         'role': 'system',
         'content':
-            'You are an AI assistant that is an expert in the Life in The UK Test. ' +
-            'When given a question from the Life in The UK Test, you are able to give the correct answer, even without the multiple choice options. ' +
-            'You are also able to confirm whether a given answer is correct or not. ' +
-            'An answer is considered correct if it is one of the correct answers to the question.' +
+            'You are an AI assistant that is an expert examiner for the Life in The UK Test. ' +
+            'When given a question from the Life in The UK Test, the expected correct answer(s), and the proposed answer(s), ' +
+            'you are able to confirm whether the proposed answer(s) is correct or not. ' +
+            'The proposed answer(s) are considered correct ' +
+            'if for each proposed answer, there is a matching expected correct answer; ' +
+            'and for each expected correct answer, there is a matching proposed answer. ' +
 
             'For example: ' +
-            'If the question is "Where did the storming of the Bastille take place?" and the actual correct answer is "Paris" ' + 
-            'then "In Paris" or "In the centre of Paris" would count as correct, as they are accurate and at least as precise as the actual correct answer. ' + 
-            '"In France" or "A large city in the north of the country" would not count as correct, as though accurate, it is less precise than the actual correct answer. They also do not demonstrate knowledge of the name of the city, and the name of the city was used in the question. '  +
+            'If the question is "Where did the storming of the Bastille take place?" and the expected correct answer is "Paris" ' + 
+            'then either "In Paris" or "In the centre of Paris" would count as correct, as they are accurate and at least as precise as the expected correct answer. ' + 
+            '"In France" or "A large city in the north of the country" would not count as correct, as though accurate, they are less precise than the expected correct answer. They also do not demonstrate knowledge of the name of the city, and the name of the city was used in the question. '  +
 
-            'If the question is "When did the Plague of Justinian occur?" and the actual correct answer is "In the 500s" ' + 
-            'then "In the mid 500s", "In the 540s" or "541" would count as correct, as they are accurate and at least as precise as the actual correct answer. ' + 
-            '"In the Middle Ages" would not count as correct, as though accurate, it is less precise than the actual correct answer. ' +
-            '"During the reign of Justinian" and "When people died of plague in Byzantine Empire" would also not count as correct, as it does not demonstrate knowledge of the years, and the years are used in the actual correct answer.'
+            'If the question is "When did the Plague of Justinian occur?" and the expected correct answer is "In the 500s" ' + 
+            'then anby of "In the mid 500s", "In the 540s" or "541" would count as correct, as they are accurate and at least as precise as the expected correct answer. ' + 
+            '"In the Middle Ages" would not count as correct, as though accurate, they are less precise than the expected correct answer. ' +
+            '"During the reign of Justinian" and "When people died of plague in Byzantine Empire" would also not count as correct, as they do not demonstrate knowledge of the years, and the years are used in the actual correct answer.'
         },
         {
         'role': 'user',
         'content': question_text
         },
         {
-        'role': 'assistant',
-        'content': given_correct_answers_text
+        'role': 'user',
+        'content': 'Here are the expected correct answer(s): ' + expected_correct_answers_text
         },
         {
         'role': 'user',
-        'content': 'Here are the actual correct answer(s): ' + actual_correct_answers_text
+        'content': 'Here are the proposed answer(s): ' + proposed_correct_answers_text
         },
         {
         'role': 'user',
-        'content': 'Did you give all the correct answer(s)?'
+        'content': 'Are the proposed answer(s) correct?'
         }
     ]
 
@@ -290,6 +292,10 @@ def create_confirm_correct_answer_request(question_text, actual_correct_answers,
                         'correct_answer_was_given': {
                             'type': 'boolean',
                             'description': 'Whether the correct answer was given or not'
+                        },
+                        'reasoning': {
+                            'type': 'string',
+                            'description': 'The reasoning behind the AI assistant\'s decision'
                         }
                     }
                 }
@@ -309,12 +315,15 @@ def create_confirm_correct_answer_request(question_text, actual_correct_answers,
 async def process_question_async(question, call_openai_async):
     try:
         request = create_guess_correct_answer_request(question['question'])
-        correct_answer_guesses = await call_openai_async(request)
+        response = await call_openai_async(request)
+        proposed_correct_answers = response['correctAnswers']
 
-        request = create_confirm_correct_answer_request(question['question'], question['correctAnswers'], correct_answer_guesses)
-        confirmation = await call_openai_async(request)
-
-        return Result_Success((question, correct_answer_guesses, confirmation))
+        request = create_confirm_correct_answer_request(question['question'], question['correctAnswers'], proposed_correct_answers)
+        response = await call_openai_async(request)
+        confirmation = response['correct_answer_was_given']
+        reasoning = response['reasoning']
+        
+        return Result_Success((question, proposed_correct_answers, confirmation, reasoning))
     except Exception as e:
         print('Error processing question: ')
         print(e)
@@ -323,15 +332,15 @@ async def process_question_async(question, call_openai_async):
 async def process_sentence_async(text, sentence, call_openai_async):
     try:
         request = create_get_questions_request(text, sentence)
-        questions = await call_openai_async(request)
+        response = await call_openai_async(request)
+        questions = response['questions']
 
         question_results = await asyncio.gather(*[process_question_async(question, call_openai_async) for question in questions])
     
         results = []
         for question_result in question_results:
             if isinstance(question_result, Result_Success):
-                question, correct_answer_guesses, confirmation = question_result.result
-                results.append(Result_Success((sentence, question, correct_answer_guesses, confirmation)))
+                results.append(Result_Success((sentence, question_result.result)))
             elif isinstance(question_result, Result_Error):
                 question = question_result.partial_result
                 results.append(Result_Error(question_result.error, (sentence, question)))
