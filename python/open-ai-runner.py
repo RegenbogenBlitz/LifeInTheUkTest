@@ -6,6 +6,15 @@ import aiohttp
 import json
 import time
 
+class Result_Success:
+    def __init__(self, result):
+        self.result = result
+
+class Result_Error:
+    def __init__(self, error, partial_result):
+        self.error = error
+        self.partial_result = partial_result
+
 def read_file(file_name):
     # Get the directory of the current script
     script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -16,24 +25,24 @@ def read_file(file_name):
         return file.read().strip()
 
 async def query_openai_async(session, endpoint, api_key, messages, tools, tool_choice):
-    headers = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'api-key': f'{api_key}',
-    }
-
-    data = {
-        'messages': messages,
-        'tools': tools,
-        'tool_choice': tool_choice,
-        'temperature': 0.7,
-        'top_p': 0.95,
-        'frequency_penalty': 0,
-        'presence_penalty': 0,
-        'max_tokens': 3200
-    }
-
     try:
+        headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'api-key': f'{api_key}',
+        }
+
+        data = {
+            'messages': messages,
+            'tools': tools,
+            'tool_choice': tool_choice,
+            'temperature': 0.7,
+            'top_p': 0.95,
+            'frequency_penalty': 0,
+            'presence_penalty': 0,
+            'max_tokens': 3200
+        }
+
         async with session.post(endpoint, headers=headers, json=data) as response:
             if response.status == 200:
                 try:
@@ -44,6 +53,33 @@ async def query_openai_async(session, endpoint, api_key, messages, tools, tool_c
                 print("Error: ", response.status, await response.text())
     except Exception as e:
         print("Error posting: ", e)
+        raise e
+
+async def make_request_async(session, endpoint, api_key, messages, tools, tool_choice):
+    response = await query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
+    
+    tool_calls = response['choices'][0]['message']['tool_calls']
+
+    if not isinstance(tool_calls, list):
+        throw('Unexpected tool_calls is not a list')
+    
+    if not len(tool_calls) == 1:
+        throw('Unexpected number of tool calls')
+    
+    tool_call = tool_calls[0]
+
+    function = tool_call['function']
+    if not function['name'] == tools[0]['function']['name']:
+        throw('Unexpected function name in tool call')
+
+    function_args = function['arguments']
+    function_args = json.loads(function_args)
+
+    function_def_args = tools[0]['function']['parameters']['properties']
+    argument_name = list(function_def_args.keys())[0]
+    argument_value = function_args[argument_name]
+
+    return argument_value
 
 def create_get_questions_request(text, sentence):
     messages = [
@@ -270,111 +306,80 @@ def create_confirm_correct_answer_request(question_text, actual_correct_answers,
 
     return messages, tools, tool_choice
 
+async def process_question_async(question, call_openai_async):
+    try:
+        request = create_guess_correct_answer_request(question['question'])
+        correct_answer_guesses = await call_openai_async(request)
 
-async def get_questions():
-    api_key = read_file('keys.txt')
-    endpoint = read_file('endpoint.txt')
-    text = read_file('text.txt')
+        request = create_confirm_correct_answer_request(question['question'], question['correctAnswers'], correct_answer_guesses)
+        confirmation = await call_openai_async(request)
 
-    sentences = text.split('.')
-    sentences = list(filter(None, sentences))
+        return Result_Success((question, correct_answer_guesses, confirmation))
+    except Exception as e:
+        print('Error processing question: ')
+        print(e)
+        return Result_Error(e, question)
 
-    tasks = []
-    responses = None
-    print("Getting questions...")
-    async with aiohttp.ClientSession() as session:
-        for sentence in sentences:
-            messages, tools, tool_choice = create_get_questions_request(text, sentence)
-            task = query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
-            tasks.append(task)
-        responses = await asyncio.gather(*tasks)
-    print("Processing responses...")
+async def process_sentence_async(text, sentence, call_openai_async):
+    try:
+        request = create_get_questions_request(text, sentence)
+        questions = await call_openai_async(request)
 
-    tool_calls = [response['choices'][0]['message']['tool_calls'] for response in responses]
-    tool_calls = [item for sublist in tool_calls for item in sublist]
-
-    results = []
-    for tool_call in tool_calls:
-        function = tool_call['function']
-        if not function['name'] == 'create_question':
-            throw('Unexpected function name in tool call')
-
-        function_args = function['arguments']
-        function_args = json.loads(function_args)
-        results.extend(function_args['questions'])
-    return results
-
-async def multi_api_call(inputs, create_request, function_name, argument_name):
-    api_key = read_file('keys.txt')
-    endpoint = read_file('endpoint.txt')
-
-    tasks = []
-
-    responses = None
-    print("Calling OpenAI...")
-    async with aiohttp.ClientSession() as session:
-        for input in inputs:
-            messages, tools, tool_choice = create_request(input)
-            task = query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
-            tasks.append((input, task))
-        responses = await asyncio.gather(*(task for (input, task) in tasks))
+        question_results = await asyncio.gather(*[process_question_async(question, call_openai_async) for question in questions])
     
-    input_response_pairs = [(input, response) for response, (input, task) in zip(responses, tasks)]
+        results = []
+        for question_result in question_results:
+            if isinstance(question_result, Result_Success):
+                question, correct_answer_guesses, confirmation = question_result.result
+                results.append(Result_Success((sentence, question, correct_answer_guesses, confirmation)))
+            elif isinstance(question_result, Result_Error):
+                question = question_result.partial_result
+                results.append(Result_Error(question_result.error, (sentence, question)))
+            else:
+                raise Exception('Unknown result type')
+        return Result_Success(results)
+    except Exception as e:
+        print('Error processing sentence: ')
+        print(e)
+        return Result_Error(e, sentence)
 
-    print("Processing responses...")
-    tool_calls = [(input, response['choices'][0]['message']['tool_calls']) for (input, response) in input_response_pairs]
+async def main():
+    try:
+        api_key = read_file('keys.txt')
+        endpoint = read_file('endpoint.txt')
+        text = read_file('text.txt')
 
-    results = []
-    for (input, tool_call_array) in tool_calls:
-        if not isinstance(tool_call_array, list):
-            throw('Unexpected tool call array')
-        
-        if not len(tool_call_array) == 1:
-            throw('Unexpected number of tool calls')
-        
-        tool_call = tool_call_array[0]
+        sentences = text.split('.')
+        sentences = list(filter(None, sentences))
 
-        function = tool_call['function']
-        if not function['name'] == function_name:
-            throw('Unexpected function name in tool call')
+        print('Processing sentences: ')
+        async with aiohttp.ClientSession() as session:
+            def call_openai_async(request):
+                messages, tools, tool_choice = request
+                return make_request_async(session, endpoint, api_key, messages, tools, tool_choice)
 
-        function_args = function['arguments']
-        function_args = json.loads(function_args)
-        argument_value = function_args[argument_name]
+            sentence_results = await asyncio.gather(*[process_sentence_async(text, sentence, call_openai_async) for sentence in sentences])
 
-        results.append((input, argument_value))
-    return results
+        for sentence_result in sentence_results:
+            if(isinstance(sentence_result, Result_Success)):
+                results = sentence_result.result
+                success_results = [success_result.result for success_result in results if isinstance(success_result, Result_Success)]
+                error_results = [(error_result.error, error_result.partial_result) for error_result in results if isinstance(error_result, Result_Error)]
+                print('Successes: ')
+                print(json.dumps(success_results, indent=4))
+                print('Errors: ')
+                print(json.dumps(error_results, indent=4))
+            elif isinstance(sentence_result, Result_Error):
+                print('Error: ')
+                print(sentence_result.error)
+                print('Partial result: ')
+                print(sentence_result.partial_result)
+            else:
+                raise Exception('Unknown result type')
 
-# --------------------------------------------------------------------------
-questions = asyncio.run(get_questions())
-print(json.dumps(questions, indent=4))
+    except Exception as e:
+        print('Error: ')
+        print(e)
+        raise e
 
-def make_guess_correct_answers_request(question):
-    questionText = question['question']
-    return create_guess_correct_answer_request(questionText)
-
-question_guess_pairs = asyncio.run(multi_api_call(
-    questions,
-    make_guess_correct_answers_request, 
-    'provide_correct_answer', 
-    'correctAnswers'))
-print(question_guess_pairs)
-
-print("Waiting one minute...")
-for i in range(60, 0, -10):
-    print(i)
-    time.sleep(10)
-
-def make_confirm_whether_correct_answers_given_request(question_guess_pair):
-    question, guessed_correct_answers = question_guess_pair
-    questionText = question['question']
-    correct_answers = question['correctAnswers']
-
-    return create_confirm_correct_answer_request(questionText, correct_answers, guessed_correct_answers)
-
-confirmations = asyncio.run(multi_api_call(
-    question_guess_pairs, 
-    make_confirm_whether_correct_answers_given_request, 
-    'confirm_whether_correct_answer_was_given', 
-    'correct_answer_was_given'))
-print(confirmations)
+asyncio.run(main())
