@@ -6,6 +6,8 @@ import aiohttp
 import json
 import time
 
+print_counter = 0
+
 class Result_Success:
     def __init__(self, result):
         self.result = result
@@ -25,35 +27,45 @@ def read_file(file_name):
         return file.read().strip()
 
 async def query_openai_async(session, endpoint, api_key, messages, tools, tool_choice):
-    try:
-        headers = {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'api-key': f'{api_key}',
-        }
+    for i in range(3):
+        try:
+            headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'api-key': f'{api_key}',
+            }
 
-        data = {
-            'messages': messages,
-            'tools': tools,
-            'tool_choice': tool_choice,
-            'temperature': 0.7,
-            'top_p': 0.95,
-            'frequency_penalty': 0,
-            'presence_penalty': 0,
-            'max_tokens': 3200
-        }
+            data = {
+                'messages': messages,
+                'tools': tools,
+                'tool_choice': tool_choice,
+                'temperature': 0.7,
+                'top_p': 0.95,
+                'frequency_penalty': 0,
+                'presence_penalty': 0,
+                'max_tokens': 3200
+            }
 
-        async with session.post(endpoint, headers=headers, json=data) as response:
-            if response.status == 200:
-                try:
-                    return await response.json()
-                except json.decoder.JSONDecodeError:
-                    print("JSONDecodeError: ", response.content)
-            else:
-                print("Error: ", response.status, await response.text())
-    except Exception as e:
-        print("Error posting: ", e)
-        raise e
+            async with session.post(endpoint, headers=headers, json=data) as response:
+                if response.status == 200:
+                    try:
+                        return await response.json()
+                    except json.decoder.JSONDecodeError:
+                        print("JSONDecodeError: ", response.content)
+                elif response.status == 429:
+                    response_text = await response.text()
+                    match = re.match(r'.*Please retry after (\d+) seconds.*', response_text)
+                    if match:
+                        wait_time = int(match.group(1)) + 1
+                        print(f"Rate limit exceeded, waiting {wait_time} seconds")
+                        await asyncio.sleep(wait_time)
+                    else:
+                        raise Exception(f"Error: {response.status} {await response.text()}")
+                else:
+                    raise Exception(f"Error: {response.status} {await response.text()}")
+        except Exception as e:
+            print("Error posting: ", e)
+            raise e
 
 async def make_request_async(session, endpoint, api_key, messages, tools, tool_choice):
     response = await query_openai_async(session, endpoint, api_key, messages, tools, tool_choice)
@@ -87,13 +99,19 @@ def create_get_questions_request(text, sentence):
         'role': 'system',
         'content':
             'You are an AI assistant that generates practice questions for the Life in The UK Test. ' +
-            'When given a section from the Life in The UK Test handbook and a sentence from that section, you generate a question based on that sentence, in the format of the Life in The UK Test. '+
+            'When given a section from the Life in The UK Test handbook and a sentence from that section, you generate multiple choice questions based on that sentence, in the format of the Life in The UK Test. '+
             'You generate as many questions as needed to cover each important fact in the sentence. ' +
             'You do not ask about multiple facts in the same question. '+
             'You make sure the questions ONLY require knowledge that is in the section provided! ' +
             'You make sure the questions DO NOT require information that is not in the Life in The UK Test handbook!'+
-            'You do not make references to the Life in The UK Test handbook or the Life in The UK Test in the questions. ' +
             'In each question you include all relevant context for that question, as you are aware that the person answering the question will not be told beforehand what sentence the question is referring to, nor what section the question comes from.'
+            'You make sure all and only the answers designated as "correctAnswers" are true. ' +
+            'If there are multiple correct answers, where sensible you do not just link them all together as one answer with an "and", instead you return them all as separate items in the correctAnswers array. ' +
+            'You make sure all the answers designated as "incorrectAnswers" are false. ' +
+            'You make sure all the incorrectAnswers are plausible. ' +
+            'You try to include at least 6 incorrectAnswers. ' +
+            'When possible, you try to use information from the rest of the book to make choosing the correct answer(s) more difficult. ' +
+            'You do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book. ' +
             'Do not asks questions that require the answer \'yes\', \'no\', \'true\' or \'false\'. Instead, ask questions that require the answer to be a specific fact. '
         },
         {
@@ -137,8 +155,22 @@ def create_get_questions_request(text, sentence):
                                         'type': 'string',
                                         'description': 'The text of the question'
                                     },
+                                    'correct_answers': {
+                                        'type': 'array',
+                                        'items': {
+                                            'type': 'string'
+                                        },
+                                        'description': 'The correct answers to the question'
+                                    },
+                                    'incorrect_answers': {
+                                        'type': 'array',
+                                        'items': {
+                                            'type': 'string'
+                                        },
+                                        'description': 'The incorrect answers to the question'
+                                    },
                                 },
-                                'required': ['question_text']
+                                'required': ['question', 'correct_answers', 'incorrect_answers']
                             }
                         }
                     }
@@ -164,7 +196,15 @@ def create_ambiguity_conversation():
         },
         {
         'role': 'assistant',
-        'content': 'Yes, the question is ambiguous. The question should never refer to the "Life in The UK handbook".'
+        'content': 'Yes, the question is ambiguous. The question should never refer to "the handbook" or "the Life in The UK handbook".'
+        },
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "How many people lived in Britain according to the sentence"'
+        },
+        {
+        'role': 'assistant',
+        'content': 'Yes, the question is ambiguous. The person answering the question will never be told in advance what sentence a question will refer to.'
         },
         {
         'role': 'user',
@@ -257,7 +297,7 @@ def create_check_question_for_ambiguity_request(question_text):
 
     return messages, tools, tool_choice
 
-def create_improve_question_clarity_request(text, sentence, question_text, reasoning):
+def create_improve_question_clarity_request(text, sentence, question, reasoning):
     messages = [
         {
         'role': 'system',
@@ -291,7 +331,7 @@ def create_improve_question_clarity_request(text, sentence, question_text, reaso
         },
         {
         'role': 'user',
-        'content': question_text
+        'content': question['question_text']
         },
         {
         'role': 'user',
@@ -304,6 +344,14 @@ def create_improve_question_clarity_request(text, sentence, question_text, reaso
         {
         'role': 'user',
         'content': 'Provide an improved version of this last question that is not ambiguous. If necessary, fill in the ambiguity with guesses, based on the sentence and the section.'
+        },
+        {
+        'role': 'user',
+        'content': 'Here are the correct answer(s) to the last question: ' + ', '.join('"' + answer + '"' for answer in question['correct_answers'])
+        },
+        {
+        'role': 'user',
+        'content': 'Here are the incorrect answer(s) to the last question: ' + ', '.join('"' + answer + '"' for answer in question['incorrect_answers'])
         }
     ])
 
@@ -316,12 +364,26 @@ def create_improve_question_clarity_request(text, sentence, question_text, reaso
                 'parameters': {
                     'type': 'object',
                     'properties': {
-                            'improved_question_text': {
-                                'type': 'string',
-                                'description': 'The improved, non-ambiguous text of the question.'
-                            },
+                        'question_text': {
+                            'type': 'string',
+                            'description': 'The improved, non-ambiguous text of the question.'
                         },
-                    'required': ['improved_question_text']
+                        'correct_answers': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            },
+                            'description': 'The correct answers to the new question'
+                        },
+                        'incorrect_answers': {
+                            'type': 'array',
+                            'items': {
+                                'type': 'string'
+                            },
+                            'description': 'The incorrect answers to the new question'
+                        },
+                    },
+                    'required': ['question_text', 'correct_answers', 'incorrect_answers']
                 }
             }
         }
@@ -336,45 +398,54 @@ def create_improve_question_clarity_request(text, sentence, question_text, reaso
 
     return messages, tools, tool_choice
 
-async def process_question_async(text, sentence, questionText, call_openai_async):
+async def process_question_async(text, sentence, question, call_openai_async):
+    global print_counter
+    print_counter += 1
+    local_print_counter = print_counter
     try:
-        request = create_check_question_for_ambiguity_request(questionText)
-        response = await call_openai_async(request)
-        if response['is_ambiguous']:
-            reasoning = response['reasoning']
-            print('Question is ambiguous: ' + questionText )
-            print('Reasoning: ' + reasoning)
-            request = create_improve_question_clarity_request(text, sentence, questionText, reasoning)
+        for i in range(3):
+            question_text = question['question_text']
+            print(f"{local_print_counter} Attempt {i+1}/3. Processing question: {question_text}")
+            request = create_check_question_for_ambiguity_request(question_text)
             response = await call_openai_async(request)
-            newQuestionText = response['improved_question_text']
-            return Result_Success((newQuestionText))
-        else:
-            return Result_Success((questionText))
+            if response['is_ambiguous']:
+                reasoning = response['reasoning']
+                print(str(local_print_counter) + ' Question is ambiguous')
+                print(str(local_print_counter) + ' Reasoning: ' + reasoning)
+                request = create_improve_question_clarity_request(text, sentence, question, reasoning)
+                question = await call_openai_async(request)
+            else:
+                print(str(local_print_counter) + ' Question is not ambiguous')
+                return Result_Success(question)
+
+        print(str(local_print_counter) + ' Question ambiguity could not be fixed')
+        return Result_Success(question)
 
     except Exception as e:
         print('Error processing question: ')
         print(e)
-        return Result_Error(e, questionText)
+        return Result_Error(e, question)
 
 async def process_sentence_async(text, sentence, call_openai_async):
+    global print_counter
+    print_counter += 1
+    local_print_counter = print_counter
     try:
+        print(str(local_print_counter) + ' Processing sentence: ' + sentence)
         request = create_get_questions_request(text, sentence)
         response = await call_openai_async(request)
-        questionTexts = [question['question_text'] for question in response['questions']]
 
-        #print("Question texts: ")
-        #print(questionTexts)
-
-        question_results = await asyncio.gather(*[process_question_async(text, sentence, questionText, call_openai_async) for questionText in questionTexts])
+        question_results = await asyncio.gather(*[process_question_async(text, sentence, question, call_openai_async) for question in response['questions']])
     
+        print(str(local_print_counter) + ' Processing results...')
         results = []
         for question_result in question_results:
             if isinstance(question_result, Result_Success):
-                questionText = question_result.result
-                results.append(Result_Success((sentence, questionText)))
+                question = question_result.result
+                results.append(Result_Success((sentence, question)))
             elif isinstance(question_result, Result_Error):
-                questionText = question_result.partial_result
-                results.append(Result_Error(question_result.error, (sentence, questionText)))
+                question = question_result.partial_result
+                results.append(Result_Error(question_result.error, (sentence, question)))
             else:
                 raise Exception('Unknown result type')
         return Result_Success(results)
@@ -398,25 +469,30 @@ async def main():
                 messages, tools, tool_choice = request
                 return make_request_async(session, endpoint, api_key, messages, tools, tool_choice)
 
-            #sentence_results = await asyncio.gather(*[process_sentence_async(text, sentence, call_openai_async) for sentence in sentences])
-            sentence_results = [await process_sentence_async(text, sentences[0], call_openai_async)]
+            sentence_results = await asyncio.gather(*[process_sentence_async(text, sentence, call_openai_async) for sentence in sentences])
 
+        questions = []
+        error_results = []
         for sentence_result in sentence_results:
             if(isinstance(sentence_result, Result_Success)):
-                results = sentence_result.result
-                success_results = [success_result.result for success_result in results if isinstance(success_result, Result_Success)]
-                error_results = [(error_result.error, error_result.partial_result) for error_result in results if isinstance(error_result, Result_Error)]
-                print('Successes: ')
-                print(json.dumps(success_results, indent=4))
-                print('Errors: ')
-                print(json.dumps(error_results, indent=4))
+                question_results = sentence_result.result
+                for question_result in question_results:
+                    if isinstance(question_result, Result_Success):
+                        sentence, question = question_result.result
+                        questions.append(question)
+                    elif isinstance(question_result, Result_Error):
+                        error_results.append(question_result.error)
+                    else:
+                        raise Exception('Unknown result type')
             elif isinstance(sentence_result, Result_Error):
-                print('Error: ')
-                print(sentence_result.error)
-                print('Partial result: ')
-                print(sentence_result.partial_result)
+                error_results.append(sentence_result.error)
             else:
                 raise Exception('Unknown result type')
+
+        print('Questions: ')
+        print(json.dumps(questions, indent=4))
+        print('Errors: ')
+        print(json.dumps(error_results, indent=4))
 
     except Exception as e:
         print('Error: ')
