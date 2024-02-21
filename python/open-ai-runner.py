@@ -27,7 +27,9 @@ def read_file(file_name):
         return file.read().strip()
 
 async def query_openai_async(session, endpoint, api_key, messages, tools, tool_choice):
-    for i in range(3):
+    wait_space = 0
+    max_index = 3
+    for i in range(max_index + 1):
         try:
             headers = {
                 'Accept': 'application/json',
@@ -48,15 +50,21 @@ async def query_openai_async(session, endpoint, api_key, messages, tools, tool_c
 
             async with session.post(endpoint, headers=headers, json=data) as response:
                 if response.status == 200:
+                    wait_space = 0
                     try:
                         return await response.json()
                     except json.decoder.JSONDecodeError:
                         print("JSONDecodeError: ", response.content)
                 elif response.status == 429:
+                    if i == max_index:
+                        print("Rate limit exceeded, max retries reached")
+                        raise Exception(f"Error: {response.status} {await response.text()}")
+
                     response_text = await response.text()
-                    match = re.match(r'.*Please retry after (\d+) seconds.*', response_text)
+                    match = re.match(r'.*Please retry after (\d+) second*', response_text)
                     if match:
-                        wait_time = int(match.group(1)) + 1
+                        wait_time = int(match.group(1)) + wait_space
+                        wait_space += 5
                         print(f"Rate limit exceeded, waiting {wait_time} seconds")
                         await asyncio.sleep(wait_time)
                     else:
@@ -192,11 +200,11 @@ def create_ambiguity_conversation():
     return [
         {
         'role': 'user',
-        'content': 'Is the following question ambiguous? "How many people lived in Britain during the period mentioned in the Life in The UK handbook?"'
+        'content': 'Is the following question ambiguous? "What is the definition of \'bunting\' as described in the Life in The UK Test handbook?"'
         },
         {
         'role': 'assistant',
-        'content': 'Yes, the question is ambiguous. The question should never refer to "the handbook" or "the Life in The UK handbook".'
+        'content': 'Yes, the question is ambiguous. The question should never refer to "the handbook" or "the Life in The UK Test handbook".'
         },
         {
         'role': 'user',
