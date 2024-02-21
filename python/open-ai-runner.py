@@ -87,53 +87,30 @@ def create_get_questions_request(text, sentence):
         'role': 'system',
         'content':
             'You are an AI assistant that generates practice questions for the Life in The UK Test. ' +
-            'When given a section from the Life in The UK Test handbook and a sentence from that section, you generate multiple choice questions based on that sentence, in the format of the Life in The UK Test. '+
+            'When given a section from the Life in The UK Test handbook and a sentence from that section, you generate a question based on that sentence, in the format of the Life in The UK Test. '+
             'You generate as many questions as needed to cover each important fact in the sentence. ' +
             'You do not ask about multiple facts in the same question. '+
             'You make sure the questions ONLY require knowledge that is in the section provided! ' +
             'You make sure the questions DO NOT require information that is not in the Life in The UK Test handbook!'+
-            'You do not make references to the Life in The UK Test handbook, the Life in The UK Test in the questions or answers. ' +
-            'You do not refer to things not included in the question with phrases such as "the sentence", "this time period", "this time", "the king", "the ... referred to" etc. unless identifying this is the purpose of the question. ' +
-            'Instead, you include all relevant context in the question, as you are aware that the person answering the question will not be told beforehand what sentence the question is referring to, nor what section the question comes from. ' +
-            'You make sure all and only the answers designated as "correctAnswers" are true. ' +
-            'If there are multiple correct answers, where sensible you do not just link them all together as one answer with an "and", instead you return them all as separate items in the correctAnswers array. ' +
-            'You make sure all the answers designated as "incorrectAnswers" are false. ' +
-            'You make sure all the incorrectAnswers are plausible. ' +
-            'You try to include at least 6 incorrectAnswers. ' +
-            'When possible, you try to use information from the rest of the book to make choosing the correct answer(s) more difficult. ' +
-            'You do not invent dates, people, places or events (e.g. battles), but use plausible ones from the rest of the book. '
+            'You do not make references to the Life in The UK Test handbook or the Life in The UK Test in the questions. ' +
+            'In each question you include all relevant context for that question, as you are aware that the person answering the question will not be told beforehand what sentence the question is referring to, nor what section the question comes from.'
+            'Do not asks questions that require the answer \'yes\', \'no\', \'true\' or \'false\'. Instead, ask questions that require the answer to be a specific fact. '
         },
         {
         'role': 'user',
         'content': 'Here is a section from the Life in The UK Test handbook.'
         },
         {
-        'role': 'assistant',
-        'content': 'Awaiting section.'
-        },
-        {
         'role': 'user',
         'content': text
-        },
-        {
-        'role': 'assistant',
-        'content': 'Understood.'
         },
         {
         'role': 'user',
         'content': 'Here is sentence from that section.'
         },
         {
-        'role': 'assistant',
-        'content': 'Awaiting sentence.'
-        },
-        {
         'role': 'user',
         'content': sentence
-        },
-        {
-        'role': 'assistant',
-        'content': 'Understood.'
         },
         {
         'role': 'user',
@@ -147,7 +124,7 @@ def create_get_questions_request(text, sentence):
             'type': 'function',
             'function': {
                 'name': 'create_question',
-                'description': 'Create a multiple choice question based on a sentence from the Life in The UK Test handbook',
+                'description': 'Create questions based on a sentence from the Life in The UK Test handbook',
                 'parameters': {
                     'type': 'object',
                     'properties': {
@@ -156,26 +133,12 @@ def create_get_questions_request(text, sentence):
                             'items': {
                                 'type': 'object',
                                 'properties': {
-                                    'question': {
+                                    'question_text': {
                                         'type': 'string',
                                         'description': 'The text of the question'
                                     },
-                                    'correctAnswers': {
-                                        'type': 'array',
-                                        'items': {
-                                            'type': 'string'
-                                        },
-                                        'description': 'The correct answers to the question'
-                                    },
-                                    'incorrectAnswers': {
-                                        'type': 'array',
-                                        'items': {
-                                            'type': 'string'
-                                        },
-                                        'description': 'The incorrect answers to the question'
-                                    },
                                 },
-                                'required': ['question', 'correctAnswers', 'incorrectAnswers']
+                                'required': ['question_text']
                             }
                         }
                     }
@@ -193,19 +156,73 @@ def create_get_questions_request(text, sentence):
 
     return messages, tools, tool_choice
 
-def create_guess_correct_answer_request(question_text):
+def create_ambiguity_conversation(question_text):
+    return [
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "How many people lived in the UK during the period mentioned in the Life in The UK handbook?"'
+        },
+        {
+        'role': 'assistant',
+        'content': 'Yes, the question is ambiguous. The question should never refer to the "Life in The UK handbook".'
+        },
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "How many people lived in the UK according to this section"'
+        },
+        {
+        'role': 'assistant',
+        'content': 'Yes, the question is ambiguous. The person answering the question will never be told in advance what section a question will refer to.'
+        },
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "How many people lived in the UK during this period?"'
+        },
+        {
+        'role': 'assistant',
+        'content': 'Yes, the question is ambiguous. It is not clear what period is being referred to.'
+        },
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "How many people lived in the UK after the Black Death was over?"'
+        },
+        {
+        'role': 'assistant',
+        'content': 'No, the question is not ambiguous. It is clear what period is being referred to.'
+        },
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "What did the king do when he was faced with a rebellion?"'
+        },
+        {
+        'role': 'assistant',
+        'content': 'Yes, the question is ambiguous. It is not clear what king is being referred to nor what rebellion in their reign is being referred to.'
+        },
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "What did William I do when the Anglo-Saxons rebelled after his success at the Battle of Hastings?"'
+        },
+        {
+        'role': 'assistant',
+        'content': 'No, the question is not ambiguous. It is clear what king is being referred to and the event concerned.'
+        },
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "' + question_text + '"'
+        }
+    ]
+
+def create_check_question_for_ambiguity_request(question_text):
     messages = [
         {
         'role': 'system',
         'content':
             'You are an AI assistant that is an expert in the Life in The UK Test. ' +
-            'When given a question from the Life in The UK Test, you are able to give the correct answer, even without the multiple choice options. '
-        },
-        {
-        'role': 'user',
-        'content': question_text
+            'When given a question from the Life in The UK Test, you are able to check whether the question is ambiguous or not. ' +
+            'A question is ambiguous if it refer to things not included in the question. '
         }
     ]
+    messages.extend(create_ambiguity_conversation(question_text))
 
     tools = [
         {
@@ -216,12 +233,13 @@ def create_guess_correct_answer_request(question_text):
                 'parameters': {
                     'type': 'object',
                     'properties': {
-                        'correctAnswers': {
-                            'type': 'array',
-                            'items': {
-                                'type': 'string'
-                            },
-                            'description': 'Correct answer (or correct answers if there is more than one) to the question'
+                        'is_ambiguous': {
+                            'type': 'boolean',
+                            'description': 'Whether the question was ambiguous or not'
+                        },
+                        'reasoning': {
+                            'type': 'string',
+                            'description': 'The reasoning behind the AI assistant\'s decision'
                         }
                     }
                 }
@@ -238,29 +256,43 @@ def create_guess_correct_answer_request(question_text):
 
     return messages, tools, tool_choice
 
-def create_confirm_correct_answer_request(question_text, expected_correct_answers, proposed_correct_answers):
-    proposed_correct_answers_text = ', '.join(proposed_correct_answers)
-    expected_correct_answers_text = ', '.join(expected_correct_answers)
+def create_improve_question_clarity_request(text, sentence, question_text, reasoning):
+
+
     messages = [
         {
         'role': 'system',
         'content':
-            'You are an AI assistant that is an expert examiner for the Life in The UK Test. ' +
-            'When given a question from the Life in The UK Test, the expected correct answer(s), and the proposed answer(s), ' +
-            'you are able to confirm whether the proposed answer(s) is correct or not. ' +
-            'The proposed answer(s) are considered correct ' +
-            'if for each proposed answer, there is a matching expected correct answer; ' +
-            'and for each expected correct answer, there is a matching proposed answer. ' +
-
-            'For example: ' +
-            'If the question is "Where did the storming of the Bastille take place?" and the expected correct answer is "Paris" ' + 
-            'then either "In Paris" or "In the centre of Paris" would count as correct, as they are accurate and at least as precise as the expected correct answer. ' + 
-            '"In France" or "A large city in the north of the country" would not count as correct, as though accurate, they are less precise than the expected correct answer. They also do not demonstrate knowledge of the name of the city, and the name of the city was used in the question. '  +
-
-            'If the question is "When did the Plague of Justinian occur?" and the expected correct answer is "In the 500s" ' + 
-            'then anby of "In the mid 500s", "In the 540s" or "541" would count as correct, as they are accurate and at least as precise as the expected correct answer. ' + 
-            '"In the Middle Ages" would not count as correct, as though accurate, they are less precise than the expected correct answer. ' +
-            '"During the reign of Justinian" and "When people died of plague in Byzantine Empire" would also not count as correct, as they do not demonstrate knowledge of the years, and the years are used in the actual correct answer.'
+            'You are an AI assistant that is an expert in the Life in The UK Test. ' +
+            'When given a question from the Life in The UK Test, you are able to check whether the question is ambiguous or not. ' +
+            'A question is ambiguous if it refer to things not included in the question. ' +
+            'If a question is ambiguous, you are able to provide a non ambiguous version of the question.'
+        }]
+    messages.extend(create_ambiguity_conversation(question_text))
+    messages.extend([
+        {
+        'role': 'assistant',
+        'content': 'Yes it is ambiguous. ' + reasoning
+        },
+        {
+        'role': 'user',
+        'content': 'Here is a section from the Life in The UK Test handbook.'
+        },
+        {
+        'role': 'user',
+        'content': text
+        },
+        {
+        'role': 'user',
+        'content': 'Here is sentence from that section.'
+        },
+        {
+        'role': 'user',
+        'content': sentence
+        },
+        {
+        'role': 'user',
+        'content': 'Here is a question based on that sentence.'
         },
         {
         'role': 'user',
@@ -268,36 +300,33 @@ def create_confirm_correct_answer_request(question_text, expected_correct_answer
         },
         {
         'role': 'user',
-        'content': 'Here are the expected correct answer(s): ' + expected_correct_answers_text
+        'content': 'Is it ambiguous?'
+        },
+        {
+        'role': 'assistant',
+        'content': 'Yes it is ambiguous. ' + reasoning
         },
         {
         'role': 'user',
-        'content': 'Here are the proposed answer(s): ' + proposed_correct_answers_text
-        },
-        {
-        'role': 'user',
-        'content': 'Are the proposed answer(s) correct?'
+        'content': 'Provide an improved version of this last question that is not ambiguous. If necessary, fill in the ambiguity with guesses, based on the sentence and the section.'
         }
-    ]
+    ])
 
     tools = [
         {
             'type': 'function',
             'function': {
-                'name': 'confirm_whether_correct_answer_was_given',
-                'description': 'The AI assistant confirms whether the given answer is correct or not',
+                'name': 'create_question',
+                'description': 'Create a non-ambiguous question based on a sentence from the Life in The UK Test handbook',
                 'parameters': {
                     'type': 'object',
                     'properties': {
-                        'correct_answer_was_given': {
-                            'type': 'boolean',
-                            'description': 'Whether the correct answer was given or not'
+                            'improved_question_text': {
+                                'type': 'string',
+                                'description': 'The improved, non-ambiguous text of the question.'
+                            },
                         },
-                        'reasoning': {
-                            'type': 'string',
-                            'description': 'The reasoning behind the AI assistant\'s decision'
-                        }
-                    }
+                    'required': ['improved_question_text']
                 }
             }
         }
@@ -306,44 +335,51 @@ def create_confirm_correct_answer_request(question_text, expected_correct_answer
     tool_choice = {
         'type': 'function',
         'function': {
-            'name': 'confirm_whether_correct_answer_was_given'
+            'name': 'create_question'
         }
     }
 
     return messages, tools, tool_choice
 
-async def process_question_async(question, call_openai_async):
+async def process_question_async(text, sentence, questionText, call_openai_async):
     try:
-        request = create_guess_correct_answer_request(question['question'])
+        request = create_check_question_for_ambiguity_request(questionText)
         response = await call_openai_async(request)
-        proposed_correct_answers = response['correctAnswers']
+        if response['is_ambiguous']:
+            reasoning = response['reasoning']
+            print('Question is ambiguous: ' + questionText )
+            print('Reasoning: ' + reasoning)
+            request = create_improve_question_clarity_request(text, sentence, questionText, reasoning)
+            response = await call_openai_async(request)
+            newQuestionText = response['improved_question_text']
+            return Result_Success((newQuestionText))
+        else:
+            return Result_Success((questionText))
 
-        request = create_confirm_correct_answer_request(question['question'], question['correctAnswers'], proposed_correct_answers)
-        response = await call_openai_async(request)
-        confirmation = response['correct_answer_was_given']
-        reasoning = response['reasoning']
-        
-        return Result_Success((question, proposed_correct_answers, confirmation, reasoning))
     except Exception as e:
         print('Error processing question: ')
         print(e)
-        return Result_Error(e, question)
+        return Result_Error(e, questionText)
 
 async def process_sentence_async(text, sentence, call_openai_async):
     try:
         request = create_get_questions_request(text, sentence)
         response = await call_openai_async(request)
-        questions = response['questions']
+        questionTexts = [question['question_text'] for question in response['questions']]
 
-        question_results = await asyncio.gather(*[process_question_async(question, call_openai_async) for question in questions])
+        #print("Question texts: ")
+        #print(questionTexts)
+
+        question_results = await asyncio.gather(*[process_question_async(text, sentence, questionText, call_openai_async) for questionText in questionTexts])
     
         results = []
         for question_result in question_results:
             if isinstance(question_result, Result_Success):
-                results.append(Result_Success((sentence, question_result.result)))
+                questionText = question_result.result
+                results.append(Result_Success((sentence, questionText)))
             elif isinstance(question_result, Result_Error):
-                question = question_result.partial_result
-                results.append(Result_Error(question_result.error, (sentence, question)))
+                questionText = question_result.partial_result
+                results.append(Result_Error(question_result.error, (sentence, questionText)))
             else:
                 raise Exception('Unknown result type')
         return Result_Success(results)
@@ -367,7 +403,8 @@ async def main():
                 messages, tools, tool_choice = request
                 return make_request_async(session, endpoint, api_key, messages, tools, tool_choice)
 
-            sentence_results = await asyncio.gather(*[process_sentence_async(text, sentence, call_openai_async) for sentence in sentences])
+            #sentence_results = await asyncio.gather(*[process_sentence_async(text, sentence, call_openai_async) for sentence in sentences])
+            sentence_results = [await process_sentence_async(text, sentences[0], call_openai_async)]
 
         for sentence_result in sentence_results:
             if(isinstance(sentence_result, Result_Success)):
