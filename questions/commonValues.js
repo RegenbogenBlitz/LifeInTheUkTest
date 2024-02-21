@@ -31,15 +31,22 @@ let significantDates = [
     1558, // Elizabeth I becomes queen
     1560, // The abolition of the authority of the Pope in Scotland
     1588, // Defeat of the Spanish Armada
-    1603, // James I becomes king
+    1603, // James VI/I becomes king
+    1605, // Gunpowder Plot
+    1611, // King James Bible
     1625, // Charles I becomes king
     1649, // Execution of Charles I
+    1656, // Jews settle in London
     1660, // Restoration of Charles II
     1685, // James II becomes king
     1688, // Glorious Revolution
+    1689, // Bill of Rights
     1702, // Anne becomes queen
     1707, // Act of Union
     1714, // Hanoverian succession
+    1721, // Robert Walpole becomes first Prime Minister
+    1742, // End of Robert Walpole's term as Prime Minister
+    1746, // Battle of Culloden
     1756, // Start of the Seven Years War
     1776, // American Declaration of Independence
     1789, // French Revolution
@@ -206,6 +213,21 @@ let dualMonarchs = [
     "William III",
     "Mary II",
     "Anne",
+];
+
+let unitedMonarchs = [
+    "George I",
+    "George II",
+    "George III",
+    "George IV",
+    "William IV",
+    "Victoria",
+    "Edward VII",
+    "George V",
+    "Edward VIII",
+    "George VI",
+    "Elizabeth II",
+    "Charles III",
 ];
 
 let significantDocuments = [
