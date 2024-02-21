@@ -156,11 +156,11 @@ def create_get_questions_request(text, sentence):
 
     return messages, tools, tool_choice
 
-def create_ambiguity_conversation(question_text):
+def create_ambiguity_conversation():
     return [
         {
         'role': 'user',
-        'content': 'Is the following question ambiguous? "How many people lived in the UK during the period mentioned in the Life in The UK handbook?"'
+        'content': 'Is the following question ambiguous? "How many people lived in Britain during the period mentioned in the Life in The UK handbook?"'
         },
         {
         'role': 'assistant',
@@ -168,7 +168,7 @@ def create_ambiguity_conversation(question_text):
         },
         {
         'role': 'user',
-        'content': 'Is the following question ambiguous? "How many people lived in the UK according to this section"'
+        'content': 'Is the following question ambiguous? "How many people lived in Britain according to this section"'
         },
         {
         'role': 'assistant',
@@ -176,7 +176,7 @@ def create_ambiguity_conversation(question_text):
         },
         {
         'role': 'user',
-        'content': 'Is the following question ambiguous? "How many people lived in the UK during this period?"'
+        'content': 'Is the following question ambiguous? "How many people lived in Britain during this period?"'
         },
         {
         'role': 'assistant',
@@ -184,7 +184,7 @@ def create_ambiguity_conversation(question_text):
         },
         {
         'role': 'user',
-        'content': 'Is the following question ambiguous? "How many people lived in the UK after the Black Death was over?"'
+        'content': 'Is the following question ambiguous? "How many people lived in Britain at the end of the last glacial ice age?"'
         },
         {
         'role': 'assistant',
@@ -192,23 +192,19 @@ def create_ambiguity_conversation(question_text):
         },
         {
         'role': 'user',
-        'content': 'Is the following question ambiguous? "What did the king do when he was faced with a rebellion?"'
+        'content': 'Is the following question ambiguous? "What did the king do after the battle?"'
         },
         {
         'role': 'assistant',
-        'content': 'Yes, the question is ambiguous. It is not clear what king is being referred to nor what rebellion in their reign is being referred to.'
+        'content': 'Yes, the question is ambiguous. It is not clear what king is being referred to nor what battle in their reign is being referred to.'
         },
         {
         'role': 'user',
-        'content': 'Is the following question ambiguous? "What did William I do when the Anglo-Saxons rebelled after his success at the Battle of Hastings?"'
+        'content': 'Is the following question ambiguous? "What did Æthelred the Unready do after the Battle of Maldon?"'
         },
         {
         'role': 'assistant',
         'content': 'No, the question is not ambiguous. It is clear what king is being referred to and the event concerned.'
-        },
-        {
-        'role': 'user',
-        'content': 'Is the following question ambiguous? "' + question_text + '"'
         }
     ]
 
@@ -222,7 +218,12 @@ def create_check_question_for_ambiguity_request(question_text):
             'A question is ambiguous if it refer to things not included in the question. '
         }
     ]
-    messages.extend(create_ambiguity_conversation(question_text))
+    messages.extend(create_ambiguity_conversation())
+    messages.append(
+        {
+        'role': 'user',
+        'content': 'Is the following question ambiguous? "' + question_text + '"'
+        })
 
     tools = [
         {
@@ -257,8 +258,6 @@ def create_check_question_for_ambiguity_request(question_text):
     return messages, tools, tool_choice
 
 def create_improve_question_clarity_request(text, sentence, question_text, reasoning):
-
-
     messages = [
         {
         'role': 'system',
@@ -268,12 +267,8 @@ def create_improve_question_clarity_request(text, sentence, question_text, reaso
             'A question is ambiguous if it refer to things not included in the question. ' +
             'If a question is ambiguous, you are able to provide a non ambiguous version of the question.'
         }]
-    messages.extend(create_ambiguity_conversation(question_text))
+    messages.extend(create_ambiguity_conversation())
     messages.extend([
-        {
-        'role': 'assistant',
-        'content': 'Yes it is ambiguous. ' + reasoning
-        },
         {
         'role': 'user',
         'content': 'Here is a section from the Life in The UK Test handbook.'
