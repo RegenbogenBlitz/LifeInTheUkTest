@@ -7,6 +7,7 @@ import json
 import time
 
 print_counter = 0
+wait_space = 0
 
 class Result_Success:
     def __init__(self, result):
@@ -27,7 +28,7 @@ def read_file(file_name):
         return file.read().strip()
 
 async def query_openai_async(session, endpoint, api_key, messages, tools, tool_choice):
-    wait_space = 0
+    global wait_space
     max_index = 3
     for i in range(max_index + 1):
         try:
@@ -64,7 +65,7 @@ async def query_openai_async(session, endpoint, api_key, messages, tools, tool_c
                     match = re.match(r'.*Please retry after (\d+) second*', response_text)
                     if match:
                         wait_time = int(match.group(1)) + wait_space
-                        wait_space += 5
+                        wait_space += 10
                         print(f"Rate limit exceeded, waiting {wait_time} seconds")
                         await asyncio.sleep(wait_time)
                     else:
