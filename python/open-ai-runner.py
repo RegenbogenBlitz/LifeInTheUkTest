@@ -323,7 +323,8 @@ def create_check_question_for_ambiguity_request(question_text):
                             'type': 'string',
                             'description': 'The reasoning behind the AI assistant\'s decision'
                         }
-                    }
+                    },
+                    'required': ['is_ambiguous', 'reasoning']
                 }
             }
         }
