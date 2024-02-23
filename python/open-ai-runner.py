@@ -9,7 +9,7 @@ import time
 print_counter = 0
 
 recently_submitted_requests = []
-request_limit = 19718 # smallest failed request size
+request_limit = 18388 # smallest failed request size
 limit_time = 65
 
 class Result_Success:
