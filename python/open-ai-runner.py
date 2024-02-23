@@ -7,7 +7,10 @@ import json
 import time
 
 print_counter = 0
-wait_space = 0
+
+recently_submitted_requests = []
+request_limit = 19718 # smallest failed request size
+limit_time = 65
 
 class Result_Success:
     def __init__(self, result):
@@ -28,46 +31,75 @@ def read_file(file_name):
         return file.read().strip()
 
 async def query_openai_async(session, endpoint, api_key, messages, tools, tool_choice):
-    global wait_space
+    global recently_submitted_requests
+    global request_limit
+
+    headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'api-key': f'{api_key}',
+    }
+
+    data = {
+        'messages': messages,
+        'tools': tools,
+        'tool_choice': tool_choice,
+        'temperature': 0.7,
+        'top_p': 0.95,
+        'frequency_penalty': 0,
+        'presence_penalty': 0,
+        'max_tokens': 3200
+    }
+
     max_index = 3
     for i in range(max_index + 1):
         try:
-            headers = {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'api-key': f'{api_key}',
-            }
+            data_size = len(json.dumps(data)) / 4
+            if data_size > request_limit:
+                raise Exception(f"Request size too large")
 
-            data = {
-                'messages': messages,
-                'tools': tools,
-                'tool_choice': tool_choice,
-                'temperature': 0.7,
-                'top_p': 0.95,
-                'frequency_penalty': 0,
-                'presence_penalty': 0,
-                'max_tokens': 3200
-            }
+            total_data_size = data_size # initial value
+            ready_to_submit = False
+            while not ready_to_submit:
+                recently_submitted_requests = [x for x in recently_submitted_requests if x['time'] > time.time() - limit_time]
+                size_of_recently_submitted_requests = sum([x['size'] for x in recently_submitted_requests])
+                
+                total_data_size = size_of_recently_submitted_requests + data_size
+                if total_data_size > request_limit:
+                    total = total_data_size
+                    earliest_request_time_to_elapse = time.time() # initial value
+                    for x in recently_submitted_requests:
+                        total -= x['size']
+                        if total <= request_limit:
+                            earliest_request_time_to_elapse = x['time'] + 5
+                            break
+                    wait_until = earliest_request_time_to_elapse + limit_time
+                    wait_time = int(wait_until - time.time()) + 1
+                    print(f"Rate limit likely to be exceeded, waiting {wait_time} seconds")
+                    await asyncio.sleep(wait_time)
+                else:
+                    ready_to_submit = True
 
+            recently_submitted_requests.append({'time': time.time(), 'size': data_size})
             async with session.post(endpoint, headers=headers, json=data) as response:
                 if response.status == 200:
-                    wait_space = 0
                     try:
                         return await response.json()
                     except json.decoder.JSONDecodeError:
                         print("JSONDecodeError: ", response.content)
                 elif response.status == 429:
-                    if i == max_index:
-                        print("Rate limit exceeded, max retries reached")
-                        raise Exception(f"Error: {response.status} {await response.text()}")
-
                     response_text = await response.text()
                     match = re.match(r'.*Please retry after (\d+) second*', response_text)
                     if match:
-                        wait_time = int(match.group(1)) + wait_space
-                        wait_space += 10
-                        print(f"Rate limit exceeded, waiting {wait_time} seconds")
-                        await asyncio.sleep(wait_time)
+                        request_limit = min(total_data_size, request_limit - 1)
+                        print(f"New request limit: {request_limit}")
+
+                        if i == max_index:
+                            print("Rate limit exceeded, max retries reached")
+                            raise Exception(f"Error: {response.status} {await response.text()}")
+
+                        print(f"Rate limit exceeded, waiting {limit_time} seconds")
+                        await asyncio.sleep(limit_time)
                     else:
                         raise Exception(f"Error: {response.status} {await response.text()}")
                 else:
@@ -412,9 +444,9 @@ async def process_question_async(text, sentence, question, call_openai_async):
     print_counter += 1
     local_print_counter = print_counter
     try:
-        for i in range(3):
+        for i in range(2):
             question_text = question['question_text']
-            print(f"{local_print_counter} Attempt {i+1}/3. Processing question: {question_text}")
+            print(f"{local_print_counter} Attempt {i+1}/2. Processing question: {question_text}")
             request = create_check_question_for_ambiguity_request(question_text)
             response = await call_openai_async(request)
             if response['is_ambiguous']:
