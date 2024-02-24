@@ -141,7 +141,7 @@
             ]
         },
         {
-            question: "What was Mary accused of that led to her execution?",
+            question: "What was Mary, Queen of Scots, accused of that led to her execution?",
             correctAnswers: ["Plotting against Elizabeth I"],
             incorrectAnswers: ["Conspiring with the French monarchy", "Leading a rebellion in Scotland", "Practicing witchcraft", "Refusing to renounce Catholicism", "Stealing the English crown", "Assassinating a political figure", "Treason against the Scottish Parliament"]
         },

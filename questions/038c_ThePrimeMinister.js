@@ -73,8 +73,8 @@
                         "Charles II's son",
                         "William III's son",
                         "James II's daughter",
-                        "Queen Anne's son",
-                        "Queen Anne's daughter",
+                        "Anne's son",
+                        "Anne's daughter",
                         "George I's son"
                     ],
                     explanation: "James II's son was known as James Francis Edward Stuart, and was also known as the Old Pretender. To his supporters, he was James VIII of Scotland and James III of England."
