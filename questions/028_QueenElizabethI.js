@@ -3,21 +3,21 @@
         {
             question: "What was the religion of Queen Elizabeth I?",
             correctAnswers: ["Protestant"],
-            incorrectAnswers: ["Catholic", "Muslim", "Hindu", "Buddhist", "Jewish", "Sikh", "Atheist"]
+            mandatoryIncorrectAnswers: ["Catholic"],
+            incorrectAnswers: ["Orthodox", "Muslim", "Hindu", "Buddhist", "Jewish", "Sikh", "Atheist"]
         },
         {
             questions: [
                 {
                     question: "Who reestablished the Church of England as the official church in England?",
                     correctAnswers: ["Elizabeth I"],
-                    incorrectAnswers: [
-                        "Henry VIII",
-                        "Victoria",
-                        "James I",
-                        "Mary I",
-                        "Charles II",
-                        "Anne",
-                        "George III"]
+                    mandatoryIncorrectAnswers: ["Henry VIII", "Edward VI", "Mary I"],
+                    incorrectAnswers: englishMonarchs.filter(monarch =>
+                        monarch.name !== "Henry VIII" &&
+                        monarch.name !== "Edward VI" &&
+                        monarch.name !== "Mary I" &&
+                        monarch.name !== "Elizabeth I").concat(dualMonarchs),
+                    explanation: "The Church of England was established before Elizabeth I, but it was she who reestablished it after her predecessor's reigns."
                 },
                 {
                     question: "What did Queen Elizabeth I reestablish as the official church in England?",
@@ -37,9 +37,7 @@
             correctAnswers: ["Everyone had to attend their local church"],
             incorrectAnswers: [
                 "Only the nobility had to attend church",
-                "Church attendance was optional",
                 "People were free to attend any church they chose",
-                "Non-attendance was punishable by exile",
                 "Only Protestants had to attend church",
                 "Only Catholics were required to attend church"]
         },
@@ -51,19 +49,17 @@
                 "The type of food to be served at religious gatherings",
                 "The specific days of the week for religious fasting",
                 "The number of candles to be lit during services",
-                "The type of flowers to be placed on the altar",
-                "The height of the church steeples"]
+                "The type of flowers to be placed on the altar"]
         },
         {
-            question: "Did Queen Elizabeth I enforce laws on what people actually believed?",
-            correctAnswers: ["No, Elizabeth did not ask about people's real beliefs"],
+            question: "What was Queen Elizabeth I's policy regarding people's the beliefs of her subjects?",
+            correctAnswers: ["People were not asked about their real beliefs"],
             incorrectAnswers: [
-                "Yes, she enforced strict belief laws",
-                "Yes, but only for the nobility",
-                "Yes, non-Protestant beliefs were outlawed",
-                "Yes, but only Protestants were questioned about their beliefs",
-                "Yes, she required public declarations of belief"],
-            explanation: "She was not interested in people's real beliefs, only in their outward conformity to the law."
+                "Only the nobility were subject to laws regarding their beliefs",
+                "Non-Protestant beliefs were prohibited by law",
+                "Only Protestants were interrogated about their beliefs",
+                "She mandated public declarations of belief"],
+            explanation: "Elizabeth was not interested in people's real beliefs, only in their outward conformity to the law."
         },
         {
             question: "What did Queen Elizabeth I succeed in doing regarding religious views?",
@@ -123,7 +119,7 @@
                     incorrectAnswers: [
                         "To establish a trade agreement with England",
                         "To support the Protestant Reformation",
-                        "To assist Elizabeth I in her rule",
+                        "To assist Elizabeth I stamp out rebellion in Ireland",
                         "To explore the New World",
                         "To start a colony in North America",
                         "To defend against an English invasion",
@@ -140,6 +136,11 @@
                         "A congregation of Catholic priests",
                         "A coalition of Protestant reformers",
                         "A band of explorers"]
+                },
+                {
+                    question: "In what year was the famous defeat of the Spanish Armada under Elizabeth I?",
+                    correctAnswers: ["1588"],
+                    incorrectAnswers: getDates(1400, 1700, [1588], false)
                 }
             ]
         }
@@ -148,7 +149,6 @@
     let category = {
         name: "Queen Elizabeth I",
         questions: questions,
-        isUnvetted: true,
         group: "The Tudors and Stuarts"
     }
     quizDeck.categories.push(category);
