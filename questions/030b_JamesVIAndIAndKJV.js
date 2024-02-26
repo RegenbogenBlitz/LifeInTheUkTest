@@ -101,7 +101,7 @@
         {
             questions: [
                 {
-                    question: "By what names is the version of the Bible, translated during the reign of James VI and I, that continues to be used in many Protestant churches today?",
+                    question: "By what names is the version of the Bible, translated during the reign of James VI and I, that continues to be used in many Protestant churches today? (Select all that apply)",
                     correctAnswers: ["King James Version", "Authorised Version"],
                     incorrectAnswers: [
                         "New International Version",

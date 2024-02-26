@@ -100,7 +100,7 @@
             ]
         },
         {
-            question: "The supporters of which two houses fought in the Wars of the Roses?",
+            question: "The supporters of which two houses fought in the Wars of the Roses? (Select all that apply)",
             correctAnswers: ["The House of Lancaster", "The House of York"],
             incorrectAnswers: royalHouses.filter(house =>
                 house !== "The House of Lancaster" &&

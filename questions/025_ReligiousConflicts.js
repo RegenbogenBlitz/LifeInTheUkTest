@@ -1,7 +1,7 @@
 (() => {
     let questions = [
         {
-            question: "What were Henry VII's main goals for England at the start of his reign?",
+            question: "What were Henry VII's main goals for England at the start of his reign? (Select all that apply)",
             correctAnswers: ["To ensure peace", "To secure his position as king"],
             incorrectAnswers: [
                 "To expand the empire",
@@ -86,7 +86,7 @@
                 .concat(dualMonarchs)
         },
         {
-            question: "What was Henry VIII most famous for?",
+            question: "What was Henry VIII most famous for? (Select all that apply)",
             correctAnswers: ["Breaking away from the Church of Rome", "Marrying six times"],
             incorrectAnswers: [
                 "Signing the Magna Carta",
@@ -215,7 +215,7 @@
                 "The Methodist Revival"]
         },
         {
-            question: "What was the Reformation a movement against?",
+            question: "What was the Reformation a movement against? (Select all that apply)",
             correctAnswers: ["The authority of the Pope", "The Roman Catholic Church"],
             incorrectAnswers: [
                 "The authority of the King",
@@ -293,7 +293,7 @@
         {
             questions: [
                 {
-                    question: "During the 16th century, where did Protestant ideas gain strength?",
+                    question: "During the 16th century, where did Protestant ideas gain strength? (Select all that apply)",
                     correctAnswers: ["England", "Wales", "Scotland"],
                     incorrectAnswers: [
                         "Ireland",
@@ -331,7 +331,7 @@
             questions: [
 
                 {
-                    question: "What were the significant consequences in Ireland of the English attempts to impose Protestantism?",
+                    question: "What were the significant consequences in Ireland of the English attempts to impose Protestantism? (Select all that apply)",
                     correctAnswers: ["Rebellion from the Irish chieftains", "Brutal fighting"],
                     incorrectAnswers: [
                         "Unification with England",
@@ -342,7 +342,7 @@
                         "Creation of the Irish Parliament"]
                 },
                 {
-                    question: "Which of the following led to the brutal fighting in Ireland during the 16th century?",
+                    question: "Which of the following led to the brutal fighting in Ireland during the 16th century? (Select all that apply)",
                     correctAnswers: [
                         "Attempts to introduce Protestantism",
                         "Attempts to introduce the English system of laws about the inheritance of land"],
@@ -388,7 +388,7 @@
             ]
         },
         {
-            question: "What did the Act for the Government of Wales result in?",
+            question: "What did the Act for the Government of Wales result in? (Select all that apply)",
             correctAnswers: ["Wales sending representatives to the House of Commons", "A reformation of the Welsh legal system"],
             incorrectAnswers: [
                 "Wales establishing its own parliament",

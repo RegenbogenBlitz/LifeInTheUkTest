@@ -11,7 +11,7 @@
             incorrectAnswers: ["Pride in being European", "Pride in being Scottish", "Pride in military conquest", "Pride in economic wealth", "Pride in technological advancements", "Pride in artistic achievements"]
         },
         {
-            question: "What was the goal of English explorers during the Elizabethan period?",
+            question: "What was the goal of English explorers during the Elizabethan period? (Select all that apply)",
             correctAnswers: ["To seek new trade routes", "Expand British trade into the Spanish colonies in the Americas"],
             incorrectAnswers: [
                 "To conquer new lands",
@@ -77,7 +77,7 @@
             ]
         },
         {
-            question: "What were the significant achievements of Sir Francis Drake?",
+            question: "What were the significant achievements of Sir Francis Drake? (Select all that apply)",
             correctAnswers: ["Circumnavigating the world", "Defeating the Spanish Armada"],
             incorrectAnswers: [
                 "Discovering the Americas",

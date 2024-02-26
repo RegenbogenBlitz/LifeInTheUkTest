@@ -16,7 +16,7 @@
             ]
         },
         {
-            question: "Which group of people were included in the king's council of advisers?",
+            question: "Which group of people were included in the king's council of advisers?  (Select all that apply)",
             correctAnswers: [
                 "Important noblemen",
                 "Leaders of the Church"],
@@ -169,7 +169,7 @@
             ]
         },
         {
-            question: "What powers of the king were restricted by the Magna Carta?",
+            question: "What powers of the king were restricted by the Magna Carta?  (Select all that apply)",
             correctAnswers: [
                 "The power to collect taxes",
                 "The power to make or change laws"
@@ -197,7 +197,7 @@
             ]
         },
         {
-            question: "What were the primary reasons for the King to call parliaments in England in the Middle Ages?",
+            question: "What were the primary reasons for the King to call parliaments in England in the Middle Ages?  (Select all that apply)",
             correctAnswers: [
                 "To consult his nobles",
                 "To raise money"],
@@ -252,7 +252,7 @@
         {
             questions: [
                 {
-                    question: "Who were the members that traditionally sat in the House of Lords during the Middle Ages?",
+                    question: "Who were the members that traditionally sat in the House of Lords during the Middle Ages?  (Select all that apply)",
                     correctAnswers: [
                         "The nobility",
                         "Great landowners",
@@ -312,7 +312,7 @@
         {
             questions: [
                 {
-                    question: "Who were the members that traditionally sat in the House of Commons during the Middle Ages?",
+                    question: "Who were the members that traditionally sat in the House of Commons during the Middle Ages?  (Select all that apply)",
                     correctAnswers: [
                         "Elected knights",
                         "Wealthy people from the towns and cities",
@@ -367,7 +367,7 @@
         {
             questions: [
                 {
-                    question: "What was the structure of the Scottish Parliament during the Middle Ages?",
+                    question: "What was the structure of the Scottish Parliament during the Middle Ages? ",
                     correctAnswers: ["It had three Houses, called Estates"],
                     incorrectAnswers: [
                         "It was a single house system",
@@ -376,7 +376,7 @@
                     ]
                 },
                 {
-                    question: "What were the three Estates of the Scottish Parliament?",
+                    question: "What were the three Estates of the Scottish Parliament? (Select all that apply)",
                     correctAnswers: [
                         "The lords",
                         "The commons",
@@ -458,7 +458,7 @@
                     incorrectAnswers: ["Civil law", "Standardized law", "Documented law", "Inscribed law", "Notarized law", "Registered law", "Transcribed law", "Incorporated law"]
                 },
                 {
-                    question: "By what processes did English judges develop common law?",
+                    question: "By what processes did English judges develop common law? (Select all that apply)",
                     correctAnswers: ["Precedence", "Tradition"],
                     incorrectAnswers: ["Legislative statutes", "Royal decrees", "Public voting", "Church doctrine", "Feudal rights", "Military orders"]
                 }

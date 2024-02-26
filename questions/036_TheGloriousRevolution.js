@@ -119,7 +119,7 @@
                 "The 'Kingless Revolution'"]
         },
         {
-            question: "Why was the 'Glorious Revolution' so named?",
+            question: "Why was the 'Glorious Revolution' so named? (Select all that apply)",
             correctAnswers: [
                 "There was no fighting in England",
                 "It guaranteed the power of Parliament"],

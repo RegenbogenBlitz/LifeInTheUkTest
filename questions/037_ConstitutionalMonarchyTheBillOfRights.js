@@ -63,7 +63,7 @@
         {
             questions: [
                 {
-                    question: "What did the Bill of Rights, 1689 confirm?",
+                    question: "What did the Bill of Rights, 1689 confirm? (Select all that apply)",
                     correctAnswers: [
                         "the rights of Parliament",
                         "the limits of the king's power"
@@ -208,7 +208,7 @@
             ]
         },
         {
-            question: "What were the two main groups in Parliament after the Glorious Revolution?",
+            question: "What were the two main groups in Parliament after the Glorious Revolution? (Select all that apply)",
             correctAnswers: [
                 "Whigs",
                 "Tories"

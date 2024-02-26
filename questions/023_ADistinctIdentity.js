@@ -34,7 +34,7 @@
                     incorrectAnswers: namesOfAges.filter(age => age !== "The Middle Ages"),
                 },
                 {
-                    question: "What languages did the English language primarly develop from during the Middle Ages?",
+                    question: "What languages did the English language primarly develop from during the Middle Ages? (Select all that apply)",
                     correctAnswers: ["Norman French", "Anglo-Saxon"],
                     incorrectAnswers: ["Celtic", "Welsh", "Gaelic", "Latin", "Old Norse", "German"],
                     explanation: "This is a simplified explanation, but it is sufficient for the purposes of the test."
@@ -217,7 +217,7 @@
             ]
         },
         {
-            question: "Which of the following languages were spoken in Scotland during the Middle Ages?",
+            question: "Which of the following languages were spoken in Scotland during the Middle Ages? (Select all that apply)",
             correctAnswers: ["Gaelic", "Scots"],
             incorrectAnswers: [
                 "Welsh",
@@ -290,7 +290,7 @@
             ]
         },
         {
-            question: "Which of the following castles, built in the Middle Ages, are still in use today?",
+            question: "Which of the following castles, built in the Middle Ages, are still in use today? (Select all that apply)",
             correctAnswers: ["Windsor Castle", "Edinburgh Castle"],
             incorrectAnswers: [
                 "Bodiam Castle",
@@ -427,7 +427,7 @@
             ]
         },
         {
-            question: "Why did people come to England from abroad during the Middle Ages?",
+            question: "Why did people come to England from abroad during the Middle Ages? (Select all that apply)",
             correctAnswers: ["To trade", "To work"],
             incorrectAnswers: [
                 "To establish colonies",
@@ -438,7 +438,7 @@
             ]
         },
         {
-            question: "During the Middle Ages, which of the following groups came to England to work due to their special skills?",
+            question: "During the Middle Ages, which of the following groups came to England to work due to their special skills? (Select all that apply)",
             correctAnswers: [
                 "Weavers from France",
                 "Engineers from Germany",

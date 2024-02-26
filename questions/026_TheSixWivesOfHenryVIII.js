@@ -1,7 +1,7 @@
 (() => {
     let questions = [
         {
-            question: "What is an 'heir'?",
+            question: "What is an 'heir'? (Select all that apply)",
             correctAnswers: [
                 "A person who will legally receive a person's money or possessions after their death",
                 "The person who will be the next king or queen"],
@@ -89,7 +89,7 @@
         {
             questions: [
                 {
-                    question: "Why did Henry VIII decide to divorce Catherine of Aragon?",
+                    question: "Why did Henry VIII decide to divorce Catherine of Aragon? (Select all that apply)",
                     correctAnswers: ["She was too old to give him another child", "He wanted a son to be his heir and they only had a daughter"],
                     mandatoryIncorrectAnswers: ["She had been his brother's wife"],
                     incorrectAnswers: [

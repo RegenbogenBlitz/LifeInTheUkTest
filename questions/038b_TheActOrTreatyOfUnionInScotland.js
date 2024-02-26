@@ -29,7 +29,7 @@
                     ]
                 },
                 {
-                    question: "In which countries did Queen Anne's lack of surviving children create uncertainty over the succession?",
+                    question: "In which countries did Queen Anne's lack of surviving children create uncertainty over the succession? (Select all that apply)",
                     correctAnswers: [
                         "England & Wales",
                         "Ireland",
@@ -106,7 +106,7 @@
             ]
         },
         {
-            question: "What did Scotland retain after its union with England?",
+            question: "What did Scotland retain after its union with England? (Select all that apply)",
             correctAnswers: [
                 "Its own legal system",
                 "Its own education system",

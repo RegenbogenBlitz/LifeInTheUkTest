@@ -254,21 +254,13 @@
             questions: [
                 {
                     question: "The Home Office will only accept Life in the UK test certificates from registered test centres. True or False?",
-                    correctAnswers: [
-                        "True"
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "Anywhere can issue UK test certificates that the Home Office will accept. True or False?",
-                    correctAnswers: [
-                        "False",
-                    ],
-                    incorrectAnswers: [
-                        "True",
-                    ],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "The Home Office will only accept Life in the UK test certificates from registered test centres."
                 }
             ]
@@ -277,21 +269,13 @@
             questions: [
                 {
                     question: "There are different arrangements for taking the Life in the UK test, if you live on the Isle of Man or in the Channel Islands. True or False?",
-                    correctAnswers: [
-                        "True"
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "The arrangements for taking the Life in the UK test are the same as for UK, if you live on the Isle of Man or in the Channel Islands. True or False?",
-                    correctAnswers: [
-                        "False",
-                    ],
-                    incorrectAnswers: [
-                        "True",
-                    ],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "There are different arrangements for taking the Life in the UK test, if you live on the Isle of Man or in the Channel Islands"
                 }
             ]
@@ -300,21 +284,13 @@
             questions: [
                 {
                     question: "You will need to take some identification and proof of your address with you to the test. If you don't take these, you will not be able to take the test. True or False?",
-                    correctAnswers: [
-                        "True"
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "You do NOT need to take some identification and proof of your address with you to the test. True or False?",
-                    correctAnswers: [
-                        "False",
-                    ],
-                    incorrectAnswers: [
-                        "True",
-                    ],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                 },
                 {
                     question: "What do you need to take with you to the test? (Select all that apply)",
@@ -341,21 +317,13 @@
             questions: [
                 {
                     question: "All questions for the Life in the UK test will be based on material within the handbook. True or False?",
-                    correctAnswers: [
-                        "True"
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "Some questions for the Life in the UK test will be based on material outside of the handbook. True or False?",
-                    correctAnswers: [
-                        "False",
-                    ],
-                    incorrectAnswers: [
-                        "True",
-                    ]
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"]
                 }
             ]
         },
@@ -363,63 +331,39 @@
             questions: [
                 {
                     question: "The handbook has been written to ensure that anyone who can read English at ESOL Entry Level 3 or above should have no difficulty with the language. True or False?",
-                    correctAnswers: [
-                        "True"
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "It is necessary to be able to read English above ESOL Entry Level 3 to understand some parts of the handbook. True or False?",
-                    correctAnswers: [
-                        "False",
-                    ],
-                    incorrectAnswers: [
-                        "True",
-                    ],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "The handbook has been written to ensure that anyone who can read English at ESOL Entry Level 3 or above should have no difficulty with the language."
                 }
             ]
         },
         {
             question: "There is a glossary at the back of the handbook containing words and phrases. True or False?",
-            correctAnswers: [
-                "True"
-            ],
-            incorrectAnswers: [
-                "False",
-            ]
+            correctAnswers: ["True"],
+            incorrectAnswers: ["False"]
         },
         {
             questions: [
                 {
                     question: "There are 'Check that you understand' boxes throughout the handbook for guidance. True or False?",
-                    correctAnswers: [
-                        "True"
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ],
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"],
                     explanation: "Just knowing the things highlighted in these boxes will NOT be enough to pass the test."
                 },
                 {
                     question: "Just knowing the things highlighted in the 'Check that you understand' boxes will NOT be enough to pass the test. True or False?",
-                    correctAnswers: [
-                        "True",
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "Just knowing the things highlighted in the 'Check that you understand' boxes will be enough to pass the test. True or False?",
-                    correctAnswers: [
-                        "False",
-                    ],
-                    incorrectAnswers: [
-                        "True",
-                    ]
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"]
                 }
             ]
         },

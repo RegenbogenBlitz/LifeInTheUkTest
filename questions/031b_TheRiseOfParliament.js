@@ -69,7 +69,7 @@
             incorrectAnswers: ["The 'Magna Carta'", "The 'Bill of Rights'", "The 'Royal Prerogative'", "Parliamentary Sovereignty", "People's Mandate", "Constitutional Monarchy"]
         },
         {
-            question: "Which countries' thrones did Charles I inherit?",
+            question: "Which countries' thrones did Charles I inherit? (Select all that apply)",
             correctAnswers: ["England", "Wales", "Ireland", "Scotland"],
             incorrectAnswers: ["France", "Spain", "Germany", "Italy", "Belgium", "The Netherlands"]
         },
@@ -85,7 +85,7 @@
                 "He amended the constitution to bypass Parliament"]
         },
         {
-            question: "What policies of Charles I were not agreed upon by Parliament?",
+            question: "What policies of Charles I were not agreed upon by Parliament? (Select all that apply)",
             correctAnswers: ["Religious", "Foreign"],
             incorrectAnswers: [
                 "Defense",

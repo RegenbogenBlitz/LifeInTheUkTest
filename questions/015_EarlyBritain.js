@@ -45,7 +45,7 @@
             ]
         },
         {
-            question: "What sort of animals did the first people to live in Britain hunt?",
+            question: "What sort of animals did the first people to live in Britain hunt?  (Select all that apply)",
             correctAnswers: ["deer", "horses"],
             incorrectAnswers: [
                 "llamas",
@@ -317,7 +317,7 @@
         {
             questions: [
                 {
-                    question: "What sort of materials did Bronze Age people in Britain make their tools, ornaments and weapons out of?",
+                    question: "What sort of materials did Bronze Age people in Britain make their tools, ornaments and weapons out of? (Select all that apply)",
                     correctAnswers: ["bronze", "gold"],
                     incorrectAnswers: [
                         "iron",
@@ -326,7 +326,7 @@
                     ]
                 },
                 {
-                    question: "What did Bronze Age people in Britain make out of bronze and gold?",
+                    question: "What did Bronze Age people in Britain make out of bronze and gold? (Select all that apply)",
                     correctAnswers: ["tools", "ornaments", "weapons"],
                     incorrectAnswers: [
                         "stirrups",

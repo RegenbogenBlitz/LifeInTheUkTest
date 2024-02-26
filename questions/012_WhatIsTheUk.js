@@ -32,7 +32,7 @@
 
     let questions = [
         {
-            question: "What are the names of the countries that make up the UK?",
+            question: "What are the names of the countries that make up the UK?  (Select all that apply)",
             correctAnswers: ["England", "Scotland", "Wales", "Northern Ireland"],
             incorrectAnswers: [
                 "Great Britain",
@@ -44,7 +44,7 @@
                 ...ukIndividualIslands],
         },
         {
-            question: "Which parts of the UK make up Great Britain?",
+            question: "Which parts of the UK make up Great Britain?  (Select all that apply)",
             correctAnswers: ["England", "Scotland", "Wales"],
             incorrectAnswers: ["Northern Ireland"],
         },

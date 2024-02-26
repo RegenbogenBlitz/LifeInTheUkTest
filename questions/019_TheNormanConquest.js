@@ -377,7 +377,7 @@
             ]
         },
         {
-            question: "What did the Norman Conquest lead to in England?",
+            question: "What did the Norman Conquest lead to in England? (Select all that apply)",
             correctAnswers: ["Changes in government", "Changes in social structures"],
             incorrectAnswers: [
                 "Prosperty for all",
@@ -484,7 +484,7 @@
                     incorrectAnswers: ["False"],
                 },
                 {
-                    question: "William sent people all over England to draw up lists for the Domesday Book. What were they drawing up lists of? (Name all that apply)",
+                    question: "William sent people all over England to draw up lists for the Domesday Book. What were they drawing up lists of? (Select all that apply)",
                     correctAnswers: ["towns", "villages", "people", "land ownership", "animal ownership"],
                     incorrectAnswers: [
                         "rivers",

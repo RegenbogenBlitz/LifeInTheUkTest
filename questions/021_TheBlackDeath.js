@@ -147,7 +147,7 @@
         {
             questions: [
                 {
-                    question: "Where did Feudalism develop in Britain?",
+                    question: "Where did Feudalism develop in Britain? (Select all that apply)",
                     correctAnswers: ["South England", "North England", "South Scotland"],
                     incorrectAnswers: [
                         "North Scotland",

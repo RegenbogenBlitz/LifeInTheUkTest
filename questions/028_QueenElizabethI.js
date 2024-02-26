@@ -42,7 +42,7 @@
                 "Only Catholics were required to attend church"]
         },
         {
-            question: "What was regulated by law during Queen Elizabeth I's reign regarding religious practices?",
+            question: "What was regulated by law during Queen Elizabeth I's reign regarding religious practices? (Select all that apply)",
             correctAnswers: ["The type of religious services", "The prayers which could be said"],
             incorrectAnswers: [
                 "The color of the church walls",

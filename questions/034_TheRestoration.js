@@ -11,7 +11,7 @@
             incorrectAnswers: ["France", "Spain", "Germany", "Italy", "Ireland", "Scotland"]
         },
         {
-            question: "By what title was King Charles II crowned?",
+            question: "By what title was King Charles II crowned? (Select all that apply)",
             correctAnswers: ["King of England, Wales, Scotland and Ireland"],
             incorrectAnswers: [
                 "King of Great Britain",
@@ -80,7 +80,7 @@
             ]
         },
         {
-            question: "Which groups were kept out of power during the reign of Charles II?",
+            question: "Which groups were kept out of power during the reign of Charles II? (Select all that apply)",
             correctAnswers: ["Roman Catholics", "Puritans"],
             incorrectAnswers: ["Anglicans"]
         },

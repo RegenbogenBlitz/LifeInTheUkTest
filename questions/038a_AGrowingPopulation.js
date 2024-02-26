@@ -133,7 +133,7 @@
             ]
         },
         {
-            question: "What professions did many educated and skilled Huguenots work in when they came to Britain?",
+            question: "What professions did many educated and skilled Huguenots work in when they came to Britain? (Select all that apply)",
             correctAnswers: [
                 "science",
                 "banking",

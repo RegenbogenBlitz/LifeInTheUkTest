@@ -92,7 +92,7 @@
             ]
         },
         {
-            question: "During the Middle Ages, which noblemen did the English kings fight against for control of their lands?",
+            question: "During the Middle Ages, which noblemen did the English kings fight against for control of their lands? (Select all that apply)",
             correctAnswers: ["Welsh", "Scottish", "Irish"],
             incorrectAnswers: [
                 "Spanish",
@@ -597,7 +597,7 @@
                         war !== "The Crusades")
                 },
                 {
-                    question: "The Hundred Years War was fought between which countries?",
+                    question: "The Hundred Years War was fought between which countries? (Select all that apply)",
                     correctAnswers: ["England", "France"],
                     incorrectAnswers: [
                         "Scotland",
@@ -636,7 +636,7 @@
                 war !== "The Crusades")
         },
         {
-            question: "The Battle of Agincourt was fought between which countries?",
+            question: "The Battle of Agincourt was fought between which countries? (Select all that apply)",
             correctAnswers: ["England", "France"],
             incorrectAnswers: [
                 "Scotland",

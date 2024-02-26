@@ -20,7 +20,7 @@
 
     let questions = [
         {
-            question: "From where did the Vikings come to Britain (in modern day terms)?",
+            question: "From where did the Vikings come to Britain (in modern day terms)?  (Select all that apply)",
             correctAnswers: ["Denmark", "Norway", "Sweden"],
             incorrectAnswers: europeanCountries.filter(country => country !== "Denmark" && country !== "Norway" && country !== "Sweden")
         },
@@ -30,7 +30,7 @@
             incorrectAnswers: getDates(1, 1066, [789], false)
         },
         {
-            question: "What did the Vikings do when they first visited Britain?",
+            question: "What did the Vikings do when they first visited Britain?  (Select all that apply)",
             correctAnswers: ["raid coastal towns", "take away goods", "take away slaves"],
             incorrectAnswers: [
                 "raid inland towns",
@@ -43,7 +43,7 @@
             ]
         },
         {
-            question: "Where did the Vikings first stay and form their own communities in Britain?",
+            question: "Where did the Vikings first stay and form their own communities in Britain? (Select all that apply)",
             correctAnswers: ["the east of England", "Scotland"],
             incorrectAnswers: [
                 "the west of England",
@@ -59,7 +59,7 @@
                     incorrectAnswers: kings.filter(king => king !== "Alfred the Great")
                 },
                 {
-                    question: "What were the significant achievements of Alfred the Great's reign?",
+                    question: "What were the significant achievements of Alfred the Great's reign? (Select all that apply)",
                     correctAnswers: ["He defeated the Vikings", "He united the Anglo-Saxon kingdoms in England"],
                     incorrectAnswers: [
                         "He defeated the Celts",
@@ -91,7 +91,7 @@
                     incorrectAnswers: ["True"]
                 },
                 {
-                    question: "After their defeat by the Anglo-Saxons, where did the Viking invaders stay in Britain?",
+                    question: "After their defeat by the Anglo-Saxons, where did the Viking invaders stay in Britain? (Select all that apply)",
                     correctAnswers: ["the east of England", "the west of England"],
                     incorrectAnswers: [
                         "the south of England",

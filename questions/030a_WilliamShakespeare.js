@@ -11,24 +11,24 @@
             incorrectAnswers: ["Scotland", "Ireland", "Wales", "France", "Spain", "Italy", "Germany"]
         },
         {
-            question: "What professions did Shakespeare have?",
+            question: "What professions did Shakespeare have? (Select all that apply)",
             correctAnswers: ["Playwright", "Actor"],
             incorrectAnswers: ["Painter", "Musician", "Architect", "Dancer", "Sculptor", "Lawyer"]
         },
         {
-            question: "What types of literary works did Shakespeare write?",
+            question: "What types of literary works did Shakespeare write? (Select all that apply)",
             correctAnswers: ["Poems", "Plays"],
             incorrectAnswers: ["Novels", "Short stories", "Essays", "Diaries", "Operas", "Travelogues", "Memoirs"]
         },
         {
-            question: "Which of the following plays are by Shakespeare?",
+            question: "Which of the following plays are by Shakespeare? (Select all that apply)",
             correctAnswers: ["A Midsummer Night's Dream", "Hamlet", "Macbeth", "Romeo and Juliet", "Henry V", "As You Like It"],
             incorrectAnswers: ["Doctor Faustus", "The Alchemist", "The Duchess of Malfi", "The White Devil", "The Revenger's Tragedy", "The Changeling", "The Spanish"]
         },
         {
             questions: [
                 {
-                    question: "What type of events did Shakespeare dramatise in his works?",
+                    question: "What type of events did Shakespeare dramatise in his works? (Select all that apply)",
                     correctAnswers: ["Significant events from the past", "Events involving kings and queens", "Events involving ordinary English men and women"],
                     incorrectAnswers: [
                         "Speculative events from the future",

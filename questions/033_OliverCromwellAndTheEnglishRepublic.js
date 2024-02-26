@@ -3,7 +3,7 @@
         {
             questions: [
                 {
-                    question: "At which battles was the King's army defeated during the civil war?",
+                    question: "At which battles was the King's army defeated during the civil war? (Select all that apply)",
                     correctAnswers: [
                         "The Battle of Marston Moor",
                         "The Battle of Naesby"],
@@ -163,7 +163,7 @@
                 "They allied with Parliament"]
         },
         {
-            question: "What happened to Charles II soon after he was declared king by the Scots?",
+            question: "What happened to Charles II soon after he was declared king by the Scots? (Select all that apply)",
             correctAnswers: ["Led a Scottish army into England", "Crowned in Scotland"],
             incorrectAnswers: [
                 "Signed a peace treaty with England",
@@ -174,7 +174,7 @@
                 "Surrendered to the English forces"]
         },
         {
-            question: "Which battles did Cromwell win to defeat Charles II's army?",
+            question: "Which battles did Cromwell win to defeat Charles II's army? (Select all that apply)",
             correctAnswers: ["The Battle of Dunbar", "The Battle of Worcester"],
             mandatoryIncorrectAnswers: [
                 "The Battle of Marston Moor",
@@ -212,7 +212,7 @@
             incorrectAnswers: ["The Royalists", "The French Monarchy", "The Spanish Armada", "The Commonwealth Army", "Oliver Cromwell", "The Scottish Parliament"]
         },
         {
-            question: "After the battle of Worcester, what parts of the British Isles did Parliament control?",
+            question: "After the battle of Worcester, what parts of the British Isles did Parliament control? (Select all that apply)",
             correctAnswers: ["Scotland", "England", "Wales"],
             incorrectAnswers: ["Ireland"],
             explanation: "The Parliament controlled Scotland, England, and Wales after the battle of Worcester. The Irish revolt was still ongoing and was not fully suppressed until 1653."
@@ -256,7 +256,7 @@
                 "It was contested by the Scots"]
         },
         {
-            question: "What was Richard Cromwell unable to control after becoming Lord Protector?",
+            question: "What was Richard Cromwell unable to control after becoming Lord Protector? (Select all that apply)",
             correctAnswers: ["the army", "the government"],
             incorrectAnswers: ["the church", "the economy", "foreign policy", "trade relations", "the legal system", "parliamentary elections"]
         },

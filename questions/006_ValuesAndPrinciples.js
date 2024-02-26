@@ -1,7 +1,7 @@
 (() => {
     let questions = [
         {
-            question: "There is NO place in British society for which of the following?",
+            question: "There is NO place in British society for which of the following? (Select all that apply)",
             correctAnswers: ["Extremism", "Intolerance"],
             incorrectAnswers: [
                 "Diversity of opinions",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            question: "British society is founded on fundamental values and principles. What are these based on?",
+            question: "British society is founded on fundamental values and principles. What are these based on? (Select all that apply)",
             correctAnswers: ["history", "tradition"],
             incorrectAnswers: [
                 "religion",
@@ -28,7 +28,7 @@
             ]
         },
         {
-            question: "British society is founded on fundamental values and principles. What are these protected by?",
+            question: "British society is founded on fundamental values and principles. What are these protected by? (Select all that apply)",
             correctAnswers: ["law", "customs", "expectations"],
             incorrectAnswers: [
                 "the army",
@@ -38,7 +38,7 @@
             ]
         },
         {
-            question: "What are the fundamental principles of British life?",
+            question: "What are the fundamental principles of British life? (Select all that apply)",
             correctAnswers: [
                 "Democracy",
                 "The rule of law",
@@ -63,7 +63,7 @@
             ]
         },
         {
-            question: "What are the responsibilities of those living in the UK?",
+            question: "What are the responsibilities of those living in the UK? (Select all that apply)",
             correctAnswers: [
                 "Respect and obey the law",
                 "Respect the rights of others, including their right to their own opinions",
@@ -96,7 +96,7 @@
             ]
         },
         {
-            question: "What does life in the UK offer?",
+            question: "What does life in the UK offer? (Select all that apply)",
             correctAnswers: [
                 "freedom of belief and religion",
                 "freedom of speech",
@@ -119,7 +119,7 @@
             ]
         },
         {
-            question: "Apart from visa status, residency period and cost; what do you need to apply for permanent residency?",
+            question: "Apart from visa status, residency period and cost; what do you need to apply for permanent residency? (Select all that apply)",
             correctAnswers: [
                 "speak and read English",
                 "have a good understanding of life in the UK"
