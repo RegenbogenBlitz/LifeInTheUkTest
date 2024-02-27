@@ -46,11 +46,14 @@ let significantDates = [
     1714, // Hanoverian succession
     1721, // Robert Walpole becomes first Prime Minister
     1742, // End of Robert Walpole's term as Prime Minister
+    1745, // Jacobite rebellion of 1745
     1746, // Battle of Culloden
     1756, // Start of the Seven Years War
     1776, // American Declaration of Independence
     1789, // French Revolution
     1815, // Battle of Waterloo
+    1829, // Catholic Emancipation
+    1832, // First Reform Act
     1837, // Victoria becomes queen
     1848, // Chartist movement
     1854, // Crimean War

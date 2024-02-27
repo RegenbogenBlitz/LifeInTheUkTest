@@ -9,8 +9,8 @@
                     ],
                     mandatoryIncorrectAnswers: ["James VIII and III", "Charles Edward Stuart"],
                     incorrectAnswers: dualMonarchs.filter(monarch =>
-                        monarch !== "Anne" &&
-                        monarch !== "George I").concat(unitedMonarchs),
+                        monarch !== "Anne").concat(unitedMonarchs.filter(monarch =>
+                            monarch !== "George I")),
                     explanation: "Technically, the Act of Settlement 1701 made George I the next in line to the throne after William III, Anne and George's mother (Sophia)'s deaths. " +
                         "So Parliament didn't choose him when Queen Anne died, the rules of succession had been settled over a decade before."
                 },
