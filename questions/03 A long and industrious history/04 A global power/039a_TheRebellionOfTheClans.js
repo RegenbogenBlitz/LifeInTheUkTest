@@ -50,19 +50,35 @@
                     ]
                 }
             ]
-        }
+        },
+        {
+            question: "Who was Charles Edward Stuart?",
+            correctAnswers: ["The grandson of James II"],
+            incorrectAnswers: [
+                "The nephew of James I",
+                "The brother of William III",
+                "The half-brother of Georges I",
+                "The son of George II",
+                "A scottish clan leader",
+                "A diplomatic envoy",
+                "Lord Chancellor of Scotland",
+                "A scottish poet",
+            ]
+        },
         //{
-        //    question: "Who was Charles Edward Stuart, also known as 'Bonnie Prince Charlie'?",
-        //    correctAnswers: [
-        //        "The grandson of James II"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The son of James II",
-        //        "The nephew of James II",
-        //        "The brother of James II",
-        //        "A military general unrelated to James II",
-        //        "A Scottish clan leader",
-        //        "The son of George II"
+        //    questions: [
+        //        {
+        //            question: "What was the nickname of Charles Edward Stuart?",
+        //            correctAnswers: ["Bonnie Prince Charlie"],
+        //            incorrectAnswers: [
+        //            ]
+        //        },
+        //        {
+        //            question: "Whose nickname was 'Bonnie Prince Charlie'?",
+        //            correctAnswers: ["Charles Edward Stuart"],
+        //            incorrectAnswers: [
+        //            ]
+        //        }
         //    ]
         //},
         //{

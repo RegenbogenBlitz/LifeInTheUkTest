@@ -58,6 +58,7 @@ let significantDates = [
     1848, // Chartist movement
     1854, // Crimean War
     1867, // Second Reform Act
+    1889, // Emmeline Pankhurst established the Women's Franchise League
     1914, // Start of the First World War
     1918, // End of the First World War
     1939, // Start of the Second World War
