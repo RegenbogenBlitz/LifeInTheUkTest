@@ -308,7 +308,7 @@
     ];
 
     let category = {
-        name: "The Enlightment (incomplete)",
+        name: "The Enlightenment (incomplete)",
         questions: questions,
         group: "A Global Power (incomplete)"
     }
