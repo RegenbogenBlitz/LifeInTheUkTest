@@ -127,22 +127,22 @@
                     ]
                 },
                 {
-                    question: "What was the Spanish Armada of 1588?",
-                    correctAnswers: ["A large fleet of ships"],
-                    incorrectAnswers: [
-                        "A powerful army",
-                        "An alliance of European powers",
-                        "A group of experienced diplomats",
-                        "A congregation of Catholic priests",
-                        "A coalition of Protestant reformers",
-                        "A band of explorers"]
-                },
-                {
                     question: "In what year was the famous defeat of the Spanish Armada under Elizabeth I?",
                     correctAnswers: ["1588"],
                     incorrectAnswers: getDates(1400, 1700, [1588], false)
                 }
             ]
+        },
+        {
+            question: "What is an armada?",
+            correctAnswers: ["A large fleet of ships"],
+            incorrectAnswers: [
+                "A powerful army",
+                "An alliance of European powers",
+                "A group of experienced diplomats",
+                "A congregation of Catholic priests",
+                "A coalition of Protestant reformers",
+                "A band of explorers"]
         }
     ];
 
