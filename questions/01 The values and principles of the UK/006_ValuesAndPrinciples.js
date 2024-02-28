@@ -154,7 +154,8 @@
 
     let category = {
         name: "The values and principles of the UK",
-        questions: questions
+        questions: questions,
+        group: "The values and principles of the UK"
     }
     quizDeck.categories.push(category);
 })();

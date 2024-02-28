@@ -454,7 +454,8 @@
 
     let category = {
         name: "Taking the Life in the UK Test",
-        questions: questions
+        questions: questions,
+        group: "The values and principles of the UK"
     }
     quizDeck.categories.push(category);
 })();
