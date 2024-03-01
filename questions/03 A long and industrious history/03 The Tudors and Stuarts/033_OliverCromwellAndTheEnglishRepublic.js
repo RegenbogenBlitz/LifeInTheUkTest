@@ -1,13 +1,13 @@
 (() => {
     let questions = [
         {
-            questions: [
+            questions: [ // KEY QUESTION
                 {
-                    question: "At which battles was the King's army defeated during the civil war? (Select all that apply)",
+                    question: "At which battles was the King's army defeated during the English Civil War? (Select all that apply)",
                     correctAnswers: [
                         "The Battle of Marston Moor",
                         "The Battle of Naesby"],
-                    mandatoryIncorrectAnswers: ["The Battle of Dunbar", "The Battle of Worcester"],
+                    mandatoryIncorrectAnswers: ["The Battle of Dunbar"],
                     incorrectAnswers: [
                         "The Battle of Cropredy Bridge",
                         "The Battle of Lostwithiel",
@@ -16,7 +16,18 @@
                         "The Battle of Stratton"]
                 },
                 {
-                    question: "When were the battles of Marston Moor and Naesby fought?",
+                    question: "When was the Battle of Marston Moor fought?",
+                    correctAnswers: ["During the English Civil War"],
+                    incorrectAnswers: [
+                        "During the Hundred Years' War",
+                        "During the War of the Roses",
+                        "During the Anglo-Spanish War",
+                        "During the Glorious Revolution",
+                        "During the Jacobite Rebellion",
+                        "During the Viking Invasions"]
+                },
+                {
+                    question: "When was the Battle of Naesby fought?",
                     correctAnswers: ["During the English Civil War"],
                     incorrectAnswers: [
                         "During the Hundred Years' War",
@@ -33,7 +44,7 @@
                 {
                     question: "By what year was it clear that Parliament had won the first English Civil War?",
                     correctAnswers: ["1646"],
-                    incorrectAnswers: ["1642", "1648", "1649", "1651", "1658", "1660", "1666"]
+                    incorrectAnswers: getDates(1500, 1900, [1646], false)
                 },
                 {
                     question: "Who had won the first English Civil War by 1646?",
@@ -59,7 +70,7 @@
         {
             question: "When was Charles I executed?",
             correctAnswers: ["1649"],
-            incorrectAnswers: ["1642", "1646", "1648", "1651", "1658", "1660", "1666"]
+            incorrectAnswers: getDates(1500, 1900, [1649], false)
         },
         {
             questions: [

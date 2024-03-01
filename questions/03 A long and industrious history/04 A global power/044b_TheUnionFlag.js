@@ -5,20 +5,11 @@
             correctAnswers: ["Henry VIII"],
             incorrectAnswers: englishMonarchs.filter(monarch => monarch !== "Henry VIII").concat(dualMonarchs)
         },
-        //{
-        //    question: "When did Ireland become unified with England, Scotland, and Wales?",
-        //    correctAnswers: [
-        //        "1801"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1606",
-        //        "1707",
-        //        "1922",
-        //        "1800",
-        //        "1536",
-        //        "1542"
-        //    ]
-        //},
+        {
+            question: "When did Ireland become part of the United Kingdom?",
+            correctAnswers: ["1801"],
+            incorrectAnswers: getDates(1300, 1950, [1801], false)
+        },
         //{
         //    question: "What event led to the unification of Ireland with England, Scotland, and Wales?",
         //    correctAnswers: [
@@ -116,23 +107,24 @@
         //        "Sovereign Flag"
         //    ]
         //},
-        //{
-        //    question: "Which crosses are combined in the Union Flag?",
-        //    correctAnswers: [
-        //        "Cross of St George",
-        //        "Cross of St Andrew",
-        //        "Cross of St Patrick"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Cross of St David",
-        //        "Cross of St Luke",
-        //        "Cross of St Mark",
-        //        "Cross of St Thomas",
-        //        "Cross of St John",
-        //        "Cross of St Peter",
-        //        "Cross of St James"
-        //    ]
-        //},
+        { // KEY QUESTION
+            question: "Which crosses are combined in the Union Flag?",
+            correctAnswers: [
+                "Cross of St George",
+                "Cross of St Andrew",
+                "Cross of St Patrick"
+            ],
+            incorrectAnswers: [
+                "Cross of St David",
+                "Cross of St Luke",
+                "Cross of St Mark",
+                "Cross of St Thomas",
+                "Cross of St John",
+                "Cross of St Peter",
+                "Cross of St James",
+                "Cross of St Michael"
+            ]
+        },
         //{
         //    question: "The Union Flag combines crosses associated with which countries?",
         //    correctAnswers: [
@@ -206,259 +198,161 @@
         //        "Letters"
         //    ]
         //},
-        //{
-        //    question: "What is the color of the Cross of St George, the symbol associated with England, on the Union Flag?",
-        //    correctAnswers: [
-        //        "Red"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Blue",
-        //        "Green",
-        //        "Yellow",
-        //        "Black",
-        //        "Purple",
-        //        "Orange"
-        //    ]
-        //},
-        //{
-        //    question: "What is the background color of the Cross of St George as it appears by itself?",
-        //    correctAnswers: [
-        //        "White"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Blue",
-        //        "Green",
-        //        "Yellow",
-        //        "Black",
-        //        "Red",
-        //        "Purple"
-        //    ]
-        //},
-        //{
-        //    question: "Who is the patron saint represented by the Cross of St George on the Union Flag?",
-        //    correctAnswers: [
-        //        "St George"
-        //    ],
-        //    incorrectAnswers: [
-        //        "St Andrew",
-        //        "St Patrick",
-        //        "St David",
-        //        "St Thomas",
-        //        "St John",
-        //        "St Michael"
-        //    ]
-        //},
-        //{
-        //    question: "What is the color of the Cross of St Andrew on the Union Flag?",
-        //    correctAnswers: [
-        //        "white"
-        //    ],
-        //    incorrectAnswers: [
-        //        "red",
-        //        "blue",
-        //        "green",
-        //        "yellow",
-        //        "black",
-        //        "orange"
-        //    ]
-        //},
-        //{
-        //    question: "What is the background color of the Cross of St Andrew on the Union Flag?",
-        //    correctAnswers: [
-        //        "blue"
-        //    ],
-        //    incorrectAnswers: [
-        //        "white",
-        //        "red",
-        //        "green",
-        //        "yellow",
-        //        "black",
-        //        "orange"
-        //    ]
-        //},
-        //{
-        //    question: "Who is the patron saint represented by the Cross of St Andrew on the Union Flag?",
-        //    correctAnswers: [
-        //        "Scotland"
-        //    ],
-        //    incorrectAnswers: [
-        //        "England",
-        //        "Wales",
-        //        "Ireland",
-        //        "Northern Ireland",
-        //        "Isle of Man",
-        //        "Cornwall"
-        //    ]
-        //},
-        //{
-        //    question: "What shape is the Cross of St Andrew on the Union Flag?",
-        //    correctAnswers: [
-        //        "diagonal"
-        //    ],
-        //    incorrectAnswers: [
-        //        "vertical",
-        //        "horizontal",
-        //        "circular",
-        //        "square",
-        //        "triangular",
-        //        "star-shaped"
-        //    ]
-        //},
-        //{
-        //    question: "The Cross of St Andrew is associated with which country on the Union Flag?",
-        //    correctAnswers: [
-        //        "Scotland"
-        //    ],
-        //    incorrectAnswers: [
-        //        "England",
-        //        "Wales",
-        //        "Ireland",
-        //        "Northern Ireland",
-        //        "Isle of Man",
-        //        "Cornwall"
-        //    ]
-        //},
-        //{
-        //    question: "What color is the Cross of St Patrick on the Union Flag?",
-        //    correctAnswers: [
-        //        "Red"
-        //    ],
-        //    incorrectAnswers: [
-        //        "White",
-        //        "Blue",
-        //        "Green",
-        //        "Yellow",
-        //        "Black",
-        //        "Purple"
-        //    ]
-        //},
-        //{
-        //    question: "What is the color of the ground on which the Cross of St Patrick is superimposed on the Union Flag, according to the description in the Life in The UK Test handbook?",
-        //    correctAnswers: [
-        //        "White"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Red",
-        //        "Blue",
-        //        "Green",
-        //        "Yellow",
-        //        "Black",
-        //        "Purple"
-        //    ]
-        //},
-        //{
-        //    question: "What pattern does the Cross of St Patrick have on the Union Flag?",
-        //    correctAnswers: [
-        //        "Diagonal"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Horizontal",
-        //        "Vertical",
-        //        "Cross",
-        //        "Circle",
-        //        "Square",
-        //        "Rectangular"
-        //    ]
-        //},
-        //{
-        //    question: "Who is the patron saint associated with the diagonal red cross on the Union Flag?",
-        //    correctAnswers: [
-        //        "St Patrick"
-        //    ],
-        //    incorrectAnswers: [
-        //        "St George",
-        //        "St Andrew",
-        //        "St David",
-        //        "St Michael",
-        //        "St Benedict",
-        //        "St Christopher"
-        //    ]
-        //},
-        //{
-        //    question: "Which country is represented by the Cross of St Patrick on the Union Flag?",
-        //    correctAnswers: [
-        //        "Ireland"
-        //    ],
-        //    incorrectAnswers: [
-        //        "England",
-        //        "Scotland",
-        //        "Wales",
-        //        "France",
-        //        "Germany",
-        //        "Spain"
-        //    ]
-        //},
-        //{
-        //    question: "How is the Cross of St Patrick represented on the Union Flag?",
-        //    correctAnswers: [
-        //        "Diagonal red cross on a white ground"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Red cross on a blue ground",
-        //        "White cross on a red ground",
-        //        "Diagonal white cross on a blue ground",
-        //        "Diagonal blue cross on a white ground",
-        //        "Horizontal red cross on a white ground",
-        //        "Vertical red cross on a white ground"
-        //    ]
-        //},
-        //{
-        //    question: "What is the significance of the diagonal red cross on the Union Flag?",
-        //    correctAnswers: [
-        //        "It represents Ireland"
-        //    ],
-        //    incorrectAnswers: [
-        //        "It represents England",
-        //        "It represents Scotland",
-        //        "It represents Wales",
-        //        "It signifies the patron saint of the UK",
-        //        "It signifies the Act of Union of 1800",
-        //        "It signifies the unification of the UK and Ireland"
-        //    ]
-        //},
-        //{
-        //    question: "The Cross of St Patrick is associated with which country's patron saint on the Union Flag?",
-        //    correctAnswers: [
-        //        "Ireland"
-        //    ],
-        //    incorrectAnswers: [
-        //        "England",
-        //        "Scotland",
-        //        "Wales",
-        //        "France",
-        //        "Italy",
-        //        "Netherlands"
-        //    ]
-        //},
-        //{
-        //    question: "What emblem is featured on the official Welsh flag?",
-        //    correctAnswers: [
-        //        "Welsh dragon"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Red cross",
-        //        "White cross",
-        //        "Diagonal white cross",
-        //        "Diagonal red cross",
-        //        "Lion",
-        //        "Harp",
-        //        "Thistle"
-        //    ]
-        //},
-        //{
-        //    question: "Why does the Welsh Dragon not appear on the union flag?",
-        //    correctAnswers: [
-        //        "Because the principality of Wales was already united with England when the first union flag was created."
-        //    ],
-        //    incorrectAnswers: [
-        //        "Because the Welsh Dragon was not a recognized symbol at the time.",
-        //        "Because the union flag only represents the countries of the United Kingdom.",
-        //        "Because Wales is represented by the Cross of St George.",
-        //        "Because the Cross of St Andrew represents Wales.",
-        //        "Because the union flag was created before Wales became part of the United Kingdom.",
-        //        "Because the flag designers chose not to include Wales in the design."
-        //    ]
-        //}
+        {
+            question: "What is the color of the Cross of St George?",
+            correctAnswers: ["Red"],
+            mandatoryIncorrectAnswers: ["White", "Blue"],
+            incorrectAnswers: [
+                "Green",
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        {
+            question: "What is the background color of the Cross of St George?",
+            correctAnswers: ["White"],
+            mandatoryIncorrectAnswers: ["Red", "Blue"],
+            incorrectAnswers: [
+                "Green",
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        { // KEY QUESTION
+            question: "Which cross on the Union Flag represents England?",
+            correctAnswers: ["The red, vertical and horizontal cross"],
+            incorrectAnswers: [
+                "The white, diagonal cross",
+                "The red, diagonal cross",
+                "None of the crosses on the Union Flag represent England",
+            ]
+        },
+        {
+            question: "What is the color of the Cross of St Andrew?",
+            correctAnswers: ["White"],
+            mandatoryIncorrectAnswers: ["Red", "Blue"],
+            incorrectAnswers: [
+                "Green",
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        {
+            question: "What is the background color of the Cross of St Andrew?",
+            correctAnswers: ["Blue"],
+            mandatoryIncorrectAnswers: ["Red", "White"],
+            incorrectAnswers: [
+                "Green",
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        { // KEY QUESTION
+            question: "Which cross on the Union Flag represents Scotland?",
+            correctAnswers: ["The white, diagonal cross"],
+            incorrectAnswers: [
+                "The red, vertical and horizontal cross",
+                "The red, diagonal cross",
+                "None of the crosses on the Union Flag represent Scotland",
+            ]
+        },
+        {
+            question: "What is the color of the Cross of St Patrick?",
+            correctAnswers: ["Red"],
+            mandatoryIncorrectAnswers: ["White", "Blue"],
+            incorrectAnswers: [
+                "Green",
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        {
+            question: "What is the background color of the Cross of St Patrick?",
+            correctAnswers: ["White"],
+            mandatoryIncorrectAnswers: ["Red", "Blue"],
+            incorrectAnswers: [
+                "Green",
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        { // KEY QUESTION
+            question: "Which cross on the Union Flag represents Ireland?",
+            correctAnswers: ["The red, diagonal cross"],
+            incorrectAnswers: [
+                "The red, vertical and horizontal cross",
+                "The white, diagonal cross",
+                "None of the crosses on the Union Flag represent Ireland",
+            ]
+        },
+        {
+            question: "What welsh creature or object is featured on the official Welsh flag?",
+            correctAnswers: ["Dragon"],
+            mandatoryIncorrectAnswers: ["Daffodil", "Lion", "Harp", "Leopard", "Unicorn"],
+            incorrectAnswers: [
+                "Stag",
+                "Bear",
+                "Eagle",
+                "Horse",
+                "Boar",
+                "Swan",
+                "Sword",
+                "Shield",
+                "Crown",
+                "Fleur-de-lis",
+                "Rose",
+                "Thistle",
+            ]
+        },
+        {
+            question: "What colour is the creature or object on the official Welsh flag?",
+            correctAnswers: ["Red"],
+            mandatoryIncorrectAnswers: ["White", "Blue", "Green"],
+            incorrectAnswers: [
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        {
+            question: "What are the background color(s) of the official Welsh flag? Select all that apply.",
+            correctAnswers: ["White", "Green"],
+            mandatoryIncorrectAnswers: ["Red", "Blue"],
+            incorrectAnswers: [
+                "Yellow",
+                "Black",
+                "Orange"
+            ]
+        },
+        { // KEY QUESTION
+            question: "Which cross on the Union Flag represents Wales?",
+            correctAnswers: ["None of the crosses on the Union Flag represent Wales"],
+            incorrectAnswers: [
+                "The red, diagonal cross",
+                "The red, vertical and horizontal cross",
+                "The white, diagonal cross"
+            ]
+        },
+        {
+            question: "Why does the Welsh Dragon not appear on the union flag?",
+            correctAnswers: [
+                "Because the principality of Wales was already united with England when the first union flag was created."
+            ],
+            incorrectAnswers: [
+                "Because the Welsh Dragon was not a recognized symbol at the time.",
+                "Because Wales is represented by the Cross of St George.",
+                "Because Wales is represented by the Cross of St Andrew.",
+                "Because Wales is represented by the Cross of St Patrick.",
+                "Because the union flag was created before Wales became part of the United Kingdom.",
+                "Because the Welsh Dragon was deem to be a pagan symbol."
+            ]
+        }
     ];
 
     let category = {

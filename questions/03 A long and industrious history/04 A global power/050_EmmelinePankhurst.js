@@ -1,5 +1,20 @@
 (() => {
     let questions = [
+        { // KEY QUESTION
+            question: "What is Emmeline Pankhurst famous for?",
+            correctAnswers: [
+                "Her activism towards voting rights for women"
+            ],
+            incorrectAnswers: [
+                "Her activism towards state provided universal primary education",
+                "Her role as a spy during the First World War",
+                "The invention of the hoop skirt",
+                "Her contributions to nursing practice",
+                "Her works of fiction and poetry",
+                "Her scientific drawings of microscopic organisms",
+                "Her contributions to the field of mathematics",
+            ]
+        },
         {
             question: "In which city was Emmeline Pankhurst born?",
             correctAnswers: [
@@ -30,34 +45,34 @@
             ],
             incorrectAnswers: getDates(1700, 1990, [1889], false)
         },
-        //{
-        //    question: "What was the primary goal of the Women's Franchise League when it was founded by Emeline Pankhurst?",
-        //    correctAnswers: [
-        //        "To get the vote in local elections for married women"
-        //    ],
-        //    incorrectAnswers: [
-        //        "To get voting rights for all women",
-        //        "To allow women to stand for parliament",
-        //        "To protest against political issues through civil disobedience",
-        //        "To contribute to the war effort during the First World War",
-        //        "To support the Women's Social and Political Union",
-        //        "To end the practice of chaining themselves to railings"
-        //    ]
-        //},
-        //{
-        //    question: "Who founded the Women's Franchise League?",
-        //    correctAnswers: [
-        //        "Emeline Pankhurst"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Susan B. Anthony",
-        //        "Millicent Fawcett",
-        //        "Florence Nightingale",
-        //        "Queen Victoria",
-        //        "Mary Wollstonecraft",
-        //        "Margaret Thatcher"
-        //    ]
-        //},
+        {
+            question: "What was the primary goal of the Women's Franchise League when it was founded by Emeline Pankhurst?",
+            correctAnswers: [
+                "To get the vote in local elections for married women"
+            ],
+            incorrectAnswers: [
+                "To get voting rights for all women",
+                "To allow women to stand for parliament",
+                "To protest against political issues through civil disobedience",
+                "To contribute to the war effort during the First World War",
+                "To support the Women's Social and Political Union",
+                "To end the practice of chaining themselves to railings"
+            ]
+        },
+        {
+            question: "Who founded the Women's Franchise League?",
+            correctAnswers: [
+                "Emeline Pankhurst"
+            ],
+            incorrectAnswers: [
+                "Mary Wollstonecraft",
+                "Florence Nightingale",
+                "Queen Victoria",
+                "Susan B. Anthony",
+                "Millicent Fawcett",
+                "Margaret Thatcher"
+            ]
+        },
         //{
         //    question: "What type of elections did the Women's Franchise League focus on when it was created?",
         //    correctAnswers: [
@@ -86,21 +101,11 @@
         //        "Women over the age of 21"
         //    ]
         //},
-        //{
-        //    question: "In which year did Emeline Pankhurst help found the Women's Social and Political Union (WSPU)?",
-        //    correctAnswers: [
-        //        "1903"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1899",
-        //        "1900",
-        //        "1905",
-        //        "1910",
-        //        "1912",
-        //        "1889",
-        //        "1920"
-        //    ]
-        //},
+        {
+            question: "In which year did Emeline Pankhurst help found the Women's Social and Political Union (WSPU)?",
+            correctAnswers: ["1903"],
+            incorrectAnswers: getDates(1700, 2020, [1903], false)
+        },
         //{
         //    question: "What does WSPU stand for, as mentioned in the context of Emeline Pankhurst founding the organization?",
         //    correctAnswers: [
@@ -116,36 +121,37 @@
         //        "Women's Solidarity and Political Union"
         //    ]
         //},
-        //{
-        //    question: "Who helped found the Women's Social and Political Union (WSPU) in 1903?",
-        //    correctAnswers: [
-        //        "Emeline Pankhurst"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Florence Nightingale",
-        //        "Elizabeth Fry",
-        //        "Mary Wollstonecraft",
-        //        "Millicent Fawcett",
-        //        "Annie Besant",
-        //        "Marie Curie",
-        //        "Rosalind Franklin"
-        //    ]
-        //},
-        //{
-        //    question: "What was the primary focus of the Women's Social and Political Union (WSPU) founded by Emeline Pankhurst?",
-        //    correctAnswers: [
-        //        "To gain the vote for women"
-        //    ],
-        //    incorrectAnswers: [
-        //        "To improve women's healthcare",
-        //        "To fight for women's employment rights",
-        //        "To advocate for women's education",
-        //        "To support women in the arts",
-        //        "To promote women's sports",
-        //        "To aid women in scientific research",
-        //        "To advance women's property rights"
-        //    ]
-        //},
+        {
+            question: "Who helped found the Women's Social and Political Union (WSPU) in 1903?",
+            correctAnswers: [
+                "Emeline Pankhurst"
+            ],
+            incorrectAnswers: [
+                "Mary Wollstonecraft",
+                "Florence Nightingale",
+                "Queen Alexandra",
+                "Elizabeth Fry",
+                "Millicent Fawcett",
+                "Annie Besant",
+                "Marie Curie",
+                "Rosalind Franklin"
+            ]
+        },
+        {
+            question: "What was the primary focus of the Women's Social and Political Union (WSPU)?",
+            correctAnswers: [
+                "To gain the vote for women"
+            ],
+            incorrectAnswers: [
+                "To improve women's healthcare",
+                "To fight for women's employment rights",
+                "To advocate for women's education",
+                "To support women in the arts",
+                "To promote women's sports",
+                "To aid women in scientific research",
+                "To advance women's property rights"
+            ]
+        },
         //{
         //    question: "What type of organization was the Women's Social and Political Union (WSPU) founded by Emeline Pankhurst?",
         //    correctAnswers: [
@@ -161,21 +167,21 @@
         //        "A women's shelter"
         //    ]
         //},
-        //{
-        //    question: "What was the first group to have its members called 'suffragettes'?",
-        //    correctAnswers: [
-        //        "Women's Social and Political Union (WSPU)"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Women's Franchise League",
-        //        "Women's Liberation Movement",
-        //        "Women's Rights Advocacy Group",
-        //        "Female Emancipation Guild",
-        //        "Ladies' Parliamentary Society",
-        //        "National Union of Women's Suffrage Societies",
-        //        "Women's Equality Federation"
-        //    ]
-        //},
+        {
+            question: "What was the first group to have its members called 'suffragettes'?",
+            correctAnswers: [
+                "Women's Social and Political Union (WSPU)"
+            ],
+            incorrectAnswers: [
+                "Women's Franchise League",
+                "Women's Liberation Movement",
+                "Women's Rights Advocacy Group",
+                "Female Emancipation Guild",
+                "Ladies' Parliamentary Society",
+                "National Union of Women's Suffrage Societies",
+                "Women's Equality Federation"
+            ]
+        },
         //{
         //    question: "What term was used to refer to members of the Women's Social and Political Union (WSPU)?",
         //    correctAnswers: [

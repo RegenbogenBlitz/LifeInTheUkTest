@@ -87,7 +87,7 @@
                 {
                     question: "In what year was the Act of Union agreed upon, which created the Kingdom of Great Britain?",
                     correctAnswers: ["1707"],
-                    incorrectAnswers: getDates(1485, 1800, [1707], false)
+                    incorrectAnswers: getDates(1485, 1820, [1707], false)
                 },
                 {
                     question: "What was created as a result of the Act of Union in 1707?",

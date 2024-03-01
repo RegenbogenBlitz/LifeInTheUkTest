@@ -3,7 +3,7 @@
         {
             question: "When did Parliament invite Charles II to come back from exile?",
             correctAnswers: ["1660"],
-            incorrectAnswers: ["1606", "1666", "1650", "1670", "1680", "1640"]
+            incorrectAnswers: getDates(1500, 1900, [1660], false)
         },
         {
             question: "Where was Charles II in exile before he was invited back by Parliament?",
@@ -89,7 +89,7 @@
                 {
                     question: "What year did a major outbreak of plague occur in London during Charles II's reign?",
                     correctAnswers: ["1665"],
-                    incorrectAnswers: ["1660", "1666", "1679", "1658", "1645", "1655", "1675"]
+                    incorrectAnswers: getDates(1500, 1900, [1665], false)
                 },
                 {
                     question: "Which city experienced a major outbreak of plague in 1665?",
@@ -101,17 +101,17 @@
                     correctAnswers: ["Charles II"],
                     incorrectAnswers: ["Charles I", "James II", "Elizabeth I", "Henry VIII", "William III", "Anne", "George I"]
                 },
-            ]
-        },
-        {
-            question: "What was the result of the major outbreak of plague in 1665?",
-            correctAnswers: ["Thousands of people died, especially in poorer areas"],
-            incorrectAnswers: [
-                "The population actually increased",
-                "The Royal Society was formed to study the plague",
-                "Effective treatments were developed",
-                "The plague was eradicated from England",
-                "Civil war broke out",
+                {
+                    question: "What was the result of the major outbreak of plague in 1665?",
+                    correctAnswers: ["Thousands of people died, especially in poorer areas"],
+                    incorrectAnswers: [
+                        "The population actually increased",
+                        "The Royal Society was formed to study the plague",
+                        "Effective treatments were developed",
+                        "The plague was eradicated from England",
+                        "Civil war broke out",
+                    ]
+                },
             ]
         },
         {
@@ -119,7 +119,7 @@
                 {
                     question: "What year did the Great Fire occur that destroyed much of London?",
                     correctAnswers: ["1666"],
-                    incorrectAnswers: ["1665", "1679", "1660", "1658", "1701", "1606", "1688"]
+                    incorrectAnswers: getDates(1500, 1900, [1666], false)
                 },
                 {
                     question: "Which famous London building was destroyed in the Great Fire of 1666?",
@@ -197,7 +197,7 @@
         {
             question: "In what year did the Habeas Corpus Act become law?",
             correctAnswers: ["1679"],
-            incorrectAnswers: ["1603", "1628", "1642", "1660", "1666", "1688", "1701"]
+            incorrectAnswers: getDates(1200, 2000, [1679], false)
         },
         {
             question: "What is the significance of the Habeas Corpus Act passed during the reign of Charless II?",
@@ -225,7 +225,7 @@
                 "Only the works of certain Anglican composers may be performed",
                 "The laws of England must be preserved in a particular manner"]
         },
-        {
+        { // Key Question
             question: "What was the significance of the Habeas Corpus Act?",
             correctAnswers: [
                 "It guaranteed that no one could be held prisoner unlawfully"],

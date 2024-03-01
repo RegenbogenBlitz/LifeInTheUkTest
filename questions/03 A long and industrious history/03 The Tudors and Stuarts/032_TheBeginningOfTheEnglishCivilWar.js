@@ -85,7 +85,7 @@
                 {
                     question: "In what year did Charles I recall parliament, after 11 years without parliament, to ask for funds?",
                     correctAnswers: ["1640"],
-                    incorrectAnswers: ["1642", "1630", "1650", "1628", "1649", "1603", "1612"]
+                    incorrectAnswers: getDates(1500, 1900, [1640], false)
                 },
             ]
         },
@@ -230,7 +230,7 @@
         {
             question: "In what year did the civil war between the king and Parliament begin?",
             correctAnswers: ["1642"],
-            incorrectAnswers: ["1603", "1620", "1635", "1651", "1666", "1707", "1714"]
+            incorrectAnswers: getDates(1500, 1900, [1642], false)
         },
         {
             question: "What name was given to the supporters of the king during the civil war?",

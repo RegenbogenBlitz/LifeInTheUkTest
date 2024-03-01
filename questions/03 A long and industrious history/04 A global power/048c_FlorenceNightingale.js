@@ -287,21 +287,40 @@
         //        "The initiation of the first government-funded nursing program"
         //    ]
         //},
-        //{
-        //    question: "Who is often regarded as the founder of modern nursing?",
-        //    correctAnswers: [
-        //        "Florence Nightingale"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Clara Barton",
-        //        "Mary Seacole",
-        //        "Elizabeth Fry",
-        //        "Edith Cavell",
-        //        "Margaret Sanger",
-        //        "Dorothea Dix",
-        //        "Linda Richards"
-        //    ]
-        //}
+        {
+            questions: [ // KEY QUESTION
+                {
+                    question: "What is Florence Nightingale famous for?",
+                    correctAnswers: [
+                        "Her contributions to nursing practice"
+                    ],
+                    incorrectAnswers: [
+                        "Her activism towards state provided universal primary education",
+                        "Her role as a spy during the Crimean War",
+                        "The invention of the hoop skirt",
+                        "Her activism towards voting rights for women",
+                        "Her works of fiction and poetry",
+                        "Her scientific drawings of microscopic organisms",
+                        "Her contributions to the field of mathematics",
+                    ]
+                },
+                {
+                    question: "Who is often regarded as the founder of modern nursing?",
+                    correctAnswers: [
+                        "Florence Nightingale"
+                    ],
+                    incorrectAnswers: [
+                        "Clara Barton",
+                        "Mary Seacole",
+                        "Elizabeth Fry",
+                        "Edith Cavell",
+                        "Margaret Sanger",
+                        "Dorothea Dix",
+                        "Linda Richards"
+                    ]
+                }
+            ]
+        }
     ];
 
     let category = {

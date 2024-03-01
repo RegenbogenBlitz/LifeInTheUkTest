@@ -104,7 +104,7 @@
                 "It was used only in poetry",
                 "It was solely for religious texts"]
         },
-        {
+        { // KEY QUESTION
             question: "What was the preferred language of the royal court and Parliament in England by 1400?",
             correctAnswers: ["English"],
             mandatoryIncorrectAnswers: ["French"],

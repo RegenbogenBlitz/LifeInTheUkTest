@@ -247,6 +247,11 @@
                 "St. William of Normandy"
             ]
         },
+        { // KEY QUESTION
+            question: "The Bayeux Tapestry was created during the reign of which monarch?",
+            correctAnswers: ["William I"],
+            incorrectAnswers: preNormanMonarchs.concat(englishMonarchs.filter(monarch => monarch !== "William I"))
+        },
         {
             questions: [
                 {
@@ -473,6 +478,11 @@
         },
         {
             questions: [
+                { // KEY QUESTION
+                    question: "The Doomsday Book was created during the reign of which monarch?",
+                    correctAnswers: ["William I"],
+                    incorrectAnswers: preNormanMonarchs.concat(englishMonarchs.filter(monarch => monarch !== "William I"))
+                },
                 {
                     question: "William sent people all over England to draw up lists of all the towns and villages. True or False?",
                     correctAnswers: ["True"],
@@ -505,7 +515,11 @@
                         "the Judgement Day chronicle",
                         "the Final Reckoning",
                     ],
-                },
+                }
+            ]
+        },
+        {
+            questions: [
                 {
                     question: "The Domesday Book still exists today. True or False?",
                     correctAnswers: ["True"],
@@ -516,16 +530,16 @@
                     correctAnswers: ["True"],
                     incorrectAnswers: ["False"],
                 },
-                {
-                    question: "The Domesday Book gives a picture of society in England just after what event?",
-                    correctAnswers: ["The Norman conquest of England"],
-                    incorrectAnswers: [
-                        "The Roman conquest of Britain",
-                        "The Roman withdrawal from Britain",
-                        "The Anglo-Saxon conquest of Britain",
-                        "The Viking conquest of Britain"
-                    ]
-                }
+            ]
+        },
+        {
+            question: "The Domesday Book gives a picture of society in England just after what event?",
+            correctAnswers: ["The Norman conquest of England"],
+            incorrectAnswers: [
+                "The Roman conquest of Britain",
+                "The Roman withdrawal from Britain",
+                "The Anglo-Saxon conquest of Britain",
+                "The Viking conquest of Britain"
             ]
         }
     ];

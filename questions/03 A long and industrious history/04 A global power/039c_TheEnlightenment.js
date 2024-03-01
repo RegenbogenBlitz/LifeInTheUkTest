@@ -60,64 +60,46 @@
         //        "the Age of Reason"
         //    ]
         //},
-        //{
-        //    question: "What was the nationality of many of the great thinkers during the Scottish Enlightenment?",
-        //    correctAnswers: [
-        //        "Scottish"
-        //    ],
-        //    incorrectAnswers: [
-        //        "English",
-        //        "Welsh",
-        //        "Irish",
-        //        "French",
-        //        "German",
-        //        "Italian"
-        //    ]
-        //},
-        //{
-        //    question: "Which century is known for having many of the great thinkers of the Enlightenment who were Scottish?",
-        //    correctAnswers: [
-        //        "the 18th century"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the 17th century",
-        //        "the 19th century",
-        //        "the 16th century",
-        //        "the 15th century",
-        //        "the 20th century",
-        //        "the 14th century"
-        //    ]
-        //},
-        //{
-        //    question: "Which Enlightenment thinker developed ideas about economics that are still referred to today?",
-        //    correctAnswers: [
-        //        "Adam Smith"
-        //    ],
-        //    incorrectAnswers: [
-        //        "David Hume",
-        //        "James Watt",
-        //        "John Locke",
-        //        "Thomas Hobbes",
-        //        "Isaac Newton",
-        //        "Voltaire",
-        //        "Jean-Jacques Rousseau"
-        //    ]
-        //},
-        //{
-        //    question: "What subject did Adam Smith develop ideas in during the Enlightenment period?",
-        //    correctAnswers: [
-        //        "economics"
-        //    ],
-        //    incorrectAnswers: [
-        //        "philosophy",
-        //        "science",
-        //        "politics",
-        //        "mechanics",
-        //        "steam power",
-        //        "human nature",
-        //        "religion"
-        //    ]
-        //},
+        {
+            questions: [ // KEY QUESTION
+                {
+                    question: "What was the nationality of the Enlightenment thinker Adam Smith?",
+                    correctAnswers: ["Scottish"],
+                    mandatoryIncorrectAnswers: ["English", "Welsh", "Irish"],
+                    incorrectAnswers: [
+                        "French",
+                        "Prussian",
+                        "Bavarian",
+                        "Spanish",
+                        "Portuguese",
+                        "Russian",
+                        "Venetian",
+                        "Genoese",
+                        "Swiss",
+                        "Dutch",
+                        "American",
+                        "Austrian"]
+                },
+                {
+                    question: "In what era did the Scottish thinker Adam Smith develop his ideas?",
+                    correctAnswers: ["The Enlightenment"],
+                    incorrectAnswers: namesOfModernAges.filter(name => name !== "The Enlightenment")
+                }
+            ]
+        },
+        {
+            question: "On what subject did Adam Smith develop ideas about?",
+            correctAnswers: [
+                "economics"
+            ],
+            incorrectAnswers: [
+                "science",
+                "politics",
+                "mechanics",
+                "steam power",
+                "religion"
+            ]
+        },
         //{
         //    question: "Which statement accurately reflects the status of Adam Smith's economic ideas according to the provided text?",
         //    correctAnswers: [
@@ -133,21 +115,46 @@
         //        "They have been replaced by modern theories"
         //    ]
         //},
-        //{
-        //    question: "Which Scottish Enlightenment thinker's ideas about human nature continue to influence philosophers today?",
-        //    correctAnswers: [
-        //        "David Hume"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Adam Smith",
-        //        "James Watt",
-        //        "John Locke",
-        //        "Thomas Hobbes",
-        //        "Isaac Newton",
-        //        "Charles Darwin",
-        //        "Albert Einstein"
-        //    ]
-        //},
+        {
+            questions: [ // KEY QUESTION
+                {
+                    question: "What was the nationality of the Enlightenment thinker David Hume?",
+                    correctAnswers: ["Scottish"],
+                    mandatoryIncorrectAnswers: ["English", "Welsh", "Irish"],
+                    incorrectAnswers: [
+                        "French",
+                        "Prussian",
+                        "Bavarian",
+                        "Spanish",
+                        "Portuguese",
+                        "Russian",
+                        "Venetian",
+                        "Genoese",
+                        "Swiss",
+                        "Dutch",
+                        "American",
+                        "Austrian"]
+                },
+                {
+                    question: "In what era did the Scottish thinker David Hume develop his ideas?",
+                    correctAnswers: ["The Enlightenment"],
+                    incorrectAnswers: namesOfModernAges.filter(name => name !== "The Enlightenment")
+                }
+            ]
+        },
+        {
+            question: "On what subject did David Hume develop ideas about?",
+            correctAnswers: [
+                "human nature"
+            ],
+            incorrectAnswers: [
+                "light",
+                "electricity",
+                "taxonomy",
+                "thermodynamics",
+                "mechanics",
+            ]
+        }
         //{
         //    question: "Who was notable for their work on steam power during the 18th century, which contributed to the Industrial Revolution?",
         //    correctAnswers: [

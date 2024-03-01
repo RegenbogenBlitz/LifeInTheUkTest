@@ -85,7 +85,7 @@
                 "She banned all religious practices other than Protestantism"
             ]
         },
-        {
+        { // Key Question
             questions: [
                 {
                     question: "What event in 1588 contributed to Elizabeth I becoming one of the most popular monarchs in English history?",

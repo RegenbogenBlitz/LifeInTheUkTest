@@ -1,7 +1,7 @@
 (() => {
     let questions = [
         {
-            question: "Which of the following is a nickname for Robert Burns in Scotland?",
+            question: "Which of the following is a nickname for Robert Burns?",
             correctAnswers: [
                 "The Bard"
             ],
@@ -14,7 +14,7 @@
                 "The Minstrel"
             ]
         },
-        {
+        { // KEY QUESTION
             question: "What was Robert Burns' nationality?",
             correctAnswers: ["Scottish"],
             mandatoryIncorrectAnswers: ["English", "Irish", "Welsh"],

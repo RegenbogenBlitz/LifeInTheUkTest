@@ -1,0 +1,28 @@
+(() => {
+    let questions = [
+        { // KEY QUESTION
+            question: "Which of the following developments are associated with the 1960s in the UK? (Select all that apply)",
+            correctAnswers: [
+                "Reform of abortion law",
+                "Reform of divorce law",
+            ],
+            incorrectAnswers: [
+                "Abolition of slavery",
+                "Creation of the NHS",
+                "Introduction of the minimum wage",
+                "Introduction of Universal Human Rights",
+                "Introduction of sick leave",
+                "Introduction of paid holidays",
+                "Introduction of maternity leave",
+            ]
+        }
+    ];
+
+    let category = {
+        name: "Social Change In The 1960s (incomplete)",
+        questions: questions,
+        isUnvetted: false,
+        group: "Britain since 1945 (incomplete)"
+    }
+    quizDeck.categories.push(category);
+})();

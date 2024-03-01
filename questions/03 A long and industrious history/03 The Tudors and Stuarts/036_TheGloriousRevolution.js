@@ -41,7 +41,7 @@
                 {
                     question: "In what year did important Protestants in England ask William to invade England and proclaim himself king?",
                     correctAnswers: ["1688"],
-                    incorrectAnswers: ["1588", "1603", "1642", "1685", "1701", "1714", "1690"]
+                    incorrectAnswers: getDates(1500, 1900, [1688], false)
                 },
                 {
                     question: "What did important Protestants in England ask William of Orange to do in 1688?",
@@ -242,7 +242,7 @@
         {
             question: "In which year did the Battle of the Boyne take place?",
             correctAnswers: ["1690"],
-            incorrectAnswers: ["1688", "1692", "1701", "1603", "1651", "1588"]
+            incorrectAnswers: getDates(1066, 1900, [1690], false)
         },
         {
             question: "Where did the Battle of the Boyne take place?",

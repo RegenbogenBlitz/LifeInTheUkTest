@@ -9,21 +9,27 @@ let significantDates = [
     597, // St Augustine arrives in England
     789, // First Viking raid
     871, // Alfred the Great becomes king
+
     1066, // Battle of Hastings
     1086, // Domesday book
+
     1139, // War of Stephen and Matilda
+
     1215, // Signing of the Magna Carta
     1258, // Signing of the provisions of Oxford
     1284, // Statute of Rhuddlan
+
     1314, // Battle of Bannockburn
     1337, // Start of the Hundred Years War
     1346, // Battle of Crecy
     1348, // Arrival of the Black Death in England
+
     1415, // Battle of Agincourt
     1453, // End of the Hundred Years War
     1455, // Start of the War of the Roses
     1475, // End of the Hundred Years War
     1485, // Battle of Bosworth
+
     1509, // Henry VIII becomes king
     1536, // Dissolution of the monasteries
     1547, // Edward VI becomes king
@@ -31,16 +37,25 @@ let significantDates = [
     1558, // Elizabeth I becomes queen
     1560, // The abolition of the authority of the Pope in Scotland
     1588, // Defeat of the Spanish Armada
+
     1603, // James VI/I becomes king
     1605, // Gunpowder Plot
     1611, // King James Bible
     1625, // Charles I becomes king
+    1640, // The Short Parliament
+    1642, // Start of the English Civil War
+    1646, // End of the First Civil War
     1649, // Execution of Charles I
     1656, // Jews settle in London
     1660, // Restoration of Charles II
+    1665, // Great Plague of London
+    1666, // Great Fire of London
+    1679, // Habeas Corpus Act
     1685, // James II becomes king
     1688, // Glorious Revolution
     1689, // Bill of Rights
+    1690, // Battle of the Boyne
+
     1702, // Anne becomes queen
     1707, // Act of Union
     1714, // Hanoverian succession
@@ -51,6 +66,8 @@ let significantDates = [
     1756, // Start of the Seven Years War
     1776, // American Declaration of Independence
     1789, // French Revolution
+
+    1801, // Act of Union
     1815, // Battle of Waterloo
     1829, // Catholic Emancipation
     1832, // First Reform Act
@@ -58,16 +75,33 @@ let significantDates = [
     1848, // Chartist movement
     1854, // Crimean War
     1867, // Second Reform Act
+    1870, // Married Women's Property Act
+    1882, // Married Women's Property Act
     1889, // Emmeline Pankhurst established the Women's Franchise League
+    1899, // Start of the Boer War
+
+    1902, // End of the Boer War
+    1903, // Founding of the Women's Social and Political Union (WSPU)
+    1913, // British promise of Home Rule for Ireland
     1914, // Start of the First World War
-    1918, // End of the First World War
+    1916, // Easter Rising
+    1918, // End of the First World War, Representation of the People Act
+    1921, // Anglo-Irish Treaty
+    1922, // Irish Free State, BBC founded
+    1929, // Start of the Great Depression
+    1936, // BBC starts television broadcasts
     1939, // Start of the Second World War
+    1940, // Dunkirk evacuation, Battle of Britain
     1945, // End of the Second World War
+    1949, // Ireland becomes a republic
     1952, // Elizabeth II becomes queen
     1956, // Suez Crisis
     1973, // UK joins the EEC
     1982, // Falklands War
     1989, // Fall of the Berlin Wall
+    1990, // World Wide Web first used successfully
+    1996, // First mammal cloned
+    1998, // Good Friday Agreement
 ];
 
 let getDates = (from, to, avoidDates, includeBcAd) => () => {
@@ -104,16 +138,23 @@ let namesOfEarlyAges = [
     "The Dark Ages",
 ];
 
+let namesOfModernAges = [
+    "The Elizabethan Era",
+    "The Age of Discovery",
+    "The Enlightenment",
+    "The Victorian Era",
+    "The Edwardian Era",
+    "The Interwar period",
+    "The Postwar period",
+];
+
 let namesOfAges = [
     ...namesOfEarlyAges,
     "The Danelaw",
     "The Anglo-Saxon period",
     "The Norman period",
     "The Renaissance",
-    "The Elizabethan Era",
-    "The Age of Discovery",
-    "The Age of Enlightenment",
-    "The Victorian Era"
+    ...namesOfModernAges
 ];
 
 let famousBattles = [
@@ -153,10 +194,31 @@ let famousEnglishWars = [
     "The Crimean War", // 1853 - 1856
     "The Boer War", // 1899 - 1902
     "The First World War", // 1914 - 1918
+    "The Irish War of Independence", // 1919 - 1921
     "The Second World War", // 1939 - 1945
+    "The Falklands War", // 1982
+    "The Gulf War", // 1990 - 1991
     "The Cold War", // 1947 - 1991
 ];
 
+let preNormanMonarchs = [
+    "Alfred the Great",
+    "Edward the Elder",
+    "Athelstan",
+    "Edmund I",
+    "Eadred",
+    "Eadwig",
+    "Edgar the Peaceful",
+    "Edward the Martyr",
+    "Ethelred the Unready",
+    "Edmund Ironside",
+    "Sweyn Forkbeard",
+    "Cnut the Great",
+    "Harold Harefoot",
+    "Harthacanute",
+    "Edward the Confessor",
+    "Harold Godwinson"
+];
 
 let englishMonarchs = [
     "William I",
