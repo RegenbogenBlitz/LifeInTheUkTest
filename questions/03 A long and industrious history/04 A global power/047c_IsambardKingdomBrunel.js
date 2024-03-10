@@ -44,7 +44,7 @@
         //    ]
         //},
         { // KEY QUESTION
-            question: "Which of the following did Isambard Kingdom Brunel build?",
+            question: "Which of the following did Isambard Kingdom Brunel build? (Select all that apply)",
             correctAnswers: [
                 "Tunnels",
                 "Bridges",

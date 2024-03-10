@@ -7,10 +7,10 @@
             ],
             incorrectAnswers: [
                 "a textile worker",
-                "a wig maker",
                 "a dye specialist",
                 "a factory manager",
-                "a steam engineer"
+                "a steam engineer",
+                "a shipbuilder",
             ]
         },
         //{

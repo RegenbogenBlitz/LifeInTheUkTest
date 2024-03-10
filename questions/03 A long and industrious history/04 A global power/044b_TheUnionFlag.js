@@ -321,7 +321,7 @@
             ]
         },
         {
-            question: "What are the background color(s) of the official Welsh flag? Select all that apply.",
+            question: "What are the background color(s) of the official Welsh flag? (Select all that apply)",
             correctAnswers: ["White", "Green"],
             mandatoryIncorrectAnswers: ["Red", "Blue"],
             incorrectAnswers: [
@@ -342,15 +342,15 @@
         {
             question: "Why does the Welsh Dragon not appear on the union flag?",
             correctAnswers: [
-                "Because the principality of Wales was already united with England when the first union flag was created."
+                "Because the principality of Wales was already united with England when the first union flag was created"
             ],
             incorrectAnswers: [
-                "Because the Welsh Dragon was not a recognized symbol at the time.",
-                "Because Wales is represented by the Cross of St George.",
-                "Because Wales is represented by the Cross of St Andrew.",
-                "Because Wales is represented by the Cross of St Patrick.",
-                "Because the union flag was created before Wales became part of the United Kingdom.",
-                "Because the Welsh Dragon was deem to be a pagan symbol."
+                "Because the Welsh Dragon was not a recognized symbol at the time",
+                "Because Wales is represented by the Cross of St George",
+                "Because Wales is represented by the Cross of St Andrew",
+                "Because Wales is represented by the Cross of St Patrick",
+                "Because the union flag was created before Wales became part of the United Kingdom",
+                "Because the Welsh Dragon was deem to be a pagan symbol"
             ]
         }
     ];

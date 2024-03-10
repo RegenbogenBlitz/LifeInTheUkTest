@@ -6,7 +6,11 @@
             incorrectAnswers: dualMonarchs.concat(
                 unitedMonarchs.filter(monarch =>
                     monarch !== "George I" &&
-                    monarch !== "George II")),
+                    monarch !== "George II" &&
+                    monarch !== "George III" &&
+                    monarch !== "George IV" &&
+                    monarch !== "George V" &&
+                    monarch !== "George VI")),
         },
         {
             question: "What was the relationship between George I and George II?",
@@ -24,7 +28,8 @@
                 {
                     question: "In which year did another attempt take place to restore a Stuart King to the British throne, during the reign of George II?",
                     correctAnswers: ["1745"],
-                    incorrectAnswers: getDates(1600, 1837, [1745], false)
+                    incorrectAnswers: getDates(1600, 1837, [1745], false),
+                    explanation: "This was the Jacobite rising of 1745"
                 },
                 {
                     question: "What was the name of the reigning monarch during the 1745 attempt to restore a Stuart King to the throne?",

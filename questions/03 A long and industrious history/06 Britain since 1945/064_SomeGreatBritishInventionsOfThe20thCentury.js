@@ -156,7 +156,7 @@ let britishInventionsAndDiscoveries = [
         {
             questions: [// KEY QUESTION
                 {
-                    question: "Who led the team that first cloned a mammal? Select all that apply.",
+                    question: "Who led the team that first cloned a mammal? (Select all that apply)",
                     correctAnswers: ["Sir Ian Wilmut", "Keith Campbell"],
                     incorrectAnswers: britishInventorsAndScientists.filter(i =>
                         i !== "Sir Ian Wilmut" &&

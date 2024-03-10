@@ -48,7 +48,7 @@
             ]
         },
         { // KEY QUESTION
-            question: "Where was the Battle of Britain fought? Select all that apply.",
+            question: "Where was the Battle of Britain fought? (Select all that apply)",
             isMultipleChoice: true,
             correctAnswers: ["In the air"],
             incorrectAnswers: [
