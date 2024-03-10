@@ -193,36 +193,46 @@
         //        "Spice Market"
         //    ]
         //},
-        //{
-        //    question: "Which establishment was the first curry house to open in Britain?",
-        //    correctAnswers: [
-        //        "Hindoostane Coffee House"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Bombay Brasserie",
-        //        "Taj Mahal Restaurant",
-        //        "Koh-i-Noor Eatery",
-        //        "Spice of Bengal",
-        //        "Raj Pavilion",
-        //        "Lahore Karahi House",
-        //        "Mumbai Diner"
-        //    ]
-        //},
-        //{
-        //    question: "Who introduced 'shampooing', the Indian art of head massage, to Britain?",
-        //    correctAnswers: [
-        //        "Mahomet and his wife"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Thomas Twining",
-        //        "Sir Stamford Raffles",
-        //        "Robert Clive",
-        //        "Warren Hastings",
-        //        "William Jones",
-        //        "John Zephaniah Holwell",
-        //        "David Hare"
-        //    ]
-        //},
+        {
+            question: "Which establishment was the first curry house to open in Britain?",
+            correctAnswers: [
+                "Hindoostane Coffee House"
+            ],
+            incorrectAnswers: [
+                "Bombay Brasserie",
+                "Taj Mahal Restaurant",
+                "Koh-i-Noor Eatery",
+                "Spice of Bengal",
+                "Raj Pavilion",
+                "Lahore Karahi House",
+                "Mumbai Diner"
+            ]
+        },
+        {
+            question: "Who opened the first curry house in Britain?",
+            correctAnswers: ["Sake Dean Mahomet"],
+            incorrectAnswers: [
+                "Maharaja Duleep Singh",
+                "Raja Ram Mohan Roy",
+                "Dadabhai Naoroji",
+                "Cornelia Sorabji",
+                "Rabindranath Tagore",
+                "Rudyard Kipling"
+            ]
+        },
+        {
+            question: "Who introduced 'shampooing', the Indian art of head massage, to Britain? (Select all that apply)",
+            correctAnswers: ["Sake Dean Mahomet", "Jane Daly"],
+            incorrectAnswers: [
+                "Maharaja Duleep Singh",
+                "Raja Ram Mohan Roy",
+                "Dadabhai Naoroji",
+                "Cornelia Sorabji",
+                "Rabindranath Tagore",
+                "Rudyard Kipling"
+            ],
+            explanation: "Sake Dean Mahomet and his wife Jane Daly introduced 'shampooing', the Indian art of head massage, to Britain."
+        },
         //{
         //    question: "What does the term 'shampooing' specifically refer to as introduced to Britain by Sake Dean Mahomet and his wife?",
         //    correctAnswers: [

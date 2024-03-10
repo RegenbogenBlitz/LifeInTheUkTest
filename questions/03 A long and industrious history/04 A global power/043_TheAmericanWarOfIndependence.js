@@ -172,36 +172,28 @@
         //        "Between the colonists and the Spanish forces"
         //    ]
         //},
-        //{
-        //    question: "In which year did the 13 American colonies declare their independence?",
-        //    correctAnswers: [
-        //        "1776"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1775",
-        //        "1777",
-        //        "1783",
-        //        "1760",
-        //        "1750",
-        //        "1780",
-        //        "1800"
-        //    ]
-        //},
-        //{
-        //    question: "How many American colonies declared their independence in 1776?",
-        //    correctAnswers: [
-        //        "13"
-        //    ],
-        //    incorrectAnswers: [
-        //        "12",
-        //        "14",
-        //        "10",
-        //        "15",
-        //        "11",
-        //        "16",
-        //        "8"
-        //    ]
-        //},
+        {
+            question: "In which year did the American colonies declare their independence?",
+            correctAnswers: ["1776"],
+            mandatoryIncorrectAnswers: ["1783"],
+            incorrectAnswers: getDates(1500, 1900, [1776, 1783], false)
+        },
+        {
+            question: "How many American colonies declared their independence ahead of the American War of Independence?",
+            correctAnswers: [
+                "13"
+            ],
+            incorrectAnswers: [
+                "9",
+                "10",
+                "11",
+                "12",
+                "14",
+                "15",
+                "16",
+                "17",
+            ]
+        },
         //{
         //    question: "What did the 13 American colonies state when they declared their independence in 1776?",
         //    correctAnswers: [
@@ -230,20 +222,12 @@
         //        "Native American tribes"
         //    ]
         //},
-        //{
-        //    question: "In what year did Britain recognise the independence of the American colonies?",
-        //    correctAnswers: [
-        //        "1783"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1776",
-        //        "1780",
-        //        "1791",
-        //        "1801",
-        //        "1812",
-        //        "1823"
-        //    ]
-        //},
+        {
+            question: "In what year did Britain recognise the independence of the American colonies?",
+            correctAnswers: ["1783"],
+            mandatoryIncorrectAnswers: ["1776"],
+            incorrectAnswers: getDates(1500, 1900, [1783, 1776], false)
+        },
         //{
         //    question: "What event led to Britain recognizing the independence of the American colonies?",
         //    correctAnswers: [
@@ -258,20 +242,18 @@
         //        "World War I"
         //    ]
         //},
-        //{
-        //    question: "What was the outcome of the American War of Independence for the colonies?",
-        //    correctAnswers: [
-        //        "Britain recognised their independence"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Britain maintained control of the colonies",
-        //        "The colonies were divided among European powers",
-        //        "The colonies formed a new British government",
-        //        "The colonies entered into a commonwealth with Britain",
-        //        "The colonies were abandoned by Britain",
-        //        "The colonies became part of another empire"
-        //    ]
-        //}
+        {
+            question: "What was the outcome of the American War of Independence for the colonies?",
+            correctAnswers: [
+                "Britain recognised their independence"
+            ],
+            incorrectAnswers: [
+                "Britain maintained control of the colonies",
+                "The colonies were divided among European powers",
+                "The colonies entered into a commonwealth with Britain",
+                "The colonies became part of another empire",
+            ]
+        }
     ];
 
     let category = {

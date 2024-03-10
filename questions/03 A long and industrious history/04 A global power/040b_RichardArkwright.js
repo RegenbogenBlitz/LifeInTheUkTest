@@ -55,34 +55,19 @@
         //        "Owing to a family tradition"
         //    ]
         //},
-        //{
-        //    question: "What did Richard Arkwright improve in the textile industry?",
-        //    correctAnswers: [
-        //        "the original carding machine"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the steam engine",
-        //        "the spinning jenny",
-        //        "the power loom",
-        //        "the cotton gin",
-        //        "the flying shuttle",
-        //        "the water frame"
-        //    ]
-        //},
-        //{
-        //    question: "What was the nature of Richard Arkwright's improvement in the textile industry?",
-        //    correctAnswers: [
-        //        "He improved a machine"
-        //    ],
-        //    incorrectAnswers: [
-        //        "He invented a new dye",
-        //        "He created a new type of fabric",
-        //        "He found a new source of fibers",
-        //        "He developed a new spinning technique",
-        //        "He introduced a new hairstyle",
-        //        "He patented a new type of wig"
-        //    ]
-        //},
+        {
+            question: "What did Richard Arkwright improve in the textile industry?",
+            correctAnswers: [
+                "the carding machine"
+            ],
+            incorrectAnswers: [
+                "the steam engine",
+                "the spinning jenny",
+                "the power loom",
+                "the cotton gin",
+                "the flying shuttle"
+            ]
+        },
         //{
         //    question: "What is the process of preparing fibres for spinning into yarn and fabric known as?",
         //    correctAnswers: [
@@ -98,20 +83,19 @@
         //        "Dyeing"
         //    ]
         //},
-        //{
-        //    question: "What type of spinning mills did Richard Arkwright develop?",
-        //    correctAnswers: [
-        //        "Horse-driven spinning mills"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Steam-powered spinning mills",
-        //        "Water-powered spinning mills",
-        //        "Hand-operated spinning mills",
-        //        "Electrically-driven spinning mills",
-        //        "Animal-powered spinning mills",
-        //        "Wind-powered spinning mills"
-        //    ]
-        //},
+        {
+            question: "What initially powered the spinning mills that Richard Arkwright developed?",
+            correctAnswers: [
+                "Horses"
+            ],
+            incorrectAnswers: [
+                "Steam",
+                "Water",
+                "Manual labour",
+                "Electricity",
+                "Wind"
+            ]
+        },
         //{
         //    question: "How many machines did the horse-driven spinning mills developed by Richard Arkwright use?",
         //    correctAnswers: [
@@ -216,20 +200,20 @@
         //        "the power loom"
         //    ]
         //},
-        //{
-        //    question: "What is Richard Arkwright particularly remembered for in regards to his factories?",
-        //    correctAnswers: [
-        //        "The efficient and profitable way he ran his factories"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The way he personally manufactured each item",
-        //        "The invention of the steam engine",
-        //        "The creation of the original carding machine",
-        //        "The design of horse-driven spinning mills",
-        //        "His role as a barber within his factories",
-        //        "His ability to dye hair and make wigs at his factories"
-        //    ]
-        //}
+        {
+            question: "Which of the following is Richard Arkwright particularly remembered for?",
+            correctAnswers: [
+                "The efficient and profitable way he ran his factories"
+            ],
+            incorrectAnswers: [
+                "How he personally manufactured each item he made",
+                "The invention of the steam engine",
+                "The developement of the spinning jenny",
+                "The invention of the power loom",
+                "The invention of the cotton gin",
+                "The invention of the flying shuttle",
+            ]
+        }
     ];
 
     let category = {

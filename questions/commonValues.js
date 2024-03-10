@@ -65,6 +65,7 @@ let significantDates = [
     1746, // Battle of Culloden
     1756, // Start of the Seven Years War
     1776, // American Declaration of Independence
+    1783, // End of the American War of Independence
     1789, // French Revolution
 
     1801, // Act of Union
