@@ -20,6 +20,10 @@ const testQuiz = () => {
             throw new Error(`No correct answers for question: ${questionObj.question}`);
         }
 
+        if (!(questionObj.correctAnswers instanceof Array)) {
+            throw new Error(`Correct answers is not an array for question: ${questionObj.question}`);
+        }
+
         for (let answer of questionObj.correctAnswers) {
             if (!answer || typeof answer !== "string" || answer.length === 0) {
                 throw new Error(`Invalid correctAnswer for question: ${questionObj.question}`);
@@ -27,6 +31,10 @@ const testQuiz = () => {
         }
 
         if (questionObj.furtherCorrectAnswers) {
+            if (!(questionObj.furtherCorrectAnswers instanceof Array)) {
+                throw new Error(`Further correct answers is not an array for question: ${questionObj.question}`);
+            }
+
             for (let answer of questionObj.furtherCorrectAnswers) {
                 if (!answer || typeof answer !== "string" || answer.length === 0) {
                     throw new Error(`Invalid furtherCorrectAnswer for question: ${questionObj.question}`);
@@ -40,6 +48,10 @@ const testQuiz = () => {
         }
 
         if (questionObj.incorrectAnswers && typeof questionObj.incorrectAnswers !== "function") {
+            if (!(questionObj.incorrectAnswers instanceof Array)) {
+                throw new Error(`Incorrect answers is not an array or function for question: ${questionObj.question}`);
+            }
+
             for (let answer of questionObj.incorrectAnswers) {
                 if (!answer || typeof answer !== "string" || answer.length === 0) {
                     throw new Error(`Invalid incorrectAnswer answer for question: ${questionObj.question}`);
@@ -48,6 +60,10 @@ const testQuiz = () => {
         }
 
         if (questionObj.mandatoryIncorrectAnswers) {
+            if (!(questionObj.mandatoryIncorrectAnswers instanceof Array)) {
+                throw new Error(`Mandatory incorrect answers is not an array for question: ${questionObj.question}`);
+            }
+
             for (let answer of questionObj.mandatoryIncorrectAnswers) {
                 if (!answer || typeof answer !== "string" || answer.length === 0) {
                     throw new Error(`Invalid mandatoryIncorrectAnswer for question: ${questionObj.question}`);
