@@ -23,18 +23,27 @@
                 "as well as smaller territories in the Middle East, Southeast Asia, and the Pacific. " +
                 "In Africa, the British Empire included Egypt, Sudan, Kenya, Uganda, South Africa, and Nigeria, among others."
         },
-        {
-            question: "Which empire became the largest the world has ever seen during the Victorian Period?",
-            correctAnswers: ["The British Empire"],
-            incorrectAnswers: [
-                "The French Empire",
-                "The Spanish Empire",
-                "The Portuguese Empire",
-                "The American Empire",
-                "The Ottoman Empire",
-                "The Russian Empire",
-                "The Chinese Empire",
-                "The Japanese Empire",
+        { // KEY QUESTION
+            questions: [
+                {
+                    question: "Which empire became the largest the world has ever seen during the Victorian Period?",
+                    correctAnswers: ["The British Empire"],
+                    incorrectAnswers: [
+                        "The French Empire",
+                        "The Spanish Empire",
+                        "The Portuguese Empire",
+                        "The American Empire",
+                        "The Ottoman Empire",
+                        "The Russian Empire",
+                        "The Chinese Empire",
+                        "The Japanese Empire",
+                    ]
+                },
+                {
+                    question: "During which era did the British Empire become the largest empire the world has ever seen?",
+                    correctAnswers: ["The Victorian Era"],
+                    incorrectAnswers: namesOfModernAges.filter(name => name !== "The Victorian Era")
+                }
             ]
         },
         {

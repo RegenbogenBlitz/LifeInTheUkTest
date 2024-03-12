@@ -47,8 +47,8 @@
         },
         {
             questions: [
-                {
-                    question: "What were the religious refugees who came to Britain between 1680 and 1720 known as?",
+                { // KEY QUESTION
+                    question: "What were the refugees who came to Britain between 1680 and 1720 known as?",
                     correctAnswers: [
                         "Huguenots"
                     ],

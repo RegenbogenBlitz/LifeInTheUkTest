@@ -69,6 +69,7 @@ let significantDates = [
     1789, // French Revolution
 
     1801, // Act of Union
+    1805, // Battle of Trafalgar
     1815, // Battle of Waterloo
     1829, // Catholic Emancipation
     1832, // First Reform Act
@@ -185,6 +186,7 @@ let famousEnglishWars = [
     "The Hundred Years War", // 1337 - 1453
     "The War of the Roses", // 1455 - 1485
     "The English Civil War", // 1642 - 1651
+    "The Nine Years War", // 1688 - 1697
     "The Great Northern War", // 1700 - 1721
     "The War of the Spanish Succession", // 1701 - 1714
     "The War of the Austrian Succession", // 1740 - 1748
@@ -336,25 +338,46 @@ let englishPoets = [
     "John Milton", // 1608-1674
     "Alexander Pope", // 1688-1744
     "William Blake", // 1757-1827
-    "Samuel Coleridge", // 1772-1834
+    "Samuel Taylor Coleridge", // 1772-1834
     "William Wordsworth", // 1770-1850
     "Lord Byron", // 1788-1824
     "Percy Shelley", // 1792-1822
     "John Keats", // 1795-1821
-    "Alfred Tennyson", // 1809-1892
+    "Alfred, Lord Tennyson", // 1809-1892
+    "Robert Browning", // 1812-1889
+    "Elizabeth Barrett Browning", // 1806-1861
+    "Christina Rossetti", // 1830-1894
     "Thomas Hardy", // 1840-1928
     "Rudyard Kipling", // 1865-1936
+    "W.B. Yeats", // 1865-1939
+    "Siegfried Sassoon", // 1886-1967
+    "T.S. Eliot", // 1888-1965
+    "Wilfred Owen", // 1893-1918
+    "W.H. Auden", // 1907-1973
+    "Dylan Thomas", // 1914-1953
+    "Philip Larkin", // 1922-1985
 ];
 
 let englishPoems = [
-    "Beowulf",
-    "Sir Gawain and the Green Knight",
-    "Paradise Lost",
-    "The Faerie Queene",
-    "The Lady of Shalott",
-    "The Rime of the Ancient Mariner",
-    "The Jabberwocky",
-    "The Waste Land",
+    "Beowulf", // Anonymous
+    "Sir Gawain and the Green Knight", // Anonymous
+    "Paradise Lost", // Milton
+    "The Faerie Queene", // Spenser
+    "Shall I Compare Thee To A Summer's Day?", // Shakespeare
+    "The Lady of Shalott", // Tennyson
+    "The Rime of the Ancient Mariner", // Coleridge
+    "I Wandered Lonely as a Cloud", // Wordsworth
+    "Ode to a Nightingale", // Keats
+    "The Lady of Shalott", // Tennyson
+    "Goblin Market", // Rossetti
+    "The Darkling Thrush", // Hardy
+    "The Jabberwocky", // Carroll
+    "If", // Kipling
+    "The Second Coming", // Yeats
+    "The Waste Land", // Eliot
+    "Dulce et Decorum Est", // Owen
+    "Funeral Blues", // Auden
+    "Do Not Go Gentle Into That Good Night" // Thomas
 ];
 
 let scotsPoems = [

@@ -29,7 +29,7 @@
                 "Military generals",
                 "The general public"]
         },
-        {
+        { // KEY QUESTION
             question: "Until what year were there few formal limits to the king's power?",
             correctAnswers: ["1215"],
             incorrectAnswers: getDates(1066, 1485, [1215], false)
@@ -66,7 +66,7 @@
                 },
             ]
         },
-        {
+        { // KEY QUESTION
             question: "When was the Magna Carta signed?",
             correctAnswers: ["1215"],
             incorrectAnswers: getDates(1066, 1485, [1215], false)

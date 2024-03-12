@@ -30,62 +30,6 @@
         //    ]
         //},
         //{
-        //    question: "What was the main source of employment in Britain before the 18th century?",
-        //    correctAnswers: [
-        //        "The biggest source of employment"
-        //    ],
-        //    incorrectAnswers: [
-        //        "A minor source of employment",
-        //        "Not a source of employment",
-        //        "The only source of employment",
-        //        "One of many equal sources of employment",
-        //        "Declining in importance",
-        //        "Rapidly growing in importance",
-        //        "Nonexistent"
-        //    ]
-        //},
-        //{
-        //    question: "What was the biggest source of employment in Britain before the 18th century?",
-        //    correctAnswers: [
-        //        "Agriculture"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Industry",
-        //        "Textile manufacturing",
-        //        "Shipbuilding",
-        //        "Steel production"
-        //    ]
-        //},
-        //{
-        //    question: "What was the main source of employment in Britain before the 18th century?",
-        //    correctAnswers: [
-        //        "Agriculture"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Cottage industries",
-        //        "Manufacturing",
-        //        "Mining",
-        //        "Shipbuilding",
-        //        "Lace making",
-        //        "Steel production"
-        //    ]
-        //},
-        //{
-        //    question: "Before the 18th century, what was the main industry providing jobs to people in Britain?",
-        //    correctAnswers: [
-        //        "Agriculture"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Mining",
-        //        "Shipbuilding",
-        //        "Cottage industries",
-        //        "Textile manufacturing",
-        //        "Railways",
-        //        "Steel production",
-        //        "Service industry"
-        //    ]
-        //},
-        //{
         //    question: "What were 'cottage industries' as mentioned in the context of Britain's employment before the 18th century?",
         //    correctAnswers: [
         //        "Industries where people worked from home to produce goods"
@@ -130,20 +74,17 @@
         //        "At trade fairs and exhibitions"
         //    ]
         //},
-        //{
-        //    question: "During which centuries did the Industrial Revolution occur in Britain?",
-        //    correctAnswers: [
-        //        "18th and 19th centuries"
-        //    ],
-        //    incorrectAnswers: [
-        //        "16th and 17th centuries",
-        //        "17th and 18th centuries",
-        //        "19th and 20th centuries",
-        //        "20th and 21st centuries",
-        //        "15th and 16th centuries",
-        //        "14th and 15th centuries"
-        //    ]
-        //},
+        {
+            question: "During which centuries did the Industrial Revolution occur in Britain? (Select all that apply)",
+            correctAnswers: ["18th", "19th"],
+            incorrectAnswers: [
+                "15th",
+                "16th",
+                "17th",
+                "20th",
+                "21st"
+            ]
+        },
         //{
         //    question: "What was the Industrial Revolution in Britain characterized by?",
         //    correctAnswers: [
@@ -172,21 +113,21 @@
         //        "Declining"
         //    ]
         //},
-        //{
-        //    question: "Which country was the first to industrialise on a large scale?",
-        //    correctAnswers: [
-        //        "Britain"
-        //    ],
-        //    incorrectAnswers: [
-        //        "China",
-        //        "India",
-        //        "France",
-        //        "Germany",
-        //        "Italy",
-        //        "Spain",
-        //        "United States"
-        //    ]
-        //},
+        {
+            question: "Which country was the first to industrialise on a large scale?",
+            correctAnswers: [
+                "Britain"
+            ],
+            incorrectAnswers: [
+                "China",
+                "India",
+                "France",
+                "Germany",
+                "Italy",
+                "Spain",
+                "United States"
+            ]
+        },
         //{
         //    question: "What scale of industrialization did Britain achieve during the Industrial Revolution according to the provided sentence?",
         //    correctAnswers: [
@@ -201,48 +142,19 @@
         //        "partially"
         //    ]
         //},
-        //{
-        //    question: "During which revolution did Britain become the first country to industrialise on a large scale?",
-        //    correctAnswers: [
-        //        "The Industrial Revolution"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Agricultural Revolution",
-        //        "The Technological Revolution",
-        //        "The French Revolution",
-        //        "The Glorious Revolution",
-        //        "The American Revolution",
-        //        "The Digital Revolution"
-        //    ]
-        //},
-        //{
-        //    question: "What was one of the key factors that enabled the Industrial Revolution in Britain?",
-        //    correctAnswers: [
-        //        "The development of machinery"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The invention of the internet",
-        //        "The discovery of electricity",
-        //        "The creation of the printing press",
-        //        "The expansion of the postal service",
-        //        "The introduction of the telegraph",
-        //        "The use of wind power"
-        //    ]
-        //},
-        //{
-        //    question: "Alongside the development of machinery, what else contributed to the Industrial Revolution in Britain?",
-        //    correctAnswers: [
-        //        "The use of steam power"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The use of solar power",
-        //        "The use of manual labor",
-        //        "The discovery of petroleum",
-        //        "The invention of the telephone",
-        //        "The use of water mills",
-        //        "The introduction of digital technology"
-        //    ]
-        //},
+        { // KEY QUESTION
+            question: "Which of the following were key factors that enabled the Industrial Revolution in Britain?",
+            correctAnswers: ["The development of machinery", "The use of steam power"],
+            incorrectAnswers: [
+                "The discovery of electricity",
+                "The creation of the printing press",
+                "The expansion of the postal service",
+                "The introduction of the telegraph",
+                "The invention of the telephone",
+                "The use of wind mills",
+                "The discovery of petroleum",
+            ]
+        },
         //{
         //    question: "What transformation occurred in agriculture and goods manufacturing during the Industrial Revolution?",
         //    correctAnswers: [

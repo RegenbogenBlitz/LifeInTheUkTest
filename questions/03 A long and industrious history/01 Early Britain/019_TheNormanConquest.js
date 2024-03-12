@@ -15,7 +15,7 @@
         },
         {
             questions: [
-                {
+                { // KEY QUESTION
                     question: "In what year did the Battle of Hastings take place?",
                     correctAnswers: ["1066"],
                     incorrectAnswers: getDates(476, 1485, [1066], false)

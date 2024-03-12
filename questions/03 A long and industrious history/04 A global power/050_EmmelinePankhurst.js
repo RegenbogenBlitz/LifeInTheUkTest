@@ -168,20 +168,41 @@
         //    ]
         //},
         {
-            question: "What was the first group to have its members called 'suffragettes'?",
-            correctAnswers: [
-                "Women's Social and Political Union (WSPU)"
-            ],
-            incorrectAnswers: [
-                "Women's Franchise League",
-                "Women's Liberation Movement",
-                "Women's Rights Advocacy Group",
-                "Female Emancipation Guild",
-                "Ladies' Parliamentary Society",
-                "National Union of Women's Suffrage Societies",
-                "Women's Equality Federation"
+            questions: [
+                {
+                    question: "What was the first group to have its members called 'suffragettes'?",
+                    correctAnswers: [
+                        "Women's Social and Political Union (WSPU)"
+                    ],
+                    incorrectAnswers: [
+                        "Women's Franchise League",
+                        "Women's Liberation Movement",
+                        "Women's Rights Advocacy Group",
+                        "Female Emancipation Guild",
+                        "Ladies' Parliamentary Society",
+                        "National Union of Women's Suffrage Societies",
+                        "Women's Equality Federation"
+                    ]
+                },
+                { // KEY QUESTION
+                    question: "What group is most associated with the term 'suffragettes'?",
+                    correctAnswers: ["Women"],
+                    incorrectAnswers: [
+                        "Men",
+                        "Children",
+                        "Miners",
+                        "Factory workers",
+                        "Domestic servants",
+                        "Animals",
+                        "Indians",
+                        "Africans",
+                        "Asians",
+                        "LGBT people",
+                        "Disabled people"
+                    ]
+                }
             ]
-        },
+        }
         //{
         //    question: "What term was used to refer to members of the Women's Social and Political Union (WSPU)?",
         //    correctAnswers: [

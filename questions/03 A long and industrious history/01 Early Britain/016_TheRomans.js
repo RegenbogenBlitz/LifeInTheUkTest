@@ -212,7 +212,7 @@
                         "Vercingetorix",
                         "Asterix",
                         "Obelix",
-                        "Attilla",
+                        "Attila",
                         "Pyrrhus",
                         "Spartacus",
                     ]
@@ -354,6 +354,18 @@
                         "The Servian Wall"
                     ]
                 },
+                { // KEY QUESTION
+                    question: "The wall in the north of England, built in the time of Emperor Hadrian, was built by whom?",
+                    correctAnswers: ["Emperor Hadrian"],
+                    mandatoryIncorrectAnswers: ["Picts"],
+                    incorrectAnswers: [
+                        "Boudicca",
+                        "Hanibal",
+                        "Attila the Hun",
+                        "Caledonians",
+                        "Iceni",
+                        "The Catholic Church"]
+                },
                 {
                     question: "Which Roman Emperor built a wall in the north of England to keep out the Picts?",
                     correctAnswers: ["Hadrian"],
@@ -458,10 +470,11 @@
                 }
             ]
         },
-        {
+        { // KEY QUESTION
             question: "How long did the Romans remain in Britain?",
             correctAnswers: ["400 years"],
             incorrectAnswers: [
+                "50 years",
                 "100 years",
                 "200 years",
                 "300 years",

@@ -172,7 +172,7 @@
         //        "Between the colonists and the Spanish forces"
         //    ]
         //},
-        {
+        { // KEY QUESTION
             question: "In which year did the American colonies declare their independence?",
             correctAnswers: ["1776"],
             mandatoryIncorrectAnswers: ["1783"],
@@ -228,30 +228,37 @@
             mandatoryIncorrectAnswers: ["1776"],
             incorrectAnswers: getDates(1500, 1900, [1783, 1776], false)
         },
-        //{
-        //    question: "What event led to Britain recognizing the independence of the American colonies?",
-        //    correctAnswers: [
-        //        "the American War of Independence"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the French Revolution",
-        //        "the Seven Years' War",
-        //        "the Battle of Waterloo",
-        //        "the Civil War",
-        //        "the Crimean War",
-        //        "World War I"
-        //    ]
-        //},
         {
-            question: "What was the outcome of the American War of Independence for the colonies?",
-            correctAnswers: [
-                "Britain recognised their independence"
-            ],
-            incorrectAnswers: [
-                "Britain maintained control of the colonies",
-                "The colonies were divided among European powers",
-                "The colonies entered into a commonwealth with Britain",
-                "The colonies became part of another empire",
+            questions: [
+                {
+                    question: "What event led to Britain recognizing the independence of the American colonies?",
+                    correctAnswers: ["The American War of Independence"],
+                    incorrectAnswers: famousEnglishWars.filter(war => war !== "The American War of Independence")
+                },
+                {
+                    question: "What event led to Britain recognizing the independence of the American colonies?",
+                    correctAnswers: ["The American War of Independence"],
+                    incorrectAnswers: [
+                        "The Jamestown Massacre",
+                        "The French Revolution",
+                        "The Haitian Revolution",
+                        "The Louisiana Purchase",
+                        "The American Civil War",
+                        "The War of 1812"
+                    ]
+                },
+                { // KEY QUESTION
+                    question: "What was the outcome of the American War of Independence for the colonies?",
+                    correctAnswers: [
+                        "Britain recognised their independence"
+                    ],
+                    incorrectAnswers: [
+                        "Britain maintained control of the colonies",
+                        "The colonies were divided among European powers",
+                        "The colonies entered into a commonwealth with Britain",
+                        "The colonies became part of another empire",
+                    ]
+                }
             ]
         }
     ];

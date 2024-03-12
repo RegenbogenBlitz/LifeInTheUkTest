@@ -214,7 +214,7 @@
                 "The Counter-Reformation",
                 "The Methodist Revival"]
         },
-        {
+        { // KEY QUESTION
             question: "What was the Reformation a movement against? (Select all that apply)",
             correctAnswers: ["The authority of the Pope", "The Roman Catholic Church"],
             incorrectAnswers: [

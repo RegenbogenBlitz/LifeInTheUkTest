@@ -112,10 +112,24 @@
         },
         {
             questions: [
-                {
+                { // KEY QUESTION
                     question: "What famous series of English poems were written by Geoffrey Chaucer?",
                     correctAnswers: ["The Canterbury Tales"],
                     incorrectAnswers: englishPoems.filter(poem => poem !== "The Canterbury Tales")
+                },
+                { // KEY QUESTION
+                    question: "What famous series of English poems were written by Geoffrey Chaucer?",
+                    correctAnswers: ["The Canterbury Tales"],
+                    incorrectAnswers: [
+                        "The Cambridge Tales",
+                        "The Oxford Tales",
+                        "The London Tales",
+                        "The York Tales",
+                        "The Winchester Tales",
+                        "The Durham Tales",
+                        "The Exeter Tales",
+                        "The Lincoln Tales"
+                    ],
                 },
                 {
                     question: "Who wrote 'The Canterbury Tales'?",

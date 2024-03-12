@@ -14,22 +14,22 @@
                 "21st century"
             ]
         },
-        //{
-        //    question: "Which specific areas saw the development of new ideas during the 18th century, as described in the provided text from the Life in the UK Test handbook?",
-        //    correctAnswers: [
-        //        "Politics",
-        //        "Philosophy",
-        //        "Science"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Technological advancements",
-        //        "Agricultural techniques",
-        //        "Literary movements",
-        //        "Artistic styles",
-        //        "Exploration of new lands",
-        //        "Military strategies"
-        //    ]
-        //},
+        { // KEY QUESTION
+            question: "Development in which of the following areas was characteristic development of the Enlightenment? (Select all that apply)",
+            correctAnswers: [
+                "Politics",
+                "Philosophy",
+                "Science"
+            ],
+            incorrectAnswers: [
+                "Astrology",
+                "Alchemy",
+                "Phrenology",
+                "Fashion",
+                "Gastronomy",
+                "Horticulture"
+            ]
+        },
         //{
         //    question: "What historical period, characterized by the development of new ideas about politics, philosophy, and science, is often referred to as 'the Enlightenment'?",
         //    correctAnswers: [

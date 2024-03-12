@@ -555,101 +555,26 @@
         //        "None at all"
         //    ]
         //},
-        //{
-        //    question: "Which of the following did the UK produce more than half of the world's supply during the 19th century?",
-        //    correctAnswers: [
-        //        "Iron",
-        //        "Coal",
-        //        "Cotton cloth"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Wool",
-        //        "Silk",
-        //        "Tea",
-        //        "Spices",
-        //        "Gold",
-        //        "Silver",
-        //        "Tobacco"
-        //    ]
-        //},
-        //{
-        //    question: "In the 19th century, the UK was a leading producer of which commodities?",
-        //    correctAnswers: [
-        //        "Iron",
-        //        "Coal",
-        //        "Cotton cloth"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Wool",
-        //        "Silk",
-        //        "Tea",
-        //        "Spices",
-        //        "Gold",
-        //        "Silver",
-        //        "Tobacco"
-        //    ]
-        //},
-        //{
-        //    question: "Which three industries did the UK lead the world in during the 19th century based on producing more than half of the world's supply?",
-        //    correctAnswers: [
-        //        "Iron",
-        //        "Coal",
-        //        "Cotton cloth"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Automobile",
-        //        "Electronics",
-        //        "Pharmaceutical",
-        //        "Agriculture",
-        //        "Textile (excluding cotton cloth)",
-        //        "Mining (excluding coal and iron)"
-        //    ]
-        //},
-        //{
-        //    question: "What was the status of the UK's iron, coal, and cotton cloth production in the global market during the 19th century?",
-        //    correctAnswers: [
-        //        "The UK produced more than half the world's supply"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The UK produced less than half the world's supply",
-        //        "The UK produced exactly half the world's supply",
-        //        "The UK was not a significant producer",
-        //        "The UK imported more than it produced",
-        //        "The UK's production was predominantly for domestic use",
-        //        "The UK's production was insignificant in the global market"
-        //    ]
-        //},
-        //{
-        //    question: "In terms of global production, where did the UK stand in the production of iron, coal, and cotton cloth in the 19th century?",
-        //    correctAnswers: [
-        //        "Produced more than half"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Produced less than half",
-        //        "Produced exactly half",
-        //        "Was not involved in production",
-        //        "Was a minor producer",
-        //        "Imported more than produced",
-        //        "Produced only for domestic use"
-        //    ]
-        //},
-        //{
-        //    question: "Which materials were predominantly produced by the UK in the 19th century, contributing to its status as a world leader in industry?",
-        //    correctAnswers: [
-        //        "Iron",
-        //        "Coal",
-        //        "Cotton cloth"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Wool",
-        //        "Silk",
-        //        "Tea",
-        //        "Spices",
-        //        "Gold",
-        //        "Silver",
-        //        "Tobacco"
-        //    ]
-        //},
+        { // KEY QUESTION
+            question: "Which of the following did the UK produce more than half of the world's supply during the 19th century? (Select all that apply)",
+            correctAnswers: [
+                "Iron",
+                "Coal",
+                "Cotton cloth"
+            ],
+            incorrectAnswers: [
+                "Beer",
+                "Cigarettes",
+                "Rubber",
+                "Wool",
+                "Silk",
+                "Tea",
+                "Spices",
+                "Gold",
+                "Silver",
+                "Tobacco"
+            ]
+        },
         //{
         //    question: "Which two sectors became central to the UK's economy in the 19th century, according to the information about the UK's industrial leadership?",
         //    correctAnswers: [

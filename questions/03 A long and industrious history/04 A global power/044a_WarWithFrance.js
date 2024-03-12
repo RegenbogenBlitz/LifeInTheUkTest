@@ -101,76 +101,46 @@
         //        "Archduke"
         //    ]
         //},
-        //{
-        //    question: "Against which countries' fleets did Britain's Navy fight during the Battle of Trafalgar?",
-        //    correctAnswers: [
-        //        "French and Spanish fleets"
-        //    ],
-        //    incorrectAnswers: [
-        //        "French and Portuguese fleets",
-        //        "Spanish and Portuguese fleets",
-        //        "German and Italian fleets",
-        //        "Dutch and French fleets",
-        //        "American and Spanish fleets",
-        //        "Russian and Spanish fleets"
-        //    ]
-        //},
-        //{
-        //    question: "In which year did Britain's Navy win the Battle of Trafalgar?",
-        //    correctAnswers: [
-        //        "1805"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1789",
-        //        "1815",
-        //        "1705",
-        //        "1799",
-        //        "1809",
-        //        "1820"
-        //    ]
-        //},
-        //{
-        //    question: "What was the outcome of the Battle of Trafalgar for Britain's Navy?",
-        //    correctAnswers: [
-        //        "Winning"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Losing",
-        //        "Stalemate",
-        //        "Withdrawal",
-        //        "Signing a treaty",
-        //        "Indecisive result",
-        //        "Ceasefire"
-        //    ]
-        //},
-        //{
-        //    question: "Which battle did Britain's Navy win in 1805 against the combined French and Spanish fleets?",
-        //    correctAnswers: [
-        //        "The Battle of Trafalgar"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Battle of Waterloo",
-        //        "The Battle of Hastings",
-        //        "The Battle of Britain",
-        //        "The Battle of Agincourt",
-        //        "The Battle of Blenheim",
-        //        "The Battle of the Nile"
-        //    ]
-        //},
-        //{
-        //    question: "Who was in charge of the British fleet at the Battle of Trafalgar?",
-        //    correctAnswers: [
-        //        "Admiral Nelson"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Duke of Wellington",
-        //        "Admiral Hood",
-        //        "Admiral Jellicoe",
-        //        "Admiral Beatty",
-        //        "Captain Cook",
-        //        "General Wolfe"
-        //    ]
-        //},
+        { // KEY QUESTION
+            question: "In which year was the Battle of Trafalgar?",
+            correctAnswers: ["1805"],
+            mandatoryIncorrectAnswers: ["1815"],
+            incorrectAnswers: getDates(1600, 1950, [1805, 1815], false)
+        },
+        { // KEY QUESTION
+            question: "Against which countries' fleets did Britain's Navy fight during the Battle of Trafalgar? (Select all that apply)",
+            correctAnswers: ["French", "Spanish"],
+            incorrectAnswers: [
+                "Portuguese",
+                "German",
+                "Italian",
+                "Dutch",
+                "American",
+                "Russian"
+            ]
+        },
+        { // KEY QUESTION
+            question: "What was the outcome of the Battle of Trafalgar for Britain's Navy?",
+            correctAnswers: ["Win"],
+            incorrectAnswers: [
+                "Loss",
+                "Stalemate",
+                "Indecisive",
+            ]
+        },
+        { // KEY QUESTION
+            question: "Who was in charge of the British fleet at the Battle of Trafalgar?",
+            correctAnswers: [
+                "Admiral Nelson"
+            ],
+            incorrectAnswers: [
+                "The Duke of Wellington",
+                "Captain Cook",
+                "Captain Bligh",
+                "Sir Francis Drake",
+                "Sir Walter Raleigh"
+            ]
+        },
         //{
         //    question: "What happened to Admiral Nelson during the Battle of Trafalgar?",
         //    correctAnswers: [
@@ -285,6 +255,12 @@
         //        "The Portuguese Army"
         //    ]
         //},
+        {
+            question: "In what year was the Battle of Waterloo?",
+            correctAnswers: ["1815"],
+            mandatoryIncorrectAnswers: ["1805"],
+            incorrectAnswers: getDates(1600, 1950, [1815, 1805], false)
+        },
         //{
         //    question: "In what year did the Napoleonic Wars end with the defeat of Emperor Napoleon by the Duke of Wellington at the Battle of Waterloo?",
         //    correctAnswers: [
