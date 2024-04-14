@@ -1,6 +1,6 @@
 (() => {
     let questions = [
-        {
+        { // KEY QUESTION
             question: "When did Parliament invite Charles II to come back from exile?",
             correctAnswers: ["1660"],
             incorrectAnswers: getDates(1500, 1900, [1660], false)

@@ -183,8 +183,7 @@
                         "Robert Peel",
                         "Benjamin Disraeli",
                         "William Gladstone",
-                        "Winston Churchill",
-
+                        "Winston Churchill"
                     ]
                 },
                 {

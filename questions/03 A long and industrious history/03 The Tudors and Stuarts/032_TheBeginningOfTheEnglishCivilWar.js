@@ -232,17 +232,17 @@
             correctAnswers: ["1642"],
             incorrectAnswers: getDates(1500, 1900, [1642], false)
         },
-        {
+        { // KEY QUESTION
             question: "What name was given to the supporters of the king during the civil war?",
             correctAnswers: ["the Cavaliers"],
             mandatoryIncorrectAnswers: ["the Roundheads", "the Parliamentarians"],
-            incorrectAnswers: ["the Loyalists", "the Commons", "the Puritans"]
+            incorrectAnswers: ["the Loyalists", "the Commons", "the Puritans", "the Luddites", "the Levellers"]
         },
-        {
+        { // KEY QUESTION
             question: "What name was given to the supporters of parliament during the civil war?",
             correctAnswers: ["the Roundheads"],
             mandatoryIncorrectAnswers: ["the Cavaliers", "the Royalists"],
-            incorrectAnswers: ["the Commonwealthmen", "the Nationalists", "the Rebels", "the Confederates", "the Unionists"]
+            incorrectAnswers: ["the Commonwealthmen", "the Nationalists", "the Rebels", "the Confederates", "the Unionists", "the Luddites"]
         },
     ];
 

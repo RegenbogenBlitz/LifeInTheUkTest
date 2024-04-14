@@ -3,11 +3,11 @@
         {
             questions: [ // KEY QUESTION
                 {
-                    question: "At which battles was the King's army defeated during the English Civil War? (Select all that apply)",
+                    question: "At which battles was the Charles I's army defeated during the English Civil War? (Select all that apply)",
                     correctAnswers: [
                         "The Battle of Marston Moor",
                         "The Battle of Naesby"],
-                    mandatoryIncorrectAnswers: ["The Battle of Dunbar"],
+                    mandatoryIncorrectAnswers: ["The Battle of Dunbar", "The Battle of Worcester"],
                     incorrectAnswers: [
                         "The Battle of Cropredy Bridge",
                         "The Battle of Lostwithiel",

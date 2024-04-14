@@ -1,5 +1,20 @@
 (() => {
     let questions = [
+        { // KEY QUESTION
+            questions: [
+                {
+                    question: "In what century did Florence Nightingale do her most famous work?",
+                    correctAnswers: ["19th"],
+                    mandatoryIncorrectAnswers: ["18th", "20th"],
+                    incorrectAnswers: ["17th", "21st"]
+                },
+                {
+                    question: "In what era did Florence Nightingale do her most famous work?",
+                    correctAnswers: ["The Victorian Era"],
+                    incorrectAnswers: namesOfModernAges.filter(age => age !== "The Victorian Era")
+                }
+            ]
+        },
         {
             question: "Where was Florence Nightingale born?",
             correctAnswers: ["Italy"],

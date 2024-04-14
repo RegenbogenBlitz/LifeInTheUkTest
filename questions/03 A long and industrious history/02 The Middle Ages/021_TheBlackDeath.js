@@ -211,9 +211,22 @@
             ]
         },
         {
-            question: "When did the Black Death arrive in Britain?",
-            correctAnswers: ["1348"],
-            incorrectAnswers: getDates(1066, 1485, [1348], false)
+            questions: [
+                {
+                    question: "When did the Black Death arrive in Britain?",
+                    correctAnswers: ["1348"],
+                    incorrectAnswers: getDates(1066, 1485, [1348], false)
+                },
+                { // KEY QUESTION
+                    question: "What was the name of the disease that arrived in Britain in 1348 and killed many people?",
+                    correctAnswers: ["The Black Death"],
+                    incorrectAnswers: [
+                        "The Red Death",
+                        "The White Death",
+                        "The Blue Death",
+                        "The Green Death"]
+                },
+            ]
         },
         {
             question: "Most probably, what sort of disease was the Black death?",

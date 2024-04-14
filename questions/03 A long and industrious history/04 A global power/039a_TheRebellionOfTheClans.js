@@ -70,50 +70,68 @@
                 "A scottish poet",
             ]
         },
-        //{
-        //    questions: [
-        //        {
-        //            question: "What was the nickname of Charles Edward Stuart?",
-        //            correctAnswers: ["Bonnie Prince Charlie"],
-        //            incorrectAnswers: [
-        //            ]
-        //        },
-        //        {
-        //            question: "Whose nickname was 'Bonnie Prince Charlie'?",
-        //            correctAnswers: ["Charles Edward Stuart"],
-        //            incorrectAnswers: [
-        //            ]
-        //        }
-        //    ]
-        //},
-        //{
-        //    question: "Where did Charles Edward Stuart, also known as 'Bonnie Prince Charlie', land in his attempt to claim the throne?",
-        //    correctAnswers: [
-        //        "Scotland"
-        //    ],
-        //    incorrectAnswers: [
-        //        "England",
-        //        "Wales",
-        //        "Ireland",
-        //        "France",
-        //        "Spain",
-        //        "North America"
-        //    ]
-        //},
-        //{
-        //    question: "Who supported Charles Edward Stuart during his attempt to claim the British throne in 1745?",
-        //    correctAnswers: [
-        //        "clansmen from the Scottish Highlands"
-        //    ],
-        //    incorrectAnswers: [
-        //        "clansmen from the Lowlands",
-        //        "the English nobility",
-        //        "the French military",
-        //        "the Irish revolutionaries",
-        //        "the Welsh lords",
-        //        "the Spanish Armada"
-        //    ]
-        //},
+        { // KEY QUESTION
+            questions: [
+                {
+                    question: "What was the nickname of Charles Edward Stuart?",
+                    correctAnswers: ["Bonnie Prince Charlie"],
+                    incorrectAnswers: [
+                        "The Old Pretender",
+                        "The Black Prince",
+                        "Charles Lackland",
+                        "Farmer Charles",
+                        "Longshanks",
+                    ]
+                },
+                {
+                    question: "Whose nickname was 'Bonnie Prince Charlie'?",
+                    correctAnswers: ["Charles Edward Stuart"],
+                    mandatoryIncorrectAnswers: [
+                        "Charles I",
+                        "Charles II",
+                        "Charles III"],
+                    incorrectAnswers: [
+                        "Charles Dickens",
+                        "Charlie Chaplin",
+                        "Charles Darwin",
+                    ]
+                }
+            ]
+        },
+        {
+            question: "In what year did Charles Edward Stuart land, in his attempt to claim the British throne?",
+            correctAnswers: ["1745"],
+            mandatoryIncorrectAnswers: ["1746"],
+            incorrectAnswers: getDates(1600, 1837, [1745, 1746], false)
+        },
+        {
+            question: "Where did Charles Edward Stuart land in his attempt to claim the throne?",
+            correctAnswers: [
+                "Scotland"
+            ],
+            incorrectAnswers: [
+                "England",
+                "Wales",
+                "Ireland",
+                "France",
+                "Spain",
+                "North America"
+            ]
+        },
+        {
+            question: "Who supported Charles Edward Stuart during his attempt to claim the British throne?",
+            correctAnswers: [
+                "clansmen from the Scottish Highlands"
+            ],
+            incorrectAnswers: [
+                "clansmen from the Scottish Lowlands",
+                "the English nobility",
+                "the French military",
+                "the Irish revolutionaries",
+                "the Welsh lords",
+                "the Spanish Armada"
+            ]
+        },
         //{
         //    question: "What did Charles Edward Stuart do with the support he received from the Scottish Highlands in 1745?",
         //    correctAnswers: [
@@ -126,20 +144,6 @@
         //        "negotiated a peace treaty",
         //        "built a fortress",
         //        "created a council of elders"
-        //    ]
-        //},
-        //{
-        //    question: "In what region did Charles Edward Stuart receive support and raise an army in 1745?",
-        //    correctAnswers: [
-        //        "the Scottish Highlands"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the Scottish Lowlands",
-        //        "Northern Ireland",
-        //        "Wales",
-        //        "Cornwall",
-        //        "Yorkshire",
-        //        "Northumberland"
         //    ]
         //},
         //{
@@ -157,93 +161,40 @@
         //        "Edward I"
         //    ]
         //},
-        //{
-        //    question: "In what year was Charles Edward Stuart defeated at the Battle of Culloden?",
-        //    correctAnswers: [
-        //        "1746"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1745",
-        //        "1603",
-        //        "1707",
-        //        "1715",
-        //        "1756",
-        //        "1801",
-        //        "1832"
-        //    ]
-        //},
-        //{
-        //    question: "Which battle marked the defeat of Charles Edward Stuart by George II's Army?",
-        //    correctAnswers: [
-        //        "The Battle of Culloden"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Battle of Bannockburn",
-        //        "The Battle of Flodden",
-        //        "The Battle of Hastings",
-        //        "The Battle of Waterloo",
-        //        "The Battle of Agincourt",
-        //        "The Battle of Bosworth Field",
-        //        "The Battle of Falkirk"
-        //    ]
-        //},
-        //{
-        //    question: "Who led the army that defeated Charles Edward Stuart in 1746?",
-        //    correctAnswers: [
-        //        "George II"
-        //    ],
-        //    incorrectAnswers: [
-        //        "George I",
-        //        "William III",
-        //        "Oliver Cromwell",
-        //        "Henry VIII",
-        //        "Elizabeth I",
-        //        "James I",
-        //        "Edward III"
-        //    ]
-        //},
-        //{
-        //    question: "Where did Charles Edward Stuart escape to after being defeated at the Battle of Cullodon in 1746?",
-        //    correctAnswers: [
-        //        "Europe"
-        //    ],
-        //    incorrectAnswers: [
-        //        "North America",
-        //        "Australia",
-        //        "Asia",
-        //        "Africa",
-        //        "South America",
-        //        "Antarctica"
-        //    ]
-        //},
-        //{
-        //    question: "Who escaped back to Europe after being defeated at the Battle of Cullodon in 1746?",
-        //    correctAnswers: [
-        //        "Charles Edward Stuart"
-        //    ],
-        //    incorrectAnswers: [
-        //        "George II",
-        //        "James II",
-        //        "A Scottish clan chief",
-        //        "A Scottish landlord",
-        //        "A member of George II's Army",
-        //        "Bonnie Prince Charlie"
-        //    ]
-        //},
-        //{
-        //    question: "Which event prompted Charles Edward Stuart to escape back to Europe?",
-        //    correctAnswers: [
-        //        "His defeat at the Battle of Cullodon in 1746"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Highland Clearances",
-        //        "The accession of George II",
-        //        "The Battle of Bannockburn",
-        //        "The union with England",
-        //        "The signing of the Treaty of Union",
-        //        "The Jacobite Rebellion"
-        //    ]
-        //},
+        {
+            questions: [
+                {
+                    question: "In what year was Charles Edward Stuart defeated at the Battle of Culloden?",
+                    correctAnswers: ["1746"],
+                    mandatoryIncorrectAnswers: ["1745"],
+                    incorrectAnswers: getDates(1600, 1837, [1746, 1745], false)
+                },
+                {
+                    question: "Which battle marked the defeat of Charles Edward Stuart and the end of his attempt for the British throne?",
+                    correctAnswers: ["The Battle of Culloden"],
+                    incorrectAnswers: famousBattles.filter(battle => battle !== "The Battle of Culloden")
+                }
+            ]
+        },
+        {
+            question: "Whose army defeated Charles Edward Stuart and ended his attempt for the British throne?",
+            correctAnswers: ["George II"],
+            incorrectAnswers: dualMonarchs.concat(unitedMonarchs.filter(monarch => monarch !== "George II"))
+        },
+        {
+            question: "Where did Charles Edward Stuart escape to after being defeated in his attempt for the British throne?",
+            correctAnswers: [
+                "Europe"
+            ],
+            incorrectAnswers: [
+                "North America",
+                "Australia",
+                "Asia",
+                "Africa",
+                "South America",
+                "Antarctica"
+            ]
+        },
         //{
         //    question: "What action did Charles Edward Stuart take after the Battle of Cullodon in 1746?",
         //    correctAnswers: [

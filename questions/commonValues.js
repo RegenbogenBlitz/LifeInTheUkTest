@@ -1,3 +1,8 @@
+let months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
 let significantDates = [
     -55, // Julius Caesar's first invasion
     43, // Roman invasion
@@ -70,9 +75,11 @@ let significantDates = [
 
     1801, // Act of Union
     1805, // Battle of Trafalgar
+    1807, // Slave Trade Act
     1815, // Battle of Waterloo
     1829, // Catholic Emancipation
     1832, // First Reform Act
+    1833, // Slavery Abolition Act
     1837, // Victoria becomes queen
     1848, // Chartist movement
     1854, // Crimean War
@@ -86,7 +93,7 @@ let significantDates = [
     1903, // Founding of the Women's Social and Political Union (WSPU)
     1913, // British promise of Home Rule for Ireland
     1914, // Start of the First World War
-    1916, // Easter Rising
+    1916, // Easter Rising, Battle of the Somme
     1918, // End of the First World War, Representation of the People Act
     1921, // Anglo-Irish Treaty
     1922, // Irish Free State, BBC founded
@@ -94,16 +101,24 @@ let significantDates = [
     1936, // BBC starts television broadcasts
     1939, // Start of the Second World War
     1940, // Dunkirk evacuation, Battle of Britain
+    1941, // Beveridge Report Commissioned
+    1942, // Beveridge Report Published
     1945, // End of the Second World War
+    1947, // Independence of India and Pakistan
+    1948, // National Health Service founded
     1949, // Ireland becomes a republic
     1952, // Elizabeth II becomes queen
     1956, // Suez Crisis
     1973, // UK joins the EEC
+    1974, // Hung Parliament
     1982, // Falklands War
     1989, // Fall of the Berlin Wall
     1990, // World Wide Web first used successfully
     1996, // First mammal cloned
     1998, // Good Friday Agreement
+
+    2010, // Coalition government
+    2016, // Brexit referendum
 ];
 
 let getDates = (from, to, avoidDates, includeBcAd) => () => {
@@ -159,23 +174,39 @@ let namesOfAges = [
     ...namesOfModernAges
 ];
 
-let famousBattles = [
-    "The Battle of Stamford Bridge", // 1066
-    "The Battle of Hastings", // 1066
-    "The Battle of Bannockburn", // 1314
-    "The Battle of Crecy", // 1346
-    "The Battle of Poitiers", // 1356
-    "The Battle of Agincourt", // 1415
-    "The Battle of Towton", // 1461
-    "The Battle of Bosworth Field", // 1485
-    "The Battle of Stoke Field", // 1487
-    "The Battle of Flodden Field", // 1513
-    "The Battle of Naseby", // 1645
-    "The Battle of Colloden", // 1746
-    "The Battle of Trafalgar", // 1805
-    "The Battle of Waterloo", // 1815
+let ww1Battles = [
     "The Battle of the Somme", // 1916
-    "The Battle of Britain", // 1940
+];
+
+let famousBattles = [
+    "The Battle of Stamford Bridge", // 1066, Harold Godwinson vs Harald Hardrada
+    "The Battle of Hastings", // 1066, Harold Godwinson vs William the Conqueror
+
+    "The Battle of Bannockburn", // 1314, Robert the Bruce vs Edward II
+    "The Battle of Crecy", // 1346, Hundred Years War
+    "The Battle of Poitiers", // 1356, Hundred Years War
+    "The Battle of Agincourt", // 1415, Hundred Years War
+
+    "The Battle of Towton", // 1461, War of the Roses
+    "The Battle of Bosworth Field", // 1485, War of the Roses
+    "The Battle of Stoke Field", // 1487, War of the Roses
+    "The Battle of Flodden Field", // 1513, War of the Roses
+
+    "The Battle of Marston Moor", // 1644, English Civil War
+    "The Battle of Naseby", // 1645, English Civil War
+    "The Battle of Dunbar", // 1650, English Civil War
+    "The Battle of Worcester", // 1651, English Civil War
+
+    "The Battle of the Boyne", // 1690, Jacobite Rebellions
+    "The Battle of Culloden", // 1746, Jacobite Rebellions
+
+    "The Battle of Trafalgar", // 1805, Napoleonic Wars
+    "The Battle of Waterloo", // 1815, Napoleonic Wars
+
+    ...ww1Battles,
+
+    "The Battle of Britain", // 1940, WWII
+    "The Battle of El Alamein", // 1942, WWII
 ];
 
 let famousEnglishWars = [
@@ -468,4 +499,37 @@ let europeanCountries = [
     "Denmark",
     "Norway",
     "Finland",
+];
+
+let primeMinisters20thCentury = [
+    "Lord Salisbury", // 1885-1886, 1886-1892, 1895-1902
+    "Arthur Balfour", // 1902-1905
+    "Henry Campbell-Bannerman", // 1905-1908
+    "H.H. Asquith", // 1908-1916
+    "David Lloyd George", // 1916-1922
+    "Bonar Law", // 1922-1923
+    "Stanley Baldwin", // 1923-1924, 1924-1929, 1935-1937
+    "Ramsay MacDonald", // 1924, 1929-1935
+    "Neville Chamberlain", // 1937-1940
+    "Winston Churchill", // 1940-1945, 1951-1955
+    "Clement Attlee", // 1945-1951
+    "Anthony Eden", // 1955-1957
+    "Harold Macmillan", // 1957-1963
+    "Alec Douglas-Home", // 1963-1964
+    "Harold Wilson", // 1964-1970, 1974-1976
+    "Edward Heath", // 1970-1974
+    "James Callaghan", // 1976-1979
+    "Margaret Thatcher", // 1979-1990
+    "John Major", // 1990-1997
+    "Tony Blair" // 1997-2007
+];
+
+let primeMinisters21stCentury = [
+    "Tony Blair", // 1997-2007
+    "Gordon Brown", // 2007-2010
+    "David Cameron", // 2010-2016
+    "Theresa May", // 2016-2019
+    "Boris Johnson", // 2019-2022,
+    "Liz Truss", // 2022-2022,
+    "Rishi Sunak", // 2022-
 ];

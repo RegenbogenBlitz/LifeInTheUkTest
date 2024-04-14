@@ -347,7 +347,7 @@
                 "The English were equally successful in Scotland and in Wales"
             ]
         },
-        {
+        { // KEY QUESTION
             questions: [
                 {
                     question: "When was the Battle of Bannockburn?",
@@ -364,7 +364,7 @@
                 }
             ]
         },
-        {
+        { // KEY QUESTION
             question: "Who led the victorious side at the Battle of Bannockburn?",
             correctAnswers: ["Robert the Bruce"],
             mandatoryIncorrectAnswers: ["William Wallace", "Edward II"],
@@ -374,7 +374,7 @@
             ]
         },
         {
-            questions: [
+            questions: [ // KEY QUESTION
                 {
                     question: "Who won at the Battle of Bannockburn?",
                     correctAnswers: ["The Scots"],

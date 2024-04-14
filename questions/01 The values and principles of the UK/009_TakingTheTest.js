@@ -23,21 +23,13 @@
             questions: [
                 {
                     question: "Questions for the Life in the UK test will be based on all parts of the handbook, including the introduction. True or False?",
-                    correctAnswers: [
-                        "True"
-                    ],
-                    incorrectAnswers: [
-                        "False",
-                    ]
+                    correctAnswers: ["True"],
+                    incorrectAnswers: ["False"]
                 },
                 {
                     question: "Questions for the Life in the UK test will only be based on some parts of the handbook. True or False?",
-                    correctAnswers: [
-                        "False"
-                    ],
-                    incorrectAnswers: [
-                        "True",
-                    ],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
                     explanation: "Questions for the Life in the UK test will be based on all parts of the handbook, including the introduction."
                 }
             ]

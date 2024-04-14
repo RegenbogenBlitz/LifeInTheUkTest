@@ -301,21 +301,35 @@
         //        "The Abolitionists"
         //    ]
         //},
-        //{
-        //    question: "Who set up the first formal anti-slavery groups in Britain?",
-        //    correctAnswers: [
-        //        "Quakers"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Anglicans",
-        //        "Catholics",
-        //        "Methodists",
-        //        "Presbyterians",
-        //        "Baptists",
-        //        "Unitarians",
-        //        "Lutherans"
-        //    ]
-        //},
+        { // KEY QUESTION
+            questions: [
+                {
+                    question: "Which religious group set up the first formal anti-slavery groups in Britain?",
+                    correctAnswers: ["Quakers"],
+                    incorrectAnswers: [
+                        "Anglicans",
+                        "Catholics",
+                        "Methodists",
+                        "Presbyterians",
+                        "Baptists",
+                        "Unitarians",
+                        "Lutherans"
+                    ]
+                },
+                {
+                    question: "Who set up the first formal anti-slavery groups in Britain?",
+                    correctAnswers: ["Quakers"],
+                    incorrectAnswers: [
+                        "William Wilberforce",
+                        "John Newton",
+                        "The Royal Navy",
+                        "King George III",
+                        "Olaudah Equiano"
+                    ]
+                }
+            ]
+        }
+        ,
         //{
         //    question: "In which century were the first formal anti-slavery groups established by the Quakers?",
         //    correctAnswers: [
@@ -345,51 +359,65 @@
         //        "They offered education to slaves"
         //    ]
         //},
-        //{
-        //    question: "What role did William Wilberforce play in the movement against slavery?",
-        //    correctAnswers: [
-        //        "Played an important role in changing the law"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Founded the first formal anti-slavery group",
-        //        "Was a leading slave trader",
-        //        "Opposed the Emancipation Act",
-        //        "Was a member of the Royal Navy",
-        //        "Was a Quaker leader",
-        //        "Led slave revolts",
-        //        "Was a slave ship captain"
-        //    ]
-        //},
-        //{
-        //    question: "What was William Wilberforce's profession?",
-        //    correctAnswers: [
-        //        "Member of Parliament"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Evangelical preacher",
-        //        "Quaker activist",
-        //        "Ship captain",
-        //        "Slave plantation owner",
-        //        "Lawyer",
-        //        "Historian",
-        //        "Teacher"
-        //    ]
-        //},
-        //{
-        //    question: "What was William Wilberforce's religion?",
-        //    correctAnswers: [
-        //        "Evangelical Christian"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Quaker",
-        //        "Catholic",
-        //        "Atheist",
-        //        "Buddhist",
-        //        "Hindu",
-        //        "Muslim",
-        //        "Jewish"
-        //    ]
-        //},
+        { // KEY QUESTION
+            questions: [
+                {
+                    question: "What role did William Wilberforce play in the movement against slavery?",
+                    correctAnswers: [
+                        "Played an important role in changing the law"
+                    ],
+                    incorrectAnswers: [
+                        "Founded the first formal anti-slavery group",
+                        "Was a leading slave trader",
+                        "Opposed the Emancipation Act",
+                        "Was a member of the Royal Navy",
+                        "Was a Quaker leader",
+                        "Led slave revolts",
+                        "Was a slave ship captain"
+                    ]
+                },
+                {
+                    question: "Which of the following describes William Wilberforce's position with respect to the slave trade?",
+                    correctAnswers: ["He was an abolitionist"],
+                    incorrectAnswers: [
+                        "He was a slave trader",
+                        "He was a plantation owner",
+                        "He was a former slave",
+                        "He was a member of the Royal Navy",
+                        "He was a Quaker"
+                    ]
+                }
+            ]
+        },
+        {
+            question: "What was William Wilberforce's profession?",
+            correctAnswers: ["Member of Parliament"],
+            incorrectAnswers: [
+                "Evangelical preacher",
+                "Quaker activist",
+                "Ship captain",
+                "Slave plantation owner",
+                "Lawyer",
+                "Historian",
+                "Teacher"
+            ]
+        },
+        {
+            question: "What was William Wilberforce's religion?",
+            correctAnswers: [
+                "Evangelical Christian"
+            ],
+            incorrectAnswers: [
+                "Quaker",
+                "Catholic",
+                "Atheist",
+                "Buddhist",
+                "Hindu",
+                "Muslim",
+                "Jewish",
+                "Sikh"
+            ]
+        },
         //{
         //    question: "What was the result of the efforts by William Wilberforce and other abolitionists regarding the slave trade?",
         //    correctAnswers: [
@@ -432,223 +460,151 @@
         //        "Reducing public awareness of slavery"
         //    ]
         //},
-        //{
-        //    question: "What year did it become illegal to trade slaves in British ships or from British ports?",
-        //    correctAnswers: [
-        //        "1807"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1833",
-        //        "1700",
-        //        "1780",
-        //        "1750",
-        //        "1850",
-        //        "1820",
-        //        "1870"
-        //    ]
-        //},
-        //{
-        //    question: "What Act abolished slavery throughout the British Empire?",
-        //    correctAnswers: [
-        //        "the Emancipation Act"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the Abolition Act",
-        //        "the Freedom Act",
-        //        "the Liberation Act",
-        //        "the Slavery Act",
-        //        "the Manumission Act",
-        //        "the Slave Trade Act"
-        //    ]
-        //},
-        //{
-        //    question: "In what year was the Emancipation Act enacted, abolishing slavery throughout the British Empire?",
-        //    correctAnswers: [
-        //        "1833"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1807",
-        //        "1700",
-        //        "1780",
-        //        "1750",
-        //        "1850",
-        //        "1820",
-        //        "1870"
-        //    ]
-        //},
-        //{
-        //    question: "What actions did the Royal Navy take against slave ships from other countries following the passage of the Emancipation Act in 1833?",
-        //    correctAnswers: [
-        //        "Stopped slave ships",
-        //        "Freed the slaves",
-        //        "Punished the slave traders"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Allowed slave ships to continue",
-        //        "Enforced the slave trade",
-        //        "Transported slaves to the British Empire",
-        //        "Ignored the activities of slave traders",
-        //        "Supported slave traders",
-        //        "Condemned slave ships but took no action",
-        //        "Protected the rights of slave traders"
-        //    ]
-        //},
-        //{
-        //    question: "Who did the Royal Navy free after stopping slave ships from other countries during the period of enforcing the 1807 abolition of the slave trade?",
-        //    correctAnswers: [
-        //        "The slaves"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The slave traders",
-        //        "The plantation owners",
-        //        "The sailors",
-        //        "The British citizens",
-        //        "Animals",
-        //        "Goods and commodities"
-        //    ]
-        //},
-        //{
-        //    question: "What action did the Royal Navy take against slave traders after intercepting their ships post-1807?",
-        //    correctAnswers: [
-        //        "Punished the slave traders"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Recruited the slave traders",
-        //        "Paid compensation to the slave traders",
-        //        "Granted freedom to the slave traders",
-        //        "Offered amnesty to the slave traders",
-        //        "Gave awards to the slave traders",
-        //        "Hired the slave traders as consultants"
-        //    ]
-        //},
-        //{
-        //    question: "What was the nationality of the workers who were employed to replace the freed slaves after 1833?",
-        //    correctAnswers: [
-        //        "Indian and Chinese"
-        //    ],
-        //    incorrectAnswers: [
-        //        "African and Caribbean",
-        //        "American and European",
-        //        "British and French",
-        //        "African and Asian",
-        //        "South American and Russian",
-        //        "European and African",
-        //        "Middle Eastern and South American"
-        //    ]
-        //},
-        //{
-        //    question: "How many Indian and Chinese workers were employed in the British Empire to replace the freed slaves after the Slavery Abolition Act of 1833?",
-        //    correctAnswers: [
-        //        "2 million"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1 million",
-        //        "3 million",
-        //        "500,000",
-        //        "4 million",
-        //        "750,000",
-        //        "5 million",
-        //        "100,000"
-        //    ]
-        //},
-        //{
-        //    question: "In which year did the British Empire begin employing Indian and Chinese workers to replace the freed slaves following the passage of the Emancipation Act?",
-        //    correctAnswers: [
-        //        "After 1833"
-        //    ],
-        //    incorrectAnswers: [
-        //        "After 1807",
-        //        "Before 1807",
-        //        "After 1750",
-        //        "Before 1833",
-        //        "After 1900",
-        //        "Before 1700"
-        //    ]
-        //},
-        //{
-        //    question: "After the abolition of slavery in the British Empire, where were Indian and Chinese workers employed in the Caribbean?",
-        //    correctAnswers: [
-        //        "Sugar plantations"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Cotton farms",
-        //        "Rice fields",
-        //        "Indigo farms",
-        //        "Spice plantations",
-        //        "Coffee farms",
-        //        "Tea plantations"
-        //    ]
-        //},
-        //{
-        //    question: "In which industry were Indian and Chinese workers employed in South Africa after the abolition of slavery in the British Empire?",
-        //    correctAnswers: [
-        //        "Mines"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Textile factories",
-        //        "Oil refineries",
-        //        "Coal plants",
-        //        "Fishing industry",
-        //        "Construction sites",
-        //        "Agricultural farms"
-        //    ]
-        //},
-        //{
-        //    question: "Following the abolition of slavery in the British Empire, Indian and Chinese workers were employed on what type of infrastructure in East Africa?",
-        //    correctAnswers: [
-        //        "Railways"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Highways",
-        //        "Bridges",
-        //        "Airports",
-        //        "Dams",
-        //        "Canals",
-        //        "Telecommunication networks"
-        //    ]
-        //},
-        //{
-        //    question: "After the Emancipation Act of 1833 abolished slavery throughout the British Empire, in which sector were Indian and Chinese workers employed in Kenya?",
-        //    correctAnswers: [
-        //        "The army"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Education",
-        //        "Healthcare",
-        //        "Law enforcement",
-        //        "Banking",
-        //        "Tourism",
-        //        "Agriculture"
-        //    ]
-        //},
-        //{
-        //    question: "Which groups of workers were employed in the army in Kenya after the abolition of slavery in the British Empire?",
-        //    correctAnswers: [
-        //        "Indian and Chinese workers"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Former British slaves",
-        //        "European immigrants",
-        //        "American soldiers",
-        //        "African natives",
-        //        "Middle Eastern laborers",
-        //        "Caribbean migrants"
-        //    ]
-        //},
-        //{
-        //    question: "What is the religious affiliation of the Quakers?",
-        //    correctAnswers: [
-        //        "Protestant"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Catholic",
-        //        "Orthodox",
-        //        "Buddhist",
-        //        "Hindu",
-        //        "Muslim",
-        //        "Jewish"
-        //    ]
-        //}
+        {
+            questions: [
+                {
+                    question: "What year did it become illegal to trade slaves in British ships or from British ports?",
+                    correctAnswers: ["1807"],
+                    mandatoryIncorrectAnswers: ["1833"],
+                    incorrectAnswers: getDates(1600, 1900, [1807, 1833], false)
+                },
+                { // KEY QUESTION
+                    question: "With regard to the slave trade, what did the 1807 Act of Parliament make illegal?",
+                    correctAnswers: [
+                        "Trading slaves in British ships",
+                        "Trading slaves from British ports"
+                    ],
+                    incorrectAnswers: [
+                        "Owning slaves in Britain",
+                        "Owning slaves in British colonies"
+                    ]
+                }
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "In what year was the Emancipation Act enacted, abolishing slavery throughout the British Empire?",
+                    correctAnswers: ["1833"],
+                    mandatoryIncorrectAnswers: ["1807"],
+                    incorrectAnswers: getDates(1600, 1900, [1833, 1807], false),
+                    explanation:
+                        "Although in the Life in the UK test book it's called \"The Emancipation Act\", " +
+                        "the correct name is the \"Slavery Abolition Act 1833\"."
+                },
+                { // KEY QUESTION
+                    question: "With regard to the slave trade, what did the 1833 Act of Parliament make illegal?",
+                    correctAnswers: ["Owning slaves throughout the British Empire"],
+                    incorrectAnswers: [
+                        "Trading slaves in British ships",
+                        "Trading slaves from British ports"
+                    ],
+                    explanation: "The trading of slaves was made illegal in an earlier act."
+                }
+            ]
+        },
+        { // KEY QUESTION
+            question:
+                "What actions did the Royal Navy take against slave ships from other countries " +
+                "following the passage of the Emancipation Act in 1833? (Select all that apply)",
+            correctAnswers: [
+                "Stopped slave ships",
+                "Freed the slaves",
+                "Punished the slave traders"
+            ],
+            incorrectAnswers: [
+                "Allowed slave ships to continue",
+                "Enforced the slave trade",
+                "Transported slaves to the British Empire",
+                "Ignored the activities of slave traders",
+                "Supported slave traders",
+                "Condemned slave ships but took no action",
+                "Protected the rights of slave traders"
+            ]
+        },
+        { // KEY QUESTION
+            questions: [
+                {
+                    question: "Which of the following nationalities were workers employed to replace the freed slaves in the British Empire after 1833? (Select all that apply)",
+                    correctAnswers: ["Indian", " Chinese"],
+                    incorrectAnswers: [
+                        "Canadian",
+                        "Australian",
+                        "South African",
+                        "Malayan",
+                        "Guianan",
+                        "Caribbean",
+                        "Burmese",
+                        "Russian",
+                        "Brazilian"
+                    ]
+                },
+                {
+                    question: "How many Indian and Chinese workers were employed in the British Empire to replace the freed slaves after the Emancipation Act of 1833?",
+                    correctAnswers: [
+                        "2 million"
+                    ],
+                    incorrectAnswers: [
+                        "100,000",
+                        "500,000",
+                        "750,000",
+                        "1 million",
+                        "3 million",
+                        "4 million",
+                        "5 million"
+                    ]
+                },
+            ]
+        },
+        {
+            question: "After the abolition of slavery in the British Empire workers were employed to replace slaves, where were these workers employed in the Caribbean?",
+            correctAnswers: [
+                "Sugar plantations"
+            ],
+            incorrectAnswers: [
+                "Cotton farms",
+                "Rice fields",
+                "Indigo farms",
+                "Spice plantations",
+                "Coffee farms",
+                "Tea plantations"
+            ]
+        },
+        {
+            question: "After the abolition of slavery in the British Empire workers were employed to replace slaves, in which industry were these workers employed in South Africa?",
+            correctAnswers: [
+                "Mines"
+            ],
+            incorrectAnswers: [
+                "Textile factories",
+                "Oil refineries",
+                "Coal plants",
+                "Fishing industry",
+                "Construction sites"
+            ]
+        },
+        {
+            question: "After the abolition of slavery in the British Empire workers were employed to replace slaves, on what were these workers employed in East Africa?",
+            correctAnswers: [
+                "Railways"
+            ],
+            incorrectAnswers: [
+                "Roads",
+                "Bridges",
+                "Ports",
+                "Dams",
+                "Canals"
+            ]
+        },
+        {
+            question: "Significant numbers of indians were employed in the army of which of the following regions during the time of British rule?",
+            correctAnswers: ["Kenya"],
+            incorrectAnswers: [
+                "Canada",
+                "Australia",
+                "South Africa"
+            ]
+        }
     ];
 
     let category = {

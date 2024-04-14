@@ -190,6 +190,7 @@
                     incorrectAnswers: [
                         "Men",
                         "Children",
+                        "Migrants",
                         "Miners",
                         "Factory workers",
                         "Domestic servants",

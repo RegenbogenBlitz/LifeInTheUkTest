@@ -1,10 +1,19 @@
 (() => {
     let questions = [
-        { // Key Question
-            question: "In what century did British engineer Isambard Kingdom Brunel do his most famous work?",
-            correctAnswers: ["19th"],
-            mandatoryIncorrectAnswers: ["18th", "20th"],
-            incorrectAnswers: ["17th", "21st"]
+        { // KEY QUESTION
+            questions: [
+                {
+                    question: "In what century did Isambard Kingdom Brunel do his most famous work?",
+                    correctAnswers: ["19th"],
+                    mandatoryIncorrectAnswers: ["18th", "20th"],
+                    incorrectAnswers: ["17th", "21st"]
+                },
+                {
+                    question: "In what era did Isambard Kingdom Brunel do his most famous work?",
+                    correctAnswers: ["The Victorian Era"],
+                    incorrectAnswers: namesOfModernAges.filter(age => age !== "The Victorian Era")
+                }
+            ]
         },
         {
             question: "What was the birthplace of Isambard Kingdom Brunel?",

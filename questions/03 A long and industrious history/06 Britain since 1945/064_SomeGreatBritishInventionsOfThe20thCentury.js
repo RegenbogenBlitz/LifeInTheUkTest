@@ -93,7 +93,7 @@ let britishInventionsAndDiscoveries = [
             incorrectAnswers: getDates(1960, 2020, [1990], false)
         },
         { // KEY QUESTION
-            question: "In what century did British scientist Sir Tim Berners-Lee do his most famous work?",
+            question: "In what century did scientist Sir Tim Berners-Lee do his most famous work?",
             correctAnswers: ["20th"],
             mandatoryIncorrectAnswers: ["19th", "21st"],
             incorrectAnswers: ["17th", "18th"]
@@ -133,7 +133,7 @@ let britishInventionsAndDiscoveries = [
             incorrectAnswers: getDates(1960, 2020, [1996], false)
         },
         {
-            question: "In what century did British scientists Sir Ian Wilmut and Keith Campbell do their most famous work?",
+            question: "In what century did scientists Sir Ian Wilmut and Keith Campbell do their most famous work?",
             correctAnswers: ["20th"],
             mandatoryIncorrectAnswers: ["19th", "21st"],
             incorrectAnswers: ["17th", "18th"]
@@ -176,7 +176,7 @@ let britishInventionsAndDiscoveries = [
         name: "Some great British inventions of the 20th century (incomplete)",
         questions: questions,
         isUnvetted: false,
-        group: "Britain Since 1945 (incomplete)"
+        group: "Britain since 1945 (incomplete)"
     }
     quizDeck.categories.push(category);
 })();
