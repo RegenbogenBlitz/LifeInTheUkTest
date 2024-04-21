@@ -451,9 +451,9 @@
             ]
         },
         {
-            questions: [ // KEY QUESTION
-                {
-                    question: "What language family did Iron Age people in Britain speak?",
+            questions: [
+                { // KEY QUESTION
+                    question: "The Iron Age people in Britain spoke languages from which language family?",
                     correctAnswers: ["Celtic"],
                     incorrectAnswers: [
                         "Germanic",
@@ -467,6 +467,22 @@
                         "Turkic",
                         "Japonic",
                         "Uralic",
+                    ]
+                },
+                { // KEY QUESTION
+                    question: "What language did Iron Age people in Britain speak?",
+                    correctAnswers: ["A language from the Celtic language family"],
+                    mandatoryIncorrectAnswers: [
+                        "Latin",
+                        "Anglo-Saxon",
+                        "Norman French"],
+                    incorrectAnswers: [
+                        "German",
+                        "Ancient Greek",
+                        "Ancient Hebrew",
+                        "Old English",
+                        "Old Norse",
+                        "Sanscrit"
                     ]
                 },
                 {

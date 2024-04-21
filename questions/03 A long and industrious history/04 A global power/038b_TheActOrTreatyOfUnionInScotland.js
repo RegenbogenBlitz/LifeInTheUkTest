@@ -1,4 +1,9 @@
 (() => {
+    const actsOfUnionExplanation = "The handbook fudges the explanation of this: " +
+        "First there was the Treaty of Union (known at the time as the Articles of Union), agreed by England and Scotland. " +
+        "Then there were two Acts of Union, the Union with Scotland Act (in England) and the Union with England Act (in Scotland): " +
+        "these documents created the Kingdom of Great Britain and are known as the Acts of Union.";
+
     let questions = [
         {
             question: "Who was the successor to William and Mary?",
@@ -47,10 +52,10 @@
                 }
             ]
         },
-        {
+        { // KEY QUESTIONS
             questions: [
                 {
-                    question: "What was name of the document that created the Kingdom of Great Britain in 1707?",
+                    question: "What was name of the document that created the Kingdom of Great Britain?",
                     correctAnswers: [
                         "Act of Union"
                     ],
@@ -61,13 +66,10 @@
                         "Magna Britannia Carta",
                         "United Kingdom Bill"
                     ],
-                    explanation: "The handbook fudges the explanation of this: " +
-                        "First there was the Treaty of Union (known at the time as the Articles of Union), agreed by England and Scotland. " +
-                        "Then there were two Acts of Union, the Union with Scotland Act (in England) and the Union with England Act (in Scotland): " +
-                        "these documents created the Kingdom of Great Britain and are known as the Acts of Union."
+                    explanation: actsOfUnionExplanation
                 },
                 {
-                    question: "What was name of the document that created the Kingdom of Great Britain in 1707, known as in Scotland?",
+                    question: "What was name of the document that created the Kingdom of Great Britain, known as in Scotland?",
                     correctAnswers: [
                         "Treaty of Union"
                     ],
@@ -79,13 +81,16 @@
                         "Act of Scotland",
                         "United Kingdom Treaty"
                     ],
-                    explanation: "The handbook fudges the explanation of this: " +
-                        "First there was the Treaty of Union (known at the time as the Articles of Union), agreed by England and Scotland. " +
-                        "Then there were two Acts of Union, the Union with Scotland Act (in England) and the Union with England Act (in Scotland): " +
-                        "these documents created the Kingdom of Great Britain and are known as the Acts of Union."
+                    explanation: actsOfUnionExplanation
                 },
                 {
                     question: "In what year was the Act of Union agreed upon, which created the Kingdom of Great Britain?",
+                    correctAnswers: ["1707"],
+                    incorrectAnswers: getDates(1485, 1820, [1707], false),
+                    explanation: actsOfUnionExplanation
+                },
+                {
+                    question: "In what year was England and Scotland united into one kingdom?",
                     correctAnswers: ["1707"],
                     incorrectAnswers: getDates(1485, 1820, [1707], false)
                 },
@@ -101,7 +106,8 @@
                         "British Empire",
                         "Commonwealth of Great Britain",
                         "Federation of England and Scotland",
-                    ]
+                    ],
+                    explanation: actsOfUnionExplanation
                 }
             ]
         },

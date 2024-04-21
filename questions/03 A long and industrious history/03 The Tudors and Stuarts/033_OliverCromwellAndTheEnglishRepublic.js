@@ -128,12 +128,24 @@
         {
             question: "What was still present in Ireland when Oliver Cromwell was sent there?",
             correctAnswers: ["A Royalist army"],
-            incorrectAnswers: ["A parliamentary army", "A Scottish army", "A Puritan militia", "A French army", "A Spanish force", "An Irish Republican army"]
+            incorrectAnswers: [
+                "A parliamentary army",
+                "A Scottish army",
+                "A Puritan militia",
+                "A French army",
+                "A Spanish force",
+                "An Irish Republican army"]
         },
         {
             question: "What was Cromwell successful in establishing in Ireland?",
             correctAnswers: ["The authority of the English Parliament"],
-            incorrectAnswers: ["The Commonwealth", "Independence for Ireland", "Royalist rule", "The monarchy", "Scottish control", "A democratic government"]
+            incorrectAnswers: [
+                "The Commonwealth",
+                "Independence for Ireland",
+                "Royalist rule",
+                "The monarchy",
+                "Scottish control",
+                "A democratic government"]
         },
         {
             questions: [

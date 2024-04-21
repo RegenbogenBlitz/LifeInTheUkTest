@@ -15,12 +15,10 @@
             correctAnswers: ["The main Protestant church in Scotland"],
             incorrectAnswers: [
                 "The main Protestant church in England",
-                "The main Protestant church in Wales",
-                "The main Protestant church in Ireland",
-                "The main Protestant church in France",
-                "The main Protestant church in Spain",
-                "The main Protestant church in Italy",
-                "The main Protestant church in Germany"
+                "The Catholic church in Ireland",
+                "The branch of Protestantism that retains bishops",
+                "The branch of Protestantism that retains monasticism",
+                "The branch of Protestantism which accepts monarchs as head of the church",
             ],
             explanation: "Presbyterian refers to the form of church government in which the church is governed by elders."
         },
@@ -146,15 +144,16 @@
         {
             questions: [
                 {
-                    question: "What was the reason for the rebellion that began in Ireland, during the reign of Charles I?",
-                    correctAnswers: ["The Roman Catholics in Ireland were afraid of the growing power of the Puritans"],
+                    question: "What was the reason for the rebellion that began in Ireland, during the reign of Charles I?" +
+                        " The Roman Catholics in Ireland ...",
+                    correctAnswers: ["were afraid of the growing power of the Puritans"],
                     incorrectAnswers: [
-                        "The Roman Catholics in Ireland wanted to support Charles I",
-                        "The Roman Catholics in Ireland were opposed to the Scottish Army",
-                        "The Roman Catholics in Ireland wanted to impose the Prayer Book",
-                        "The Roman Catholics in Ireland were trying to gain independence from England",
-                        "The Roman Catholics in Ireland were in favor of the king's religious reforms",
-                        "The Roman Catholics in Ireland were supporting the Cavaliers"]
+                        "wanted to support Charles I",
+                        "were opposed to the Scottish Army",
+                        "wanted to impose the Prayer Book",
+                        "were trying to gain independence from England",
+                        "were in favor of the king's religious reforms",
+                        "were supporting the Cavaliers"]
                 },
                 {
                     question: "In which country did a rebellion begin due to fears of the Puritans' growing power?",

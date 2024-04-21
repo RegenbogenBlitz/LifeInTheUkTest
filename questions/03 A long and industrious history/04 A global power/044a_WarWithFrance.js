@@ -71,21 +71,32 @@
         //        "1830"
         //    ]
         //},
-        //{
-        //    question: "Who became Emperor of France and continued the war against Britain?",
-        //    correctAnswers: [
-        //        "Napoleon"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Louis XIV",
-        //        "Charles de Gaulle",
-        //        "Joan of Arc",
-        //        "Henry VIII",
-        //        "Marie Antoinette",
-        //        "King Louis XVI",
-        //        "Julius Caesar"
-        //    ]
-        //},
+        {
+            question: "In what year did the French Revolution begin?",
+            correctAnswers: ["1789"],
+            mandatoryIncorrectAnswers: ["1776"],
+            incorrectAnswers: getDates(1600, 1820, [1789, 1776], false)
+        },
+        {
+            question: "Who became Emperor of France after the French revolution of the 18th century?",
+            correctAnswers: [
+                "Napoleon"
+            ],
+            incorrectAnswers: [
+                "Joan of Arc",
+                "Louis XVI",
+                "Marie Antoinette",
+                "Louis XVII",
+                "Louis XVIII",
+                "Louis-Philippe",
+                "Robespierre",
+                "Danton",
+                "Marat",
+                "Miterrand",
+                "De Gaulle",
+                "Chirac"
+            ]
+        },
         //{
         //    question: "What title did Napoleon hold in France during the war against Britain in the early 19th century?",
         //    correctAnswers: [
@@ -106,6 +117,11 @@
             correctAnswers: ["1805"],
             mandatoryIncorrectAnswers: ["1815"],
             incorrectAnswers: getDates(1600, 1950, [1805, 1815], false)
+        },
+        { // KEY QUESTION
+            question: "The Battle of Trafalgar was part of which series of wars?",
+            correctAnswers: ["The Napoleonic Wars"],
+            incorrectAnswers: famousEnglishWars.filter(war => war !== "The Napoleonic Wars")
         },
         { // KEY QUESTION
             question: "Against which countries' fleets did Britain's Navy fight during the Battle of Trafalgar? (Select all that apply)",
@@ -141,34 +157,34 @@
                 "Sir Walter Raleigh"
             ]
         },
-        //{
-        //    question: "What happened to Admiral Nelson during the Battle of Trafalgar?",
-        //    correctAnswers: [
-        //        "He was killed in the battle"
-        //    ],
-        //    incorrectAnswers: [
-        //        "He was captured by the French",
-        //        "He was promoted during the battle",
-        //        "He successfully retreated",
-        //        "He surrendered to the Spanish",
-        //        "He was wounded but survived",
-        //        "He was not present at the battle"
-        //    ]
-        //},
-        //{
-        //    question: "What does Nelson's column in Trafalgar Square, London, commemorate?",
-        //    correctAnswers: [
-        //        "Admiral Nelson"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Duke of Wellington",
-        //        "The Battle of Trafalgar",
-        //        "The Battle of Waterloo",
-        //        "Napoleon",
-        //        "The British Navy",
-        //        "The French Revolution"
-        //    ]
-        //},
+        {
+            question: "What happened to Admiral Nelson during the Battle of Trafalgar?",
+            correctAnswers: [
+                "He was killed in the battle"
+            ],
+            incorrectAnswers: [
+                "He was captured by the French",
+                "He was promoted during the battle",
+                "He successfully retreated",
+                "He surrendered to the Spanish",
+                "He was wounded but survived",
+                "He was not present at the battle"
+            ]
+        },
+        {
+            question: "What does the column in Trafalgar Square, London, commemorate?",
+            correctAnswers: [
+                "Admiral Nelson"
+            ],
+            incorrectAnswers: [
+                "The Duke of Wellington",
+                "The Battle of Trafalgar",
+                "The Battle of Waterloo",
+                "King George III",
+                "Napoleon",
+                "HMS Victory",
+            ]
+        },
         //{
         //    question: "Where can Nelson's ship, HMS Victory, be visited?",
         //    correctAnswers: [
@@ -184,21 +200,26 @@
         //        "Bristol"
         //    ]
         //},
-        //{
-        //    question: "What is the name of Admiral Nelson's ship that can be visited in Portsmouth?",
-        //    correctAnswers: [
-        //        "HMS Victory"
-        //    ],
-        //    incorrectAnswers: [
-        //        "HMS Trafalgar",
-        //        "HMS Nelson",
-        //        "HMS Waterloo",
-        //        "HMS Wellington",
-        //        "HMS Iron Duke",
-        //        "HMS Elizabeth",
-        //        "HMS Britannia"
-        //    ]
-        //},
+        {
+            question: "What is the name of Admiral Nelson's ship, used at the Battle of Trafalgar?",
+            correctAnswers: [
+                "HMS Victory"
+            ],
+            incorrectAnswers: [
+                "HMS Warrior",
+                "HMS Invincible",
+                "HMS Dauntless",
+                "HMS Indomitable",
+                "HMS Tormentor",
+                "HMS Britannia",
+                "HMS Royal Sovereign",
+                "HMS Dreadnought",
+                "HMS Neptune",
+                "HMS Temeraire",
+                "HMS Prince",
+                "HMS Tonnant",
+            ]
+        },
         //{
         //    question: "Which military force of Britain engaged in combat with the French during the French Revolutionary and Napoleonic Wars?",
         //    correctAnswers: [
@@ -275,34 +296,62 @@
         //        "1799"
         //    ]
         //},
-        //{
-        //    question: "Who was defeated at the Battle of Waterloo in 1815?",
-        //    correctAnswers: [
-        //        "Emperor Napoleon"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Admiral Nelson",
-        //        "The Duke of Marlborough",
-        //        "The Duke of Wellington",
-        //        "King Louis XVI",
-        //        "King George III",
-        //        "Queen Victoria"
-        //    ]
-        //},
-        //{
-        //    question: "Who defeated Emperor Napoleon at the Battle of Waterloo in 1815?",
-        //    correctAnswers: [
-        //        "The Duke of Wellington"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Admiral Nelson",
-        //        "The Duke of Marlborough",
-        //        "King Louis XVI",
-        //        "King George III",
-        //        "Queen Victoria",
-        //        "General Montgomery"
-        //    ]
-        //},
+        {
+            question: "Who was defeated at the Battle of Waterloo?",
+            correctAnswers: ["The French"],
+            mandatoryIncorrectAnswers: ["The British"],
+            incorrectAnswers: [
+                "The Prussians",
+                "The Dutch",
+                "The Hanoverians",
+                "The Spanish"
+            ]
+        },
+        { // KEY QUESTION
+            question: "Who was defeated at the Battle of Waterloo?",
+            correctAnswers: ["Emperor Napoleon"],
+            mandatoryIncorrectAnswers: ["Admiral Nelson", "The Duke of Wellington"],
+            incorrectAnswers: [
+                "Joan of Arc",
+                "Charles Edward Stuart",
+                "The Duke of Marlborough",
+                "King Louis XVI",
+                "King George III",
+                "Queen Victoria",
+                "Maximilien Robespierre",
+                "Jean-Paul Marat",
+            ]
+        },
+        {
+            question: "Which of the following were victorious at the Battle of Waterloo?",
+            correctAnswers: ["The British"],
+            mandatoryIncorrectAnswers: ["The French"],
+            incorrectAnswers: [
+                "The Spanish",
+                "The Americans",
+                "The Italians",
+                "The Japanese",
+                "The Russians",
+            ],
+            explanation: "The British, along with the Prussians and Dutch, were victorious at the Battle of Waterloo."
+        },
+        { // KEY QUESTION
+            question: "Which of the following led the victorious forces at the Battle of Waterloo?",
+            correctAnswers: ["The Duke of Wellington"],
+            mandatoryIncorrectAnswers: ["Admiral Nelson", "Emperor Napoleon"],
+            incorrectAnswers: [
+                "Joan of Arc",
+                "Charles Edward Stuart",
+                "The Duke of Marlborough",
+                "King Louis XVI",
+                "King George III",
+                "Queen Victoria",
+                "Maximilien Robespierre",
+                "Jean-Paul Marat",
+            ],
+            explanation: "The Duke of Wellington led the British forces at the Battle of Waterloo, but the Prussian forces under Field Marshal Blücher also played a significant role in the victory."
+        },
+
         //{
         //    question: "At which battle in 1815 was Emperor Napoleon defeated?",
         //    correctAnswers: [

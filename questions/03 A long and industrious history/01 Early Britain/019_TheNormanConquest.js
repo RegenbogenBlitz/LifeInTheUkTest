@@ -34,17 +34,17 @@
                         "The Anglo-Saxon invasion of Britain",
                         "The Viking invasion of Britain"
                     ]
-                },
-                {
-                    question: "What event was sealed by the Battle of Hastings?",
-                    correctAnswers: ["The Norman conquest of England"],
-                    incorrectAnswers: [
-                        "The Roman conquest of Britain",
-                        "The Roman withdrawal from Britain",
-                        "The Anglo-Saxon conquest of Britain",
-                        "The Viking conquest of Britain"
-                    ]
                 }
+            ]
+        },
+        {
+            question: "What event was sealed by the Battle of Hastings?",
+            correctAnswers: ["The Norman conquest of England"],
+            incorrectAnswers: [
+                "The Roman conquest of Britain",
+                "The Roman withdrawal from Britain",
+                "The Anglo-Saxon conquest of Britain",
+                "The Viking conquest of Britain"
             ]
         },
         {
@@ -78,9 +78,10 @@
         },
         {
             questions: [
-                {
+                { // KEY QUESTION
                     question: "An invasion of England at the Battle of Hastings was led by a man called William. What was his title?",
                     correctAnswers: ["Duke of Normandy"],
+                    mandatoryIncorrectAnswers: ["Prince of Orange"],
                     incorrectAnswers: [
                         "Prince of Normandy",
                         "Earl of Normandy",
@@ -265,7 +266,7 @@
                         "The Monument"
                     ]
                 },
-                {
+                { // KEY QUESTION
                     question: "What does the Bayeux Tapestry show?",
                     correctAnswers: ["The Battle of Hastings"],
                     incorrectAnswers: famousBattles.filter(battle => battle !== "The Battle of Hastings"),

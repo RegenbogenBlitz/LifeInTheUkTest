@@ -43,48 +43,56 @@
         //        "Land ownership"
         //    ]
         //},
-        //{
-        //    question: "What was the impact of the Reform Act of 1832 on the electorate?",
-        //    correctAnswers: [
-        //        "It greatly increased the number of people with the right to vote."
-        //    ],
-        //    incorrectAnswers: [
-        //        "It decreased the number of people with the right to vote.",
-        //        "It did not change the number of people with the right to vote.",
-        //        "It only allowed women to vote.",
-        //        "It only allowed property owners to vote.",
-        //        "It abolished the right to vote.",
-        //        "It introduced universal suffrage."
-        //    ]
-        //},
-        //{
-        //    question: "What did the Reform Act of 1832 abolish in terms of electoral districts?",
-        //    correctAnswers: [
-        //        "Pocket and rotten boroughs"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Metropolitan boroughs",
-        //        "County boroughs",
-        //        "Parliamentary constituencies",
-        //        "Urban boroughs",
-        //        "Rural boroughs",
-        //        "District boroughs"
-        //    ]
-        //},
-        //{
-        //    question: "After the Reform Act of 1832, which areas were allocated more parliamentary seats?",
-        //    correctAnswers: [
-        //        "Towns and cities"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Countryside",
-        //        "Villages",
-        //        "Suburbs",
-        //        "Coastal areas",
-        //        "Market towns",
-        //        "Rural areas"
-        //    ]
-        //},
+        {
+            question: "What was the impact of the Reform Act in the early 1800s on the electorate?",
+            correctAnswers: [
+                "It greatly increased the number of people with the right to vote."
+            ],
+            incorrectAnswers: [
+                "It decreased the number of people with the right to vote.",
+                "It did not change the number of people with the right to vote.",
+                "It only allowed property owners to vote.",
+                "It allowed women to vote.",
+                "It introduced universal suffrage."
+            ]
+        },
+        {
+            questions: [
+
+                {
+                    question: "What did the Reform Act in the early 1800s abolish in terms of electoral districts? (Select all that apply)",
+                    correctAnswers: [
+                        "Pocket boroughs",
+                        "Rotten boroughs"
+                    ],
+                    incorrectAnswers: [
+                        "Metropolitan boroughs",
+                        "County boroughs",
+                        "Island boroughs",
+                        "University boroughs",
+                        "Royal boroughs"
+                    ]
+                },
+                {
+                    question: "In what year was the Reform Act that abolished pocket and rotten boroughs passed?",
+                    correctAnswers: ["1832"],
+                    incorrectAnswers: getDates(1700, 1970, [1832], false)
+                }
+            ]
+        },
+        {
+            question: "After the Reform Act in the early 1800s, which areas were allocated more parliamentary seats?",
+            correctAnswers: [
+                "Towns and cities"
+            ],
+            incorrectAnswers: [
+                "Rural areas",
+                "Scotland",
+                "Ireland",
+                "Universities",
+                "Islands"
+            ]
+        },
         //{
         //    question: "What was the basis for voting in Britain after the Reform Act of 1832, which shifted political power from the countryside to the towns?",
         //    correctAnswers: [

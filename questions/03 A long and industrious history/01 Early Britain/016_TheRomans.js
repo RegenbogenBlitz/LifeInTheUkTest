@@ -355,15 +355,17 @@
                     ]
                 },
                 { // KEY QUESTION
-                    question: "The wall in the north of England, built in the time of Emperor Hadrian, was built by whom?",
+                    question: "The wall in the north of England, containing a number of forts and built during the Roman period, was built by whom?",
                     correctAnswers: ["Emperor Hadrian"],
-                    mandatoryIncorrectAnswers: ["Picts"],
+                    mandatoryIncorrectAnswers: ["The Picts", "Emperor Antonius"],
                     incorrectAnswers: [
+                        "Emperor Julius Caesar",
+                        "Emperor Claudius",
                         "Boudicca",
                         "Hanibal",
                         "Attila the Hun",
-                        "Caledonians",
-                        "Iceni",
+                        "The Caledonians",
+                        "The Iceni",
                         "The Catholic Church"]
                 },
                 {

@@ -1,6 +1,17 @@
 (() => {
     let questions = [
         { // KEY QUESTION
+            question: "What does the term 'Restoration' refer to in English history?",
+            correctAnswers: ["The return of the monarchy"],
+            incorrectAnswers: [
+                "The establishment of the Church of England",
+                "The rebuilding of London after the Great Fire",
+                "The return of the Catholic Church as the official church in England",
+                "The invitation to William and Mary to become monarchs",
+                "The rebuilding of London after the Blitz"
+            ]
+        },
+        { // KEY QUESTION
             question: "When did Parliament invite Charles II to come back from exile?",
             correctAnswers: ["1660"],
             incorrectAnswers: getDates(1500, 1900, [1660], false)

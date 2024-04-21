@@ -557,7 +557,7 @@
             ]
         },
         {
-            question: "After the abolition of slavery in the British Empire workers were employed to replace slaves, where were these workers employed in the Caribbean?",
+            question: "After the abolition of slavery in the British Empire, workers were employed to replace slaves, where were these workers employed in the Caribbean?",
             correctAnswers: [
                 "Sugar plantations"
             ],
@@ -571,7 +571,7 @@
             ]
         },
         {
-            question: "After the abolition of slavery in the British Empire workers were employed to replace slaves, in which industry were these workers employed in South Africa?",
+            question: "After the abolition of slavery in the British Empire, workers were employed to replace slaves, in which industry were these workers employed in South Africa?",
             correctAnswers: [
                 "Mines"
             ],
@@ -584,7 +584,7 @@
             ]
         },
         {
-            question: "After the abolition of slavery in the British Empire workers were employed to replace slaves, on what were these workers employed in East Africa?",
+            question: "After the abolition of slavery in the British Empire, workers were employed to replace slaves, on what were these workers employed in East Africa?",
             correctAnswers: [
                 "Railways"
             ],

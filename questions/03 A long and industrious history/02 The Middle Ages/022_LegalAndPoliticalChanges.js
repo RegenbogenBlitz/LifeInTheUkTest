@@ -59,12 +59,12 @@
                         "He was captured by the Welsh"
                     ]
                 },
-                {
-                    question: "What was the outcome when King John was forced by his noblemen to agree to their demands?",
-                    correctAnswers: ["The Magna Carta"],
-                    incorrectAnswers: significantDocuments.filter(x => x !== "The Magna Carta")
-                },
             ]
+        },
+        {
+            question: "What was the outcome when King John was forced by his noblemen to agree to their demands?",
+            correctAnswers: ["The Magna Carta"],
+            incorrectAnswers: significantDocuments.filter(x => x !== "The Magna Carta")
         },
         { // KEY QUESTION
             question: "When was the Magna Carta signed?",
@@ -73,7 +73,7 @@
         },
         {
             questions: [
-                {
+                { // KEY QUESTION
                     question: "Which of the following did the Magna Carta establish?",
                     correctAnswers: ["That even the king was subject to the law"],
                     incorrectAnswers: [
@@ -83,7 +83,11 @@
                         "The first English Parliament",
                         "The establishment of common law",
                         "The unification of Scotland and England",
-                        "The principles of the feudal system"
+                        "The principles of the feudal system",
+                        "The abolition of serfdom",
+                        "Free primary education",
+                        "Universal suffrage for all men",
+                        "Universal suffrage for women",
                     ]
                 },
                 {
