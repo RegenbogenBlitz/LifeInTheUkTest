@@ -94,7 +94,6 @@
     let category = {
         name: "Winston Churchill (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "The 20th Century (incomplete)"
     }
     quizDeck.categories.push(category);

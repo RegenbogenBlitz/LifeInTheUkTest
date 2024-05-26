@@ -175,7 +175,6 @@ let britishInventionsAndDiscoveries = [
     let category = {
         name: "Some great British inventions of the 20th century (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "Britain since 1945 (incomplete)"
     }
     quizDeck.categories.push(category);

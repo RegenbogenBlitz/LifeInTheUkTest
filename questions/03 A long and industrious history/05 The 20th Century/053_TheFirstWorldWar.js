@@ -90,7 +90,6 @@
     let category = {
         name: "The First World War (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "The 20th Century (incomplete)"
     }
     quizDeck.categories.push(category);

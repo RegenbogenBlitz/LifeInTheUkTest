@@ -31,7 +31,6 @@
     let category = {
         name: "Social Change In The 1960s (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "Britain since 1945 (incomplete)"
     }
     quizDeck.categories.push(category);

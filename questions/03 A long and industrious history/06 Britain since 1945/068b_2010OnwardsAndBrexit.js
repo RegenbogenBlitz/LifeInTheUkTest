@@ -37,7 +37,6 @@
     let category = {
         name: "2010 Onwards And Brexit (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "Britain since 1945 (incomplete)"
     }
     quizDeck.categories.push(category);

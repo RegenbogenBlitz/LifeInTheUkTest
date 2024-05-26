@@ -245,7 +245,6 @@
     let category = {
         name: "Dylan Thomas",
         questions: questions,
-        isUnvetted: false,
         group: "Britain since 1945 (incomplete)"
     }
     quizDeck.categories.push(category);

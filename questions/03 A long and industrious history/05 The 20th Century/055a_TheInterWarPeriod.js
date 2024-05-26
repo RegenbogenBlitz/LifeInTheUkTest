@@ -22,7 +22,6 @@
     let category = {
         name: "The inter-war Period (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "The 20th Century (incomplete)"
     }
     quizDeck.categories.push(category);

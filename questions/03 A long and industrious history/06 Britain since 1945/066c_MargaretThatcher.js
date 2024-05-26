@@ -20,7 +20,6 @@
     let category = {
         name: "Margaret Thatcher (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "Britain since 1945 (incomplete)"
     }
     quizDeck.categories.push(category);

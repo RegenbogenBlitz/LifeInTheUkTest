@@ -10,7 +10,6 @@
     let category = {
         name: "The Partition Of Ireland (incomplete)",
         questions: questions,
-        isUnvetted: false,
         group: "The 20th Century (incomplete)"
     }
     quizDeck.categories.push(category);
