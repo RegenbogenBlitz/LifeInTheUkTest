@@ -110,3 +110,24 @@ const testQuiz = () => {
 
     console.log("All tests passed!");
 }
+
+const countIncomplete = () => {
+    let result = "";
+    const categories = quizDeck.categories;
+    const incompleteCategories = [];
+
+    for (let category of categories) {
+        if (category.name.toLowerCase().includes("incomplete")) {
+            const trimmedCategoryName = category.name.replace("(incomplete)", "").trim();
+            incompleteCategories.push({ name: trimmedCategoryName, numberOfQuestions: category.questions.length });
+        }
+    }
+
+    incompleteCategories.sort((a, b) => a.numberOfQuestions - b.numberOfQuestions);
+
+    for (let incompleteCategory of incompleteCategories) {
+        result += `${incompleteCategory.name} ${incompleteCategory.numberOfQuestions} \n`;
+    }
+
+    console.log(result);
+}
