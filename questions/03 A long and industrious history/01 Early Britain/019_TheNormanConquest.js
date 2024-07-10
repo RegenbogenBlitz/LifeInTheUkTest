@@ -528,8 +528,9 @@
                 },
                 {
                     question: "The Domesday Book was destroyed centuries ago. True or False?",
-                    correctAnswers: ["True"],
-                    incorrectAnswers: ["False"],
+                    correctAnswers: ["False"],
+                    incorrectAnswers: ["True"],
+                    explanation: "The Domesday Book still exists today."
                 },
             ]
         },
