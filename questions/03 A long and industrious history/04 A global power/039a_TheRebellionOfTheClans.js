@@ -435,9 +435,10 @@
     ];
 
     let category = {
-        name: "The rebellion of the clans (incomplete)",
+        name: "The rebellion of the clans",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

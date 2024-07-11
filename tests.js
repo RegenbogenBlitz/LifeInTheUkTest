@@ -117,9 +117,8 @@ const countIncomplete = () => {
     const incompleteCategories = [];
 
     for (let category of categories) {
-        if (category.name.toLowerCase().includes("incomplete")) {
-            const trimmedCategoryName = category.name.replace("(incomplete)", "").trim();
-            incompleteCategories.push({ name: trimmedCategoryName, numberOfQuestions: category.questions.length });
+        if (category.isIncomplete) {
+            incompleteCategories.push({ name: category.name, numberOfQuestions: category.questions.length });
         }
     }
 

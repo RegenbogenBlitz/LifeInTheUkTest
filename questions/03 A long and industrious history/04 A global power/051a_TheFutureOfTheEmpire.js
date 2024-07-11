@@ -374,9 +374,10 @@
     ];
 
     let category = {
-        name: "The future of the Empire (incomplete)",
+        name: "The future of the Empire",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

@@ -245,7 +245,7 @@
     let category = {
         name: "Dylan Thomas",
         questions: questions,
-        group: "Britain since 1945 (incomplete)"
+        group: "Britain since 1945"
     }
     quizDeck.categories.push(category);
 })();

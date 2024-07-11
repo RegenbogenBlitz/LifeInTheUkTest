@@ -57,9 +57,10 @@
     ];
 
     let category = {
-        name: "William Beveridge (incomplete)",
+        name: "William Beveridge",
         questions: questions,
-        group: "Britain since 1945 (incomplete)"
+        isIncomplete: true,
+        group: "Britain since 1945"
     }
     quizDeck.categories.push(category);
 })();

@@ -88,7 +88,7 @@
     let category = {
         name: "The Victorian Age",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

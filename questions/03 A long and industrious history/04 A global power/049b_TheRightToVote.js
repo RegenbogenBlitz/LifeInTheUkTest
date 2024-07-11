@@ -549,9 +549,10 @@
     ];
 
     let category = {
-        name: "The right to vote (incomplete)",
+        name: "The right to vote",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

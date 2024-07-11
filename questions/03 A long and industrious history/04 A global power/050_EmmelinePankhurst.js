@@ -636,9 +636,10 @@
     ];
 
     let category = {
-        name: "Emmeline Pankhurst (incomplete)",
+        name: "Emmeline Pankhurst",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

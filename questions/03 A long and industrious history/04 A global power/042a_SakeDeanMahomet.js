@@ -264,9 +264,10 @@
     ];
 
     let category = {
-        name: "Sake Dean Mahomet (incomplete)",
+        name: "Sake Dean Mahomet",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

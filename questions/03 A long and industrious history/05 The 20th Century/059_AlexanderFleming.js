@@ -110,9 +110,10 @@
     ];
 
     let category = {
-        name: "Alexander Fleming (incomplete)",
+        name: "Alexander Fleming",
         questions: questions,
-        group: "The 20th Century (incomplete)"
+        isIncomplete: true,
+        group: "The 20th Century"
     }
     quizDeck.categories.push(category);
 })();

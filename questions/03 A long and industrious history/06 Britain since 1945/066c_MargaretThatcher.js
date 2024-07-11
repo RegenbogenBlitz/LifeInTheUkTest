@@ -18,9 +18,10 @@
     ];
 
     let category = {
-        name: "Margaret Thatcher (incomplete)",
+        name: "Margaret Thatcher",
         questions: questions,
-        group: "Britain since 1945 (incomplete)"
+        isIncomplete: true,
+        group: "Britain since 1945"
     }
     quizDeck.categories.push(category);
 })();

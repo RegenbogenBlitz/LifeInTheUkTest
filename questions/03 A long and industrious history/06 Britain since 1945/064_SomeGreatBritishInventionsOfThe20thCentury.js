@@ -173,9 +173,10 @@ let britishInventionsAndDiscoveries = [
     ];
 
     let category = {
-        name: "Some great British inventions of the 20th century (incomplete)",
+        name: "Some great British inventions of The 20th Century",
         questions: questions,
-        group: "Britain since 1945 (incomplete)"
+        isIncomplete: true,
+        group: "Britain since 1945"
     }
     quizDeck.categories.push(category);
 })();

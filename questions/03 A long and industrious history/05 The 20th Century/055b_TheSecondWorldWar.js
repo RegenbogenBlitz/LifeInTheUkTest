@@ -232,9 +232,10 @@
     ];
 
     let category = {
-        name: "The Second World War (incomplete)",
+        name: "The Second World War",
         questions: questions,
-        group: "The 20th Century (incomplete)"
+        isIncomplete: true,
+        group: "The 20th Century"
     }
     quizDeck.categories.push(category);
 })();

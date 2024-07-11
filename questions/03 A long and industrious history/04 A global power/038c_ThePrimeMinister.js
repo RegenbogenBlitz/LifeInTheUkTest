@@ -239,7 +239,7 @@
     let category = {
         name: "The Prime Minister",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

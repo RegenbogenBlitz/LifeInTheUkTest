@@ -48,9 +48,10 @@
     ];
 
     let category = {
-        name: "The Welfare State (incomplete)",
+        name: "The Welfare State",
         questions: questions,
-        group: "Britain since 1945 (incomplete)"
+        isIncomplete: true,
+        group: "Britain since 1945"
     }
     quizDeck.categories.push(category);
 })();

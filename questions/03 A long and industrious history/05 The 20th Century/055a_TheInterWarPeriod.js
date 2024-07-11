@@ -20,9 +20,10 @@
     ];
 
     let category = {
-        name: "The inter-war Period (incomplete)",
+        name: "The inter-war Period",
         questions: questions,
-        group: "The 20th Century (incomplete)"
+        isIncomplete: true,
+        group: "The 20th Century"
     }
     quizDeck.categories.push(category);
 })();

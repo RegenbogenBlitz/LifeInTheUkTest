@@ -339,9 +339,10 @@
     ];
 
     let category = {
-        name: "Florence Nightingale (incomplete)",
+        name: "Florence Nightingale",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

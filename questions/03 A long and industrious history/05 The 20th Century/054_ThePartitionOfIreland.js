@@ -8,9 +8,10 @@
     ];
 
     let category = {
-        name: "The Partition Of Ireland (incomplete)",
+        name: "The Partition Of Ireland",
         questions: questions,
-        group: "The 20th Century (incomplete)"
+        isIncomplete: true,
+        group: "The 20th Century"
     }
     quizDeck.categories.push(category);
 })();

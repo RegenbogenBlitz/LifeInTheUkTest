@@ -29,9 +29,10 @@
     ];
 
     let category = {
-        name: "Social Change In The 1960s (incomplete)",
+        name: "Social Change In The 1960s",
         questions: questions,
-        group: "Britain since 1945 (incomplete)"
+        isIncomplete: true,
+        group: "Britain since 1945"
     }
     quizDeck.categories.push(category);
 })();

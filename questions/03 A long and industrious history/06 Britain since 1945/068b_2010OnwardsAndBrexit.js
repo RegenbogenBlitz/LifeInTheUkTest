@@ -35,9 +35,10 @@
     ];
 
     let category = {
-        name: "2010 Onwards And Brexit (incomplete)",
+        name: "2010 Onwards And Brexit",
         questions: questions,
-        group: "Britain since 1945 (incomplete)"
+        isIncomplete: true,
+        group: "Britain since 1945"
     }
     quizDeck.categories.push(category);
 })();

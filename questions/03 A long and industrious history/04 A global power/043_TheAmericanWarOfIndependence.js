@@ -264,9 +264,10 @@
     ];
 
     let category = {
-        name: "The American War of Independence (incomplete)",
+        name: "The American War of Independence",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

@@ -324,9 +324,10 @@
     ];
 
     let category = {
-        name: "The British Empire (incomplete)",
+        name: "The British Empire",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

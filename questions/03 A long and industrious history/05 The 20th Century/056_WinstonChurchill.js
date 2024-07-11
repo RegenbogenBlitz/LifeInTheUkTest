@@ -92,9 +92,10 @@
     ];
 
     let category = {
-        name: "Winston Churchill (incomplete)",
+        name: "Winston Churchill",
         questions: questions,
-        group: "The 20th Century (incomplete)"
+        isIncomplete: true,
+        group: "The 20th Century"
     }
     quizDeck.categories.push(category);
 })();

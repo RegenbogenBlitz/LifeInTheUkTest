@@ -165,7 +165,7 @@
     let category = {
         name: "The Act or Treaty of Union in Scotland",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

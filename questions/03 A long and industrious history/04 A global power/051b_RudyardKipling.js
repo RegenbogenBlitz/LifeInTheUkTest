@@ -261,9 +261,10 @@
     ];
 
     let category = {
-        name: "Rudyard Kipling (incomplete)",
+        name: "Rudyard Kipling",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

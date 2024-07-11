@@ -608,9 +608,10 @@
     ];
 
     let category = {
-        name: "The slave trade (incomplete)",
+        name: "The slave trade",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

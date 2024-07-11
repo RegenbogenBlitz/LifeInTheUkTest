@@ -88,9 +88,10 @@
     ];
 
     let category = {
-        name: "The First World War (incomplete)",
+        name: "The First World War",
         questions: questions,
-        group: "The 20th Century (incomplete)"
+        isIncomplete: true,
+        group: "The 20th Century"
     }
     quizDeck.categories.push(category);
 })();

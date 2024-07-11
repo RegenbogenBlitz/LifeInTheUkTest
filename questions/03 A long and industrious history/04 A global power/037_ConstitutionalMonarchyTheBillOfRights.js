@@ -476,7 +476,7 @@
     let category = {
         name: "Constitutional Monarchy - the Bill of Rights",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

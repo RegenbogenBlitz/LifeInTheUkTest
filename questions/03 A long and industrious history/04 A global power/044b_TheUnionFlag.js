@@ -356,9 +356,10 @@
     ];
 
     let category = {
-        name: "The Union Flag (incomplete)",
+        name: "The Union Flag",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

@@ -171,7 +171,7 @@
     let category = {
         name: "A Growing Population",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

@@ -58,7 +58,8 @@ let loadCategoryControls = () => {
             label.classList = "category-unvetted";
         }
         label.appendChild(input);
-        label.appendChild(document.createTextNode(category.name));
+        const labelText = category.isIncomplete ? category.name + " (incomplete)" : category.name;
+        label.appendChild(document.createTextNode(labelText));
 
         let item = document.createElement("li");
         item.appendChild(label);
@@ -81,7 +82,10 @@ let loadCategoryControls = () => {
 
                 let groupLabel = document.createElement("label");
                 groupLabel.appendChild(groupInput);
-                groupLabel.appendChild(document.createTextNode(c.group));
+
+                const groupIsIncomplete = quizDeck.categories.some(category => category.group === c.group && category.isIncomplete);
+                const labelText = groupIsIncomplete ? c.group + " (incomplete)" : c.group;
+                groupLabel.appendChild(document.createTextNode(labelText));
 
                 let groupButton = document.createElement("button");
                 groupButton.classList = "show-hide-category-group-button";

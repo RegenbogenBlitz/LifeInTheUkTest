@@ -626,7 +626,7 @@
     let category = {
         name: "The Industrial Revolution",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

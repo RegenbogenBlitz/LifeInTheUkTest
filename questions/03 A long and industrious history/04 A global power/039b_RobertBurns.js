@@ -176,9 +176,10 @@
     ];
 
     let category = {
-        name: "Robert Burns (incomplete)",
+        name: "Robert Burns",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

@@ -286,9 +286,10 @@
     ];
 
     let category = {
-        name: "Isambard Kingdom Brunel (incomplete)",
+        name: "Isambard Kingdom Brunel",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

@@ -217,9 +217,10 @@
     ];
 
     let category = {
-        name: "Richard Arkwright (incomplete)",
+        name: "Richard Arkwright",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

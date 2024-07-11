@@ -432,9 +432,10 @@
     ];
 
     let category = {
-        name: "Ireland in the 19th century (incomplete)",
+        name: "Ireland in the 19th century",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

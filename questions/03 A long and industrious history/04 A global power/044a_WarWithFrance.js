@@ -411,9 +411,10 @@
     ];
 
     let category = {
-        name: "War with France (incomplete)",
+        name: "War with France",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();

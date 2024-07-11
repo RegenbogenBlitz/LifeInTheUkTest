@@ -315,9 +315,10 @@
     ];
 
     let category = {
-        name: "The Enlightenment (incomplete)",
+        name: "The Enlightenment",
         questions: questions,
-        group: "A Global Power (incomplete)"
+        isIncomplete: true,
+        group: "A Global Power"
     }
     quizDeck.categories.push(category);
 })();
