@@ -118,7 +118,13 @@ const countIncomplete = () => {
 
     for (let category of categories) {
         if (category.isIncomplete) {
-            incompleteCategories.push({ name: category.name, numberOfQuestions: category.questions.length });
+            const numberOfQuestions = category.questions.reduce((acc, question) => {
+                if (question.questions) {
+                    return acc + question.questions.length;
+                }
+                return acc + 1;
+            }, 0);
+            incompleteCategories.push({ name: category.name, numberOfQuestions });
         }
     }
 
