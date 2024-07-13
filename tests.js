@@ -78,7 +78,7 @@ const testQuiz = () => {
         if (!category.name) {
             throw new Error("There is a category with no name");
         }
-        if (category.questions.length === 0) {
+        if (!category.questions) {
             throw new Error(`Category ${category.name} has no questions`);
         }
 

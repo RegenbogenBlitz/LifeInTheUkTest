@@ -22,10 +22,16 @@ let QuizHelpers = (() => {
                 throw new Error(`No correct answers for question: ${questionText}`);
             }
 
-            var incorrectAnswers =
-                typeof question.incorrectAnswers === "function"
-                    ? question.incorrectAnswers()
-                    : question.incorrectAnswers;
+            let incorrectAnswers;
+
+            if (question.incorrectAnswers) {
+                incorrectAnswers =
+                    typeof question.incorrectAnswers === "function"
+                        ? question.incorrectAnswers()
+                        : question.incorrectAnswers;
+            } else {
+                incorrectAnswers = [];
+            }
 
             let numberOfMandatoryIncorrectAnswers = question.mandatoryIncorrectAnswers ? question.mandatoryIncorrectAnswers.length : 0;
 
