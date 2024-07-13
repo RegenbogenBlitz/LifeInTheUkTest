@@ -566,7 +566,8 @@
     let category = {
         name: "Pre-Roman",
         questions: questions,
-        group: "Early Britain"
+        group: "Early Britain",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

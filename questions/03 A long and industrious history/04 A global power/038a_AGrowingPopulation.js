@@ -171,7 +171,8 @@
     let category = {
         name: "A Growing Population",
         questions: questions,
-        group: "A Global Power"
+        group: "A Global Power",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

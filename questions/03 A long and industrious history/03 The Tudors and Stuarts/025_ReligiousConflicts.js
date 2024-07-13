@@ -592,7 +592,8 @@
     let category = {
         name: "Religious Conflicts",
         questions: questions,
-        group: "The Tudors and Stuarts"
+        group: "The Tudors and Stuarts",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

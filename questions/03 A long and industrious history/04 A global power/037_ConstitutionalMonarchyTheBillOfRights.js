@@ -476,7 +476,8 @@
     let category = {
         name: "Constitutional Monarchy - the Bill of Rights",
         questions: questions,
-        group: "A Global Power"
+        group: "A Global Power",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

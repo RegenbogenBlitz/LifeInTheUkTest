@@ -120,22 +120,28 @@ let loadCategoryControls = () => {
 
     let categorySelectionUl = document.getElementById("category-selection");
 
+    let categoryMajorGroups = {};
     let categoryGroups = {};
     quizDeck.categories.forEach(c => {
-        let categoryItem = createCategoryItem(c);
+        let parentElement = categorySelectionUl;
+        if (c.majorGroup) {
+            let majorGroupUl = categoryMajorGroups[c.majorGroup];
+            if (!majorGroupUl) {
+                majorGroupUl = createGroup(c.majorGroup, categoryMajorGroups, c => c.majorGroup, categorySelectionUl);
+            }
+            parentElement = majorGroupUl;
+        }
 
         if (c.group) {
             let groupUl = categoryGroups[c.group];
             if (!groupUl) {
-                groupUl = createGroup(c.group, categoryGroups, c => c.group, categorySelectionUl);
+                groupUl = createGroup(c.group, categoryGroups, c => c.group, parentElement);
             }
-            groupUl.appendChild(categoryItem);
-        }
-        else {
-            categorySelectionUl.appendChild(categoryItem);
+            parentElement = groupUl;
         }
 
-
+        const categoryItem = createCategoryItem(c);
+        parentElement.appendChild(categoryItem);
     });
 }
 

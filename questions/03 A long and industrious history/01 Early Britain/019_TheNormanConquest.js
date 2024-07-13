@@ -549,7 +549,8 @@
     let category = {
         name: "The Norman Conquest",
         questions: questions,
-        group: "Early Britain"
+        group: "Early Britain",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

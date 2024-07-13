@@ -502,7 +502,8 @@
     let category = {
         name: "Legal and Political Changes",
         questions: questions,
-        group: "The Middle Ages"
+        group: "The Middle Ages",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

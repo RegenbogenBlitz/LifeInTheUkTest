@@ -239,7 +239,8 @@
     let category = {
         name: "The Prime Minister",
         questions: questions,
-        group: "A Global Power"
+        group: "A Global Power",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

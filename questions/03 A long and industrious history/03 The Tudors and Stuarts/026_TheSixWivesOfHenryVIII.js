@@ -585,7 +585,8 @@
     let category = {
         name: "The Wives of Henry VIII",
         questions: questions,
-        group: "The Tudors and Stuarts"
+        group: "The Tudors and Stuarts",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

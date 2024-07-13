@@ -206,7 +206,8 @@
     let category = {
         name: "The Vikings",
         questions: questions,
-        group: "Early Britain"
+        group: "Early Britain",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

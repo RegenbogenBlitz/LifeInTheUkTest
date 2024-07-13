@@ -162,7 +162,8 @@
     let category = {
         name: "William Shakespeare",
         questions: questions,
-        group: "The Tudors and Stuarts"
+        group: "The Tudors and Stuarts",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

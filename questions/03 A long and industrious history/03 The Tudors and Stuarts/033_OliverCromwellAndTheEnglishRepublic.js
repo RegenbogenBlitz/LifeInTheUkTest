@@ -328,7 +328,8 @@
         name: "Oliver Cromwell and the English Republic",
         questions: questions,
         isUnvetted: true,
-        group: "The Tudors and Stuarts"
+        group: "The Tudors and Stuarts",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

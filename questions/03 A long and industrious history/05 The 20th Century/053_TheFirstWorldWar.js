@@ -91,7 +91,8 @@
         name: "The First World War",
         questions: questions,
         isIncomplete: true,
-        group: "The 20th Century"
+        group: "The 20th Century",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

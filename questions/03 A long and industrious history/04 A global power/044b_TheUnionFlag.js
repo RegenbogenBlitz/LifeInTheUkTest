@@ -359,7 +359,8 @@
         name: "The Union Flag",
         questions: questions,
         isIncomplete: true,
-        group: "A Global Power"
+        group: "A Global Power",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

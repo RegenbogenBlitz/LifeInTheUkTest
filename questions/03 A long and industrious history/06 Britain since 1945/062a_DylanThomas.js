@@ -245,7 +245,8 @@
     let category = {
         name: "Dylan Thomas",
         questions: questions,
-        group: "Britain since 1945"
+        group: "Britain since 1945",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

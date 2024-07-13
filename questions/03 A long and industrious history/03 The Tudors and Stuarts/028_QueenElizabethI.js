@@ -149,7 +149,8 @@
     let category = {
         name: "Queen Elizabeth I",
         questions: questions,
-        group: "The Tudors and Stuarts"
+        group: "The Tudors and Stuarts",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

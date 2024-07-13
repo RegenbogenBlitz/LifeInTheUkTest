@@ -371,7 +371,8 @@
     let category = {
         name: "The Wars of the Roses",
         questions: questions,
-        group: "The Middle Ages"
+        group: "The Middle Ages",
+        majorGroup: "A long and illustrious history"
     }
 
     quizDeck.categories.push(category);

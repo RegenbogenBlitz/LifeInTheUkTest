@@ -271,7 +271,8 @@
     let category = {
         name: "The Reformation in Scotland and Mary Queen of Scots",
         questions: questions,
-        group: "The Tudors and Stuarts"
+        group: "The Tudors and Stuarts",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();

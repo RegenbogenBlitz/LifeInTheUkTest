@@ -533,7 +533,8 @@
     let category = {
         name: "The Romans",
         questions: questions,
-        group: "Early Britain"
+        group: "Early Britain",
+        majorGroup: "A long and illustrious history"
     }
     quizDeck.categories.push(category);
 })();
