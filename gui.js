@@ -57,7 +57,9 @@ let loadCategoryControls = () => {
         if (category.isUnvetted) {
             label.classList = "category-unvetted";
         }
-        label.appendChild(input);
+        if (category.questions.length > 0) {
+            label.appendChild(input);
+        }
         const labelText = category.isIncomplete ? category.name + " (incomplete)" : category.name;
         label.appendChild(document.createTextNode(labelText));
 
