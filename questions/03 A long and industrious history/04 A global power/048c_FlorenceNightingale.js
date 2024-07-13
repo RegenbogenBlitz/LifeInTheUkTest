@@ -119,20 +119,11 @@
         //        "refugees"
         //    ]
         //},
-        //{
-        //    question: "During which war was Florence Nightingale treating soldiers in military hospitals in Turkey?",
-        //    correctAnswers: [
-        //        "the Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the First World War",
-        //        "the Second World War",
-        //        "the Napoleonic Wars",
-        //        "the Boer War",
-        //        "the War of the Roses",
-        //        "the Hundred Years' War"
-        //    ]
-        //},
+        {
+            question: "During which war was Florence Nightingale treating soldiers in military hospitals in Turkey?",
+            correctAnswers: ["The Crimean War"],
+            incorrectAnswers: famousEnglishWars.filter(war => war !== "the Crimean War")
+        },
         //{
         //    question: "What did Florence Nightingale and her fellow nurses achieve in the military hospitals during the Crimean War?",
         //    correctAnswers: [
@@ -147,35 +138,26 @@
         //        "Developed a new vaccine"
         //    ]
         //},
-        //{
-        //    question: "In which year did Florence Nightingale establish the Nightingale Training School for nurses?",
-        //    correctAnswers: [
-        //        "1860"
-        //    ],
-        //    incorrectAnswers: [
-        //        "1854",
-        //        "1856",
-        //        "1870",
-        //        "1875",
-        //        "1880",
-        //        "1890",
-        //        "1900"
-        //    ]
-        //},
-        //{
-        //    question: "Where did Florence Nightingale establish the Nightingale Training School for nurses?",
-        //    correctAnswers: [
-        //        "St Thomas' Hospital in London"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Royal London Hospital",
-        //        "King's College Hospital",
-        //        "Queen Elizabeth Hospital",
-        //        "Guy's Hospital",
-        //        "Westminster Hospital",
-        //        "Royal Free Hospital"
-        //    ]
-        //},
+        {
+            question: "In which year did Florence Nightingale establish the Nightingale Training School for nurses?",
+            correctAnswers: ["1860"],
+            incorrectAnswers: getDates(1800, 1900, [1860])
+        },
+        {
+            question: "Where did Florence Nightingale establish the Nightingale Training School for nurses?",
+            correctAnswers: [
+                "St Thomas' Hospital in London"
+            ],
+            incorrectAnswers: [
+                "St Bartholomew's Hospital in London",
+                "Guy's Hospital in London",
+                "Bethlem Royal Hospital in London",
+                "Royal London Hospital",
+                "Great Ormond Street Hospital",
+                "Royal Edinburgh Hospital",
+                "St Leonard's Hospital in St Andrews",
+            ]
+        },
         //{
         //    question: "What did Florence Nightingale establish at St Thomas' Hospital in London in 1860?",
         //    correctAnswers: [

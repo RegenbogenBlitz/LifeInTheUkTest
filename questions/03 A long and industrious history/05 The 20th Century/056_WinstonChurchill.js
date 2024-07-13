@@ -17,7 +17,10 @@
                 "Unionist Party",
                 "Communist Party",
                 "National Liberal Party",
-                "Common Wealth Party"
+                "Commonwealth Party",
+                "Social Democratic Party",
+                "The Liberal Democrats",
+                "Reform Party"
             ]
         },
         {

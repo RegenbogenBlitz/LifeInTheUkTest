@@ -75,20 +75,20 @@
         //        "They argued that the Empire should focus solely on European affairs."
         //    ]
         //},
-        //{
-        //    question: "What did the great majority of British people believe about the role of the British Empire in the world during the late 19th to early 20th century?",
-        //    correctAnswers: [
-        //        "A force for good in the world"
-        //    ],
-        //    incorrectAnswers: [
-        //        "A burden on the economy",
-        //        "A source of constant conflict",
-        //        "Unnecessary for Britain's prosperity",
-        //        "In need of immediate dissolution",
-        //        "A system of oppression",
-        //        "Merely a political strategy"
-        //    ]
-        //},
+        {
+            question: "What did the great majority of British people believe about the role of the British Empire in the world during the late 19th to early 20th century?",
+            correctAnswers: [
+                "A force for good in the world"
+            ],
+            incorrectAnswers: [
+                "A burden on the economy",
+                "A source of constant conflict",
+                "Unnecessary for Britain's prosperity",
+                "In need of immediate dissolution",
+                "A system of oppression",
+                "Merely a political strategy"
+            ]
+        },
         //{
         //    question: "What effect did the Boer War of 1899 to 1902 have on the discussions about the British Empire's future?",
         //    correctAnswers: [
@@ -103,48 +103,60 @@
         //        "Prompted an immediate transition to the Commonwealth"
         //    ]
         //},
-        //{
-        //    question: "Who did the British go to war with in South Africa during the Boer War of 1899 to 1902?",
-        //    correctAnswers: [
-        //        "settlers from the Netherlands called the Boers"
-        //    ],
-        //    incorrectAnswers: [
-        //        "settlers from France called the Boers",
-        //        "settlers from Spain called the Boers",
-        //        "settlers from Germany called the Boers",
-        //        "settlers from Portugal called the Boers",
-        //        "settlers from Denmark called the Boers",
-        //        "settlers from Italy called the Boers"
-        //    ]
-        //},
-        //{
-        //    question: "What was the original nationality of the settlers known as the Boers that the British fought in South Africa during the Boer War?",
-        //    correctAnswers: [
-        //        "Dutch"
-        //    ],
-        //    incorrectAnswers: [
-        //        "French",
-        //        "Spanish",
-        //        "German",
-        //        "Portuguese",
-        //        "Danish",
-        //        "Italian"
-        //    ]
-        //},
-        //{
-        //    question: "What name were the settlers from the Netherlands known by in South Africa?",
-        //    correctAnswers: [
-        //        "Boers"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Afrikaners",
-        //        "Zulu",
-        //        "Xhosa",
-        //        "Dutchmen",
-        //        "Flemish",
-        //        "Hollanders"
-        //    ]
-        //},
+        {
+            question: "Which year did the Boer War start?",
+            correctAnswers: ["1899"],
+            mandatoryIncorrectAnswers: ["1902"],
+            incorrectAnswers: getDates(1800, 1950, [1899, 1902])
+        },
+        {
+            question: "Which year did the Boer War end?",
+            correctAnswers: ["1902"],
+            mandatoryIncorrectAnswers: ["1899"],
+            incorrectAnswers: getDates(1800, 1950, [1902, 1899])
+        },
+        {
+            questions: [
+                {
+                    question: "Who did the British go to war with in South Africa during the Boer War?",
+                    correctAnswers: [
+                        "settlers from the Netherlands called the Boers"
+                    ],
+                    incorrectAnswers: [
+                        "a native African tribe called the Boers",
+                        "a native African tribe called the Zulus",
+                        "a native African tribe called the Xhosa",
+                        "rebel British colonists",
+                    ]
+                },
+                {
+                    question: "What was the original nationality of the settlers known as the Boers that the British fought in South Africa during the Boer War?",
+                    correctAnswers: ["Dutch"],
+                    mandatoryIncorrectAnswers: ["British", "native African"],
+                    incorrectAnswers: [
+                        "French",
+                        "Spanish",
+                        "German",
+                        "Portuguese",
+                        "Danish",
+                        "Italian"
+                    ]
+                },
+                {
+                    question: "What name were the settlers from the Netherlands known by in South Africa at the end of the 19th Century?",
+                    correctAnswers: ["Boers"],
+                    mandatoryIncorrectAnswers: ["Afrikaners"],
+                    incorrectAnswers: [
+                        "Zulu",
+                        "Xhosa",
+                        "Dutchmen",
+                        "Flemish",
+                        "Hollanders"
+                    ],
+                    explanation: "The term 'Afrikaners' was not commonly used to describe the settlers from the Netherlands in South Africa at the end of the 19th Century."
+                }
+            ]
+        },
         //{
         //    question: "During which conflict did the British fight the settlers from the Netherlands known as the Boers in South Africa?",
         //    correctAnswers: [
@@ -343,20 +355,20 @@
         //        "a negotiated transition"
         //    ]
         //},
-        //{
-        //    question: "When did the orderly transition from the British Empire to the Commonwealth mostly occur?",
-        //    correctAnswers: [
-        //        "the second half of the 20th century"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the first half of the 20th century",
-        //        "the late 19th century",
-        //        "the early 20th century",
-        //        "the mid-19th century",
-        //        "the beginning of the 21st century",
-        //        "the end of the 18th century"
-        //    ]
-        //},
+        {
+            question: "When did the orderly transition from the British Empire to the Commonwealth mostly occur?",
+            correctAnswers: [
+                "the second half of the 20th century"
+            ],
+            incorrectAnswers: [
+                "the first half of the 20th century",
+                "the late 19th century",
+                "the early 20th century",
+                "the mid-19th century",
+                "the beginning of the 21st century",
+                "the end of the 18th century"
+            ]
+        },
         //{
         //    question: "What was the outcome for countries within the British Empire during the transition to the Commonwealth in the second half of the 20th century?",
         //    correctAnswers: [

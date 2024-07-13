@@ -14,7 +14,7 @@
             question: "Which of the following developments are associated with the 1960s in the UK? (Select all that apply)",
             correctAnswers: [
                 "Reform of abortion law",
-                "Reform of divorce law",
+                "Reform of divorce law"
             ],
             incorrectAnswers: [
                 "Abolition of slavery",
@@ -24,6 +24,31 @@
                 "Introduction of sick leave",
                 "Introduction of paid holidays",
                 "Introduction of maternity leave",
+            ]
+        },
+        {
+            question: "Which countries developed Concorde, the supersonic airliner? (Select all that apply)",
+            correctAnswers: ["Britain", "France"],
+            incorrectAnswers: [
+                "Germany",
+                "Italy",
+                "Spain",
+                "United States",
+                "Russia",
+                "China",
+                "Japan"
+            ]
+        },
+        {
+            question: "During which decade was Concorde, the supersonic airliner, developed?",
+            correctAnswers: ["1960s"],
+            incorrectAnswers: [
+                "1940s",
+                "1950s",
+                "1970s",
+                "1980s",
+                "1990s",
+                "2000s"
             ]
         }
     ];

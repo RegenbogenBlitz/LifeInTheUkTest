@@ -1,6 +1,18 @@
 (() => {
     let questions = [
         {
+            question: "Which year did the Crimean War start?",
+            correctAnswers: ["1853"],
+            mandatoryIncorrectAnswers: ["1856"],
+            incorrectAnswers: getDates(1800, 1900, [1853, 1856])
+        },
+        {
+            question: "Which year did the Crimean War end?",
+            correctAnswers: ["1856"],
+            mandatoryIncorrectAnswers: ["1853"],
+            incorrectAnswers: getDates(1800, 1900, [1856, 1853])
+        },
+        {
             question: "Which of the following countries did Britain fight alongside during the Crimean War? (Select all that apply)",
             correctAnswers: [
                 "Turkey",
@@ -11,6 +23,8 @@
                 "Germany",
                 "Spain",
                 "Portugal",
+                "Austria",
+                "Italy",
                 "United States",
                 "Canada",
                 "China",
@@ -21,91 +35,33 @@
                 "Belgium"
             ]
         },
-        //{
-        //    question: "Who was Britain's opponent in the Crimean War?",
-        //    correctAnswers: [
-        //        "Russia"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Germany",
-        //        "France",
-        //        "Austria",
-        //        "Ottoman Empire",
-        //        "Spain",
-        //        "Italy"
-        //    ]
-        //},
-        //{
-        //    question: "In what years did the Crimean War take place?",
-        //    correctAnswers: [
-        //        "From 1853 to 1856"
-        //    ],
-        //    incorrectAnswers: [
-        //        "From 1843 to 1846",
-        //        "From 1863 to 1866",
-        //        "From 1833 to 1836",
-        //        "From 1873 to 1876",
-        //        "From 1848 to 1852",
-        //        "From 1858 to 1861"
-        //    ]
-        //},
-        //{
-        //    question: "What was the conflict in which Britain fought with Turkey and France against Russia?",
-        //    correctAnswers: [
-        //        "The Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Boer War",
-        //        "The Napoleonic Wars",
-        //        "World War I",
-        //        "The Seven Years' War",
-        //        "The Hundred Years' War",
-        //        "The War of the Roses"
-        //    ]
-        //},
-        //{
-        //    question: "During which war did Britain ally with Turkey and France to fight against Russia?",
-        //    correctAnswers: [
-        //        "The Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The First World War",
-        //        "The Second World War",
-        //        "The Russo-Japanese War",
-        //        "The Great Northern War",
-        //        "The Balkan Wars",
-        //        "The Russo-Turkish War"
-        //    ]
-        //},
-        //{
-        //    question: "In which war that took place from 1853 to 1856 did Britain fight against Russia?",
-        //    correctAnswers: [
-        //        "The Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Franco-Prussian War",
-        //        "The War of Austrian Succession",
-        //        "The American Civil War",
-        //        "The Opium Wars",
-        //        "The Boxer Rebellion",
-        //        "The Anglo-Zulu War"
-        //    ]
-        //},
-        //{
-        //    question: "Which war was the first to be extensively covered by the media, including news stories and photographs?",
-        //    correctAnswers: [
-        //        "The Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The First World War",
-        //        "The Second World War",
-        //        "The Boer War",
-        //        "The Napoleonic Wars",
-        //        "The American Revolutionary War",
-        //        "The War of the Roses",
-        //        "The Hundred Years' War"
-        //    ]
-        //},
+        {
+            question: "Who was Britain's opponent in the Crimean War?",
+            correctAnswers: ["Russia"],
+            mandatoryIncorrectAnswers: ["Turkey", "France"],
+            incorrectAnswers: [
+                "Germany",
+                "Spain",
+                "Portugal",
+                "Austria",
+                "Italy",
+                "United States",
+                "Canada",
+                "China",
+                "Japan",
+                "India",
+                "Australia",
+                "Netherlands",
+                "Belgium"
+            ]
+        },
+        {
+            question: "Which war was the first to be extensively covered by the media, including news stories and photographs?",
+            correctAnswers: [
+                "The Crimean War"
+            ],
+            incorrectAnswers: famousEnglishWars.filter(war => war !== "The Crimean War")
+        },
         //{
         //    question: "In what forms was the Crimean War extensively covered by the media?",
         //    correctAnswers: [
@@ -151,21 +107,18 @@
         //        "Anglo-Zulu War"
         //    ]
         //},
-        //{
-        //    question: "What was the primary cause of death for many soldiers during the Crimean War?",
-        //    correctAnswers: [
-        //        "Illnesses caught in the hospitals"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Battle injuries",
-        //        "Exposure to the elements",
-        //        "Starvation",
-        //        "Disease from poor camp conditions",
-        //        "Friendly fire",
-        //        "Accidents during training",
-        //        "Poisoning"
-        //    ]
-        //},
+        {
+            question: "What was the primary cause of death for many soldiers during the Crimean War?",
+            correctAnswers: ["Illnesses caught in the hospitals"],
+            mandatoryIncorrectAnswers: ["Battle injuries"],
+            incorrectAnswers: [
+                "Exposure to the elements",
+                "Starvation",
+                "Disease from poor camp conditions",
+                "Friendly fire",
+                "Accidents during training"
+            ]
+        },
         //{
         //    question: "What does the statement 'The conditions were very poor' imply about the hospitals during the Crimean War?",
         //    correctAnswers: [
@@ -181,96 +134,41 @@
         //        "Nutritional needs of patients were well-met"
         //    ]
         //},
-        //{
-        //    question: "Who introduced the Victoria Cross medal?",
-        //    correctAnswers: [
-        //        "Queen Victoria"
-        //    ],
-        //    incorrectAnswers: [
-        //        "King Edward VII",
-        //        "Queen Elizabeth II",
-        //        "Prime Minister Winston Churchill",
-        //        "King George V",
-        //        "Queen Elizabeth I",
-        //        "King Henry VIII",
-        //        "Queen Anne"
-        //    ]
-        //},
-        //{
-        //    question: "During which war was the Victoria Cross medal introduced?",
-        //    correctAnswers: [
-        //        "the Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "the First World War",
-        //        "the Second World War",
-        //        "the Boer War",
-        //        "the Napoleonic Wars",
-        //        "the Seven Years' War",
-        //        "the American War of Independence",
-        //        "the Falklands War"
-        //    ]
-        //},
-        //{
-        //    question: "What does the Victoria Cross medal honour?",
-        //    correctAnswers: [
-        //        "acts of valour by soldiers"
-        //    ],
-        //    incorrectAnswers: [
-        //        "journalistic achievements",
-        //        "scientific discoveries",
-        //        "political service",
-        //        "artistic contributions",
-        //        "educational advancements",
-        //        "economic development",
-        //        "medical breakthroughs"
-        //    ]
-        //},
-        //{
-        //    question: "When was the Victoria Cross medal introduced?",
-        //    correctAnswers: [
-        //        "during the Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "during the First World War",
-        //        "during the Second World War",
-        //        "during the Boer War",
-        //        "during the Napoleonic Wars",
-        //        "during the Seven Years' War",
-        //        "during the American War of Independence",
-        //        "during the Falklands War"
-        //    ]
-        //},
-        //{
-        //    question: "What does the Victoria Cross medal honour?",
-        //    correctAnswers: [
-        //        "Acts of valour by soldiers"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Acts of bravery by civilians",
-        //        "Long service in the military",
-        //        "Innovations in military technology",
-        //        "Outstanding leadership in politics",
-        //        "Exceptional contributions to the arts",
-        //        "Contributions to science and medicine",
-        //        "Heroic actions by emergency services"
-        //    ]
-        //},
-        //{
-        //    question: "During which war was the Victoria Cross medal introduced?",
-        //    correctAnswers: [
-        //        "The Crimean War"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The First World War",
-        //        "The Second World War",
-        //        "The Boer War",
-        //        "The Napoleonic Wars",
-        //        "The Falklands War",
-        //        "The Gulf War",
-        //        "The War of the Roses"
-        //    ]
-        //},
+        {
+            question: "Who introduced the Victoria Cross medal?",
+            correctAnswers: [
+                "Queen Victoria"
+            ],
+            incorrectAnswers: [
+                "King Edward VII",
+                "Prime Minister Viscount Melbourne",
+                "Prime Minister William Gladstone",
+                "Prime Minister Benjamin Disraeli",
+                "Major-General Charles Gordon",
+            ]
+        },
+        {
+            question: "What does the Victoria Cross medal honour?",
+            correctAnswers: [
+                "Acts of valour by soldiers"
+            ],
+            incorrectAnswers: [
+                "Acts of bravery by civilians",
+                "Acts of bravery by animals",
+                "Long service in the military",
+                "Innovations in military technology",
+                "Outstanding military leadership",
+                "Contributions to military science and medicine",
+                "Heroic actions by emergency services"
+            ]
+        },
+        {
+            question: "During which war was the Victoria Cross medal introduced?",
+            correctAnswers: [
+                "The Crimean War"
+            ],
+            incorrectAnswers: famousEnglishWars.filter(war => war !== "The Crimean War")
+        },
         //{
         //    question: "Which of the following are considered part of 'the media' according to the definition provided in the Life in The UK Test handbook?",
         //    correctAnswers: [

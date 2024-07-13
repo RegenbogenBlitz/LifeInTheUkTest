@@ -10,7 +10,7 @@
                 "Conditions in Ireland were similar to those in England.",
                 "Conditions in Ireland were similar to those in Wales."
             ]
-        }
+        },
         //{
         //    question: "What proportion of the Irish population depended on farming for their livelihood in the mid-19th century?",
         //    correctAnswers: [
@@ -39,79 +39,83 @@
         //        "Substantial holdings"
         //    ]
         //},
-        //{
-        //    question: "What food did many people in Ireland depend on as a large part of their diet in the middle of the 19th century?",
-        //    correctAnswers: [
-        //        "Potatoes"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Wheat",
-        //        "Rice",
-        //        "Barley",
-        //        "Corn",
-        //        "Oats",
-        //        "Rye",
-        //        "Fish"
-        //    ]
-        //},
-        //{
-        //    question: "When did the potato crop failure and subsequent famine occur in Ireland?",
-        //    correctAnswers: [
-        //        "In the middle of the 19th century"
-        //    ],
-        //    incorrectAnswers: [
-        //        "In the early 19th century",
-        //        "In the late 18th century",
-        //        "At the beginning of the 20th century",
-        //        "In the early 17th century",
-        //        "During the mid-16th century",
-        //        "In the late 19th century"
-        //    ]
-        //},
-        //{
-        //    question: "What natural disaster led to a famine in Ireland in the 19th century?",
-        //    correctAnswers: [
-        //        "The potato crop failed"
-        //    ],
-        //    incorrectAnswers: [
-        //        "A severe drought",
-        //        "Widespread flooding",
-        //        "A devastating earthquake",
-        //        "An outbreak of disease in wheat crops",
-        //        "A plague of locusts",
-        //        "An extreme cold snap that lasted several years"
-        //    ]
-        //},
-        //{
-        //    question: "How many people died from disease and starvation in Ireland during the famine referenced in the mid-19th century?",
-        //    correctAnswers: [
-        //        "A million"
-        //    ],
-        //    incorrectAnswers: [
-        //        "A hundred thousand",
-        //        "Half a million",
-        //        "Two million",
-        //        "Three million",
-        //        "Four hundred thousand",
-        //        "Seven hundred fifty thousand",
-        //        "Eight hundred thousand"
-        //    ]
-        //},
-        //{
-        //    question: "How many people left Ireland during the famine in the middle of the 19th century?",
-        //    correctAnswers: [
-        //        "A million and a half"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Half a million",
-        //        "Two million",
-        //        "Three million",
-        //        "750,000",
-        //        "A million",
-        //        "500,000",
-        //        "250,000"
-        //    ]
-        //},
+        {
+            question: "What food did many people in Ireland depend on as a large part of their diet in the middle of the 19th century?",
+            correctAnswers: [
+                "Potatoes"
+            ],
+            incorrectAnswers: [
+                "Wheat",
+                "Rice",
+                "Barley",
+                "Corn",
+                "Oats",
+                "Rye",
+                "Fish"
+            ]
+        },
+        {
+            questions: [
+                {
+                    question: "When did the potato crop failure and subsequent famine occur in Ireland?",
+                    correctAnswers: [
+                        "In the middle of the 19th century"
+                    ],
+                    incorrectAnswers: [
+                        "In the early 19th century",
+                        "In the late 18th century",
+                        "At the beginning of the 20th century",
+                        "In the early 17th century",
+                        "During the mid-16th century",
+                        "In the late 19th century"
+                    ]
+                },
+                {
+                    question: "What natural disaster led to a famine in Ireland in the 19th century?",
+                    correctAnswers: [
+                        "The potato crop failed"
+                    ],
+                    incorrectAnswers: [
+                        "A severe drought",
+                        "Widespread flooding",
+                        "A devastating earthquake",
+                        "An outbreak of disease in wheat crops",
+                        "A plague of locusts",
+                        "An extreme cold snap that lasted several years"
+                    ]
+                },
+            ]
+        },
+        {
+            question: "How many people died from disease and starvation in Ireland during the famine in the mid-19th century?",
+            correctAnswers: [
+                "A million"
+            ],
+            incorrectAnswers: [
+                "A hundred thousand",
+                "Half a million",
+                "Two million",
+                "Three million",
+                "Four hundred thousand",
+                "Seven hundred fifty thousand",
+                "Eight hundred thousand"
+            ]
+        },
+        {
+            question: "How many people left Ireland during the famine in the middle of the 19th century?",
+            correctAnswers: [
+                "A million and a half"
+            ],
+            incorrectAnswers: [
+                "Half a million",
+                "Two million",
+                "Three million",
+                "750,000",
+                "A million",
+                "500,000",
+                "250,000"
+            ]
+        },
         //{
         //    question: "What caused a significant number of people to leave Ireland in the 19th century?",
         //    correctAnswers: [
@@ -261,22 +265,20 @@
         //        "Partial autonomy"
         //    ]
         //},
-        //{
-        //    question: "Which group within the Irish Nationalist movement of the 19th century favoured complete independence?",
-        //    correctAnswers: [
-        //        "The Fenians"
-        //    ],
-        //    incorrectAnswers: [
-        //        "The Unionists",
-        //        "The Nationalists",
-        //        "The Republicans",
-        //        "The Home Rulers",
-        //        "The Loyalists",
-        //        "The Confederates",
-        //        "The Parliamentarians",
-        //        "The Activists"
-        //    ]
-        //},
+        {
+            question: "Which group within the Irish Nationalist movement of the 19th century favoured complete independence?",
+            correctAnswers: [
+                "The Fenians"
+            ],
+            incorrectAnswers: [
+                "The Unionists",
+                "The Home Rulers",
+                "The Loyalists",
+                "The Confederates",
+                "The Parliamentarians",
+                "The Activists"
+            ]
+        },
         //{
         //    question: "During which century did the Fenians advocate for complete independence within the Irish Nationalist movement?",
         //    correctAnswers: [
@@ -373,34 +375,29 @@
         //        "A mutual non-aggression pact"
         //    ]
         //},
-        //{
-        //    question: "What did Charles Stewart Parnell advocate for Ireland?",
-        //    correctAnswers: [
-        //        "Home Rule"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Complete independence",
-        //        "Republicanism",
-        //        "Unionism",
-        //        "Federalism",
-        //        "Devolution",
-        //        "Autonomy"
-        //    ]
-        //},
-        //{
-        //    question: "What would 'Home Rule' entail for Ireland according to Charles Stewart Parnell's advocacy?",
-        //    correctAnswers: [
-        //        "Ireland would remain in the UK but have its own parliament"
-        //    ],
-        //    incorrectAnswers: [
-        //        "Ireland would become fully independent from the UK",
-        //        "Ireland would have no legislative powers",
-        //        "Ireland would be governed directly by the UK Parliament",
-        //        "Ireland would join another state",
-        //        "Ireland would share its parliament with another country",
-        //        "Ireland would become a republic"
-        //    ]
-        //},
+        {
+            question: "What did Charles Stewart Parnell advocate for Ireland?",
+            correctAnswers: [
+                "Home Rule"
+            ],
+            incorrectAnswers: [
+                "Complete independence",
+                "Unionism",
+                "Devolution"
+            ]
+        },
+        {
+            question: "What would 'Home Rule' have entailed for Ireland?",
+            correctAnswers: [
+                "Ireland would remain in the UK but have its own parliament"
+            ],
+            incorrectAnswers: [
+                "Ireland would become fully independent from the UK",
+                "Ireland would be governed directly by the UK Parliament",
+                "Ireland would join another state",
+                "Ireland would share its parliament with another country"
+            ]
+        },
         //{
         //    question: "Who was a notable advocate for 'Home Rule' in Ireland?",
         //    correctAnswers: [
