@@ -45,6 +45,55 @@ let getMaxQuestions = () => {
     }
 }
 
+const createGroup = (groupName, groups, getGroupName, parentElement) => {
+    const groupInput = document.createElement("input");
+    groupInput.type = "checkbox";
+    groupInput.classList = "category-group-checkbox";
+
+    const groupLabel = document.createElement("label");
+    groupLabel.appendChild(groupInput);
+
+    const groupIsIncomplete = quizDeck.categories.some(c => getGroupName(c) === groupName && c.isIncomplete);
+    const labelText = groupIsIncomplete ? groupName + " (incomplete)" : groupName;
+    groupLabel.appendChild(document.createTextNode(labelText));
+
+    const groupUl = document.createElement("ul");
+    groupUl.style.display = "none";
+
+    const groupButton = document.createElement("button");
+    groupButton.classList = "show-hide-category-group-button";
+    groupButton.textContent = "Show";
+    groupButton.addEventListener("click", () => {
+        if (groupUl.style.display === "none") {
+            groupUl.style.display = "block";
+            groupButton.textContent = "Hide";
+        }
+        else {
+            groupUl.style.display = "none";
+            groupButton.textContent = "Show";
+        }
+    });
+
+    const groupItem = document.createElement("li");
+    groupItem.appendChild(groupLabel);
+    groupItem.appendChild(groupButton);
+    groupItem.appendChild(groupUl);
+
+    parentElement.appendChild(groupItem);
+
+    const group_onChange = () => {
+        const groupCheckboxes = groupUl.querySelectorAll("input");
+        groupCheckboxes.forEach(cb => {
+            cb.checked = groupInput.checked;
+        });
+    };
+    groupInput.addEventListener("change", group_onChange);
+
+    groups[groupName] = groupUl;
+
+    return groupUl;
+}
+
 let loadCategoryControls = () => {
     let createCategoryItem = (category) => {
         let input = document.createElement("input");
@@ -78,49 +127,7 @@ let loadCategoryControls = () => {
         if (c.group) {
             let groupUl = categoryGroups[c.group];
             if (!groupUl) {
-                let groupInput = document.createElement("input");
-                groupInput.type = "checkbox";
-                groupInput.classList = "category-group-checkbox";
-
-                let groupLabel = document.createElement("label");
-                groupLabel.appendChild(groupInput);
-
-                const groupIsIncomplete = quizDeck.categories.some(category => category.group === c.group && category.isIncomplete);
-                const labelText = groupIsIncomplete ? c.group + " (incomplete)" : c.group;
-                groupLabel.appendChild(document.createTextNode(labelText));
-
-                let groupButton = document.createElement("button");
-                groupButton.classList = "show-hide-category-group-button";
-                groupButton.textContent = "Show";
-                groupButton.addEventListener("click", () => {
-                    if (groupUl.style.display === "none") {
-                        groupUl.style.display = "block";
-                        groupButton.textContent = "Hide";
-                    }
-                    else {
-                        groupUl.style.display = "none";
-                        groupButton.textContent = "Show";
-                    }
-                });
-                groupUl = document.createElement("ul");
-                groupUl.style.display = "none";
-
-                groupItem = document.createElement("li");
-                groupItem.appendChild(groupLabel);
-                groupItem.appendChild(groupButton);
-                groupItem.appendChild(groupUl);
-
-                categorySelectionUl.appendChild(groupItem);
-
-                let group_onChange = () => {
-                    let groupCheckboxes = groupUl.querySelectorAll("input");
-                    groupCheckboxes.forEach(cb => {
-                        cb.checked = groupInput.checked;
-                    });
-                };
-                groupInput.addEventListener("change", group_onChange);
-
-                categoryGroups[c.group] = groupUl;
+                groupUl = createGroup(c.group, categoryGroups, c => c.group, categorySelectionUl);
             }
             groupUl.appendChild(categoryItem);
         }
