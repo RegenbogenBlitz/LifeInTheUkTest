@@ -46,19 +46,36 @@ let getMaxQuestions = () => {
 }
 
 const createGroup = (groupName, groups, getGroupName, parentElement) => {
-    const groupInput = document.createElement("input");
-    groupInput.type = "checkbox";
-    groupInput.classList = "category-group-checkbox";
-
-    const groupLabel = document.createElement("label");
-    groupLabel.appendChild(groupInput);
-
     const groupIsIncomplete = quizDeck.categories.some(c => getGroupName(c) === groupName && c.isIncomplete);
-    const labelText = groupIsIncomplete ? groupName + " (incomplete)" : groupName;
-    groupLabel.appendChild(document.createTextNode(labelText));
+    const groupHasQuestions = quizDeck.categories.some(c => getGroupName(c) === groupName && c.questions.length > 0);
 
     const groupUl = document.createElement("ul");
     groupUl.style.display = "none";
+    groups[groupName] = groupUl;
+
+    const groupLabel = document.createElement("label");
+
+    if (groupHasQuestions) {
+        const groupInput = document.createElement("input");
+        groupInput.type = "checkbox";
+        groupInput.classList = "category-group-checkbox";
+        groupLabel.appendChild(groupInput);
+
+        const group_onChange = () => {
+            const groupCheckboxes = groupUl.querySelectorAll("input");
+            groupCheckboxes.forEach(cb => {
+                cb.checked = groupInput.checked;
+            });
+        };
+        groupInput.addEventListener("change", group_onChange);
+    }
+
+    const groupItem = document.createElement("li");
+
+    const labelText = groupIsIncomplete ? groupName + " (incomplete)" : groupName;
+    groupLabel.appendChild(document.createTextNode(labelText));
+    groupItem.appendChild(groupLabel);
+
 
     const groupButton = document.createElement("button");
     groupButton.classList = "show-hide-category-group-button";
@@ -73,51 +90,38 @@ const createGroup = (groupName, groups, getGroupName, parentElement) => {
             groupButton.textContent = "Show";
         }
     });
-
-    const groupItem = document.createElement("li");
-    groupItem.appendChild(groupLabel);
     groupItem.appendChild(groupButton);
+
     groupItem.appendChild(groupUl);
-
     parentElement.appendChild(groupItem);
-
-    const group_onChange = () => {
-        const groupCheckboxes = groupUl.querySelectorAll("input");
-        groupCheckboxes.forEach(cb => {
-            cb.checked = groupInput.checked;
-        });
-    };
-    groupInput.addEventListener("change", group_onChange);
-
-    groups[groupName] = groupUl;
 
     return groupUl;
 }
 
-let loadCategoryControls = () => {
-    let createCategoryItem = (category) => {
-        let input = document.createElement("input");
-        input.type = "checkbox";
-        input.classList = "category-checkbox";
-        input.name = "category";
-        input.value = category.name;
+const createCategoryItem = (category) => {
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.classList = "category-checkbox";
+    input.name = "category";
+    input.value = category.name;
 
-        let label = document.createElement("label");
-        if (category.isUnvetted) {
-            label.classList = "category-unvetted";
-        }
-        if (category.questions.length > 0) {
-            label.appendChild(input);
-        }
-        const labelText = category.isIncomplete ? category.name + " (incomplete)" : category.name;
-        label.appendChild(document.createTextNode(labelText));
-
-        let item = document.createElement("li");
-        item.appendChild(label);
-
-        return item;
+    const label = document.createElement("label");
+    if (category.isUnvetted) {
+        label.classList = "category-unvetted";
     }
+    if (category.questions.length > 0) {
+        label.appendChild(input);
+    }
+    const labelText = category.isIncomplete ? category.name + " (incomplete)" : category.name;
+    label.appendChild(document.createTextNode(labelText));
 
+    const item = document.createElement("li");
+    item.appendChild(label);
+
+    return item;
+}
+
+let loadCategoryControls = () => {
     let categorySelectionUl = document.getElementById("category-selection");
 
     let categoryMajorGroups = {};
