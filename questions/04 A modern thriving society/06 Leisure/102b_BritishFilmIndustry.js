@@ -3,10 +3,10 @@
     ];
 
     let category = {
-        name: "Water sports",
+        name: "British Film Industry",
         questions: questions,
         isIncomplete: true,
-        group: "Sport",
+        group: "Leisure",
         majorGroup: "A modern thriving society"
     }
     quizDeck.categories.push(category);
