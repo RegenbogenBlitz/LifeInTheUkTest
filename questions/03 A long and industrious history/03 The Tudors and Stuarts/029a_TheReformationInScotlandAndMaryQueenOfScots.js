@@ -159,10 +159,10 @@
                 "Her husband was appointed as an advisor to Elizabeth I"]
         },
         {
-            question: "What was Mary, Queen of Scots, suspected of that resulted in her the country?",
+            question: "What was Mary, Queen of Scots, suspected of that resulted in her fleeing the country?",
             correctAnswers: ["Involvement in her husband's murder"],
             incorrectAnswers: [
-                "Attempting to remove her sone from the succession",
+                "Attempting to remove her son from the succession",
                 "Plotting to reinstate Catholicism as the official religion of Scotland",
                 "Treason against Scotland",
                 "Converting to Protestantism",
